@@ -21,6 +21,11 @@ mode = st.sidebar.radio(
     "Choose your data source:",
     ["Financial Extraction (RAG)", "Live Web Sentiment (Scraper)"]
 )
+st.sidebar.markdown("---")
+if st.sidebar.button("Clear Chat History"):
+    st.session_state.messages = []
+    st.rerun()
+
 
 # Initialize pipelines
 @st.cache_resource
