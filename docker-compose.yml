@@ -1,10 +1,10 @@
-version: '3.8'
 services:
-  michelin-rag-app:
+  report-analyst:
     build: .
     ports:
       - "8501:8501"
-    volumes:
-      - .:/app
     env_file:
       - .env
+    volumes:
+      - ./vector_db:/app/vector_db   # persist the index between restarts
+      - ./data/ocr:/app/data/ocr     # reuse cached page transcriptions
