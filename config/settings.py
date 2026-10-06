@@ -36,6 +36,15 @@ class Settings(BaseSettings):
 
     # Guardrails
     max_question_chars: int = 1000
+    llm_input_classifier: bool = True  # second layer after pattern checks: off-topic / injection classifier
+
+    # API and operations
+    api_auth_token: str = ""  # if set, API requests must send this in the X-API-Key header
+    rate_limit_per_minute: int = 20  # per client, for the API
+    log_dir: Path = BASE_DIR / "logs"
+    # Optional cost estimates (USD per 1M tokens). Leave at 0 to report tokens only.
+    price_input_per_million: float = 0.0
+    price_output_per_million: float = 0.0
 
 
 settings = Settings()

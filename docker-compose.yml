@@ -1,10 +1,30 @@
 services:
-  report-analyst:
+  api:
     build: .
+    command: sh -c "[ -f vector_db/chunks.jsonl ] || python -m src.pipeline.index; uvicorn src.api.main:app --host 0.0.0.0 --port 8000"
     ports:
-      - "8501:8501"
+      - "8000:8000"
     env_file:
       - .env
     volumes:
       - ./vector_db:/app/vector_db   # persist the index between restarts
       - ./data/ocr:/app/data/ocr     # reuse cached page transcriptions
+      - ./logs:/app/logs             # request logs
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      start_period: 900s             # first start builds the index
+
+  ui:
+    build: .
+    command: streamlit run src/ui/app.py --server.port=8501 --server.address=0.0.0.0
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./vector_db:/app/vector_db
+      - ./logs:/app/logs
+    depends_on:
+      api:
+        condition: service_healthy   # the API container builds the index first

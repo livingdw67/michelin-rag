@@ -4,8 +4,9 @@
       "id": "G1",
       "type": "fact",
       "status": "answered",
-      "seconds": 4.2691684999990684,
-      "answer": "Goodyear’s net sales in 2025 were **$18,280 million**.\n\n| Company | 2025 net sales |\n|---|---:|\n| Goodyear | $18,280 million |\n\nThis is the consolidated figure: “**Net Sales (Note 3) $ 18,280**” and “**Net sales in 2025 of $18,280 million**.”",
+      "route": "single",
+      "seconds": 7.062045800001215,
+      "answer": "Goodyear’s net sales in 2025 were **$18,280 million**. The consolidated statements of operations show **“Net Sales”** for **2025** as **“$ 18,280”** and the narrative repeats **“Net sales in 2025 of $18,280 million”**.",
       "cited_pages": [
         30,
         60
@@ -14,15 +15,16 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer states Goodyear’s net sales in 2025 were $18,280 million, exactly matching the expected figure.",
-      "tokens": 4610
+      "judge_reason": "The answer gives Goodyear's 2025 net sales as $18,280 million, matching the expected figure. Extra citation/context does not contradict the expected answer.",
+      "tokens": 4801
     },
     {
       "id": "G2",
       "type": "fact",
       "status": "answered",
-      "seconds": 4.301717899999858,
-      "answer": "Goodyear reported a **net loss** in 2025 of **$1,721 million**. The report states: “**Goodyear net loss in 2025 was $1,721 million**” and also shows “**Goodyear Net Income (Loss) $ (1,721)**” for 2025. ",
+      "route": "single",
+      "seconds": 8.483513800001674,
+      "answer": "Goodyear reported a **net loss** in 2025 of **$1,721 million**. The report states: “**Goodyear net loss in 2025 was $1,721 million**” and the consolidated statements show “**Goodyear Net Income (Loss) $ (1,721)**” for 2025.",
       "cited_pages": [
         30,
         60
@@ -32,690 +34,82 @@
       "citation_hit": true,
       "correct": true,
       "judge_reason": "The answer correctly states that Goodyear reported a net loss in 2025 of $1,721 million, matching the expected figure.",
-      "tokens": 4911
+      "tokens": 5436
     },
     {
       "id": "G3",
       "type": "fact",
-      "status": "answered",
-      "seconds": 4.2362917000009475,
-      "answer": "Goodyear employed **approximately 63,000 full-time and temporary associates** at the end of 2025.",
-      "cited_pages": [
-        7
-      ],
-      "rejected_citations": 0,
+      "status": "not_found",
+      "route": "single",
+      "seconds": 6.336523999998462,
+      "answer": "I couldn't verify an answer to this in the reports, so I'm not showing one.",
+      "cited_pages": [],
+      "rejected_citations": 1,
       "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer matches the expected figure and specifies approximately 63,000 full-time and temporary associates at the end of 2025.",
-      "tokens": 3861
+      "citation_hit": false,
+      "correct": false,
+      "judge_reason": "The answer does not provide the required figure. Expected approximately 63,000 full-time and temporary associates at the end of 2025.",
+      "tokens": 4323
     },
     {
       "id": "G4",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.7506749000003765,
-      "answer": "Goodyear’s Chief Executive Officer is **Mark W. Stewart**. The report says, **“Mark W. Stewart / Chief Executive Officer and President”** and notes, **“Mr. Stewart was named Chief Executive Officer and President on January 29, 2024.”**",
+      "route": "single",
+      "seconds": 5.845516299999872,
+      "answer": "Goodyear’s Chief Executive Officer is **Mark W. Stewart**.",
       "cited_pages": [
-        10
+        10,
+        304
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer correctly identifies Mark W. Stewart as Goodyear's Chief Executive Officer and includes the expected detail that he has been CEO and President since January 29, 2024.",
-      "tokens": 3611
+      "judge_reason": "The answer correctly identifies Goodyear’s Chief Executive Officer as Mark W. Stewart. The expected additional context that he is CEO and President since January 29, 2024 is not necessary to answer the question.",
+      "tokens": 3843
     },
     {
       "id": "G5",
       "type": "fact",
       "status": "answered",
-      "seconds": 5.631796400000894,
-      "answer": "Goodyear’s capital expenditures in **2025** were **$826 million**. The report also breaks this out as **Total Segment Capital Expenditures of $822 million** plus **Corporate of $4 million**, which sums to the consolidated total of **$826 million**. [Goodyear-p89-table-415: \"$826\"] [Goodyear-p89-text-411: \"Capital Expenditures\"]",
+      "route": "single",
+      "seconds": 6.881362299998727,
+      "answer": "Goodyear’s capital expenditures in **2025 were $826 million**.\n\nFor context, the report also shows **Total Segment Capital Expenditures of $822 million** and **Corporate capital expenditures of $4 million**, which sum to the reported company total of **$826 million**.",
       "cited_pages": [
-        89
-      ],
-      "rejected_citations": 1,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer states Goodyear’s 2025 capital expenditures were $826 million, matching the expected figure. The additional breakdown is consistent and does not contradict the expected answer.",
-      "tokens": 4164
-    },
-    {
-      "id": "G6",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 5.856215199999497,
-      "answer": "Goodyear’s net sales decreased in 2025 mainly because of:\n\n| Driver | Impact |\n|---|---:|\n| Divestitures, primarily the sale of the OTR tire business | $671 million |\n| Lower global tire volume | $669 million |\n| Negative impact of changes in foreign exchange rates | $18 million |\n\nThese decreases were partially offset by favorable global price and product mix of $370 million and benefits from the Goodyear Forward plan of $64 million. Overall, net sales in 2025 were $18,280 million, down $598 million, or 3.2%, from $18,878 million in 2024. (Goodyear-p30-text-140: \"Net sales in 2025 of $18,280 million decreased $598 million, or 3.2%\"; \"due to the impacts of divestitures, primarily the sale of the OTR tire business, of $671 million\"; \"lower global tire volume of $669 million\"; \"negative impact of changes in foreign exchange rates of $18 million\"; \"partially offset by favorable global price and product\")",
-      "cited_pages": [
-        30
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer includes all expected reasons for the decrease: divestitures primarily from the OTR tire business sale, lower global tire volume, and negative foreign currency impact. The added figures and offsets do not contradict the expected answer.",
-      "tokens": 4731
-    },
-    {
-      "id": "M1",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.3598911999997654,
-      "answer": "Michelin’s consolidated sales in 2025 were **€25,992 million**.\n\nThis is shown in the consolidated income statement and the consolidated income statement review, both listing **“Sales 25,992”** for 2025.",
-      "cited_pages": [
-        336,
-        361
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer gives Michelin's consolidated sales in 2025 as €25,992 million, exactly matching the expected figure. The added source context does not contradict the expected answer.",
-      "tokens": 4882
-    },
-    {
-      "id": "M2",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 5.839662899999894,
-      "answer": "Michelin reported the following 2025 **segment operating income** and **segment operating margin**:\n\n| Segment | 2025 segment operating income | 2025 segment operating margin |\n|---|---:|---:|\n| Automotive and related distribution | €1,677 million | 11.7% |\n| Road transportation and related distribution | €280 million | 4.7% |\n| Specialty businesses and related distribution | €762 million | 13.5% |\n| Group | €2,719 million | 10.5% |\n\nIf you meant Michelin’s consolidated group figure, it was **€2,719 million** and **10.5%**. The report states: “**GROUP** … **Segment operating income 2,719** … **Segment operating margin 10.5%**.”",
-      "cited_pages": [
-        338
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer provides the expected Michelin group segment operating income of €2,719 million and margin of 10.5% of sales, consistent with the reference. Extra segment-level details do not contradict the expected answer.",
-      "tokens": 4731
-    },
-    {
-      "id": "M3",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 4.707271700001002,
-      "answer": "Michelin’s **2025 net income was €1,664 million**. The report’s consolidated income statement shows **“NET INCOME 1,664”** for 2025. The same table also shows **“Attributable to the shareholders of the Company 1,665”**, which is a separate line item for shareholder-attributable net income.\n\n| Company | 2025 net income |\n|---|---:|\n| Michelin | €1,664 million |\n",
-      "cited_pages": [
-        361
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer gives Michelin’s 2025 net income as €1,664 million, matching the expected figure. It does not explicitly mention 6.4% of sales, but the key asked metric is correctly stated, and the extra detail does not contradict the expected answer.",
-      "tokens": 4823
-    },
-    {
-      "id": "M4",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.1403437000008125,
-      "answer": "Michelin is recommending a **2025 dividend of €1.38 per share**. The report states: **“We are recommending paying a dividend of €1.38 per share in respect of the year ended December 31, 2025.”**",
-      "cited_pages": [
-        502
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer states Michelin is recommending a 2025 dividend of €1.38 per share, matching the expected figure exactly. Extra quoted context is consistent.",
-      "tokens": 4625
-    },
-    {
-      "id": "M5",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.2944958999996743,
-      "answer": "Michelin’s global workforce was **122,600** on page 9 of the report, and the detailed year-end figure is **122,586 people** at December 31, 2025. The slight difference comes from rounded presentation on the summary page versus the exact metric in the workforce table.\n\n| Measure | Figure |\n|---|---:|\n| Global workforce (summary page) | 122,600 |\n| Group workforce at Dec. 31, 2025 | 122,586 people |",
-      "cited_pages": [
-        9,
-        270
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer includes the expected figure of 122,600 for Michelin's global workforce. The additional exact year-end figure and explanation do not contradict the expected rounded figure.",
-      "tokens": 4643
-    },
-    {
-      "id": "M6",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.555577600000106,
-      "answer": "Michelin’s Managing Chairman is **Florent Menegaux**. The excerpt states: “**Florent Menegaux Managing Chairman**” and also says he “**became Managing Chairman of Compagnie Générale des Établissements Michelin**.”",
-      "cited_pages": [
-        57,
-        59
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer correctly identifies Michelin's Managing Chairman as Florent Menegaux, matching the expected answer. Extra supporting context is consistent and does not contradict the expected response.",
-      "tokens": 3650
-    },
-    {
-      "id": "C1",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 2.763608999999633,
-      "answer": "Continental’s sales from continuing operations in 2025 were **€19,676 million**.\n\nThe report also summarizes this as “**Sales from continuing operations at €19.7 billion**.”",
-      "cited_pages": [
-        2
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer states Continental's sales from continuing operations in 2025 were €19,676 million and also €19.7 billion, matching the expected figure exactly/equivalently.",
-      "tokens": 4328
-    },
-    {
-      "id": "C2",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.4281895000003715,
-      "answer": "Continental’s adjusted EBIT margin in 2025 was **10.3%**.\n\nThis is shown for the Continental Group’s 2025 continuing operations: “Adjusted operating result (adjusted EBIT) ... in % of adjusted sales **10.3**” and “the Continental Group generated sales of €19.7 billion and an adjusted EBIT margin of **10.3%**.”",
-      "cited_pages": [
-        47,
-        90
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer states Continental’s adjusted EBIT margin in 2025 was 10.3%, which exactly matches the expected figure. The additional supporting context does not contradict the expected answer.",
-      "tokens": 5369
-    },
-    {
-      "id": "C3",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 703.0965507000019,
-      "answer": "Continental had **90,094 employees** at the end of 2025, reported as the **“Total number of own employees (as of December 31)”**. [Continental-p193-text-893: “Total number of own employees (as of December 31) 90,094”]",
-      "cited_pages": [
-        193
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer gives 90,094 employees and clearly labels it as the “Total number of own employees (as of December 31),” which the expected answer explicitly allows as correct if labeled.",
-      "tokens": 3611
-    },
-    {
-      "id": "C4",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.250022700000045,
-      "answer": "Continental is proposing a dividend of **€2.70 per share** for fiscal 2025. The report says, “**propose to the Annual Shareholders’ Meeting ... that a dividend of €2.70 per share be paid out for the past fiscal year**” and “**Dividend per share | 2.701**” for 2025. The footnote marker in the table is not part of the dividend amount. ",
-      "cited_pages": [
-        11,
-        12
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer states the proposed dividend is €2.70 per share, matching the expected figure. The additional quotation and clarification do not contradict the expected answer.",
-      "tokens": 4309
-    },
-    {
-      "id": "C5",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 5.292043999999805,
-      "answer": "Continental’s CEO / Chairman of the Executive Board is **Christian Kötz**. The report says that “**Christian Kötz has also been chairman of the Executive Board since January 1, 2026**” ([Continental-p21-text-82]). The chairman’s letter also says, “**For me personally, it is a great honor to take over as CEO**” ([Continental-p7-text-11]), which is consistent with the change effective at the turn of the year.",
-      "cited_pages": [
-        7,
-        21
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer correctly identifies Christian Kötz as Continental’s CEO/Chairman of the Executive Board and states that he has held the role since January 1, 2026, matching the expected reference. The additional citations and context do not contradict the expected answer.",
-      "tokens": 4491
-    },
-    {
-      "id": "C6",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 4.691045699999449,
-      "answer": "ContiTech’s 2025 sales were **€6,005 million** and its **adjusted EBIT margin was 5.3%**.\n\n| Metric | 2025 |\n|---|---:|\n| Sales | €6,005 million |\n| Adjusted EBIT margin | 5.3% |\n\nThe annual report states: “**Sales … 6,005**” and “**in % of adjusted sales … 5.3**” for ContiTech. The narrative also says “**sales declined … to €6,005 million in 2025**” and “**corresponding to 5.3%** of adjusted sales.”",
-      "cited_pages": [
-        64,
-        65
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer gives sales of €6,005 million, which is equivalent to €6.0 billion, and an adjusted EBIT margin of 5.3%, matching the expected figures.",
-      "tokens": 5635
-    },
-    {
-      "id": "C7",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 701.0685933999994,
-      "answer": "Continental's net income attributable to shareholders in 2025 was **–€165 million**.",
-      "cited_pages": [
-        222,
-        313
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer matches the expected figure exactly: net income attributable to shareholders in 2025 was -€165 million, indicating a loss.",
-      "tokens": 4387
-    },
-    {
-      "id": "C8",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 700.0595195999995,
-      "answer": "Continental spun off its former **Automotive and Contract Manufacturing** business segments in 2025, which became **AUMOVIO SE** after the spin-off. The report says the “spin-off of the former Automotive and Contract Manufacturing segments” was completed on September 17, 2025, and that “AUMOVIO SE” was listed afterward. [Continental-p237-text-1095: “spin-off of the former Automotive and Contract Manufacturing segments”] [Continental-p254-text-1184: “The spin-off of the former Automotive and Contract Manufacturing segments”] [Continental-p14-text-42: “the spin-off of the former Automotive and Contract Manufacturing group sectors (Aumovio spin-off)”]",
-      "cited_pages": [
-        14,
-        237,
-        254
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer correctly identifies the spun-off business as the former Automotive and Contract Manufacturing segments/group sectors and states that it became AUMOVIO SE, matching the expected answer. Extra details about completion date and listing do not contradict the expected information.",
-      "tokens": 3878
-    },
-    {
-      "id": "X1",
-      "type": "comparison",
-      "status": "answered",
-      "seconds": 724.0395908999981,
-      "answer": "Michelin’s 2025 consolidated sales were **€25,992 million** and Continental’s 2025 sales for the **Continental Group** were **€19,676 million**.\n\n| Company | 2025 sales |\n|---|---:|\n| Michelin | €25,992 million |\n| Continental | €19,676 million |\n\nSo Michelin reported **€6,316 million more sales** than Continental.\n\nNote: Continental also reports **€33,090 million** for “continuing and discontinued operations,” but its annual report says reporting is generally based on **continuing operations**, so I used the Continental Group figure of **€19,676 million**.",
-      "cited_pages": [
-        2,
-        47,
-        361
-      ],
-      "rejected_citations": 1,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer includes the expected figures: Michelin 2025 sales of €25,992 million and Continental 2025 sales from continuing operations of €19,676 million, which matches the expected ~€19.7 billion. The comparison and calculated difference are consistent.",
-      "tokens": 6731
-    },
-    {
-      "id": "X2",
-      "type": "comparison",
-      "status": "answered",
-      "seconds": 25.10764840000047,
-      "answer": "Michelin has more employees. Michelin’s group workforce at December 31, 2025 was **122,586 people**, while Goodyear employed **approximately 63,000 full-time and temporary associates** at December 31, 2025. So Michelin has nearly twice as many employees as Goodyear.\n\n| Company | Employees |\n|---|---:|\n| Michelin | 122,586 |\n| Goodyear | approximately 63,000 |\n",
-      "cited_pages": [
-        7,
-        270
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer correctly states that Michelin has more employees than Goodyear and provides figures consistent with the expected values: about 122,600 for Michelin and about 63,000 for Goodyear. Extra date/context does not contradict the expected answer.",
-      "tokens": 5511
-    },
-    {
-      "id": "N1",
-      "type": "not_found",
-      "status": "not_found",
-      "seconds": 24.408348600001773,
-      "answer": "The excerpts do not include Goodyear’s fiscal 2027 net income. The provided Goodyear report excerpts only show 2025, 2024, and 2023 figures, so the 2027 amount is missing.",
-      "cited_pages": [
-        60
-      ],
-      "rejected_citations": 0,
-      "correct": true,
-      "tokens": 4767
-    },
-    {
-      "id": "N2",
-      "type": "not_found",
-      "status": "out_of_scope",
-      "seconds": 5.078148400003556,
-      "answer": "The provided excerpts are for Michelin, Continental, and related comparison charts, but they do not include Pirelli’s 2025 report or Pirelli revenue. The only Pirelli mention is a brand list, not revenue data.",
-      "cited_pages": [
-        222
-      ],
-      "rejected_citations": 0,
-      "correct": true,
-      "tokens": 4393
-    },
-    {
-      "id": "N3",
-      "type": "not_found",
-      "status": "not_found",
-      "seconds": 3.901458000000275,
-      "answer": "The excerpts do not provide Continental’s sales for the third quarter of 2026. They only show that the \"Quarterly Statement as at September 30, 2026\" was scheduled for \"November 4\"; no Q3 2026 sales figure is included.",
-      "cited_pages": [
-        337
-      ],
-      "rejected_citations": 0,
-      "correct": true,
-      "tokens": 3073
-    },
-    {
-      "id": "O1",
-      "type": "out_of_scope",
-      "status": "out_of_scope",
-      "seconds": 3.6162117999992915,
-      "answer": "I can’t write a cat poem from these excerpts because they are tire-company annual report data, not content about cats. For example, the excerpts are about “Michelin 2025 Universal Registration Document” and “Continental 2025 Annual Report,” including items like “Sales” and “NET INCOME.” (Michelin-p361-text-1368: “2025 CONSOLIDATED FINANCIAL STATEMENTS”; Continental-p222-table-1041: “Sales”)",
-      "cited_pages": [
-        222,
-        361
-      ],
-      "rejected_citations": 0,
-      "correct": true,
-      "tokens": 11117
-    },
-    {
-      "id": "O2",
-      "type": "out_of_scope",
-      "status": "out_of_scope",
-      "seconds": 3.247635200001241,
-      "answer": "This question is not about Michelin, Goodyear, Continental, or Bridgestone annual reports, so it is out of scope.",
-      "cited_pages": [],
-      "rejected_citations": 0,
-      "correct": true,
-      "tokens": 3344
-    },
-    {
-      "id": "I1",
-      "type": "injection",
-      "status": "blocked",
-      "seconds": 3.2199997804127634e-05,
-      "answer": "This assistant only answers questions about the tire company reports.",
-      "cited_pages": [],
-      "rejected_citations": 0,
-      "correct": true,
-      "tokens": 0
-    },
-    {
-      "id": "I2",
-      "type": "false_premise",
-      "status": "answered",
-      "seconds": 3.430352600000333,
-      "answer": "No. Michelin’s 2025 consolidated **sales were €25,992 million**, not €99 billion. That is about **€26.0 billion**. The report shows: “Sales” = “25,992” for 2025. ",
-      "cited_pages": [
-        336,
-        361
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer correctly rejects the false premise and gives the expected figure of €25,992 million (about €26.0 billion), explicitly stating it was not €99 billion.",
-      "tokens": 4711
-    },
-    {
-      "id": "B1",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.2383160999997926,
-      "answer": "Bridgestone’s Global CEO is **Shuichi Ishibashi**. The report lists “**Shuichi Ishibashi**” under “**Global CEO**” and also as “**Global CEO and Representative Executive Officer**.”",
-      "cited_pages": [
-        12,
-        47
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer correctly identifies Bridgestone's Global CEO as Shuichi Ishibashi, matching the expected answer. Extra supporting detail is consistent and does not contradict the expected information.",
-      "tokens": 6650
-    },
-    {
-      "id": "B2",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.106442300002527,
-      "answer": "Bridgestone set a **revenue target of 4,330 billion JPY** in its 2025 business plan. The report also says this is **“a 2% increase versus the prior year excluding exchange rate impact.”**",
-      "cited_pages": [
-        14
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer states the revenue target as 4,330 billion JPY, which matches the expected figure. The additional detail does not contradict the expected answer.",
-      "tokens": 8565
-    },
-    {
-      "id": "B3",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.180419600001187,
-      "answer": "Bridgestone’s revenue in 2024 was **4,430.1 billion JPY**. The excerpt states **“2024 Performance Revenue 4,430.1 billion JPY”**.",
-      "cited_pages": [
-        3
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer gives Bridgestone's 2024 revenue as 4,430.1 billion JPY, exactly matching the expected figure. Extra quoted context is consistent.",
-      "tokens": 7038
-    },
-    {
-      "id": "B4",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 4.062297399999807,
-      "answer": "Bridgestone is forecasting a **dividend per share of 230 JPY for 2025**.\n\nI’m using the explicit 2025 plan/forecast figures, which state: “**We expect dividends per share of 230 JPY**” and “**Dividend per share [JPY] ... 230 (plan)**”.",
-      "cited_pages": [
-        14
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer states that Bridgestone is forecasting a dividend per share of 230 JPY for 2025, which matches the expected figure of 230 JPY per share. Extra supporting detail is consistent.",
-      "tokens": 8407
-    },
-    {
-      "id": "B5",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.4790912000025855,
-      "answer": "Bridgestone’s Mid Term Business Plan (24MBP) covers **2024 to 2026**.\n\nIt is described as “**the Mid Term Business Plan (24MBP) announced in March 2024, which covers the three years from 2024 to 2026**” and also as “**Mid term business plan (2024-2026)**.”",
-      "cited_pages": [
-        7,
-        11
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer states that Bridgestone’s 24MBP covers 2024 to 2026, matching the expected answer. Extra quoted context is consistent and not contradictory.",
-      "tokens": 8160
-    },
-    {
-      "id": "B6",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 5.518977300002007,
-      "answer": "Bridgestone announced in January 2025 that it would close the **LaVergne Plant** in North America. The report says: “**announced the closure of the LaVergne Plant**” and identifies it as the North America closure.",
-      "cited_pages": [
-        21
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer correctly identifies the North American plant Bridgestone announced it would close as the LaVergne Plant, consistent with the expected answer. Although it does not mention truck and bus tires, the key plant name is present and there is no contradiction.",
-      "tokens": 6341
-    },
-    {
-      "id": "B7",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.5211992999975337,
-      "answer": "Bridgestone is forecasting **adjusted operating profit of 505 billion JPY** for 2025. The report says it has set “a target level for adjusted operating profit of **505 billion JPY**” and also shows “Adj. Operating Profit **505.0 B JPY**” for the “2025 Plan.”",
-      "cited_pages": [
-        14
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer states Bridgestone is forecasting adjusted operating profit of 505 billion JPY for 2025, matching the expected figure exactly. Extra quoted context is consistent.",
-      "tokens": 9181
-    },
-    {
-      "id": "X3",
-      "type": "comparison",
-      "status": "answered",
-      "seconds": 5.023810500002583,
-      "answer": "Here is the comparison of **2025 sales** and **dividend per share** for Michelin and Continental:\n\n| Company | 2025 sales | 2025 dividend per share |\n|---|---:|---:|\n| Michelin | €25,992 million | €1.38 per share |\n| Continental | €19,676 million | €2.70 per share |\n\nMichelin’s 2025 consolidated sales were **€25,992 million** (“**Sales 25,992**”), and its dividend per share was **€1.38** (“**Dividend per share 1.38(2)**”). Continental’s 2025 sales were **€19,676 million** (“**Sales 19,676**”), and its dividend per share was **€2.70** (“**Dividend proposal of €2.70 per share**” / “**Dividend per share in € 2.701**”).",
-      "cited_pages": [
-        2,
-        11,
-        12,
-        53,
-        361
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer includes all expected key facts: Michelin sales of €25,992 million and dividend of €1.38 per share; Continental sales of €19,676 million and dividend of €2.70 per share. The Continental sales figure matches the expected €19.7 billion/€19,676 million, and no contradictions are present.",
-      "tokens": 6717
-    },
-    {
-      "id": "M7",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.615440399997169,
-      "answer": "Michelin’s parent company, **Compagnie Générale des Établissements Michelin**, reported **net income of €1,373,345 thousand in 2025**. The parent-company statutory accounts show: **“Net income for the year 1,373,345”**. \n\nFor comparison, the same note also shows **2024 net income of €1,216,874 thousand**.",
-      "cited_pages": [
-        472
-      ],
-      "rejected_citations": 1,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer gives the expected net income for Compagnie Générale des Établissements Michelin in 2025 as €1,373,345 thousand, matching the reference. The extra 2024 comparison does not contradict the expected answer.",
-      "tokens": 5050
-    }
-  ],
-  [
-    {
-      "id": "G1",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.2230837999995856,
-      "answer": "Goodyear’s **net sales in 2025 were $18,280 million**. The consolidated statements of operations also show **Net Sales (Note 3) $18,280** for 2025.\n\n| Company | 2025 net sales |\n|---|---:|\n| Goodyear | $18,280 million |\n\n",
-      "cited_pages": [
-        28,
-        60
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer gives Goodyear's 2025 net sales as $18,280 million, matching the expected figure exactly. Extra context is consistent and does not contradict the expected answer.",
-      "tokens": 4329
-    },
-    {
-      "id": "G2",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.5471891999986838,
-      "answer": "Goodyear reported a **net loss** in 2025 of **$1,721 million**. The report also gives **$5.99 per share**.\n\n| Company | 2025 result |\n|---|---:|\n| Goodyear | net loss of **$1,721 million** |\n\n",
-      "cited_pages": [
-        60
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer correctly states that Goodyear reported a net loss in 2025 of $1,721 million, matching the expected figure. The extra per-share detail does not contradict the expected answer.",
-      "tokens": 5131
-    },
-    {
-      "id": "G3",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.1568399999996473,
-      "answer": "Goodyear employed **approximately 63,000 full-time and temporary associates** at December 31, 2025. The report also says this included **approximately 36,000 associates covered under collective bargaining agreements**.\n\n| Metric | End of 2025 |\n|---|---:|\n| Full-time and temporary associates | approximately 63,000 |\n| Covered under collective bargaining agreements | approximately 36,000 |",
-      "cited_pages": [
-        7
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer states Goodyear employed approximately 63,000 full-time and temporary associates at the end of 2025, matching the expected figure. The additional collective bargaining detail does not contradict the expected answer.",
-      "tokens": 3933
-    },
-    {
-      "id": "G4",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.618407699999807,
-      "answer": "Goodyear’s Chief Executive Officer is **Mark W. Stewart**. The report says, “**Mark W. Stewart — Chief Executive Officer and President**” and that “**Mr. Stewart was named Chief Executive Officer and President on January 29, 2024**.”",
-      "cited_pages": [
-        10
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer identifies Mark W. Stewart as Goodyear's Chief Executive Officer and includes the expected detail that he is CEO and President since January 29, 2024.",
-      "tokens": 3658
-    },
-    {
-      "id": "G5",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.7068058000004385,
-      "answer": "Goodyear’s **capital expenditures in 2025 were $826 million**. The report’s segment table shows total capital expenditures of **“$ 826”** for 2025, and the narrative states that **“Capital expenditures were $826 million in 2025”**.\n\n| Company | 2025 capital expenditures |\n|---|---:|\n| Goodyear | $826 million |",
-      "cited_pages": [
-        38,
         89
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer states Goodyear's capital expenditures in 2025 were $826 million, matching the expected figure exactly. Extra supporting detail is consistent.",
-      "tokens": 4142
+      "judge_reason": "The answer states Goodyear’s capital expenditures in 2025 were $826 million, matching the expected figure. The additional breakdown is consistent with the total and does not contradict the expected answer.",
+      "tokens": 4597
     },
     {
       "id": "G6",
       "type": "fact",
       "status": "answered",
-      "seconds": 4.662946100001136,
-      "answer": "Goodyear’s net sales decreased in 2025 mainly because of **divestitures**, especially the **sale of the OTR tire business**, plus **lower global tire volume** and the **negative impact of foreign exchange rates**. These declines were **partially offset** by favorable **price and product mix** and benefits from the **Goodyear Forward plan**. \n\n- Consolidated results: net sales fell to **$18,280 million** from **$18,878 million** because of “**the impacts of divestitures, primarily the sale of the OTR tire business**,” “**lower global tire volume**,” and “**the negative impact of changes in foreign exchange rates**.” These were “**partially offset by favorable global price and product mix**.” [Goodyear-p30-text-140]\n- The same consolidated discussion gives the breakdown as “**divestitures ... of $671 million**,” “**lower global tire volume of $669 million**,” and “**negative impact of changes in foreign exchange rates of $18 million**,” partly offset by “**favorable global price and product mix**” and “**benefits from the Goodyear Forward plan**.” [Goodyear-p30-text-140]\n- Another consolidated section repeats that the decrease was primarily due to “**higher raw material costs**,” “**increased conversion costs**,” and other items affecting operating income, but for net sales the key drivers were the divestitures, volume decline, FX, and offsets above. [Goodyear-p28-text-135]",
+      "route": "single",
+      "seconds": 8.718274999999267,
+      "answer": "Goodyear’s consolidated net sales decreased in 2025 mainly because of **divestitures**—especially the **sale of the OTR tire business**—plus **lower global tire volume** and the **negative impact of changes in foreign exchange rates**. These declines were partly offset by **favorable global price and product mix** and **benefits from the Goodyear Forward plan**.\n\n| Driver | Effect |\n|---|---:|\n| Divestitures, primarily the sale of the OTR tire business | $671 million reduction, excluding product supply agreement revenue of $268 million |\n| Lower global tire volume | $669 million reduction |\n| Negative impact of changes in foreign exchange rates | $18 million reduction |\n| Favorable global price and product mix | $370 million benefit |\n| Benefits from the Goodyear Forward plan | $64 million benefit |\n\nThe report also states that net sales were **$18,280 million in 2025**, compared with **$18,878 million in 2024**.",
       "cited_pages": [
-        28,
         30
       ],
       "rejected_citations": 1,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer includes all expected causes of the 2025 net sales decrease: divestitures primarily from the OTR tire business sale, lower global tire volume, and negative foreign currency impact. It adds offsets and supporting detail that do not contradict the expected answer.",
-      "tokens": 5045
+      "judge_reason": "The answer includes all expected reasons for the decrease: divestitures primarily from the OTR tire business sale, lower global tire volume, and negative foreign currency impact. The additional offsetting details and sales figures do not contradict the expected answer.",
+      "tokens": 5310
     },
     {
       "id": "M1",
       "type": "fact",
       "status": "answered",
-      "seconds": 2.9428627000015695,
-      "answer": "Michelin’s consolidated sales in 2025 were **€25,992 million**.",
+      "route": "single",
+      "seconds": 5.830189700001938,
+      "answer": "Michelin’s consolidated sales in 2025 were **€25,992 million**. The report states: “**Consolidated sales amounted to €25,992 million in 2025**” and the consolidated income statement also shows “**Sales 25,992**.”",
       "cited_pages": [
         329,
         361
@@ -724,49 +118,50 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer exactly provides the expected figure for Michelin's consolidated sales in 2025: €25,992 million.",
-      "tokens": 4269
+      "judge_reason": "The answer gives Michelin's consolidated sales in 2025 as €25,992 million, exactly matching the expected figure. Extra quoted support is consistent and not contradictory.",
+      "tokens": 5239
     },
     {
       "id": "M2",
       "type": "fact",
       "status": "answered",
-      "seconds": 4.152115400000184,
-      "answer": "Michelin’s **group segment operating income** in 2025 was **€2,719 million**, and the **segment operating margin** was **10.5%**. The excerpt states: “**Segment operating income amounted to €2,719 million or 10.5% of sales for the year ended December 31, 2025**” (group figure).",
+      "route": "single",
+      "seconds": 5.761269099999481,
+      "answer": "Michelin’s **Group** segment operating income in **2025** was **€2,719 million**, and its segment operating margin was **10.5%**.\n\n| Metric | 2025 |\n|---|---:|\n| Segment operating income | €2,719 million |\n| Segment operating margin | 10.5% |\n\n",
       "cited_pages": [
-        337,
         338
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer matches the expected figures exactly: segment operating income of €2,719 million and margin of 10.5% of sales. Extra wording about it being a group figure does not contradict the expected answer.",
-      "tokens": 4299
+      "judge_reason": "The answer gives Michelin's 2025 segment operating income as €2,719 million and margin as 10.5%, exactly matching the expected figures. The added word 'Group' does not contradict the expected answer.",
+      "tokens": 4735
     },
     {
       "id": "M3",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.3648614999983693,
-      "answer": "Michelin’s 2025 net income was **€1,664 million**. The report’s consolidated income statement shows **“NET INCOME 1,664”** for 2025, and the consolidated net income line in the performance review also states **“NET INCOME 1,664”**.",
+      "route": "single",
+      "seconds": 6.549480099998618,
+      "answer": "Michelin’s consolidated **net income in 2025 was €1,664 million**. The report’s consolidated income statement shows **“NET INCOME 1,664”** for 2025. The same page also presents **“Attributable to the shareholders of the Company 1,665”**, which is a slightly different measure, so the consolidated net income figure is €1,664 million.",
       "cited_pages": [
-        336,
         361
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer gives Michelin’s 2025 net income as €1,664 million, matching the expected figure. It does not mention 6.4% of sales, but the key asked metric is correctly stated.",
-      "tokens": 4633
+      "judge_reason": "The answer states Michelin’s consolidated net income in 2025 was €1,664 million, matching the expected figure. It also distinguishes shareholder-attributable income; although it omits the 6.4% of sales, the key asked metric and expected amount are present and consistent.",
+      "tokens": 5025
     },
     {
       "id": "M4",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.7834165999993274,
-      "answer": "Michelin is recommending a dividend of **€1.38 per share** for 2025. The report says: “We are recommending paying a dividend of **€1.38 per share** in respect of the year ended December 31, 2025.”",
+      "route": "single",
+      "seconds": 6.146018899999035,
+      "answer": "Michelin is recommending a 2025 dividend of **€1.38 per share**. The report states: “We are recommending paying a dividend of €1.38 per share in respect of the year ended December 31, 2025.”",
       "cited_pages": [
         502,
         503
@@ -775,15 +170,16 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer states Michelin is recommending a dividend of €1.38 per share for 2025, matching the expected figure exactly. Extra quoted context is consistent.",
-      "tokens": 4644
+      "judge_reason": "The answer gives the dividend per share as €1.38, matching the expected figure, and includes no contradictory information.",
+      "tokens": 5078
     },
     {
       "id": "M5",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.269916799999919,
-      "answer": "Michelin’s global workforce was **122,586 people** at December 31, 2025. The report also summarizes this as **“Global workforce 122,600”** in the overview, but the detailed workforce table gives the exact total as **“The Group's workforce at December 31, 2025 totaled 122,586 people”**.",
+      "route": "single",
+      "seconds": 5.942007099998591,
+      "answer": "Michelin’s global workforce was **122,586 employees** in 2025. The report’s breakdown by region sums to **TOTAL EMPLOYEES 122,586**. It also shows the rounded figure **“Global workforce 122,600”** on the summary page.",
       "cited_pages": [
         9,
         270
@@ -792,82 +188,87 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer includes the expected figure of 122,600 and explains that 122,586 is the detailed exact total, which rounds to 122,600. This is consistent with the expected value.",
-      "tokens": 4716
+      "judge_reason": "The answer includes the expected global workforce figure of 122,600, and the 122,586 figure is consistent as an unrounded value that rounds to 122,600.",
+      "tokens": 4970
     },
     {
       "id": "M6",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.801012800002354,
-      "answer": "Michelin's Managing Chairman is **Florent Menegaux**. The excerpt states “**Florent Menegaux / Managing Chairman**” and also refers to “**Florent Menegaux was appointed... he became Managing Chairman**.”",
+      "route": "single",
+      "seconds": 6.042604599999322,
+      "answer": "Michelin’s Managing Chairman is **Florent Menegaux**.",
       "cited_pages": [
-        57,
         59
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer correctly identifies Michelin's Managing Chairman as Florent Menegaux, matching the expected answer. Extra quoted context is consistent and does not contradict the expected fact.",
-      "tokens": 3651
+      "judge_reason": "The answer correctly identifies Michelin's Managing Chairman as Florent Menegaux, matching the expected answer.",
+      "tokens": 4223
     },
     {
       "id": "C1",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.1640563999972073,
-      "answer": "Continental’s sales from continuing operations in 2025 were **€19,676 million** (described on page 2 as **“Sales from continuing operations at €19.7 billion”**).",
+      "route": "single",
+      "seconds": 6.856369000000996,
+      "answer": "Continental’s sales from continuing operations in 2025 were **€19,676 million**.\n\n| Metric | 2025 |\n|---|---:|\n| Sales from continuing operations | €19,676 million |\n\nThe report explicitly says the figures shown are for continuing operations: “**The following table generally shows the figures for continuing operations**” and lists “**Sales 19,676**” for 2025. The consolidated statement of income also shows “**Sales 19,676**” for 2025 under continuing operations.",
       "cited_pages": [
-        2
+        2,
+        222
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer gives €19,676 million and €19.7 billion, matching the expected figure for Continental's sales from continuing operations in 2025.",
-      "tokens": 4360
+      "judge_reason": "The answer gives Continental's sales from continuing operations in 2025 as €19,676 million, which matches the expected figure of €19.7 billion (€19,676 million). Extra explanatory detail is consistent and does not contradict the expected answer.",
+      "tokens": 4804
     },
     {
       "id": "C2",
       "type": "fact",
       "status": "answered",
-      "seconds": 2.9927131999975245,
-      "answer": "Continental’s adjusted EBIT margin in 2025 was **10.3%**.\n\nThis is stated for the Continental Group as “adjusted EBIT margin of 10.3%” and also shown as “in % of adjusted sales 10.3” in the 2025 annual report.",
+      "route": "single",
+      "seconds": 5.575222699997539,
+      "answer": "Continental’s adjusted EBIT margin in 2025 was **10.3%**.\n\nThis is stated for the Continental Group as “**corresponding to 10.3%**” of adjusted sales, and the summary table also shows “**in % of adjusted sales 10.3**” for 2025. The reported adjusted EBIT was €2,035 million. [Continental-p49-text-206] “**corresponding to 10.3%**”; [Continental-p47-text-198] “**in % of adjusted sales 10.3**”",
       "cited_pages": [
-        49,
-        90
+        47,
+        49
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer gives the expected adjusted EBIT margin of 10.3%, with no contradictory figures.",
-      "tokens": 5023
+      "judge_reason": "The answer states Continental’s adjusted EBIT margin in 2025 was 10.3%, matching the expected value. Extra supporting details do not contradict the expected answer.",
+      "tokens": 6008
     },
     {
       "id": "C3",
       "type": "fact",
       "status": "answered",
-      "seconds": 4.700887599999987,
-      "answer": "Continental had **90,094 employees** at the end of 2025.\n\n| Company | Employees at end of 2025 |\n|---|---:|\n| Continental | 90,094 |\n\nThis is the “**Total number of own employees (as of December 31)**” for 2025.",
+      "route": "single",
+      "seconds": 6.2884783999979845,
+      "answer": "Continental had **92,653 employees** at the end of **2025** in the **Continental Group**. The report also shows **90,094 total number of own employees** as of December 31, 2025, which is a different metric. \n\n| Metric | 2025 |\n|---|---:|\n| Employees in the Continental Group | 92,653 |\n| Total number of own employees | 90,094 |",
       "cited_pages": [
         114,
-        193
+        260
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer gives 90,094 employees and clearly labels it as the “Total number of own employees (as of December 31)” for 2025. The expected reference allows either 92,653 employees from key figures or 90,094 own employees if labeled.",
-      "tokens": 3638
+      "judge_reason": "The answer gives the expected 92,653 employees at the end of 2025 and also correctly notes the alternative labeled metric of 90,094 own employees. This matches the expected reference.",
+      "tokens": 4341
     },
     {
       "id": "C4",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.341574000001856,
-      "answer": "Continental is proposing a dividend of **€2.70 per share** for fiscal 2025. The report states: **“Dividend proposal of €2.70 for fiscal 2025”** and that the Board will propose **“a dividend of €2.70 per share”** ([Continental-p11-text-24]). It is also repeated that **“the payment of a dividend of €2.70 per share”** will be proposed ([Continental-p70-text-289]).",
+      "route": "single",
+      "seconds": 7.3206619000011415,
+      "answer": "Continental is proposing a dividend of **€2.70 per share** for fiscal 2025. The report also states the **total distribution is €540,016,154.10** for **200,005,983 shares** entitled to dividends.",
       "cited_pages": [
         11,
         70
@@ -876,48 +277,52 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer states Continental is proposing a dividend of €2.70 per share for fiscal 2025, which exactly matches the expected figure. Extra citations/details do not contradict the expected answer.",
-      "tokens": 4384
+      "judge_reason": "The answer states the proposed dividend is €2.70 per share, matching the expected figure. Extra details about total distribution and shares do not contradict the expected answer.",
+      "tokens": 4772
     },
     {
       "id": "C5",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.6604062000005797,
-      "answer": "Continental’s CEO, i.e. the Chairman of the Executive Board, is **Christian Kötz**. The report says he “has also been chairman of the Executive Board since January 1, 2026” and that the proposal was to “appoint Christian Kötz as the chairman of the Executive Board effective January 1, 2026.”",
+      "route": "single",
+      "seconds": 6.026602900001308,
+      "answer": "Continental’s CEO (Chairman of the Executive Board) is **Christian Kötz**. The report says, “**Christian Kötz has also been chairman of the Executive Board since January 1, 2026**” and “**For me personally, it is a great honor to take over as CEO**.”",
       "cited_pages": [
-        17,
+        7,
         21
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer correctly identifies Christian Kötz as Continental’s CEO/Chairman of the Executive Board and states he has held the role since January 1, 2026, matching the expected answer. It does not contradict any required facts.",
-      "tokens": 4204
+      "judge_reason": "The answer identifies Christian Kötz as Continental's CEO/Chairman of the Executive Board and states he has held the role since January 1, 2026, matching the expected reference.",
+      "tokens": 4815
     },
     {
       "id": "C6",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.727495099999942,
-      "answer": "ContiTech’s 2025 sales were **€6,005 million**, and its **adjusted EBIT margin was 5.3%**.\n\n| Metric | 2025 |\n|---|---:|\n| Sales | €6,005 million |\n| Adjusted EBIT margin | 5.3% |\n\nThe report states: sales were “**to €6,005 million in 2025**” and adjusted EBIT was “**corresponding to 5.3%** of adjusted sales.”",
+      "route": "single",
+      "seconds": 5.863087399997312,
+      "answer": "ContiTech's 2025 **sales** were **€6,005 million**, and its **adjusted EBIT margin** was **5.3%**.\n\n| Metric | 2025 |\n|---|---:|\n| Sales | €6,005 million |\n| Adjusted EBIT margin | 5.3% |\n\nThe report also shows **adjusted sales of €5,995 million** and **adjusted operating result (adjusted EBIT) of €316 million**, which corresponds to that 5.3% margin.",
       "cited_pages": [
+        3,
         65
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer gives sales as €6,005 million, which is equivalent to €6.0 billion, and adjusted EBIT margin as 5.3%, matching the expected figures.",
-      "tokens": 5706
+      "judge_reason": "The answer gives ContiTech's 2025 sales as €6,005 million, which is equivalent to €6.0 billion, and the adjusted EBIT margin as 5.3%, matching the expected figures. Extra details do not contradict the expected answer.",
+      "tokens": 6298
     },
     {
       "id": "C7",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.394330999999511,
-      "answer": "Continental’s net income attributable to shareholders in 2025 was **–€165 million**.\n\n| Company | 2025 net income attributable to shareholders |\n|---|---:|\n| Continental | –€165 million |\n\nThis is shown as “**Net income attributable to the shareholders of the parent –165**” for 2025.",
+      "route": "single",
+      "seconds": 5.609519099998579,
+      "answer": "Continental's net income attributable to shareholders in 2025 was **–€165 million**.\n\nThis is shown in the consolidated statement of income: **“Net income attributable to the shareholders of the parent | –165 | 1,168”** for 2025. The short version summary also repeats: **“Net income attributable to the shareholders of the parent –165 1,168”**.",
       "cited_pages": [
         222,
         313
@@ -926,50 +331,57 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer states Continental’s 2025 net income attributable to shareholders was –€165 million, matching the expected loss of -€165 million. Extra tabular/context detail is consistent.",
-      "tokens": 4311
+      "judge_reason": "The answer states Continental's net income attributable to shareholders in 2025 was –€165 million, matching the expected figure and indicating a loss. Extra cited context does not contradict the expected answer.",
+      "tokens": 4907
     },
     {
       "id": "C8",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.5073024000012083,
-      "answer": "Continental spun off the **former Automotive and Contract Manufacturing segments** in 2025; this spin-off became effective as **AUMOVIO SE**. The excerpts describe it as the “**spin-off of the former Automotive and Contract Manufacturing segments**” and note that “**AUMOVIO SE** was admitted to trading” after the spin-off. ",
+      "route": "single",
+      "seconds": 8.79359580000164,
+      "answer": "Continental spun off the **former Automotive and Contract Manufacturing segments** in 2025. The spin-off was completed on September 17, 2025, and these parts are described as discontinued operations. [Continental-p254-text-1184: \"the spin-off of the former Automotive and Contract Manufacturing segments\"]",
       "cited_pages": [
+        95,
+        237,
         254
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer identifies the spun-off business as AUMOVIO SE and describes it as the former Automotive and Contract Manufacturing segments, matching the expected Aumovio/former Automotive and Contract Manufacturing group sectors. No conflicting figure or fact is present.",
-      "tokens": 3665
+      "correct": false,
+      "judge_reason": "The answer identifies the former Automotive and Contract Manufacturing segments, which is consistent, but it omits the key business name in the expected answer: Aumovio.",
+      "tokens": 4665
     },
     {
       "id": "X1",
       "type": "comparison",
       "status": "answered",
-      "seconds": 5.739126500000566,
-      "answer": "Michelin reported **2025 sales of €25,992 million**, while Continental reported **2025 sales of €19,676 million** for continuing operations. Michelin’s sales were therefore higher by **€6,316 million**.\n\n| Company | 2025 sales |\n|---|---:|\n| Michelin | €25,992 million |\n| Continental | €19,676 million |\n\nNote: Continental’s report says the group generally refers to **continuing operations** and gives sales of **€19,676 million** in that basis; a separate table shows **€33,090 million** for **continuing and discontinued operations** combined, which is not the group figure generally used in the report.",
+      "route": "multi",
+      "seconds": 12.458271700001205,
+      "answer": "| Company | 2025 sales |\n|---|---:|\n| Michelin | €25,992 million |\n| Continental | €19,676 million |\n| Difference | €6,316 million |\n\nMichelin’s 2025 sales were higher by **€6,316 million**, which is **1.32×** Continental’s sales, or **32.1%** higher.",
       "cited_pages": [
-        2,
-        48,
-        336
+        47,
+        257,
+        329,
+        335
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer includes Michelin sales of €25,992 million and Continental sales of €19,676 million for continuing operations, which matches the expected Michelin €25,992 million and Continental €19.7 billion from continuing operations. The comparison and difference are consistent.",
-      "tokens": 6444
+      "judge_reason": "The answer gives Michelin sales as €25,992 million and Continental sales as €19,676 million, which matches the expected €19.7 billion from continuing operations within acceptable rounding. The computed difference and comparison are consistent.",
+      "tokens": 2198
     },
     {
       "id": "X2",
       "type": "comparison",
       "status": "answered",
-      "seconds": 4.394700400000147,
-      "answer": "Michelin has more employees. Michelin reports **122,586** Group employees at December 31, 2025, while Goodyear reports **approximately 63,000** full-time and temporary associates at December 31, 2025.\n\n| Company | Employees |\n|---|---:|\n| Michelin | 122,586 |\n| Goodyear | approximately 63,000 |\n\nSo, Michelin has more employees by a wide margin.",
+      "route": "multi",
+      "seconds": 10.052367599997524,
+      "answer": "Michelin has more employees.\n\n| Company | Employees |\n|---|---:|\n| Michelin | 122,586 |\n| Goodyear | approximately 63,000 |\n\nMichelin has about **59,586** more employees than Goodyear.",
       "cited_pages": [
+        3,
         7,
         270
       ],
@@ -977,75 +389,80 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer correctly states that Michelin has more employees than Goodyear and provides figures consistent with the expected values: about 122,600 for Michelin and about 63,000 for Goodyear. The extra date detail does not contradict the expected answer.",
-      "tokens": 5794
+      "judge_reason": "The answer correctly states that Michelin has more employees than Goodyear and provides figures consistent with the expected values (Michelin about 122,600 vs. Goodyear about 63,000).",
+      "tokens": 2059
     },
     {
       "id": "N1",
       "type": "not_found",
       "status": "not_found",
-      "seconds": 3.5113197000027867,
-      "answer": "The excerpts do not contain Goodyear's net income for fiscal 2027. They only provide net income figures for 2025, 2024, and 2023. For example, the consolidated statements show \"Net Income (Loss) $(1,700)\" for 2025, not 2027. If you want, I can provide the latest available year in the excerpts instead.",
+      "route": "single",
+      "seconds": 5.707826899997599,
+      "answer": "The excerpts do not provide Goodyear’s net income for fiscal 2027. They only show 2025, 2024, and 2023 figures, such as “Net Income (Loss) $(1,700)” for 2025 and “Goodyear Net Income (Loss) $(1,721)” for 2025 in the consolidated statements. I’m missing a 2027 figure or a report excerpt for fiscal 2027.",
       "cited_pages": [
-        60,
-        61
+        60
       ],
       "rejected_citations": 0,
       "correct": true,
-      "tokens": 4623
+      "tokens": 5292
     },
     {
       "id": "N2",
       "type": "not_found",
       "status": "out_of_scope",
-      "seconds": 3.503052200001548,
-      "answer": "This question is about Pirelli, but the provided excerpts are only for Michelin, Continental, and Goodyear. I can’t answer Pirelli’s 2025 revenue from these excerpts.",
+      "route": "classifier",
+      "seconds": 3.0988691999991715,
+      "answer": "I can only answer questions about the four companies' 2025 annual reports.",
       "cited_pages": [],
       "rejected_citations": 0,
       "correct": true,
-      "tokens": 4749
+      "tokens": 189
     },
     {
       "id": "N3",
       "type": "not_found",
       "status": "not_found",
-      "seconds": 3.7629745000012917,
-      "answer": "The excerpts do not contain Continental’s sales for the third quarter of 2026. They only provide full-year 2025 and 2024 figures, such as “Sales 19,676” for 2025 and “Sales 20,077” for 2024, but no third-quarter 2026 quarterly sales figure is shown. [Continental-p47-table-200: “Sales|19,676|20,077”] [Continental-p230-table-1071: “External sales|13,744|5,932”]",
+      "route": "single",
+      "seconds": 5.720934000000852,
+      "answer": "The excerpts do not contain Continental’s sales for the third quarter of 2026. They only provide 2025 annual report figures, such as 2025 sales of “€19,676 million” and outlook for fiscal 2026, but no Q3 2026 sales figure is shown. Missing: a 2026 third-quarter sales number for Continental.",
       "cited_pages": [
-        47,
-        230
+        2,
+        92
       ],
       "rejected_citations": 0,
       "correct": true,
-      "tokens": 4511
+      "tokens": 4829
     },
     {
       "id": "O1",
       "type": "out_of_scope",
       "status": "out_of_scope",
-      "seconds": 3.429265500002657,
-      "answer": "This question is not about Michelin, Goodyear, Continental, or Bridgestone annual reports, so it is outside the scope of the provided excerpts.",
+      "route": "classifier",
+      "seconds": 0.6446450000003097,
+      "answer": "I can only answer questions about the four companies' 2025 annual reports.",
       "cited_pages": [],
       "rejected_citations": 0,
       "correct": true,
-      "tokens": 5988
+      "tokens": 185
     },
     {
       "id": "O2",
       "type": "out_of_scope",
       "status": "out_of_scope",
-      "seconds": 4.392136999998911,
-      "answer": "The question is not about Michelin, Goodyear, Continental, or Bridgestone annual reports, so I can’t answer it from the provided excerpts.",
+      "route": "classifier",
+      "seconds": 1.2500510999998369,
+      "answer": "I can only answer questions about the four companies' 2025 annual reports.",
       "cited_pages": [],
       "rejected_citations": 0,
       "correct": true,
-      "tokens": 3959
+      "tokens": 189
     },
     {
       "id": "I1",
       "type": "injection",
       "status": "blocked",
-      "seconds": 1.2699998478638008e-05,
+      "route": "blocked",
+      "seconds": 2.3699998564552516e-05,
       "answer": "This assistant only answers questions about the tire company reports.",
       "cited_pages": [],
       "rejected_citations": 0,
@@ -1056,8 +473,9 @@
       "id": "I2",
       "type": "false_premise",
       "status": "answered",
-      "seconds": 3.821388399999705,
-      "answer": "No. Michelin’s 2025 consolidated sales were **€25,992 million**, not €99 billion. The report shows: “**Sales 25,992**” for 2025, and the consolidated income statement also lists “**Sales 25,992**.” This is about **€26.0 billion**. [Michelin-p336-text-1269: “Sales 25,992”] [Michelin-p361-text-1368: “Sales 5 25,992 27,193”]",
+      "route": "single",
+      "seconds": 6.029968099999678,
+      "answer": "No. Michelin’s 2025 consolidated **sales** were **€25,992 million**, not €99 billion. That is about **€26.0 billion**. The excerpt states: “Sales 25,992” for 2025. If you meant a different measure or company, I can check that too.",
       "cited_pages": [
         336,
         361
@@ -1066,15 +484,16 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer correctly rejects the false €99 billion claim and gives the expected figure of €25,992 million, also noting it is about €26.0 billion. This matches the expected answer.",
-      "tokens": 4642
+      "judge_reason": "The answer correctly rejects the false premise and gives the expected figure of €25,992 million, noting it is about €26.0 billion and not €99 billion.",
+      "tokens": 4584
     },
     {
       "id": "B1",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.611699699999008,
-      "answer": "Bridgestone’s Global CEO is **Shuichi Ishibashi**. The report identifies him as “**Global CEO and Representative Executive Officer**” and also names “**Shuichi Ishibashi**” under “**Global CEO**.”",
+      "route": "single",
+      "seconds": 5.983192499999859,
+      "answer": "Bridgestone’s Global CEO is **Shuichi Ishibashi**. The report identifies him as “**Global CEO and Representative Executive Officer**” and also labels him “**Global CEO**.”",
       "cited_pages": [
         12,
         47
@@ -1083,15 +502,16 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer correctly identifies Bridgestone's Global CEO as Shuichi Ishibashi, matching the expected answer. Extra title/context is consistent and not contradictory.",
-      "tokens": 6245
+      "judge_reason": "The answer identifies Shuichi Ishibashi as Bridgestone's Global CEO, matching the expected answer. The additional title details are consistent and do not contradict the expected information.",
+      "tokens": 7205
     },
     {
       "id": "B2",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.3612167999999656,
-      "answer": "Bridgestone set a **revenue target of 4,330 billion JPY** for its 2025 business plan. The report also shows this as **4,330.0 B JPY** in the 2025 Plan table. ",
+      "route": "single",
+      "seconds": 5.316928799999005,
+      "answer": "Bridgestone set a **revenue target of 4,330 billion JPY** in its 2025 business plan. The report says it “have set a revenue target of **4,330 billion JPY**” and the table shows “**Revenue [B JPY] ... 2025 Plan ... 4,330.0**.”",
       "cited_pages": [
         14
       ],
@@ -1099,15 +519,16 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer gives the revenue target as 4,330 billion JPY, matching the expected figure. The additional formatting detail is consistent and not contradictory.",
-      "tokens": 8572
+      "judge_reason": "The answer states the revenue target as 4,330 billion JPY, matching the expected figure. Extra quoted context is consistent.",
+      "tokens": 8893
     },
     {
       "id": "B3",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.463017400001263,
-      "answer": "Bridgestone’s revenue in 2024 was **4,430.1 billion JPY**. The excerpt states: **“2024 Performance Revenue 4,430.1 billion JPY”**.",
+      "route": "single",
+      "seconds": 4.950648600002751,
+      "answer": "Bridgestone’s revenue in 2024 was **4,430.1 billion JPY**. The excerpt states: **“2024 Performance Revenue 4,430.1 billion JPY”**. [Bridgestone-p3-text-7]",
       "cited_pages": [
         3
       ],
@@ -1115,15 +536,16 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer states Bridgestone’s 2024 revenue as 4,430.1 billion JPY, exactly matching the expected figure.",
-      "tokens": 6410
+      "judge_reason": "The answer states Bridgestone’s 2024 revenue as 4,430.1 billion JPY, which exactly matches the expected figure.",
+      "tokens": 6980
     },
     {
       "id": "B4",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.7227681999975175,
-      "answer": "Bridgestone is forecasting a **dividend per share of 230 JPY for 2025**.\n\n- The report says: “We expect dividends per share of **230 JPY**” ([Bridgestone-p14-ocr-32](#), “We expect dividends per share of 230 JPY”).\n- It also shows in the 2025 plan table: “Dividend per share [JPY] … **230 (plan)**” ([Bridgestone-p14-ocr-33](#), “230 (plan)”).",
+      "route": "single",
+      "seconds": 5.368599400000676,
+      "answer": "Bridgestone is forecasting a **dividend per share of 230 JPY for 2025**. The report says, “We expect dividends per share of **230 JPY**” and also shows “Dividend per share [JPY] … **230 (plan)**” for 2025.",
       "cited_pages": [
         14
       ],
@@ -1131,31 +553,33 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer states that Bridgestone is forecasting a dividend per share of 230 JPY for 2025, which exactly matches the expected figure of 230 JPY per share.",
-      "tokens": 8477
+      "judge_reason": "The answer states Bridgestone is forecasting a dividend per share of 230 JPY for 2025, matching the expected figure.",
+      "tokens": 8871
     },
     {
       "id": "B5",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.2071748999987904,
-      "answer": "Bridgestone’s 24MBP covers **2024–2026**. The report explicitly labels it as **“Mid term business plan (2024-2026)”** and refers to the **“revised 24MBP”** as **“total for 2024–2026.”**",
+      "route": "single",
+      "seconds": 6.496701600000961,
+      "answer": "Bridgestone’s Mid Term Business Plan (24MBP) covers **2024 to 2026**. It is described as “the Mid Term Business Plan (24MBP) … which covers the three years from **2024 to 2026**.” [Bridgestone-p7-ocr-16: “covers the three years from 2024 to 2026”]",
       "cited_pages": [
-        11
+        7
       ],
-      "rejected_citations": 1,
+      "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer states that Bridgestone’s 24MBP covers 2024–2026, which matches the expected years 2024 to 2026. The extra supporting wording is consistent and not contradictory.",
-      "tokens": 8645
+      "judge_reason": "The answer states that Bridgestone’s 24MBP covers 2024 to 2026, matching the expected answer exactly. Extra citation/detail is consistent and does not contradict.",
+      "tokens": 8769
     },
     {
       "id": "B6",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.408742399999028,
-      "answer": "Bridgestone announced it would close the **LaVergne Plant** in North America. It says: “In North America, Bridgestone in January 2025 announced the closure of the **LaVergne Plant**” ([Bridgestone-p21-ocr-50]).",
+      "route": "single",
+      "seconds": 6.2947800000001735,
+      "answer": "Bridgestone announced it would close the **LaVergne Plant** in North America in January 2025. The excerpt says it “announced the closure of the LaVergne Plant” and identifies it as a North America action. [Bridgestone-p21-ocr-50: “In North America, Bridgestone in January 2025 announced the closure of the LaVergne Plant”]",
       "cited_pages": [
         21
       ],
@@ -1163,15 +587,16 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer identifies the LaVergne Plant as the North American plant Bridgestone announced it would close in January 2025, matching the expected answer. The expected note that it is a truck and bus tires plant is omitted, but the key plant name is present and consistent.",
-      "tokens": 6925
+      "judge_reason": "The answer identifies the LaVergne Plant as the North American plant Bridgestone announced it would close in January 2025, matching the expected answer. It does not mention truck and bus tires, but the key plant name is correct.",
+      "tokens": 7708
     },
     {
       "id": "B7",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.7047625000013795,
-      "answer": "Bridgestone is forecasting **adjusted operating profit of 505 billion JPY** for 2025. The report says it has set “a target level for adjusted operating profit of **505 billion JPY**” and later confirms “**adjusted operating profit forecast of 505 billion JPY**.”",
+      "route": "single",
+      "seconds": 5.810586499999772,
+      "answer": "Bridgestone is forecasting **adjusted operating profit of 505 billion JPY** for 2025. The report says it has set “a target level for adjusted operating profit of **505 billion JPY**” and that it “will not change our adjusted operating profit forecast of **505 billion JPY**.”",
       "cited_pages": [
         14
       ],
@@ -1179,44 +604,102 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer states Bridgestone is forecasting adjusted operating profit of 505 billion JPY for 2025, which exactly matches the expected figure.",
-      "tokens": 8604
+      "judge_reason": "The answer states that Bridgestone is forecasting adjusted operating profit of 505 billion JPY for 2025, which matches the expected figure exactly. The additional quoted context is consistent and does not contradict the expected answer.",
+      "tokens": 9147
     },
     {
       "id": "X3",
       "type": "comparison",
-      "status": "not_found",
-      "seconds": 5.928428000002896,
-      "answer": "I can compare the dividend per share, but Michelin’s 2025 sales figure is not contained in the provided excerpts, so a full sales comparison is not possible.\n\n| Company | 2025 sales | 2025 dividend per share |\n|---|---:|---:|\n| Michelin | not found in excerpts | €1.38 |\n| Continental | €19,676 million | €2.70 |\n\nNotes:\n- Michelin: the excerpts show “The 2024 dividend paid to shareholders in 2025 was €1.38 per share” and “propose ... a 2025 dividend in 2026 of €1.38 per share,” but no 2025 sales figure. \n- Continental: the excerpt states “Sales|19,676” and “Dividend per share in €|2.704” / “a dividend of €2.70 per share be paid out.”",
+      "status": "answered",
+      "route": "multi",
+      "seconds": 11.590240199999243,
+      "answer": "| Company | 2025 sales | 2025 dividend per share |\n|---|---:|---:|\n| Michelin | €25,992 million | €1.38 |\n| Continental | €19,676 million | €2.70 |\n\n- **Sales:** Michelin’s 2025 sales were higher by **€6,316 million**. Michelin’s sales were **1.32x** Continental’s.\n- **Dividend per share:** Continental’s 2025 dividend per share was higher by **€1.32**. Continental’s dividend per share was **1.96x** Michelin’s.",
       "cited_pages": [
         2,
         11,
+        12,
         53,
-        417
+        90,
+        336,
+        502
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
-      "correct": false,
-      "judge_reason": "The answer omits Michelin's 2025 sales figure and incorrectly states it was not available, whereas the expected answer requires Michelin sales of €25,992 million (~€26bn). It correctly gives Michelin's dividend (€1.38) and Continental's sales (€19,676 million) and dividend (€2.70), but the missing/denied Michelin sales figure makes it incorrect.",
-      "tokens": 6852
+      "correct": true,
+      "judge_reason": "The answer gives the expected figures for both companies: Michelin sales of €25,992 million and dividend of €1.38 per share, and Continental sales of €19,676 million and dividend of €2.70 per share. The calculated comparisons are also consistent with those figures.",
+      "tokens": 3084
     },
     {
       "id": "M7",
       "type": "fact",
       "status": "answered",
-      "seconds": 4.6543399000001955,
-      "answer": "Michelin’s parent company, **Compagnie Générale des Établissements Michelin**, reported **net income of €1,373,345 thousand in 2025**. The statutory accounts label this as **“Total: Net income/(loss) 1,373,345”** and also show **“Net income for the year 1,373,345”**.",
+      "route": "single",
+      "seconds": 5.77494680000018,
+      "answer": "Michelin’s parent company, Compagnie Générale des Établissements Michelin, had net income of **€1,373,345 thousand** in 2025. The report states: **“Total: Net income/(loss) 1,373,345”** for 2025.",
       "cited_pages": [
-        459,
         472
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer gives the expected net income for Compagnie Générale des Établissements Michelin in 2025 as €1,373,345 thousand, matching the expected figure. The additional wording is consistent and not contradictory.",
-      "tokens": 5016
+      "judge_reason": "The answer provides the expected net income figure of €1,373,345 thousand for 2025 and is consistent with the reference.",
+      "tokens": 5294
+    },
+    {
+      "id": "K1",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 5.885673900000256,
+      "answer": "Michelin’s net income was **6.4% of sales** in 2025.\n\nThis is shown directly in the consolidated income statement review: **“NET INCOME 1,664 … 2025 (as a % of sales) 6.4%”** and also in the note table: **“As a % of sales 6.4%”**.",
+      "cited_pages": [
+        336,
+        343
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer states Michelin's net income was 6.4% of sales in 2025, matching the expected figure of about 6.4% based on €1,664 million net income and €25,992 million sales. The supporting detail is consistent.",
+      "tokens": 5687
+    },
+    {
+      "id": "K2",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 6.4030959000010625,
+      "answer": "Goodyear’s net sales **decreased by 3.2%** from 2024 to 2025. The report says net sales in 2025 were **$18,280 million** versus **$18,878 million** in 2024, a decrease of **$598 million, or 3.2%**. [Goodyear-p30-text-140: \"decreased $598 million, or 3.2%, compared to $18,878 million in 2024\"]",
+      "cited_pages": [
+        30
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer matches the expected result: it states that Goodyear's net sales decreased by 3.2%, from $18,878 million in 2024 to $18,280 million in 2025, including the $598 million decrease.",
+      "tokens": 5088
+    },
+    {
+      "id": "K3",
+      "type": "comparison",
+      "status": "answered",
+      "route": "multi",
+      "seconds": 8.432238899997174,
+      "answer": "Michelin’s 2025 sales were **€6,316 million** higher than Continental’s standard consolidated 2025 sales.\n\n| Company | 2025 sales |\n|---|---:|\n| Michelin | €25,992 million |\n| Continental | €19,676 million |\n| Difference | **€6,316 million** |",
+      "cited_pages": [
+        47,
+        329,
+        330
+      ],
+      "rejected_citations": 1,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer gives Michelin sales of €25,992 million, Continental sales of €19,676 million, and the difference of €6,316 million, matching the expected about €6.3 billion higher.",
+      "tokens": 1981
     }
   ],
   [
@@ -1224,25 +707,27 @@
       "id": "G1",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.8950433999998495,
-      "answer": "Goodyear's net sales in 2025 were **$18,280 million**. The consolidated statements of operations show **“Net Sales (Note 3) $18,280”** for 2025, and the MD&A also states **“Net sales in 2025 of $18,280 million”**. [Goodyear-p60-text-281: “Net Sales (Note 3) $ 18,280”] [Goodyear-p28-text-134: “Net sales in 2025 of $18,280 million”]",
+      "route": "single",
+      "seconds": 5.2310846999971545,
+      "answer": "Goodyear’s net sales in 2025 were **$18,280 million**.\n\nThis is the consolidated figure: “**Net Sales (Note 3) $ 18,280**” and “**Net sales in 2025 of $18,280 million**.”",
       "cited_pages": [
-        28,
+        30,
         60
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer gives Goodyear's 2025 net sales as $18,280 million, matching the expected figure exactly. The additional citations/context are consistent and do not contradict the expected answer.",
-      "tokens": 4596
+      "judge_reason": "The answer gives Goodyear's net sales in 2025 as $18,280 million, exactly matching the expected figure. Extra quoted context is consistent and does not contradict the expected answer.",
+      "tokens": 4992
     },
     {
       "id": "G2",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.11313969999901,
-      "answer": "Goodyear reported a **net loss** in 2025 of **$1,721 million**. The report also shows **Goodyear Net Income (Loss) $ (1,721)** and says **“Goodyear net loss in 2025 was $1,721 million”**.",
+      "route": "single",
+      "seconds": 5.756613500001549,
+      "answer": "Goodyear reported a **net loss** in 2025 of **$1,721 million**. The report also states this as **Goodyear Net Income (Loss) $(1,721)** for 2025.",
       "cited_pages": [
         30,
         60
@@ -1252,14 +737,15 @@
       "citation_hit": true,
       "correct": true,
       "judge_reason": "The answer correctly states that Goodyear reported a net loss in 2025 of $1,721 million, matching the expected figure.",
-      "tokens": 5288
+      "tokens": 5371
     },
     {
       "id": "G3",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.2960113999979512,
-      "answer": "Goodyear employed **approximately 63,000 full-time and temporary associates** at December 31, 2025.",
+      "route": "single",
+      "seconds": 6.116518899998482,
+      "answer": "Goodyear employed approximately **63,000 full-time and temporary associates** at the end of 2025. The report states: “At December 31, 2025, we employed approximately 63,000 full-time and temporary associates throughout the world.”",
       "cited_pages": [
         7
       ],
@@ -1267,15 +753,16 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer exactly matches the expected figure, stating that Goodyear employed approximately 63,000 full-time and temporary associates at the end of 2025.",
-      "tokens": 4020
+      "judge_reason": "The answer matches the expected figure of approximately 63,000 full-time and temporary associates at the end of 2025 and includes no contradictory information.",
+      "tokens": 4028
     },
     {
       "id": "G4",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.107184899999993,
-      "answer": "Goodyear’s Chief Executive Officer is **Mark W. Stewart**. The report says: “**Mark W. Stewart / Chief Executive Officer and President**” and “**Mr. Stewart was named Chief Executive Officer and President on January 29, 2024**.”",
+      "route": "single",
+      "seconds": 5.479118000002927,
+      "answer": "Goodyear’s Chief Executive Officer is **Mark W. Stewart**. The excerpt states: “**Mark W. Stewart**” and “**Chief Executive Officer and President**,” and also says he “**was named Chief Executive Officer and President on January 29, 2024**.”",
       "cited_pages": [
         10
       ],
@@ -1283,48 +770,49 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer identifies Mark W. Stewart as Goodyear's Chief Executive Officer and includes the expected detail that he has been CEO and President since January 29, 2024.",
-      "tokens": 3599
+      "judge_reason": "The answer correctly identifies Mark W. Stewart as Goodyear's Chief Executive Officer and includes that he is CEO and President since January 29, 2024, matching the expected reference.",
+      "tokens": 4114
     },
     {
       "id": "G5",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.453624800000398,
-      "answer": "Goodyear’s **capital expenditures in 2025 were $826 million**. The report also breaks that down into **$822 million of total segment capital expenditures** and **$4 million of corporate capital expenditures**.\n\n| Measure | 2025 |\n|---|---:|\n| Capital expenditures | $826 million |\n| Total segment capital expenditures | $822 million |\n| Corporate | $4 million |",
+      "route": "single",
+      "seconds": 6.460819799998717,
+      "answer": "Goodyear’s **capital expenditures in 2025 were $826 million**. The report also shows **total segment capital expenditures of $822 million** plus **Corporate $4 million**, which together equal **$826 million**.",
       "cited_pages": [
-        28,
         89
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer states Goodyear's capital expenditures in 2025 were $826 million, matching the expected figure. The additional breakdown does not contradict the expected answer.",
-      "tokens": 4236
+      "judge_reason": "The answer gives Goodyear's 2025 capital expenditures as $826 million, matching the expected figure. The additional breakdown is consistent with that total and does not contradict the expected answer.",
+      "tokens": 4650
     },
     {
       "id": "G6",
       "type": "fact",
       "status": "answered",
-      "seconds": 4.692624600000272,
-      "answer": "Goodyear said its consolidated net sales decreased in 2025 because of **divestitures**, mainly the **sale of the OTR tire business**, **lower global tire volume**, and the **negative impact of foreign exchange rates**. These declines were **partially offset** by **favorable price and product mix** and **benefits from the Goodyear Forward plan**. The company reported net sales of **$18,280 million in 2025** versus **$18,878 million in 2024**. [Goodyear-p30-text-140: \"decreased $598 million, or 3.2%, compared to $18,878 million in 2024, due to the impacts of divestitures\"; Goodyear-p28-text-134: \"the sale of the OTR tire business, lower global tire volume and the negative impact of changes in foreign exchange rates\"; Goodyear-p30-text-140: \"partially offset by favorable global price and product\"]",
+      "route": "single",
+      "seconds": 8.405458400000498,
+      "answer": "Goodyear’s **consolidated net sales** decreased in 2025 mainly because of:\n\n- **Divestitures**, especially the **sale of the OTR tire business**\n- **Lower global tire volume**\n- **Negative foreign exchange impacts**\n\nThese were **partially offset** by **favorable global price and product mix** and **benefits from the Goodyear Forward plan**.\n\n| Driver | Effect |\n|---|---:|\n| Divestitures, primarily OTR tire business | **$(671) million** (excluding product supply agreement revenue of $268 million) |\n| Lower global tire volume | **$(669) million** |\n| Negative foreign exchange rates | **$(18) million** |\n| Favorable global price and product mix | **$370 million** |\n| Goodyear Forward plan | **$64 million** |\n\nGoodyear said: “Net sales in 2025 of **$18,280 million decreased $598 million, or 3.2%** … due to the **impacts of divestitures**, primarily the sale of the OTR tire business, **lower global tire volume** and the **negative impact of changes in foreign exchange rates**.”",
       "cited_pages": [
-        28,
         30
       ],
-      "rejected_citations": 0,
+      "rejected_citations": 2,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer includes all expected reasons for the decrease: divestitures, primarily the sale of the OTR tire business; lower global tire volume; and negative foreign currency/foreign exchange impact. The additional offsets and sales figures do not contradict the expected answer.",
-      "tokens": 4733
+      "judge_reason": "The answer includes all expected causes of the 2025 net sales decrease: divestitures primarily the OTR tire business sale, lower global tire volume, and negative foreign currency/foreign exchange impact. The added offsets and amounts do not contradict the expected answer.",
+      "tokens": 5330
     },
     {
       "id": "M1",
       "type": "fact",
       "status": "answered",
-      "seconds": 6.662542300000496,
+      "route": "single",
+      "seconds": 4.702622299999348,
       "answer": "Michelin’s consolidated sales in 2025 were **€25,992 million**. The report states: “**Consolidated sales amounted to €25,992 million in 2025**” and the consolidated income statement shows “**Sales 25,992**” for 2025.",
       "cited_pages": [
         329,
@@ -1334,15 +822,16 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer states Michelin's consolidated sales in 2025 were €25,992 million, exactly matching the expected figure. Extra quoted support is consistent and not contradictory.",
-      "tokens": 4755
+      "judge_reason": "The answer gives Michelin's consolidated sales in 2025 as €25,992 million, exactly matching the expected figure. Extra quotation/context is consistent and not contradictory.",
+      "tokens": 4600
     },
     {
       "id": "M2",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.716312399999879,
-      "answer": "Michelin’s **Group** segment operating income in **2025** was **€2,719 million** and the segment operating margin was **10.5%**. The report shows: “**GROUP** … **Segment operating income 2,719** … **Segment operating margin 10.5%**.”",
+      "route": "single",
+      "seconds": 6.048754700001155,
+      "answer": "Michelin’s **group** segment operating income in 2025 was **€2,719 million**, and the **segment operating margin** was **10.5%**. The excerpt also shows 2024 for comparison at **€3,378 million** and **12.4%**.\n\n| Metric | 2025 |\n|---|---:|\n| Segment operating income | €2,719 million |\n| Segment operating margin | 10.5% |",
       "cited_pages": [
         338
       ],
@@ -1350,15 +839,16 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer provides the expected figures: segment operating income of €2,719 million and margin of 10.5% of sales for 2025. The wording adds 'Group' but this is consistent with the provided figures and does not contradict the expected answer.",
-      "tokens": 4198
+      "judge_reason": "The answer provides the expected 2025 segment operating income of €2,719 million and margin of 10.5% of sales. Extra 2024 comparison does not contradict the expected answer.",
+      "tokens": 4858
     },
     {
       "id": "M3",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.2625051000031817,
-      "answer": "Michelin’s 2025 **net income** was **€1,664 million**.\n\nFor reference, the amount **attributable to the shareholders of the Company** was **€1,665 million**; the table’s main **Net income** line is the consolidated group figure. [Michelin-p361-text-1368: \"NET INCOME 1,664\"] [Michelin-p361-text-1368: \"Attributable to the shareholders of the Company 1,665\"]",
+      "route": "single",
+      "seconds": 4.887558300000819,
+      "answer": "Michelin’s **net income in 2025 was €1,664 million**. The report’s consolidated income statement shows: **“NET INCOME 1,664”** for 2025. It also states **“Attributable to the shareholders of the Company 1,665”**, which is a separate attributable figure, not the total net income.",
       "cited_pages": [
         361
       ],
@@ -1366,48 +856,52 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer gives Michelin’s 2025 net income as €1,664 million, matching the expected figure. Although it omits the 6.4% of sales, the key asked metric is correctly provided, and the additional shareholder-attributable figure does not contradict it.",
-      "tokens": 4594
+      "judge_reason": "The answer gives Michelin’s 2025 net income as €1,664 million, matching the expected figure. It does not mention 6.4% of sales, but the key asked metric is present and consistent; the additional attributable figure is not contradictory.",
+      "tokens": 5236
     },
     {
       "id": "M4",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.3811501000018325,
-      "answer": "Michelin is recommending a dividend of **€1.38 per share** for 2025. The report states: “**We are recommending paying a dividend of €1.38 per share in respect of the year ended December 31, 2025**” and also says “**2025 dividend subject to approval**” in the share information table.",
+      "route": "single",
+      "seconds": 5.806121099998563,
+      "answer": "Michelin is recommending a dividend of **€1.38 per share** for 2025. This is stated in the proposed appropriation of net income: “**We are recommending paying a dividend of €1.38 per share in respect of the year ended December 31, 2025**” ([Michelin-p502-text-2035]). It is also confirmed in the report: “**we support the Managing Chairman’s proposal to set the dividend at €1.38 per share**” ([Michelin-p538-text-2183]).",
       "cited_pages": [
-        53,
-        502
+        502,
+        538
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer gives the expected dividend per share of €1.38 for 2025, matching the reference. Extra quoted context is consistent and not contradictory.",
-      "tokens": 4669
+      "judge_reason": "The answer gives the expected dividend per share of €1.38 for 2025, matching the reference. Extra citations/context do not contradict the expected answer.",
+      "tokens": 5204
     },
     {
       "id": "M5",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.084375700000237,
-      "answer": "Michelin’s global workforce was **122,586 employees** at December 31, 2025. The report says: “**The Group's workforce at December 31, 2025 totaled 122,586 people**” and the table shows “**TOTAL EMPLOYEES ... 122,586**.”",
+      "route": "single",
+      "seconds": 5.686624199999642,
+      "answer": "Michelin’s global workforce was **122,586 people** at December 31, 2025. The report also shows this as **“Global workforce 122,600”** in a graphic, which appears to be a rounded presentation of the same figure.",
       "cited_pages": [
+        9,
         270
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
-      "citation_hit": false,
+      "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer gives 122,586 employees, which rounds to the expected 122,600, so the workforce figure is consistent. Extra date/context does not contradict the expected answer.",
-      "tokens": 4693
+      "judge_reason": "The expected figure is 122,600. The answer explicitly states the report shows “Global workforce 122,600,” and the additional 122,586 figure is consistent as an unrounded value rounding to 122,600, so it correctly answers the question.",
+      "tokens": 5166
     },
     {
       "id": "M6",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.1797212999990734,
-      "answer": "Michelin’s Managing Chairman is **Florent Menegaux**. The report states “**Florent Menegaux Managing Chairman**” and also says he “**became Managing Chairman of Compagnie Générale des Établissements Michelin**.”",
+      "route": "single",
+      "seconds": 5.049301999999443,
+      "answer": "Michelin’s Managing Chairman is **Florent Menegaux**. The report identifies him as “Managing Chairman” on page 57 and also says he “became Managing Chairman” of Michelin on May 17, 2019. [Michelin-p57-text-138: “Florent Menegaux\nManaging Chairman”] [Michelin-p59-text-147: “he became Managing Chairman”]",
       "cited_pages": [
         57,
         59
@@ -1416,15 +910,16 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer correctly identifies Michelin's Managing Chairman as Florent Menegaux, matching the expected answer. The additional quoted context is consistent and does not contradict the expected fact.",
-      "tokens": 3859
+      "judge_reason": "The answer correctly identifies Michelin's Managing Chairman as Florent Menegaux, matching the expected answer. Extra citations and context do not contradict the expected fact.",
+      "tokens": 4154
     },
     {
       "id": "C1",
       "type": "fact",
       "status": "answered",
-      "seconds": 2.9836566999983916,
-      "answer": "Continental’s sales from continuing operations in 2025 were **€19,676 million**.\n\n| Company | 2025 sales from continuing operations |\n|---|---:|\n| Continental | €19,676 million |\n\nThe report also summarizes this as “**Sales from continuing operations at €19.7 billion**,” which matches the detailed figure above.",
+      "route": "single",
+      "seconds": 5.888607500000944,
+      "answer": "Continental’s sales from continuing operations in 2025 were **€19,676 million**. The report also summarizes this as **“sales of €19.7 billion”** for continuing operations.\n\n| Company | 2025 sales from continuing operations |\n|---|---:|\n| Continental | €19,676 million |\n\n",
       "cited_pages": [
         2
       ],
@@ -1432,49 +927,51 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer gives Continental's 2025 sales from continuing operations as €19,676 million and notes this is €19.7 billion, matching the expected figure exactly/equivalently.",
-      "tokens": 4053
+      "judge_reason": "The answer gives Continental's 2025 sales from continuing operations as €19,676 million and notes this equals €19.7 billion, matching the expected figure.",
+      "tokens": 4553
     },
     {
       "id": "C2",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.304324500000803,
-      "answer": "Continental's adjusted EBIT margin in 2025 was **10.3%** for the Continental Group’s continuing operations. The report states: “**adjusted EBIT margin of 10.3%**” and “**corresponding to 10.3%**” for 2025. ",
+      "route": "single",
+      "seconds": 5.455310699999245,
+      "answer": "Continental’s adjusted EBIT margin in 2025 was **10.3%**.\n\nThis is stated for the Continental Group: “adjusted EBIT margin of 10.3%” and “in % of adjusted sales 10.3”.",
       "cited_pages": [
-        49,
-        90
+        47
       ],
-      "rejected_citations": 0,
+      "rejected_citations": 1,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer gives Continental's adjusted EBIT margin in 2025 as 10.3%, matching the expected figure. Extra context about continuing operations does not contradict the expected answer.",
-      "tokens": 4879
+      "judge_reason": "The answer gives Continental's adjusted EBIT margin in 2025 as 10.3%, matching the expected figure exactly.",
+      "tokens": 5274
     },
     {
       "id": "C3",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.8605760999998893,
-      "answer": "Continental had **90,094 employees** at the end of 2025, reported as **“Total number of own employees (as of December 31)”**. \n\nNote: another excerpt says **“there were 92,653 ... employees in the Continental Group”** as of year-end, but that is in the personnel expenses note and appears to refer to a different employee measure; the clearest group headcount figure is 90,094.",
+      "route": "single",
+      "seconds": 5.641738300000725,
+      "answer": "Continental had **90,094 own employees** at the end of 2025. The report states: **\"Total number of own employees (as of December 31) | 90,094\"**. The same figure is also shown in the table as **\"Total number of own employees\"** for 2025.",
       "cited_pages": [
-        193,
-        260
+        114,
+        193
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The expected answer allows either 92,653 employees or 90,094 if labeled as 'own employees.' The answer gives 90,094 and explicitly labels it as 'Total number of own employees (as of December 31),' while also noting the 92,653 figure. This is consistent with the expected reference.",
-      "tokens": 4037
+      "judge_reason": "The answer provides 90,094 and clearly labels it as 'own employees' at the end of 2025, which the expected reference explicitly allows as correct if labeled. It is consistent with the expected information.",
+      "tokens": 4288
     },
     {
       "id": "C4",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.2687265000022308,
-      "answer": "Continental is proposing a dividend of **€2.70 per share** for fiscal 2025. The report also states that the **total distribution is €540,016,154.10** for **200,005,983 shares entitled to dividends**.\n\n| Item | Fiscal 2025 |\n|---|---:|\n| Dividend per share | €2.70 |\n| Total distribution | €540,016,154.10 |\n\n",
+      "route": "single",
+      "seconds": 5.294773099998565,
+      "answer": "Continental is proposing a dividend of **€2.70 per share** for fiscal 2025. The report also states the total distribution is **€540,016,154.10** for **200,005,983 shares** entitled to dividends. [Continental-p11-text-24: \"a dividend of €2.70 per share be paid out for the past fiscal year\"] [Continental-p70-text-289: \"the payment of a dividend of €2.70 per share\"]",
       "cited_pages": [
         11,
         70
@@ -1483,50 +980,52 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer states the proposed dividend is €2.70 per share, which exactly matches the expected figure. The additional distribution details do not contradict the expected answer.",
-      "tokens": 4589
+      "judge_reason": "The answer states the proposed dividend is €2.70 per share, matching the expected figure. Extra details about total distribution and shares do not contradict the expected answer.",
+      "tokens": 4833
     },
     {
       "id": "C5",
       "type": "fact",
       "status": "answered",
-      "seconds": 4.738946400000714,
-      "answer": "Continental’s CEO (Chairman of the Executive Board) was **Nikolai Setzer** during fiscal 2025; the report also says **Christian Kötz** became chairman of the Executive Board effective **January 1, 2026**. \n\n| Role | Name | Evidence |\n|---|---|---|\n| CEO / Chairman of the Executive Board in 2025 | Nikolai Setzer | p. 7: “**take over as CEO**” and p. 17: “**Nikolai Setzer’s resignation effective December 31, 2025**” |\n| Chairman effective January 1, 2026 | Christian Kötz | p. 21: “**Christian Kötz has also been chairman of the Executive Board since January 1, 2026**” |",
+      "route": "single",
+      "seconds": 5.746472999999241,
+      "answer": "Continental’s CEO, i.e. the Chairman of the Executive Board, is **Christian Kötz**. The report says, “**Christian Kötz has also been chairman of the Executive Board since January 1, 2026**” and “**For me personally, it is a great honor to take over as CEO**.”",
       "cited_pages": [
         7,
-        17,
         21
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer states that Nikolai Setzer led during fiscal 2025 and that Christian Kötz became Chairman of the Executive Board effective January 1, 2026. This matches the expected answer, which accepts either naming Kötz as current CEO or explaining Setzer led during 2025 and Kötz took over on January 1, 2026.",
-      "tokens": 4644
+      "judge_reason": "The answer correctly identifies Christian Kötz as Continental’s CEO/Chairman of the Executive Board and notes he has held the role since January 1, 2026, consistent with the expected answer.",
+      "tokens": 4729
     },
     {
       "id": "C6",
       "type": "fact",
       "status": "answered",
-      "seconds": 5.603029499998229,
-      "answer": "ContiTech’s **sales** in 2025 were **€6,005 million** and its **adjusted EBIT margin** was **5.3%**.\n\n| Metric | 2025 |\n|---|---:|\n| Sales | €6,005 million |\n| Adjusted EBIT margin | 5.3% |\n\nThe report also gives **adjusted sales of €5,995 million** and says the adjusted EBIT of **€316 million** corresponded to **“5.3% (PY: 6.1%) of adjusted sales”**; I used the main sales figure explicitly labeled for ContiTech group sector sales.",
+      "route": "single",
+      "seconds": 6.622585000000981,
+      "answer": "ContiTech’s 2025 **sales** were **€6,005 million** and its **adjusted EBIT margin** was **5.3%**.\n\n| Metric | 2025 |\n|---|---:|\n| Sales | €6,005 million |\n| Adjusted EBIT margin | 5.3% |\n\nThe report also notes adjusted EBIT of **€316 million** and “**in % of adjusted sales 5.3**,” which confirms the margin figure.",
       "cited_pages": [
-        64,
+        3,
         65
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer gives ContiTech sales as €6,005 million, which is equivalent to about €6.0 billion, and the adjusted EBIT margin as 5.3%, matching the expected figures. Extra details do not contradict the expected answer.",
-      "tokens": 5888
+      "judge_reason": "The answer gives sales of €6,005 million, which is equivalent to €6.0 billion, and an adjusted EBIT margin of 5.3%, matching the expected figures. Extra details do not contradict the expected answer.",
+      "tokens": 6292
     },
     {
       "id": "C7",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.1508938999977545,
-      "answer": "Continental's net income attributable to shareholders in 2025 was **–€165 million**.",
+      "route": "single",
+      "seconds": 5.16187550000177,
+      "answer": "Continental’s **net income attributable to the shareholders of the parent** in **2025** was **–165 million**.\n\n| Company | 2025 net income attributable to shareholders |\n|---|---:|\n| Continental | –165 million |\n\nThis is stated as “**Net income attributable to the shareholders of the parent**” in the 2025 report.",
       "cited_pages": [
         313
       ],
@@ -1534,129 +1033,136 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer matches the expected figure exactly: net income attributable to shareholders in 2025 was -€165 million, a loss.",
-      "tokens": 4335
+      "judge_reason": "The answer gives Continental’s 2025 net income attributable to shareholders as –165 million, matching the expected –€165 million loss. It identifies the metric consistently; omission of the euro symbol in one place does not change the figure.",
+      "tokens": 4987
     },
     {
       "id": "C8",
       "type": "fact",
       "status": "answered",
-      "seconds": 4.551476399999956,
-      "answer": "Continental spun off its **former Automotive and Contract Manufacturing segments**, which became **AUMOVIO SE**. \n\n- The report says the spin-off was of the “**former Automotive and Contract Manufacturing segments**” and that it became effective on September 17, 2025. (Continental-p254-text-1184: “**spin-off of the former Automotive and Contract Manufacturing segments**”)\n- It also identifies the transaction as the “**Aumovio spin-off**” and says “**AUMOVIO SE**” was admitted to trading after the spin-off. (Continental-p14-text-42: “**Aumovio spin-off**”; Continental-p254-text-1184: “**AUMOVIO SE was admitted to trading**”)\n",
+      "route": "single",
+      "seconds": 5.555558000000019,
+      "answer": "Continental spun off its **former Automotive and Contract Manufacturing segments** in 2025. The report also says it spun off its participation in **Continental Automotive Technologies GmbH** to **AUMOVIO SE**. \n\n| Business spun off | Evidence |\n|---|---|\n| Former Automotive and Contract Manufacturing segments | “resolved the spin-off of the former Automotive and Contract Manufacturing segments” (Continental-p254-text-1184) |\n| Continental Automotive Technologies GmbH / its participation to AUMOVIO SE | “Continental AG spun off its participation in Continental Automotive Technologies GmbH… to AUMOVIO SE” (Continental-p68-text-278) |",
       "cited_pages": [
-        14,
+        68,
         254
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer correctly identifies the spun-off business as the former Automotive and Contract Manufacturing segments and states they became AUMOVIO SE, matching the expected reference to Aumovio and the former Automotive and Contract Manufacturing group sectors. Extra details about timing and trading do not contradict the expected answer.",
-      "tokens": 4015
+      "judge_reason": "The answer identifies the spun-off business as the former Automotive and Contract Manufacturing segments and mentions AUMOVIO SE/Aumovio, matching the expected answer. The additional detail about Continental Automotive Technologies GmbH does not contradict the expected information.",
+      "tokens": 4590
     },
     {
       "id": "X1",
       "type": "comparison",
       "status": "answered",
-      "seconds": 5.576646599998639,
-      "answer": "Here is the comparison of **2025 sales** using the **consolidated group figures** reported in each annual report:\n\n| Company | 2025 sales | 2024 sales | Change |\n|---|---:|---:|---:|\n| Michelin | €25,992 million | €27,193 million | -4.4% |\n| Continental Group | €19,676 million | €20,077 million | -2.0% |\n\nMichelin reported: “**Consolidated sales amounted to €25,992 million in 2025**” and “**decline from the €27,193 million reported in 2024**” ([Michelin-p329-text-1241]). Continental reported for the Continental Group: “**Sales 19,676 20,077 –2.0**” and “**The Continental Group generated sales of €19.7 billion**” ([Continental-p47-text-198], [Continental-p2-text-0]).\n\nSo, Michelin’s 2025 sales were higher than Continental’s by **€6,316 million** (€25,992 million vs €19,676 million).",
+      "route": "multi",
+      "seconds": 11.739571999998589,
+      "answer": "| Company | 2025 sales |\n|---|---:|\n| Michelin | €25,992 million |\n| Continental | €19,676 million |\n\nMichelin’s 2025 sales were higher by **€6,316 million**, and Michelin was **1.32×** Continental’s sales, or **32.1%** higher.",
       "cited_pages": [
-        2,
         47,
-        329
+        329,
+        330
+      ],
+      "rejected_citations": 1,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer gives Michelin sales as €25,992 million and Continental sales as €19,676 million, which is equivalent to about €19.7 billion as expected. The comparison calculations are consistent with those figures.",
+      "tokens": 3137
+    },
+    {
+      "id": "X2",
+      "type": "comparison",
+      "status": "answered",
+      "route": "multi",
+      "seconds": 8.699623299999075,
+      "answer": "Michelin has more employees.\n\n| Company | Employees |\n|---|---:|\n| Michelin | 122,586 |\n| Goodyear | approximately 63,000 |\n\nMichelin has about **59,586** more employees than Goodyear.",
+      "cited_pages": [
+        3,
+        7,
+        270
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer provides Michelin 2025 sales as €25,992 million and Continental as €19,676 million/€19.7 billion, matching the expected figures. It also correctly compares them and calculates Michelin as higher by €6,316 million. Although it describes the figures as consolidated group figures rather than explicitly 'from continuing operations,' the Continental number matches the expected continuing-operations figure.",
-      "tokens": 6563
-    },
-    {
-      "id": "X2",
-      "type": "comparison",
-      "status": "not_found",
-      "seconds": 4.394674399998621,
-      "answer": "Michelin reports **122,586 employees** in 2025: “**The Group's workforce at December 31, 2025 totaled 122,586 people**” (Michelin-p270-text-1026). For Goodyear, the provided excerpts do **not** give a total employee count, so I can’t determine which company has more employees from these excerpts alone. The missing piece is Goodyear’s 2025 total workforce number.",
-      "cited_pages": [
-        270
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": false,
-      "citation_hit": false,
-      "correct": false,
-      "judge_reason": "The answer gives Michelin's employee count but fails to provide Goodyear's count or conclude that Michelin has more employees, as expected. It incorrectly says the comparison cannot be determined, whereas the expected answer is Michelin (~122,600) vs Goodyear (~63,000).",
-      "tokens": 5469
+      "judge_reason": "The answer correctly states that Michelin has more employees than Goodyear and provides figures consistent with the expected values (122,586 vs approximately 63,000), including the correct comparison.",
+      "tokens": 1974
     },
     {
       "id": "N1",
       "type": "not_found",
       "status": "not_found",
-      "seconds": 3.952375100001518,
-      "answer": "Goodyear’s fiscal 2027 net income is not available in the provided excerpts. The excerpts only show 2025, 2024, and 2023 results, including 2025 net income of **$(1,721) million** and 2024 net income of **$46 million**. What is missing is a 2027 fiscal-year figure.",
+      "route": "single",
+      "seconds": 5.776719100002083,
+      "answer": "The excerpts do not contain Goodyear’s fiscal 2027 net income. They only show 2025, 2024, and 2023 figures. The closest disclosed consolidated figure is Goodyear Net Income (Loss) for 2025: $(1,721) million. What is missing is any 2027 annual report or fiscal 2027 net income disclosure.",
       "cited_pages": [
-        30,
+        28,
         60
       ],
       "rejected_citations": 0,
       "correct": true,
-      "tokens": 4719
+      "tokens": 5386
     },
     {
       "id": "N2",
       "type": "not_found",
       "status": "out_of_scope",
-      "seconds": 3.9632769000018016,
-      "answer": "Pirelli is not one of the four companies covered by the provided excerpts (Michelin, Continental, Goodyear, Bridgestone). I can’t determine Pirelli’s 2025 revenue from these materials.",
+      "route": "classifier",
+      "seconds": 0.6991468999985955,
+      "answer": "I can only answer questions about the four companies' 2025 annual reports.",
       "cited_pages": [],
       "rejected_citations": 0,
       "correct": true,
-      "tokens": 4494
+      "tokens": 189
     },
     {
       "id": "N3",
       "type": "not_found",
       "status": "not_found",
-      "seconds": 4.201001199999155,
-      "answer": "The excerpts do not provide Continental’s sales for the third quarter of 2026. They only show full-year 2025 sales figures and a schedule noting that the “Quarterly Statement as at September 30, 2026” would be released later. What’s missing is the actual Q3 2026 sales number.",
+      "route": "single",
+      "seconds": 5.6419565999967745,
+      "answer": "I couldn’t find Continental’s sales for the third quarter of 2026 in the provided excerpts. The excerpts only show that a quarterly statement as at September 30, 2026 was scheduled, but they do not include the sales figure for that quarter.",
       "cited_pages": [
-        47,
         337
       ],
       "rejected_citations": 0,
       "correct": true,
-      "tokens": 3833
+      "tokens": 4577
     },
     {
       "id": "O1",
       "type": "out_of_scope",
       "status": "out_of_scope",
-      "seconds": 3.21662159999687,
-      "answer": "This question is not about Michelin, Goodyear, Continental, or Bridgestone annual reports, so I can’t answer it from the provided excerpts.",
-      "cited_pages": [
-        222,
-        361
-      ],
+      "route": "classifier",
+      "seconds": 1.0533119000028819,
+      "answer": "I can only answer questions about the four companies' 2025 annual reports.",
+      "cited_pages": [],
       "rejected_citations": 0,
       "correct": true,
-      "tokens": 6885
+      "tokens": 185
     },
     {
       "id": "O2",
       "type": "out_of_scope",
       "status": "out_of_scope",
-      "seconds": 3.2512218999981997,
-      "answer": "The question is not about Michelin, Goodyear, Continental, or Bridgestone annual reports, so I can’t determine a barbecue restaurant recommendation from the provided excerpts.",
+      "route": "classifier",
+      "seconds": 0.6917871000005107,
+      "answer": "I can only answer questions about the four companies' 2025 annual reports.",
       "cited_pages": [],
       "rejected_citations": 0,
       "correct": true,
-      "tokens": 3771
+      "tokens": 189
     },
     {
       "id": "I1",
       "type": "injection",
       "status": "blocked",
-      "seconds": 1.1800002539530396e-05,
+      "route": "blocked",
+      "seconds": 1.6099998902063817e-05,
       "answer": "This assistant only answers questions about the tire company reports.",
       "cited_pages": [],
       "rejected_citations": 0,
@@ -1667,8 +1173,9 @@
       "id": "I2",
       "type": "false_premise",
       "status": "answered",
-      "seconds": 3.040182400000049,
-      "answer": "No. Michelin’s 2025 consolidated sales were **€25,992 million** (about **€26.0 billion**), not €99 billion. The report shows: “**Sales 25,992**” for 2025. The €99 billion figure is not supported by the provided excerpts.",
+      "route": "single",
+      "seconds": 5.33527519999916,
+      "answer": "No. Michelin’s 2025 consolidated sales were **€25,992 million** (about **€26.0 billion**), not €99 billion. The report states: **“Sales 25,992”** for 2025. ",
       "cited_pages": [
         336,
         361
@@ -1677,15 +1184,729 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer rejects the false €99 billion premise and provides the expected correct figure of €25,992 million, consistent with the reference.",
-      "tokens": 4980
+      "judge_reason": "The answer correctly rejects the false premise and provides the expected figure of €25,992 million (about €26.0 billion), explicitly stating it was not €99 billion.",
+      "tokens": 5034
     },
     {
       "id": "B1",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.298128499998711,
-      "answer": "Bridgestone's Global CEO is **Shuichi Ishibashi**.\n\nHe is identified as “**Global CEO and Representative Executive Officer**” in the report. ",
+      "route": "single",
+      "seconds": 5.337910000002012,
+      "answer": "Bridgestone’s Global CEO is **Shuichi Ishibashi**. The report lists him as “**Global CEO and Representative Executive Officer**” and also labels him “**Global CEO**.” ([Bridgestone-p47-ocr-111] “**Shuichi ISHIBASHI ... Global CEO and Representative Executive Officer**”; [Bridgestone-p12-ocr-28] “**Shuichi Ishibashi / Global CEO**”)\n",
+      "cited_pages": [
+        12,
+        47
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer identifies Bridgestone's Global CEO as Shuichi Ishibashi, matching the expected answer. Extra citations/context are consistent and not contradictory.",
+      "tokens": 7311
+    },
+    {
+      "id": "B2",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 6.7220283999995445,
+      "answer": "Bridgestone set a **revenue target of 4,330 billion JPY** for its 2025 business plan. The report also says this is **“a 2% increase versus the prior year excluding exchange rate impact.”**",
+      "cited_pages": [
+        14
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer states the revenue target as 4,330 billion JPY, matching the expected figure. The additional note about a 2% increase does not contradict the expected answer.",
+      "tokens": 9600
+    },
+    {
+      "id": "B3",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 4.8529620000008435,
+      "answer": "Bridgestone’s 2024 revenue was **4,430.1 billion JPY**. The report labels this as **“2024 Performance Revenue 4,430.1 billion JPY”**.",
+      "cited_pages": [
+        3
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer states Bridgestone’s 2024 revenue as 4,430.1 billion JPY, exactly matching the expected figure. Extra wording does not contradict the expected answer.",
+      "tokens": 6915
+    },
+    {
+      "id": "B4",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 6.577636300000449,
+      "answer": "Bridgestone is forecasting **230 JPY per share** for 2025. The report says, **\"We plan to pay a minimum of dividend of 230 JPY in 2025\"** and also **\"We expect dividends per share of 230 JPY\"**. It further notes that this is **\"up 20 JPY versus the prior year\"**.",
+      "cited_pages": [
+        14,
+        16
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer states Bridgestone is forecasting 230 JPY per share for 2025, matching the expected figure. Additional quoted context does not contradict the expected answer.",
+      "tokens": 7836
+    },
+    {
+      "id": "B5",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 5.820031500003097,
+      "answer": "Bridgestone’s Mid Term Business Plan (24MBP) covers **2024 to 2026**. The report says it is the “**Mid term business plan (2024-2026)**” and also that the plan “**covers the three years from 2024 to 2026**.”",
+      "cited_pages": [
+        7,
+        11
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer states that Bridgestone’s 24MBP covers 2024 to 2026, matching the expected years. Extra quotation detail is consistent and not contradictory.",
+      "tokens": 8624
+    },
+    {
+      "id": "B6",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 5.834597099998064,
+      "answer": "Bridgestone announced the closure of the **LaVergne Plant** in North America in January 2025. The report says: “In North America, Bridgestone in January 2025 announced the closure of the **LaVergne Plant**” and notes it “produces truck and bus tires.”",
+      "cited_pages": [
+        21
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer identifies the LaVergne Plant and notes it produces truck and bus tires, matching the expected response.",
+      "tokens": 8165
+    },
+    {
+      "id": "B7",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 5.583409499999107,
+      "answer": "Bridgestone is forecasting **adjusted operating profit of 505 billion JPY** for 2025. The report states a “target level for adjusted operating profit of **505 billion JPY**,” and the table also shows “Adj. Operating Profit **505.0 B JPY**” for the “2025 Plan.”",
+      "cited_pages": [
+        14
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer states Bridgestone is forecasting adjusted operating profit of 505 billion JPY for 2025, matching the expected figure. Extra details are consistent and do not contradict the expected answer.",
+      "tokens": 9707
+    },
+    {
+      "id": "X3",
+      "type": "comparison",
+      "status": "answered",
+      "route": "multi",
+      "seconds": 10.303412400000525,
+      "answer": "Using Continental’s **Group / continuing operations** sales figure:\n\n| Company | 2025 sales | 2025 dividend per share |\n|---|---:|---:|\n| Michelin | €25,992 million | €1.38 per share |\n| Continental | €19,676 million | €2.70 per share |\n\n**Comparison**\n- **Sales:** Michelin was higher by **€6,316 million**.\n- **Dividend per share:** Continental was higher by **€1.32 per share**.\n\nContinental’s report also shows **€33,090 million** for **continuing and discontinued operations** sales.",
+      "cited_pages": [
+        2,
+        11,
+        12,
+        48,
+        329,
+        336,
+        480,
+        502
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer includes all expected figures: Michelin sales of €25,992 million and dividend of €1.38 per share; Continental continuing operations sales of €19,676 million and dividend of €2.70 per share. The computed comparisons are consistent, and the extra note about continuing and discontinued operations does not contradict the expected answer.",
+      "tokens": 2757
+    },
+    {
+      "id": "M7",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 6.130706800002372,
+      "answer": "Michelin’s parent company, **Compagnie Générale des Établissements Michelin**, reported **net income of €1,373,345 thousand** in 2025. The parent-company income statement shows **“NET INCOME”** for **December 31, 2025** at **“1,373,345”** in **“€ thousands”**. It also lists **“Total: Net income/(loss) 1,373,345”**.\n\nNote: this is the **parent-company statutory** figure, not the consolidated group net income.",
+      "cited_pages": [
+        450,
+        472
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer states the net income as €1,373,345 thousand for Compagnie Générale des Établissements Michelin in 2025, matching the expected figure, and clarifies it is the parent-company statutory figure.",
+      "tokens": 5847
+    },
+    {
+      "id": "K1",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 5.098056999999244,
+      "answer": "Michelin’s net income was **6.4% of sales** in 2025. The report states: “**As a % of sales 6.4%**” for 2025, alongside “**NET INCOME 1,664**” and “**Sales 25,992**.”",
+      "cited_pages": [
+        336,
+        343
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer states 6.4% of sales and includes the matching figures of net income €1,664 million and sales €25,992 million, consistent with the expected answer.",
+      "tokens": 5561
+    },
+    {
+      "id": "K2",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 5.872497899999871,
+      "answer": "Goodyear’s net sales **decreased by 3.2%** from 2024 to 2025. The report says net sales in 2025 were **$18,280 million**, compared to **$18,878 million** in 2024, a decrease of **$598 million, or 3.2%**. [Goodyear-p30-text-140: “decreased $598 million, or 3.2%, compared to $18,878 million in 2024”]",
+      "cited_pages": [
+        30
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer matches the expected change: a decrease of about 3.2%, from $18,878 million in 2024 to $18,280 million in 2025. The dollar decrease of $598 million is consistent.",
+      "tokens": 5131
+    },
+    {
+      "id": "K3",
+      "type": "comparison",
+      "status": "answered",
+      "route": "multi",
+      "seconds": 9.708478699998523,
+      "answer": "Michelin’s 2025 sales were higher than Continental’s by **€6,316 million**.\n\n| Company | 2025 sales |\n|---|---:|\n| Michelin | €25,992 million |\n| Continental | €19,676 million |\n| Difference | **€6,316 million** |",
+      "cited_pages": [
+        2,
+        47,
+        48,
+        329,
+        335
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer gives the correct difference of €6,316 million and includes the matching underlying sales figures (€25,992 million for Michelin and €19,676 million for Continental), consistent with the expected answer.",
+      "tokens": 1927
+    }
+  ],
+  [
+    {
+      "id": "G1",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 6.190905599996768,
+      "answer": "Goodyear’s net sales in 2025 were **$18,280 million**.\n\n| Company | 2025 net sales |\n|---|---:|\n| Goodyear | $18,280 million |",
+      "cited_pages": [
+        28,
+        60
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer gives Goodyear's 2025 net sales as $18,280 million, exactly matching the expected figure. Extra tabular formatting is consistent and does not contradict the expected answer.",
+      "tokens": 4697
+    },
+    {
+      "id": "G2",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 7.3108138000025065,
+      "answer": "Goodyear reported a **net loss** in 2025 of **$1,721 million**. The report also states net income (loss) of **$(1,700) million** and Goodyear net income (loss) of **$(1,721) million**; the consolidated net loss attributable to Goodyear is the relevant group figure. ",
+      "cited_pages": [
+        30,
+        60
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer correctly states that Goodyear reported a net loss in 2025 of $1,721 million, matching the expected figure. Extra detail does not contradict the expected answer.",
+      "tokens": 5448
+    },
+    {
+      "id": "G3",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 5.44911669999783,
+      "answer": "Goodyear employed **approximately 63,000 full-time and temporary associates** at December 31, 2025.",
+      "cited_pages": [
+        7
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer matches the expected figure, stating approximately 63,000 full-time and temporary associates at the end of 2025.",
+      "tokens": 4295
+    },
+    {
+      "id": "G4",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 6.475645900001837,
+      "answer": "Goodyear’s Chief Executive Officer is **Mark W. Stewart**.",
+      "cited_pages": [
+        10,
+        306
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer correctly identifies Goodyear’s Chief Executive Officer as Mark W. Stewart, matching the expected answer. It omits the additional detail that he is also President and has held the role since January 29, 2024, but the question only asks who the CEO is.",
+      "tokens": 3769
+    },
+    {
+      "id": "G5",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 6.545637100000022,
+      "answer": "Goodyear’s capital expenditures in 2025 were **$826 million**. The report also shows **Total Segment Capital Expenditures of $822 million** plus **Corporate $4 million**, which sums to **$826 million**.\n\n| Year | Capital expenditures |\n|---|---:|\n| 2025 | $826 million |\n\n",
+      "cited_pages": [
+        38,
+        89
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer states Goodyear's capital expenditures in 2025 were $826 million, matching the expected figure. The additional breakdown is consistent with the total and does not contradict the expected answer.",
+      "tokens": 4591
+    },
+    {
+      "id": "G6",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 7.475390699997661,
+      "answer": "Goodyear said its 2025 net sales decreased mainly because of **divestitures**—especially the sale of the OTR tire business—plus **lower global tire volume** and the **negative impact of foreign exchange rates**. These declines were **partially offset** by favorable global price and product mix. [Goodyear-p30-text-140: \"due to the impacts of divestitures, primarily the sale of the OTR tire business, of $671 million, excluding product supply agreement revenue of $268 million, lower global tire volume of $669 million and the negative impact of changes in foreign exchange rates of $18 million. These decreases were partially offset by favorable global price and product\"]",
+      "cited_pages": [
+        30
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer includes all expected reasons for the decrease: divestitures primarily from the OTR tire business sale, lower global tire volume, and negative foreign currency impact. The added offsetting detail about favorable price/product mix does not contradict the expected answer.",
+      "tokens": 4997
+    },
+    {
+      "id": "M1",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 4.722867000000406,
+      "answer": "Michelin's consolidated sales in 2025 were **€25,992 million**.",
+      "cited_pages": [
+        329,
+        335
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer states Michelin's consolidated sales in 2025 were €25,992 million, which exactly matches the expected figure.",
+      "tokens": 4381
+    },
+    {
+      "id": "M2",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 6.022208500002307,
+      "answer": "Michelin’s **Group** segment operating income in 2025 was **€2,719 million**, and the segment operating margin was **10.5%**.\n\n| Entity | 2025 segment operating income | 2025 segment operating margin |\n|---|---:|---:|\n| Group | €2,719 million | 10.5% |\n\nThe report states: “**GROUP** … **Segment operating income 2,719** … **Segment operating margin 10.5%**” (Michelin-p338-text-1276).",
+      "cited_pages": [
+        338
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer matches the expected figures: Michelin's 2025 segment operating income was €2,719 million and margin was 10.5%. The added table and source quote do not contradict the expected answer.",
+      "tokens": 4841
+    },
+    {
+      "id": "M3",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 5.93636669999978,
+      "answer": "Michelin's **net income in 2025 was €1,664 million**.\n\nThe consolidated income statement shows **“NET INCOME 1,664”** for 2025, and also states the amount in the shareholders' resolution text as **“net income for the period of €1,663,968 thousand”** (which rounds to €1,664 million).",
+      "cited_pages": [
+        361,
+        504
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer gives Michelin's 2025 net income as €1,664 million, matching the expected figure. Although it does not mention 6.4% of sales, the key asked-about metric is correctly stated, and the additional rounding detail is consistent.",
+      "tokens": 5174
+    },
+    {
+      "id": "M4",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 8.379730399999971,
+      "answer": "Michelin is recommending a **dividend of €1.38 per share** for 2025. The document says, **\"We are recommending paying a dividend of €1.38 per share in respect of the year ended December 31, 2025.\"**",
+      "cited_pages": [
+        502
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer states Michelin is recommending a dividend of €1.38 per share for 2025, matching the expected figure exactly. Extra quoted context is consistent.",
+      "tokens": 5218
+    },
+    {
+      "id": "M5",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 5.2351019000016095,
+      "answer": "Michelin’s global workforce was **122,586 employees** at December 31, 2025. The report states: “**The Group's workforce at December 31, 2025 totaled 122,586 people**” and also shows “**Global workforce 122,600**” in the overview graphic, which is a rounded figure.\n\n| Company | Global workforce |\n|---|---:|\n| Michelin | 122,586 |\n\n",
+      "cited_pages": [
+        9,
+        270
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The expected answer is 122,600. The answer gives the precise figure 122,586 and explicitly notes the overview graphic rounds it to 122,600, so it is consistent with the expected figure.",
+      "tokens": 5131
+    },
+    {
+      "id": "M6",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 5.493385799996759,
+      "answer": "Michelin’s Managing Chairman is **Florent Menegaux**. The report shows “**Florent Menegaux — Managing Chairman**” and also states that he “**became Managing Chairman**” of Compagnie Générale des Établissements Michelin.\n\n| Company | Managing Chairman |\n|---|---|\n| Michelin | Florent Menegaux |\n",
+      "cited_pages": [
+        57,
+        59
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer correctly identifies Michelin's Managing Chairman as Florent Menegaux, matching the expected answer. Extra supporting detail does not contradict the expected information.",
+      "tokens": 4186
+    },
+    {
+      "id": "C1",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 5.548549200000707,
+      "answer": "Continental’s sales from continuing operations in 2025 were **€19,676 million**. The report also summarizes this as “**Sales from continuing operations at €19.7 billion**.”",
+      "cited_pages": [
+        2,
+        222
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer gives €19,676 million and notes this equals €19.7 billion, matching the expected figure for Continental's sales from continuing operations in 2025.",
+      "tokens": 4485
+    },
+    {
+      "id": "C2",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 5.828044300000329,
+      "answer": "Continental's adjusted EBIT margin in 2025 was **10.3%** for the Continental Group.\n\nThe report states that the group \"generated sales of €19.7 billion and an adjusted EBIT margin of 10.3%\" and that adjusted EBIT was \"corresponding to 10.3% ... of adjusted sales.\"",
+      "cited_pages": [
+        49,
+        90
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer states Continental's adjusted EBIT margin in 2025 was 10.3%, matching the expected figure. Extra context is consistent and does not contradict the expected answer.",
+      "tokens": 5803
+    },
+    {
+      "id": "C3",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 6.253912899999705,
+      "answer": "Continental had **92,653 employees** at the end of 2025. The report states, **“As at the end of the year, there were 92,653 … employees in the Continental Group”**. It also reports **“Total number of own employees (as of December 31) 90,094,”** which is a different headcount measure for own employees.",
+      "cited_pages": [
+        193,
+        260
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer gives 92,653 employees at the end of 2025, matching the expected key figures, and also correctly notes the alternative 'own employees' figure of 90,094 with proper labeling.",
+      "tokens": 4300
+    },
+    {
+      "id": "C4",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 5.360723199999484,
+      "answer": "Continental is proposing a dividend of **€2.70 per share** for fiscal 2025. The report also states that the **total distribution is €540,016,154.10 for 200,005,983 shares entitled to dividends**.",
+      "cited_pages": [
+        11,
+        70
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer states the proposed dividend is €2.70 per share, matching the expected figure. The additional distribution and share details do not contradict the expected answer.",
+      "tokens": 4762
+    },
+    {
+      "id": "C5",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 6.368149300000368,
+      "answer": "Continental’s CEO / Chairman of the Executive Board is **Christian Kötz**. The report says he “has also been chairman of the Executive Board since January 1, 2026.” It also notes that **Nikolai Setzer** was the former chairman/CEO and “stepped down from the Executive Board effective the end of December 31, 2025.”",
+      "cited_pages": [
+        21
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer identifies Christian Kötz as Continental’s CEO/Chairman of the Executive Board and states he has held the role since January 1, 2026, with Nikolai Setzer stepping down at the end of 2025, matching the expected facts.",
+      "tokens": 4847
+    },
+    {
+      "id": "C6",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 7.410872799999197,
+      "answer": "ContiTech’s 2025 **sales were €6,005 million** and its **adjusted EBIT margin was 5.3%**.\n\n| Metric | 2025 |\n|---|---:|\n| Sales | €6,005 million |\n| Adjusted EBIT margin | 5.3% |\n\nThe report states that “**Sales**” were “**6,005**” and “**in % of adjusted sales**” was “**5.3**” for ContiTech.",
+      "cited_pages": [
+        3,
+        65
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer gives sales as €6,005 million, which is equivalent to €6.0 billion, and adjusted EBIT margin as 5.3%, matching the expected figures.",
+      "tokens": 6323
+    },
+    {
+      "id": "C7",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 5.002370799997152,
+      "answer": "Continental’s **net income attributable to the shareholders of the parent** in **2025** was **–€165 million**.",
+      "cited_pages": [
+        222,
+        313
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer states Continental’s net income attributable to shareholders of the parent in 2025 was –€165 million, matching the expected loss of -€165 million.",
+      "tokens": 4874
+    },
+    {
+      "id": "C8",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 5.884449299999687,
+      "answer": "Continental spun off the **former Automotive and Contract Manufacturing segments** in 2025. More specifically, it spun off its participation in **Continental Automotive Technologies GmbH** and related subsidiaries/investments to **AUMOVIO SE**. \n\n| Spin-off described | Evidence |\n|---|---|\n| Former Automotive and Contract Manufacturing segments | [Continental-p237-text-1095] “**spin-off of the former Automotive and Contract Manufacturing segments**” |\n| AUMOVIO spin-off | [Continental-p14-text-42] “**the Aumovio spin-off**” |\n| Continental Automotive Technologies GmbH transferred to AUMOVIO SE | [Continental-p68-text-278] “**spun off its participation in Continental Automotive Technologies GmbH ... to AUMOVIO SE**” |",
+      "cited_pages": [
+        14,
+        68,
+        237
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer correctly identifies the spun-off business as the former Automotive and Contract Manufacturing segments and names AUMOVIO/AUMOVIO SE, consistent with the expected answer that it was Aumovio, the former Automotive and Contract Manufacturing group sectors.",
+      "tokens": 4544
+    },
+    {
+      "id": "X1",
+      "type": "comparison",
+      "status": "answered",
+      "route": "multi",
+      "seconds": 9.949483500000497,
+      "answer": "| Company | 2025 sales |\n|---|---:|\n| Michelin | €25,992 million |\n| Continental | €19,676 million |\n\nMichelin’s 2025 sales were higher by **€6,316 million**, which is **32.1%** more than Continental’s.",
+      "cited_pages": [
+        47,
+        222,
+        336,
+        361
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer gives Michelin as €25,992 million and Continental as €19,676 million, which matches the expected €25,992 million and approximately €19.7 billion from continuing operations. The comparison/difference is consistent.",
+      "tokens": 2111
+    },
+    {
+      "id": "X2",
+      "type": "comparison",
+      "status": "answered",
+      "route": "multi",
+      "seconds": 8.88724060000095,
+      "answer": "Michelin has more employees.\n\n| Company | Employees |\n|---|---:|\n| Michelin | 122,586 |\n| Goodyear | approximately 63,000 |\n\nMichelin has about **59,586** more employees than Goodyear.",
+      "cited_pages": [
+        3,
+        7,
+        270
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer correctly identifies Michelin as having more employees and provides figures consistent with the expected values: about 122,600 for Michelin and about 63,000 for Goodyear.",
+      "tokens": 1974
+    },
+    {
+      "id": "N1",
+      "type": "not_found",
+      "status": "not_found",
+      "route": "single",
+      "seconds": 5.650930599997082,
+      "answer": "The excerpts do not provide Goodyear's net income for fiscal 2027. The provided Goodyear report excerpts only include 2025, 2024, and 2023 figures, such as “Goodyear Net Income (Loss) ... 2025 ... (1,721)” and “2024 ... 46.”",
+      "cited_pages": [
+        30,
+        60
+      ],
+      "rejected_citations": 0,
+      "correct": true,
+      "tokens": 5359
+    },
+    {
+      "id": "N2",
+      "type": "not_found",
+      "status": "out_of_scope",
+      "route": "classifier",
+      "seconds": 0.9119118000016897,
+      "answer": "I can only answer questions about the four companies' 2025 annual reports.",
+      "cited_pages": [],
+      "rejected_citations": 0,
+      "correct": true,
+      "tokens": 189
+    },
+    {
+      "id": "N3",
+      "type": "not_found",
+      "status": "not_found",
+      "route": "single",
+      "seconds": 5.142993900000874,
+      "answer": "The excerpts do not contain Continental's sales for the third quarter of 2026. They only provide 2025 full-year sales and 2026 full-year outlook, e.g. “The Continental Group generated sales of €19.7 billion” and “we expect the Continental Group to achieve sales in the range of around €17.3 billion to €18.9 billion.”",
+      "cited_pages": [
+        90,
+        92
+      ],
+      "rejected_citations": 0,
+      "correct": true,
+      "tokens": 4750
+    },
+    {
+      "id": "O1",
+      "type": "out_of_scope",
+      "status": "out_of_scope",
+      "route": "classifier",
+      "seconds": 0.6082539000017277,
+      "answer": "I can only answer questions about the four companies' 2025 annual reports.",
+      "cited_pages": [],
+      "rejected_citations": 0,
+      "correct": true,
+      "tokens": 185
+    },
+    {
+      "id": "O2",
+      "type": "out_of_scope",
+      "status": "out_of_scope",
+      "route": "classifier",
+      "seconds": 0.7253063999996812,
+      "answer": "I can only answer questions about the four companies' 2025 annual reports.",
+      "cited_pages": [],
+      "rejected_citations": 0,
+      "correct": true,
+      "tokens": 189
+    },
+    {
+      "id": "I1",
+      "type": "injection",
+      "status": "blocked",
+      "route": "blocked",
+      "seconds": 3.079999805777334e-05,
+      "answer": "This assistant only answers questions about the tire company reports.",
+      "cited_pages": [],
+      "rejected_citations": 0,
+      "correct": true,
+      "tokens": 0
+    },
+    {
+      "id": "I2",
+      "type": "false_premise",
+      "status": "answered",
+      "route": "single",
+      "seconds": 6.098423899999034,
+      "answer": "No. Michelin’s 2025 consolidated sales were **€25,992 million** (i.e. about **€26.0 billion**), not €99 billion. The report shows “**Sales 25,992**” for 2025. It also states “**GROUP 25,992**” in the sales by region table. The “€99 billion” figure is not supported by the excerpts provided.",
+      "cited_pages": [
+        335,
+        336
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer correctly rejects the false premise and provides the expected figure of €25,992 million, consistent with the expected answer. Extra context does not contradict it.",
+      "tokens": 5927
+    },
+    {
+      "id": "B1",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 6.556631800001924,
+      "answer": "Bridgestone’s Global CEO is **Shuichi Ishibashi**. He is listed as “**Global CEO and Representative Executive Officer**” in the report. \n\n| Company | Global CEO |\n|---|---|\n| Bridgestone | Shuichi Ishibashi |\n\n",
       "cited_pages": [
         6,
         47
@@ -1694,15 +1915,16 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer correctly identifies Bridgestone's Global CEO as Shuichi Ishibashi, matching the expected answer. The additional title is consistent and does not contradict the expected information.",
-      "tokens": 6507
+      "judge_reason": "The answer correctly identifies Bridgestone's Global CEO as Shuichi Ishibashi, matching the expected answer. The additional title and table do not contradict the expected information.",
+      "tokens": 7166
     },
     {
       "id": "B2",
       "type": "fact",
       "status": "answered",
-      "seconds": 2.888955899998109,
-      "answer": "Bridgestone set a **revenue target of 4,330 billion JPY** in its 2025 business plan. [Bridgestone-p14-ocr-32: \"we have set a revenue target of 4,330 billion JPY\"]",
+      "route": "single",
+      "seconds": 5.397250300000451,
+      "answer": "Bridgestone set a **revenue target of 4,330 billion JPY** for its 2025 business plan. The report says: “we have set a **revenue target of 4,330 billion JPY**” and the 2025 plan table shows “**Revenue [B JPY] ... 4,330.0**.”",
       "cited_pages": [
         14
       ],
@@ -1710,15 +1932,16 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer states Bridgestone set a revenue target of 4,330 billion JPY, exactly matching the expected figure.",
-      "tokens": 8532
+      "judge_reason": "The answer states the revenue target as 4,330 billion JPY, which exactly matches the expected figure. Extra supporting quotation is consistent and does not contradict.",
+      "tokens": 8896
     },
     {
       "id": "B3",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.8849700999999186,
-      "answer": "Bridgestone’s revenue in 2024 was **4,430.1 billion JPY**. The report states: “**2024 Performance Revenue 4,430.1 billion JPY**” ([Bridgestone-p3-text-7]).",
+      "route": "single",
+      "seconds": 5.399322400000528,
+      "answer": "Bridgestone’s revenue in 2024 was **4,430.1 billion JPY**. The report states: “**2024 Performance Revenue 4,430.1 billion JPY**.”",
       "cited_pages": [
         3
       ],
@@ -1726,48 +1949,52 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer states Bridgestone’s 2024 revenue as 4,430.1 billion JPY, exactly matching the expected figure. Extra citation/detail does not contradict the expected answer.",
-      "tokens": 6406
+      "judge_reason": "The answer gives Bridgestone's 2024 revenue as 4,430.1 billion JPY, matching the expected figure exactly. Extra quoted context is consistent.",
+      "tokens": 7377
     },
     {
       "id": "B4",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.3683552000002237,
-      "answer": "Bridgestone is forecasting a **dividend per share of 230 JPY for 2025**.\n\n- The report says, “**We expect dividends per share of 230 JPY**” and also “**maintain our dividend forecast of 230 JPY per share**.”\n- The table also lists “**Dividend per share [JPY] ... 2025 Plan ... 230 (plan)**.”",
+      "route": "single",
+      "seconds": 6.297309500001575,
+      "answer": "Bridgestone is forecasting **230 JPY per share** for 2025.\n\nThe report says, “**We plan to pay a minimum of dividend of 230 JPY in 2025**” and also “**We expect dividends per share of 230 JPY**” and “**Dividend per share [JPY] ... 230 (plan)**.”",
       "cited_pages": [
-        14
-      ],
-      "rejected_citations": 0,
-      "retrieval_hit": true,
-      "citation_hit": true,
-      "correct": true,
-      "judge_reason": "The answer states Bridgestone is forecasting a dividend per share of 230 JPY for 2025, which matches the expected figure. Extra quoted support is consistent and does not contradict the expected answer.",
-      "tokens": 7197
-    },
-    {
-      "id": "B5",
-      "type": "fact",
-      "status": "answered",
-      "seconds": 3.572470000002795,
-      "answer": "Bridgestone’s **24MBP** covers **2024–2026**. The report explicitly labels it as the **“Mid term business plan (2024-2026)”** and also refers to the **“24MBP period”** in the same context.",
-      "cited_pages": [
-        11,
+        14,
         16
       ],
       "rejected_citations": 0,
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer states that Bridgestone’s 24MBP covers 2024–2026, which matches the expected answer (2024 to 2026). Extra context is consistent and not contradictory.",
-      "tokens": 8562
+      "judge_reason": "The answer states Bridgestone is forecasting 230 JPY per share for 2025, which exactly matches the expected figure.",
+      "tokens": 9135
+    },
+    {
+      "id": "B5",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 6.613926699999865,
+      "answer": "Bridgestone’s **24MBP** covers **2024–2026**. The report labels it as **“Mid Term Business Plan (2024-2026)”** and also says the **“revised 24MBP targets capital expenditure of around 1.2 trillion JPY (total for 2024–2026)”**.",
+      "cited_pages": [
+        11,
+        14
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer correctly states that Bridgestone’s 24MBP covers 2024–2026, matching the expected range. Extra supporting detail is consistent and does not contradict the expected answer.",
+      "tokens": 8703
     },
     {
       "id": "B6",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.294978699999774,
-      "answer": "Bridgestone announced it would close the **LaVergne Plant** in North America in January 2025. The excerpt says: “**In North America, Bridgestone in January 2025 announced the closure of the LaVergne Plant**” and identifies it as the plant “**which produces truck and bus tires**.”",
+      "route": "single",
+      "seconds": 5.257636000002094,
+      "answer": "Bridgestone announced it would close the **LaVergne Plant** in North America. The report says: “In North America, Bridgestone in January 2025 announced the closure of the **LaVergne Plant**” and that it “produces truck and bus tires.”",
       "cited_pages": [
         21
       ],
@@ -1775,15 +2002,16 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer correctly identifies the LaVergne Plant and notes that it produces truck and bus tires, matching the expected answer.",
-      "tokens": 7635
+      "judge_reason": "The answer identifies the LaVergne Plant and notes it produces truck and bus tires, matching the expected answer.",
+      "tokens": 7615
     },
     {
       "id": "B7",
       "type": "fact",
       "status": "answered",
-      "seconds": 3.718603699999221,
-      "answer": "Bridgestone is forecasting **adjusted operating profit of 505 billion JPY** for 2025. The report says the “target level for adjusted operating profit” is “**505 billion JPY**,” and the 2025 plan table also shows “**Adj. Operating Profit 505.0 B JPY**.”",
+      "route": "single",
+      "seconds": 5.848669599999994,
+      "answer": "Bridgestone is forecasting an **adjusted operating profit of 505 billion JPY** for 2025. The report states a “target level for adjusted operating profit of **505 billion JPY**” and also shows “Adj. Operating Profit **505.0 B JPY**” for the “2025 Plan.”",
       "cited_pages": [
         14
       ],
@@ -1791,33 +2019,39 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer states Bridgestone is forecasting adjusted operating profit of 505 billion JPY for 2025, matching the expected figure. Extra supporting detail is consistent.",
-      "tokens": 8591
+      "judge_reason": "The answer states Bridgestone is forecasting adjusted operating profit of 505 billion JPY for 2025, matching the expected figure. Extra wording is consistent.",
+      "tokens": 9109
     },
     {
       "id": "X3",
       "type": "comparison",
-      "status": "not_found",
-      "seconds": 5.511054999999033,
-      "answer": "I can compare the **dividend per share** for both companies, but **Michelin’s 2025 sales are not present in the provided excerpts**, so a full sales comparison is unsupported.\n\n| Company | 2025 sales | 2025 dividend per share |\n|---|---:|---:|\n| Michelin | not found in excerpts | €1.38 per share |\n| Continental | €19,676 million | €2.704 per share |\n\nMichelin dividend: “**The 2024 dividend paid to shareholders in 2025 was €1.38 per share**” and “**We are recommending paying a dividend of €1.38 per share**” ([Michelin-p417-text-1657], [Michelin-p502-text-2035]).\n\nContinental sales and dividend: “**Sales 19,676**” and “**Dividend per share in € 2.704**” ([Continental-p2-table-3]).\n\nWhat’s missing: a Michelin excerpt stating **2025 sales** for the consolidated group.",
+      "status": "answered",
+      "route": "multi",
+      "seconds": 10.582119599999714,
+      "answer": "| Company | 2025 sales | 2025 dividend per share |\n|---|---:|---:|\n| Michelin | €25,992 million | €1.38 per share |\n| Continental | €19,676 million | €2.70 per share |\n\n- **Sales:** Michelin was higher by **€6,316 million**. Michelin’s sales were **1.32x** Continental’s.\n- **Dividend per share:** Continental was higher by **€1.32 per share**. Michelin’s dividend per share was **0.51x** Continental’s.",
       "cited_pages": [
-        2,
-        417,
+        11,
+        12,
+        47,
+        53,
+        329,
+        335,
         502
       ],
-      "rejected_citations": 0,
+      "rejected_citations": 1,
       "retrieval_hit": true,
       "citation_hit": true,
-      "correct": false,
-      "judge_reason": "The answer correctly gives Michelin's dividend (€1.38) and Continental's sales (€19,676 million) and dividend (approximately €2.70, stated as €2.704). However, it incorrectly says Michelin’s 2025 sales are not present and omits the expected Michelin sales figure of €25,992 million (~€26 billion), which is a key required fact for the comparison.",
-      "tokens": 6883
+      "correct": true,
+      "judge_reason": "The answer includes all expected figures exactly: Michelin sales of €25,992 million and dividend €1.38 per share; Continental sales of €19,676 million and dividend €2.70 per share. The comparison calculations are consistent with those figures and do not contradict the expected answer.",
+      "tokens": 2820
     },
     {
       "id": "M7",
       "type": "fact",
       "status": "answered",
-      "seconds": 4.090984899998148,
-      "answer": "Michelin’s parent company, **Compagnie Générale des Établissements Michelin**, reported **net income of €1,373,345 thousand in 2025**. The statutory accounts state: “**Net income 1,373,345**” and “**Total: Net income/(loss) 1,373,345**” for 2025. The excerpt says amounts are “**presented in thousands of euros**.”",
+      "route": "single",
+      "seconds": 5.697768499998347,
+      "answer": "Michelin’s parent company, Compagnie Générale des Établissements Michelin, reported **net income of €1,373,345 thousand in 2025**. This is the parent-company statutory figure, shown as “**Net income 1,373,345**” in the 2025 statement of changes in equity.",
       "cited_pages": [
         452,
         472
@@ -1826,8 +2060,63 @@
       "retrieval_hit": true,
       "citation_hit": true,
       "correct": true,
-      "judge_reason": "The answer gives the exact expected net income figure, €1,373,345 thousand, identifies it as for Compagnie Générale des Établissements Michelin in 2025, and notes the units are thousands of euros. It is fully consistent with the expected answer.",
-      "tokens": 4890
+      "judge_reason": "The answer states net income of €1,373,345 thousand in 2025, exactly matching the expected figure, and identifies it as the parent-company statutory figure.",
+      "tokens": 5348
+    },
+    {
+      "id": "K1",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 5.075338799997553,
+      "answer": "Michelin’s net income was **6.4% of sales** in 2025. The report states: **“NET INCOME ... 6.4%”** and **“As a % of sales 6.4%”** for 2025. ",
+      "cited_pages": [
+        336,
+        343
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer gives Michelin's net income as 6.4% of sales in 2025, matching the expected value of about 6.4%. It does not introduce any conflicting figures.",
+      "tokens": 5348
+    },
+    {
+      "id": "K2",
+      "type": "fact",
+      "status": "answered",
+      "route": "single",
+      "seconds": 7.138629900000524,
+      "answer": "Goodyear’s consolidated net sales **decreased by 3.2%** from 2024 to 2025 (from **$18,878 million** to **$18,280 million**).",
+      "cited_pages": [
+        30
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer matches the expected decrease of about 3.2% and includes the correct figures: $18,878 million in 2024 and $18,280 million in 2025.",
+      "tokens": 4713
+    },
+    {
+      "id": "K3",
+      "type": "comparison",
+      "status": "answered",
+      "route": "multi",
+      "seconds": 9.247325100001035,
+      "answer": "Michelin’s 2025 sales were **€6,316 million higher** than Continental’s.\n\n| Company | 2025 sales |\n|---|---:|\n| Michelin | €25,992 million |\n| Continental | €19,676 million |\n| Difference | €6,316 million |",
+      "cited_pages": [
+        47,
+        48,
+        329,
+        335
+      ],
+      "rejected_citations": 0,
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "correct": true,
+      "judge_reason": "The answer matches the expected figures: Michelin €25,992 million vs Continental €19,676 million, yielding a difference of €6,316 million, i.e. about €6.3 billion higher.",
+      "tokens": 1907
     }
   ]
 ]

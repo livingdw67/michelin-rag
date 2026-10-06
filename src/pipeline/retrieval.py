@@ -6,7 +6,7 @@ about Goodyear can never be answered from Michelin's report.
 """
 import json
 import re
-from functools import lru_cache
+import threading
 
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
@@ -119,6 +119,14 @@ class HybridRetriever:
         return Document(page_content=c["text"], metadata={key: v for key, v in c.items() if key != "text"})
 
 
-@lru_cache(maxsize=1)
+_retriever = None
+_retriever_lock = threading.Lock()
+
+
 def get_retriever():
-    return HybridRetriever()
+    """Shared retriever. Created once under a lock: concurrent first calls would race to open Chroma."""
+    global _retriever
+    with _retriever_lock:
+        if _retriever is None:
+            _retriever = HybridRetriever()
+    return _retriever

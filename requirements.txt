@@ -14,8 +14,11 @@ chromadb==1.5.9
 rank-bm25==0.2.2
 pymupdf==1.28.2
 
-# App and config
+# App, API, and config
 streamlit==1.65.0
+fastapi==0.142.2
+uvicorn==0.54.0
+pandas==3.0.6
 ddgs==9.16.0
 pydantic==2.13.5
 pydantic-settings==2.15.0
@@ -23,3 +26,4 @@ python-dotenv==1.2.4
 
 # Testing
 pytest==9.1.1
+httpx==0.28.1

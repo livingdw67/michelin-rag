@@ -18,7 +18,7 @@ from langchain_openai import ChatOpenAI
 from pydantic import BaseModel
 
 from config.settings import settings
-from src.pipeline.answer import answer_question
+from src.agent.graph import run_agent
 from src.pipeline.guardrails import GuardrailError
 from src.pipeline.retrieval import get_retriever
 
@@ -58,12 +58,13 @@ def run_case(case, retriever, grader):
 def _run_case(case, retriever, grader):
     started = time.perf_counter()
     try:
-        result = answer_question(case["question"], retriever=retriever)
+        result = run_agent(case["question"])
         status, answer, sources, retrieved = result.status, result.answer, result.sources, result.retrieved
         rejected = result.rejected_citations
     except GuardrailError as e:
         status, answer, sources, retrieved, rejected = "blocked", str(e), [], [], 0
-    row = {"id": case["id"], "type": case["type"], "status": status, "seconds": time.perf_counter() - started,
+    route = result.route if status != "blocked" else "blocked"
+    row = {"id": case["id"], "type": case["type"], "status": status, "route": route, "seconds": time.perf_counter() - started,
            "answer": answer, "cited_pages": sorted({s["page"] for s in sources}), "rejected_citations": rejected}
 
     if case["type"] in ANSWERABLE:
@@ -139,7 +140,7 @@ def main(runs):
                             f"{sum(r['correct'] for r in results)}/{runs} | {note} |")
 
     header = (f"# Evaluation Results\n\n{len(cases)} questions × {runs} runs · answer model `{settings.chat_model}` · "
-              f"query expansion `{settings.rewrite_model}` · grader `{settings.judge_model}`\n\n"
+              f"routing: LangGraph agent · query expansion `{settings.rewrite_model}` · grader `{settings.judge_model}`\n\n"
               "LLM steps are not fully deterministic, so the suite runs several times and reports the mean "
               "and range.\n")
     report = "\n".join([header, *table, "", "## Per-question results", "", *per_question]) + "\n"
