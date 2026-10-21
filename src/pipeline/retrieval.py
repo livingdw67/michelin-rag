@@ -10,11 +10,11 @@ import threading
 
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
-from langchain_openai import ChatOpenAI
 from pydantic import BaseModel
 from rank_bm25 import BM25Okapi
 
 from config.settings import COMPANIES, settings
+from src.llm import chat_model
 from src.pipeline.index import CHUNKS_FILE, COLLECTION, embeddings
 
 TOKEN = re.compile(r"[a-z0-9]+(?:[.,][0-9]+)*")
@@ -78,7 +78,7 @@ class HybridRetriever:
         if not settings.query_expansion:
             return []
         try:
-            llm = ChatOpenAI(model=settings.rewrite_model, api_key=settings.openai_api_key)
+            llm = chat_model(settings.rewrite_model)
             return llm.with_structured_output(SearchQueries).invoke(EXPANSION_PROMPT.format(question=question)).queries[:2]
         except Exception:
             return []

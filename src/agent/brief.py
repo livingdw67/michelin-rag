@@ -6,9 +6,9 @@ sources, and its numbers are checked against them before it is returned.
 """
 from concurrent.futures import ThreadPoolExecutor
 
-from langchain_openai import ChatOpenAI
 
-from config.settings import COMPANIES, settings
+from config.settings import COMPANIES
+from src.llm import chat_model
 from src.pipeline.answer import answer_question
 from src.pipeline.calculator import ungrounded_numbers
 from src.pipeline.metrics import load_metrics
@@ -76,7 +76,7 @@ def build_brief(company_a, company_b):
                 first = result.sources[0]
                 add_source(f"{company} {topic}: {result.answer}", first["doc"], first["page"])
 
-    llm = ChatOpenAI(model=settings.chat_model, api_key=settings.openai_api_key, reasoning_effort="low")
+    llm = chat_model(reasoning_effort="low")
     memo = llm.invoke(MEMO_PROMPT.format(a=company_a, b=company_b, sources="\n\n".join(sources))).content
 
     # Numbers in the memo must come from the sources (citation markers like [3] are small ints, ignored)

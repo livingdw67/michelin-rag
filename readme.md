@@ -22,6 +22,8 @@ A chatbot or a web search can tell you roughly what Michelin earns. What it can'
 
 The set covers financial figures, leadership, workforce, and strategy for all four companies; cross-company and multi-metric comparisons; calculations (margins, growth rates, differences); a parent-company vs. group distinction; questions the reports can't answer; off-topic requests; a prompt-injection attempt; and a false premise ("Michelin's sales were €99 billion, right?").
 
+**Factorial evaluation (400 questions).** 41 questions show the system works but can't say what makes a question hard: a 98% score on 35 answerable questions has a 95% interval of roughly 85–99.5%. A second, [400-question set](eval/factorial/README.md) crosses company × question type × wording (formal, casual, terse, typo; randomly assigned and balanced within every cell), adds 48 comparisons, 48 false premises, 48 unanswerable questions and 48 off-topic or injection attempts, and is analyzed with a Firth logistic model (errors clustered by question), a stratified permutation test for wording, and a check of the LLM judge against a model-free grader. Every figure is pinned to its page, calculation answers are computed in code, and each "not in the reports" question is checked to be absent before the set can be built.
+
 ## Features
 
 | Tab | What it does |
@@ -110,14 +112,25 @@ streamlit run src/ui/app.py
 ```
 
 ```bash
-pytest                               # 43 unit tests: retrieval, guardrails, calculator, API (no API key needed)
-python -m eval.run_eval --runs 3     # full evaluation (uses the API; about 200k tokens per run)
+pytest                               # 76 unit tests: retrieval, guardrails, calculator, API, factorial eval (no API key needed)
+python -m eval.run_eval --runs 3     # golden-set evaluation (uses the API; about 200k tokens per run)
+python -m eval.factorial.run         # 400-question factorial evaluation, resumable (about 2M tokens per run)
+python -m eval.factorial.stats       # its report: eval/factorial/results/results_openai.md
+```
+
+**Local models.** Set `LLM_PROFILE=local` to run the whole app on Ollama (`qwen2.5:7b` and `nomic-embed-text` by default, with a separate index) through its OpenAI-compatible endpoint. All model creation goes through [src/llm.py](src/llm.py). The evaluation judge stays on OpenAI, which is what makes the [OpenAI vs. local comparison](eval/factorial/README.md#openai-vs-a-local-model) fair:
+
+```bash
+LLM_PROFILE=local python -m src.pipeline.index       # once
+LLM_PROFILE=local python -m eval.factorial.run       # same 400 questions, local models
+python -m eval.factorial.compare                     # paired comparison report
 ```
 
 ## Project Structure
 
 ```text
-config/settings.py          Models, retrieval parameters, guardrail and API settings, company registry
+config/settings.py          Models and provider profile, retrieval parameters, guardrail and API settings, company registry
+src/llm.py                  Creates every chat and embedding model (OpenAI, or a local OpenAI-compatible server)
 src/pipeline/documents.py   PDF parsing, table extraction, image-page transcription, chunking
 src/pipeline/index.py       Builds the Chroma vector store and the BM25 chunk file
 src/pipeline/retrieval.py   Company detection, query expansion, hybrid retrieval with rank fusion
@@ -131,6 +144,7 @@ src/api/main.py             FastAPI service with auth, rate limiting, and reques
 src/observability.py        Per-request telemetry
 src/ui/app.py               Streamlit app
 eval/                       Golden question set, evaluation runner, results
+eval/factorial/             400-question factorial eval: page-verified questions, runner, statistics
 tests/                      Unit tests (run in GitHub Actions)
 ```
 

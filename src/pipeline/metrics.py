@@ -10,10 +10,10 @@ from datetime import date
 from typing import Literal, Optional
 
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_openai import ChatOpenAI
 from pydantic import BaseModel, Field
 
 from config.settings import COMPANIES, settings
+from src.llm import chat_model
 from src.pipeline.answer import Citation, format_context
 from src.pipeline.calculator import calculate, ungrounded_numbers
 from src.pipeline.guardrails import verify_citations
@@ -69,7 +69,7 @@ def extract_metric(company, key, retriever=None, llm=None):
     label, template = METRICS[key]
     question = template.format(company=company)
     docs = (retriever or get_retriever()).retrieve(question)
-    llm = llm or ChatOpenAI(model=settings.chat_model, api_key=settings.openai_api_key, reasoning_effort="low")
+    llm = llm or chat_model(reasoning_effort="low")
     prompt = ChatPromptTemplate.from_messages([("human", EXTRACT_PROMPT)])
     result = (prompt | llm.with_structured_output(MetricValue)).invoke(
         {"metric": label, "question": question, "context": format_context(docs)})

@@ -11,11 +11,11 @@ from typing import Literal, Optional, TypedDict
 
 from langchain_core.messages import HumanMessage, SystemMessage, ToolMessage
 from langchain_core.tools import tool
-from langchain_openai import ChatOpenAI
 from langgraph.graph import END, START, StateGraph
 from pydantic import BaseModel, Field
 
 from config.settings import settings
+from src.llm import chat_model
 from src.pipeline.answer import SYSTEM_PROMPT, answer_question
 from src.pipeline.calculator import calculate, ungrounded_numbers
 from src.pipeline.guardrails import GuardrailError, check_question, classify_input, leaks_prompt
@@ -106,7 +106,7 @@ class AgentResult:
 
 
 def _llm(model=None, **kwargs):
-    return ChatOpenAI(model=model or settings.chat_model, api_key=settings.openai_api_key, **kwargs)
+    return chat_model(model, **kwargs)
 
 
 def contextualize(state: AgentState):

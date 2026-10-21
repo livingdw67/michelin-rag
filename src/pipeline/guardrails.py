@@ -97,14 +97,14 @@ def classify_input(question, llm=None):
     so an outage degrades to the pattern checks rather than blocking every user."""
     from typing import Literal
 
-    from langchain_openai import ChatOpenAI
+    from src.llm import chat_model
     from pydantic import BaseModel
 
     class Verdict(BaseModel):
         category: Literal["on_topic", "off_topic", "injection"]
 
     try:
-        llm = llm or ChatOpenAI(model=settings.rewrite_model, api_key=settings.openai_api_key)
+        llm = llm or chat_model(settings.rewrite_model)
         return llm.with_structured_output(Verdict).invoke(CLASSIFIER_PROMPT.format(question=question)).category
     except Exception:
         return "on_topic"
