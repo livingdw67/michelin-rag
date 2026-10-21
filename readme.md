@@ -22,6 +22,8 @@ A chatbot or a web search can tell you roughly what Michelin earns. What it can'
 
 The set covers financial figures, leadership, workforce, and strategy for all four companies; cross-company and multi-metric comparisons; calculations (margins, growth rates, differences); a parent-company vs. group distinction; questions the reports can't answer; off-topic requests; a prompt-injection attempt; and a false premise ("Michelin's sales were €99 billion, right?").
 
+**Factorial evaluation (400 questions).** 41 questions show the system works but can't say what makes a question hard: a 98% score on 35 answerable questions has a 95% interval of roughly 85–99.5%. A second, [400-question set](eval/factorial/README.md) crosses company × question type × wording (formal, casual, terse, typo; randomly assigned and balanced within every cell), adds 48 comparisons, 48 false premises, 48 unanswerable questions and 48 off-topic or injection attempts, and is analyzed with a Firth logistic model (errors clustered by question), a stratified permutation test for wording, and a check of the LLM judge against a model-free grader. Every figure is pinned to its page, calculation answers are computed in code, and each "not in the reports" question is checked to be absent before the set can be built.
+
 ## Features
 
 | Tab | What it does |
@@ -110,8 +112,10 @@ streamlit run src/ui/app.py
 ```
 
 ```bash
-pytest                               # 43 unit tests: retrieval, guardrails, calculator, API (no API key needed)
-python -m eval.run_eval --runs 3     # full evaluation (uses the API; about 200k tokens per run)
+pytest                               # 67 unit tests: retrieval, guardrails, calculator, API, factorial eval (no API key needed)
+python -m eval.run_eval --runs 3     # golden-set evaluation (uses the API; about 200k tokens per run)
+python -m eval.factorial.run         # 400-question factorial evaluation, resumable (about 2M tokens per run)
+python -m eval.factorial.stats       # its report: eval/factorial/results/results.md
 ```
 
 ## Project Structure
@@ -131,6 +135,7 @@ src/api/main.py             FastAPI service with auth, rate limiting, and reques
 src/observability.py        Per-request telemetry
 src/ui/app.py               Streamlit app
 eval/                       Golden question set, evaluation runner, results
+eval/factorial/             400-question factorial eval: page-verified questions, runner, statistics
 tests/                      Unit tests (run in GitHub Actions)
 ```
 

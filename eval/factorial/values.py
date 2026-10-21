@@ -1,0 +1,187 @@
+"""Atomic figures read from the four reports, each pinned to the page it appears on.
+
+Every question in the factorial set that needs a number takes it from here, and calculation
+truths are computed from these values in code rather than typed in. `build_questions.py`
+checks that each evidence string really appears on its page before writing the question set.
+
+Pages are 1-based PDF page numbers, the same numbering the index stores in chunk metadata.
+Units: Goodyear in $ millions, Michelin and Continental in € millions, Bridgestone in billion JPY,
+unless the label says otherwise.
+"""
+from dataclasses import dataclass
+
+
+@dataclass(frozen=True)
+class Value:
+    company: str
+    value: float
+    page: int
+    evidence: str  # must appear on `page` (whitespace-insensitive)
+    label: str
+
+
+V = {}
+
+
+def v(key, company, value, page, evidence, label):
+    assert key not in V, key
+    V[key] = Value(company, value, page, evidence, label)
+
+
+G, M, C, B = "Goodyear", "Michelin", "Continental", "Bridgestone"
+
+# --- Goodyear: 2025 Form 10-K ($ millions) ------------------------------------------------------
+v("gy_sales", G, 18280, 28, "Net sales were $18,280 million in 2025", "net sales 2025")
+v("gy_sales24", G, 18878, 28, "compared to $18,878 million in 2024", "net sales 2024")
+v("gy_netloss", G, -1721, 28, "Goodyear net loss in 2025 was $1,721 million", "Goodyear net loss 2025")
+v("gy_eps", G, -5.99, 28, "or $5.99 per share", "net loss per share 2025")
+v("gy_soi", G, 1057, 34, "Total segment operating income in 2025 was $1,057 million", "total segment operating income 2025")
+v("gy_soi24", G, 1302, 34, "from $1,302 million in 2024", "total segment operating income 2024")
+v("gy_som", G, 5.8, 34, "in 2025 was 5.8% compared to 6.9% in 2024", "total segment operating margin 2025")
+v("gy_capex", G, 826, 28, "capital expenditures of $826 million", "capital expenditures 2025")
+v("gy_ocf", G, 796, 38, "Net cash provided by operating activities was $796 million in 2025", "operating cash flow 2025")
+v("gy_cash", G, 801, 28, "we had $801 million of Cash and Cash Equivalents", "cash and cash equivalents end-2025")
+v("gy_cash24", G, 810, 28, "compared to $810 million and $3,555 million", "cash and cash equivalents end-2024")
+v("gy_emp", G, 63000, 7, "we employed approximately 63,000 full-time and temporary associates", "associates end-2025")
+v("gy_plants", G, 49, 24, "We manufacture our products in 49 manufacturing facilities", "manufacturing facilities")
+v("gy_retail", G, 750, 24, "We operate approximately 750 retail outlets", "retail outlets")
+v("gy_am_sales", G, 10768, 34, "Net sales in 2025 were $10,768 million", "Americas net sales 2025")
+v("gy_am_om", G, 6.8, 34, "Operating Margin 6.8 %", "Americas operating margin 2025")
+v("gy_emea_sales", G, 5550, 35, "Net sales in 2025 were $5,550 million", "EMEA net sales 2025")
+v("gy_emea_oi", G, 114, 35, "Operating income in 2025 was $114 million", "EMEA operating income 2025")
+v("gy_emea_om", G, 2.1, 35, "Operating Margin 2.1 %", "EMEA operating margin 2025")
+v("gy_ap_sales", G, 1962, 35, "Net sales in 2025 were $1,962 million", "Asia Pacific net sales 2025")
+v("gy_ap_sales24", G, 2420, 35, "from $2,420 million in 2024", "Asia Pacific net sales 2024")
+v("gy_ap_om", G, 10.6, 35, "Operating Margin 10.6 %", "Asia Pacific operating margin 2025")
+v("gy_am_units", G, 78.2, 34, "to 78.2 million units", "Americas tire units 2025 (millions)")
+v("gy_emea_units", G, 47.9, 35, "to 47.9 million units", "EMEA tire units 2025 (millions)")
+v("gy_ap_units", G, 32.6, 35, "to 32.6 million units", "Asia Pacific tire units 2025 (millions)")
+v("gy_rd", G, 380, 68, "Research and development expenditures were $380 million, $426 million", "R&D expenditures 2025")
+v("gy_rd24", G, 426, 68, "Research and development expenditures were $380 million, $426 million", "R&D expenditures 2024")
+v("gy_assets", G, 18208, 62, "Total Assets $ 18,208 $ 20,921", "total assets end-2025")
+v("gy_assets24", G, 20921, 62, "Total Assets $ 18,208 $ 20,921", "total assets end-2024")
+v("gy_equity", G, 3403, 62, "Total Shareholders’ Equity 3,403", "total shareholders' equity end-2025")
+v("gy_ca", G, 7218, 62, "7,218", "total current assets end-2025")
+v("gy_cl", G, 6782, 62, "Total Current Liabilities 6,782", "total current liabilities end-2025")
+v("gy_cogs", G, 14909, 60, "Cost of Goods Sold 14,909", "cost of goods sold 2025")
+v("gy_sag", G, 2719, 60, "Selling, Administrative and General Expense 2,719", "SAG 2025")
+v("gy_int", G, 445, 60, "Interest Expense (Note 5) 445", "interest expense 2025")
+v("gy_int24", G, 522, 60, "Interest Expense (Note 5) 445 522", "interest expense 2024")
+v("gy_units_drop", G, 4.7, 28, "a 4.7% decrease in tire unit shipments", "tire unit shipment decline 2025 (%)")
+v("gy_util", G, 83, 24, "approximately 83% during 2025", "tire capacity utilization 2025 (%)")
+v("gy_gw", G, 674, 34, "non-cash goodwill impairment charge of $674 million", "Americas goodwill impairment 2025")
+v("gy_chem", G, 650, 28, "we completed the $650 million sale of our polymer chemicals business", "chemical business sale price")
+v("gy_cba", G, 36000, 7, "approximately 36,000", "associates under collective bargaining")
+v("gy_fwd26", G, 300, 28, "approximately $300 million of incremental savings in 2026", "Goodyear Forward savings expected 2026")
+v("gy_tariff26", G, 300, 29, "estimated annualized cost of tariffs", "expected annualized tariff cost 2026")
+
+# --- Michelin: 2025 Universal Registration Document (€ millions) --------------------------------
+v("mi_sales", M, 25992, 336, "Sales 25,992 27,193", "consolidated sales 2025")
+v("mi_sales24", M, 27193, 336, "Sales 25,992 27,193", "consolidated sales 2024")
+v("mi_gross", M, 7019, 336, "Gross income 7,019", "gross income 2025")
+v("mi_oi", M, 2366, 336, "Operating income 2,366", "operating income 2025")
+v("mi_eps", M, 2.36, 336, "Basic 2.36", "basic EPS 2025 (€)")
+v("mi_rd", M, 788, 336, "Research and development expenses (788)", "R&D expenses 2025")
+v("mi_tax", M, 594, 336, "Income tax (594)", "income tax 2025")
+v("mi_pbt", M, 2258, 336, "2,258", "income before taxes 2025")
+v("mi_cnd", M, 154, 336, "Cost of net debt (154)", "cost of net debt 2025")
+v("mi_ni", M, 1664, 336, "NET INCOME 1,664 1,890", "net income 2025")
+v("mi_ni24", M, 1890, 336, "NET INCOME 1,664 1,890", "net income 2024")
+v("mi_auto_sales", M, 14306, 338, "14,306", "Automotive segment sales 2025")
+v("mi_road_soi", M, 280, 338, "Segment operating income 280 597", "Road transportation segment operating income 2025")
+v("mi_road_soi24", M, 597, 338, "Segment operating income 280 597", "Road transportation segment operating income 2024")
+v("mi_road_m", M, 4.7, 338, "Segment operating margin 4.7%", "Road transportation segment operating margin 2025")
+v("mi_spec_m", M, 13.5, 338, "Segment operating margin 13.5%", "Specialty segment operating margin 2025")
+v("mi_soi_m", M, 10.5, 338, "Segment operating margin 10.5%", "group segment operating margin 2025")
+v("mi_netdebt", M, 2345, 347, "Net debt stood at €2,345 million at December 31, 2025", "net debt end-2025")
+v("mi_netdebt24", M, 3112, 348, "AT DECEMBER 31 2,345 3,112", "net debt end-2024")
+v("mi_gearing", M, 13.0, 348, "Gearing declined to 13.0%", "gearing end-2025 (%)")
+v("mi_cash", M, 3877, 347, "€3,877 million at December 31, 2025", "cash and cash equivalents end-2025")
+v("mi_equity", M, 18076, 347, "€18,076 million at December 31, 2025", "total equity end-2025")
+v("mi_fcf", M, 2126, 351, "FREE CASH FLOW BEFORE M&A 2,126", "free cash flow before M&A 2025")
+v("mi_capex", M, 1967, 351, "amounted to €1,967 million in 2025", "capital expenditure 2025")
+v("mi_ocf", M, 3819, 351, "Net cash from operating activities 3,819 4,336", "net cash from operating activities 2025")
+v("mi_ocf24", M, 4336, 351, "Net cash from operating activities 3,819 4,336", "net cash from operating activities 2024")
+v("mi_roce", M, 9.2, 352, "ROCE narrowed by 1.3 points year-on-year to 9.2%", "ROCE 2025 (%)")
+v("mi_roce24", M, 10.5, 352, "10.5%", "ROCE 2024 (%)")
+v("mi_buyback", M, 668, 347, "share buyback program for a total cost of €668 million", "share buyback 2025")
+v("mi_divpaid", M, 974, 347, "€980 million in distributions, of which €974 million in", "dividends paid 2025")
+v("mi_patents", M, 11800, 12, "11,800 active patents", "active patents")
+v("mi_vol", M, 4.7, 329, "a 4.7% decline in sales volumes", "sales volume decline 2025 (%)")
+v("mi_emp", M, 122600, 9, "122,600", "global workforce")
+v("mi_emp_eu", M, 60600, 9, "60,600", "workforce in Europe")
+v("mi_countries", M, 63, 12, "122,600 employees in 63 countries", "countries with employees")
+v("mi_div", M, 1.38, 459, "1.38", "recommended dividend per share 2025 (€)")
+
+# --- Continental: 2025 Annual Report (€ millions, continuing operations) ------------------------
+v("co_sales", C, 19676, 2, "Sales 19,676 20,077", "sales 2025")
+v("co_sales24", C, 20077, 2, "Sales 19,676 20,077", "sales 2024")
+v("co_ebitda", C, 1858, 2, "EBITDA 1,858 3,154", "EBITDA 2025")
+v("co_ebit", C, 272, 2, "EBIT 272 2,043", "EBIT 2025")
+v("co_eps", C, -0.83, 2, "Basic earnings per share in € –0.83", "basic EPS 2025 (€)")
+v("co_ni", C, -165, 2, "Net income attributable to the shareholders of the parent –165", "net income attributable to shareholders 2025")
+v("co_aebit", C, 2035, 2, "2,035 2,212", "adjusted EBIT 2025")
+v("co_aebit24", C, 2212, 2, "2,035 2,212", "adjusted EBIT 2024")
+v("co_aebit_m", C, 10.3, 2, "Adjusted EBIT margin from continuing operations at 10.3%", "adjusted EBIT margin 2025 (%)")
+v("co_fcf", C, 967, 2, "Free cash flow (continuing operations) 967 603", "free cash flow 2025")
+v("co_fcf24", C, 603, 2, "Free cash flow (continuing operations) 967 603", "free cash flow 2024")
+v("co_netdebt", C, 5154, 2, "Net indebtedness 5,154", "net indebtedness end-2025")
+v("co_lev", C, 2.8, 2, "Leverage ratio 2.8", "leverage ratio end-2025")
+v("co_equity", C, 4158, 2, "Total equity 4,158", "total equity end-2025")
+v("co_eqratio", C, 23.4, 2, "Equity ratio in % 23.4", "equity ratio end-2025 (%)")
+v("co_emp", C, 92653, 2, "92,653 97,418", "employees end-2025")
+v("co_emp24", C, 97418, 2, "92,653 97,418", "employees end-2024")
+v("co_px", C, 67.96, 2, "67.96 48.49", "share price end-2025 (€)")
+v("co_px24", C, 48.49, 2, "67.96 48.49", "share price end-2024 (€)")
+v("co_tires_sales", C, 13798, 3, "Sales 13,798 13,861", "Tires sales 2025")
+v("co_tires_m", C, 13.6, 3, "in % of adjusted sales 13.6 13.7 5.3", "Tires adjusted EBIT margin 2025 (%)")
+v("co_ct_m", C, 5.3, 3, "in % of adjusted sales 13.6 13.7 5.3", "ContiTech adjusted EBIT margin 2025 (%)")
+v("co_tires_emp", C, 56187, 3, "Employees: 56,187", "Tires employees end-2025")
+v("co_ct_emp", C, 36188, 3, "Employees: 36,188", "ContiTech employees end-2025")
+v("co_ct_ebit", C, -556, 3, "–556", "ContiTech EBIT 2025")
+v("co_rd", C, 579, 52, "to €579 million (PY: €552 million)", "R&D expenses 2025")
+v("co_rd_tires", C, 359, 52, "€359 million", "Tires R&D expenses 2025")
+v("co_da", C, 1586, 52, "to €1,586", "depreciation and amortization 2025")
+v("co_capex", C, 1316, 54, "to €1,316 million (PY: €1,251 million)", "capital expenditure 2025")
+v("co_capex24", C, 1251, 54, "to €1,316 million (PY: €1,251 million)", "capital expenditure 2024")
+v("co_capex_ratio", C, 6.7, 54, "was 6.7% (PY: 6.2%)", "capital expenditure ratio 2025 (%)")
+v("co_ocf", C, 2014, 54, "At €2,014 million in 2025, cash flow from operating activities", "cash flow from operating activities 2025")
+v("co_ocf24", C, 1628, 54, "€1,628 mil", "cash flow from operating activities 2024")
+v("co_gross_debt", C, 6826, 54, "Gross indebtedness amounted to €6,826 million", "gross indebtedness end-2025")
+v("co_div", C, 2.70, 11, "dividend of €2.70 per share", "proposed dividend per share 2025 (€)")
+
+# --- Bridgestone: 2025 Integrated Report (billion JPY; latest full year is 2024) ----------------
+v("bs_rev", B, 4430.1, 51, "4,430.1", "revenue 2024")
+v("bs_rev23", B, 4313.8, 51, "4,313.8 | 4,430.1", "revenue 2023")
+v("bs_aop", B, 483.3, 51, "480.6 | 483.3", "adjusted operating profit 2024")
+v("bs_aop23", B, 480.6, 51, "480.6 | 483.3", "adjusted operating profit 2023")
+v("bs_aopm", B, 10.9, 51, "11.1 | 10.9 | %", "adjusted operating profit margin 2024 (%)")
+v("bs_profit", B, 285.0, 51, "331.3 | 285.0", "profit attributable to owners of parent 2024")
+v("bs_profit23", B, 331.3, 51, "331.3 | 285.0", "profit attributable to owners of parent 2023")
+v("bs_assets", B, 5723.5, 51, "5,723.5", "total assets end-2024")
+v("bs_equity", B, 3786.5, 51, "3,786.5", "total equity end-2024")
+v("bs_liab", B, 1937.0, 51, "1,937.0", "total liabilities end-2024")
+v("bs_roic", B, 8.2, 51, "8.7 | 8.2 | %", "ROIC 2024 (%)")
+v("bs_roe", B, 8.1, 51, "8.1 | 8.1 | %", "ROE 2024 (%)")
+v("bs_ocf", B, 548.8, 51, "661.4 | 548.8", "cash flows from operating activities 2024")
+v("bs_ocf23", B, 661.4, 51, "661.4 | 548.8", "cash flows from operating activities 2023")
+v("bs_fcf", B, 293.8, 51, "363.7 | 293.8", "free cash flow 2024")
+v("bs_capex", B, 389.8, 51, "420.0 | 389.8", "capital expenditures 2024")
+v("bs_rd", B, 126.2, 51, "122.0 | 126.2", "R&D expenses 2024")
+v("bs_rd23", B, 122.0, 51, "122.0 | 126.2", "R&D expenses 2023")
+v("bs_rd_ratio", B, 2.9, 51, "2.8 | 2.9 | %", "R&D expenses to revenue 2024 (%)")
+v("bs_da", B, 348.1, 51, "305.8 | 348.1", "depreciation and amortization 2024")
+v("bs_am_rev", B, 2180.0, 51, "2,080.0 | 2,180.0", "Americas segment revenue 2024")
+v("bs_jp_m", B, 15.3, 51, "16.6 | 15.3 | %", "Japan segment adjusted operating margin 2024 (%)")
+v("bs_emea_m", B, 3.6, 51, "2.8 | 3.6 | %", "EMEA segment adjusted operating margin 2024 (%)")
+v("bs_emp", B, 121464, 53, "121,464", "consolidated employees end-2024")
+v("bs_emp_am", B, 47946, 53, "47,946", "Americas employees end-2024")
+v("bs_tons", B, 1.48, 3, "1.48 million tons", "tire production volume 2024 (million tons of rubber)")
+v("bs_capex25", B, 406.0, 14, "Approximately 406 billion JPY", "2025 capital expenditure plan")
+v("bs_prem25", B, 2880.0, 14, "Revenue 2,880.0 B JPY", "2025 premium tire business revenue plan")
+v("bs_rev25", B, 4330.0, 14, "revenue target of 4,330 billion JPY", "2025 revenue target")
+v("bs_profit25", B, 253.0, 14, "285.0 | 253.0", "2025 planned profit from continuing operations")
+v("bs_div24", B, 210, 51, "200 | 210 | JPY", "dividend per share 2024 (JPY)")
+v("bs_div25", B, 230, 14, "dividend forecast of 230 JPY per share", "2025 dividend forecast (JPY)")
+v("bs_ltifr", B, 2.41, 53, "2.76 | 2.41", "lost-time injury frequency rate 2024 (employees)")
+v("bs_female", B, 12.5, 53, "| Total | 12.5 |", "ratio of female employees end-2024 (%)")
