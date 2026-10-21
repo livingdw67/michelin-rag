@@ -1,9 +1,9 @@
 """Analyse the factorial eval: accuracy by factor, a logistic model, and checks on the grading.
 
-Reads results/attempts.jsonl (one row per question x run) and writes:
-  results/results.md     the report
-  results/summary.json   every number in the report
-  results/per_item.csv   one row per question: wording, runs passed, last judge note
+Reads results/attempts_<system>.jsonl (one row per question x run) and writes, for that system:
+  results/results_<system>.md     the report
+  results/summary_<system>.json   every number in the report
+  results/per_item_<system>.csv   one row per question: wording, runs passed, last judge note
 
 Statistical choices
   * Unit of analysis. Runs of the same question are not independent, so intervals and tests treat
@@ -22,7 +22,7 @@ Statistical choices
     every disagreement is listed for a human read.
 
 Usage:
-    python -m eval.factorial.stats [--attempts attempts.jsonl] [--perms 10000] [--boot 2000]
+    python -m eval.factorial.stats [--attempts attempts_openai.jsonl] [--perms 10000] [--boot 2000]
 """
 import argparse
 import json
@@ -397,8 +397,11 @@ def report(df, items, questions, errors, perms, boot):
     s["status_by_type"] = {t: dict(Counter(df.loc[df["type"] == t, "status"])) for t in TYPES if (df["type"] == t).any()}
 
     h = s["headline"]
+    system = ""
+    if "chat_model" in df and df["chat_model"].notna().any():
+        system = f" · {df['system'].iloc[0]} system, answer model `{df['chat_model'].iloc[0]}`"
     md = [f"# Factorial Evaluation Results", "",
-          f"{s['questions']} questions × {runs} run(s) = {s['attempts']} graded attempts"
+          f"{s['questions']} questions × {runs} run(s) = {s['attempts']} graded attempts{system}"
           + (f" ({len(errors)} errored attempts excluded; rerun to retry them)" if errors else "") + ".",
           "Design and method: [README](../README.md). Question-level intervals treat each question as the unit, "
           "since runs of the same question are not independent.", "",
@@ -487,24 +490,31 @@ def report(df, items, questions, errors, perms, boot):
     return s, "\n".join(md)
 
 
+def suffix(attempts_name):
+    """attempts_openai.jsonl -> "_openai"; anything else keeps its own stem."""
+    stem = Path(attempts_name).stem
+    return stem[len("attempts"):] if stem.startswith("attempts") else f"_{stem}"
+
+
 def main(attempts_name, perms, boot):
     df, questions, errors = load(attempts_name)
     items = item_rates(df)
     summary, md = report(df, items, questions, errors, perms, boot)
-    (RESULTS / "results.md").write_text(md, encoding="utf-8")
-    (RESULTS / "summary.json").write_text(json.dumps(summary, indent=2, default=float), encoding="utf-8")
+    tag = suffix(attempts_name)
+    (RESULTS / f"results{tag}.md").write_text(md, encoding="utf-8")
+    (RESULTS / f"summary{tag}.json").write_text(json.dumps(summary, indent=2, default=float), encoding="utf-8")
     last_reason = df.sort_values("run").groupby("id")["judge_reason"].last() if "judge_reason" in df else None
     out = items.join(last_reason) if last_reason is not None else items
-    out.to_csv(RESULTS / "per_item.csv")
+    out.to_csv(RESULTS / f"per_item{tag}.csv")
     h = summary["headline"]
     print(f"answerable {pct(h['answerable']['accuracy'])}, decline {pct(h['decline']['accuracy'])}, "
           f"all {pct(h['all']['accuracy'])} over {summary['attempts']} attempts")
-    print(f"wrote {RESULTS / 'results.md'}")
+    print(f"wrote {RESULTS / f'results{tag}.md'}")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--attempts", default="attempts.jsonl")
+    parser.add_argument("--attempts", default="attempts_openai.jsonl")
     parser.add_argument("--perms", type=int, default=10000)
     parser.add_argument("--boot", type=int, default=2000)
     args = parser.parse_args()

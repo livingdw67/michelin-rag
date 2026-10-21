@@ -159,3 +159,47 @@ def test_run_stability_summary():
     s = fleiss_kappa(item_rates(df))
     assert s["runs"] == 3 and s["always_right"] + s["always_wrong"] + s["flaky"] == s["questions"]
     assert -1 <= s["kappa"] <= 1 and not math.isnan(s["icc"])
+
+
+# --- two-system comparison ----------------------------------------------------------------------
+
+def test_mcnemar_exact_and_mid_p():
+    from eval.factorial.compare import mcnemar
+    exact, mid = mcnemar(9, 2)  # 11 discordant pairs, split 9 / 2
+    assert exact == pytest.approx(134 / 2048, abs=1e-9) and mid == pytest.approx(79 / 2048, abs=1e-9)
+    assert mcnemar(0, 0) == (1.0, 1.0)
+
+
+def test_newcombe_interval_contains_the_difference_and_is_antisymmetric():
+    from eval.factorial.compare import newcombe_paired
+    diff, (lo, hi) = newcombe_paired(300, 40, 15, 45)
+    assert lo < diff < hi and -1 <= lo and hi <= 1
+    diff2, (lo2, hi2) = newcombe_paired(300, 15, 40, 45)
+    assert diff2 == pytest.approx(-diff) and lo2 == pytest.approx(-hi) and hi2 == pytest.approx(-lo)
+
+
+def _two_systems(seed, typo_drop):
+    rng = np.random.default_rng(seed)
+    w = assign_wordings(ITEMS)
+    rows = []
+    for item in ITEMS:
+        for sys in ("a", "b"):
+            p = 0.95 - (typo_drop if sys == "b" and w[item["id"]] == "typo" else 0)
+            for run in (1, 2):
+                rows.append({"id": item["id"], "run": run, "type": item["type"], "company": item["company"],
+                             "wording": w[item["id"]], "sys": sys, "correct": bool(rng.random() < p)})
+    return pd.DataFrame(rows)
+
+
+def test_interaction_model_flags_a_wording_specific_gap():
+    from eval.factorial.compare import interaction_model
+    tests = interaction_model(_two_systems(0, typo_drop=0.3))["tests"]
+    assert tests["system x wording"]["p"] < 0.01
+
+
+def test_paired_difference_has_the_right_sign_and_interval():
+    from eval.factorial.compare import paired_diff
+    a = pd.Series([1.0] * 80 + [0.0] * 20)
+    b = pd.Series([1.0] * 60 + [0.0] * 40)
+    r = paired_diff(a, b, np.random.default_rng(0), boot=500, perms=500)
+    assert r["difference"] == pytest.approx(0.2) and r["ci_95"][0] > 0 and r["p"] < 0.01

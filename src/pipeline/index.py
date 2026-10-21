@@ -8,9 +8,9 @@ import shutil
 
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
-from langchain_openai import OpenAIEmbeddings
 
 from config.settings import COMPANIES, settings
+from src.llm import embeddings
 from src.pipeline.documents import chunk_documents, load_company
 
 CHUNKS_FILE = "chunks.jsonl"
@@ -31,10 +31,6 @@ def load_company_cached(company):
         for d in docs:
             f.write(json.dumps({"text": d.page_content, **d.metadata}, ensure_ascii=False) + "\n")
     return docs
-
-
-def embeddings():
-    return OpenAIEmbeddings(model=settings.embedding_model, api_key=settings.openai_api_key)
 
 
 def build_index():

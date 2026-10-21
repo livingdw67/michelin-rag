@@ -1,6 +1,7 @@
 """Central configuration. Override any value with an environment variable or .env entry."""
 from pathlib import Path
 
+from pydantic import model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -10,6 +11,14 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=BASE_DIR / ".env", extra="ignore")
 
     openai_api_key: str = ""
+
+    # Model provider. "openai" (default) or "local": a local OpenAI-compatible server such as Ollama
+    # answers, expands queries, classifies input and embeds. The eval judge always stays on OpenAI so
+    # both systems are graded identically. Any value below can still be overridden in .env.
+    llm_profile: str = "openai"
+    llm_base_url: str = ""  # OpenAI-compatible endpoint for the app's models, e.g. http://localhost:11434/v1
+    llm_api_key: str = ""  # local servers usually ignore it
+    embedding_base_url: str = ""  # endpoint for embeddings; empty means OpenAI
 
     # Paths
     data_dir: Path = BASE_DIR / "data"
@@ -45,6 +54,20 @@ class Settings(BaseSettings):
     # Optional cost estimates (USD per 1M tokens). Leave at 0 to report tokens only.
     price_input_per_million: float = 0.0
     price_output_per_million: float = 0.0
+
+    @model_validator(mode="after")
+    def _local_profile_defaults(self):
+        """LLM_PROFILE=local fills in Ollama defaults for anything the .env doesn't set, and keeps
+        its own index, since the vectors from a different embedding model aren't interchangeable."""
+        if self.llm_profile != "local":
+            return self
+        defaults = {"llm_base_url": "http://localhost:11434/v1", "embedding_base_url": "http://localhost:11434/v1",
+                    "chat_model": "qwen2.5:7b", "rewrite_model": "qwen2.5:7b",
+                    "embedding_model": "nomic-embed-text", "index_dir": BASE_DIR / "vector_db_local"}
+        for field, value in defaults.items():
+            if field not in self.model_fields_set:
+                object.__setattr__(self, field, value)
+        return self
 
 
 settings = Settings()

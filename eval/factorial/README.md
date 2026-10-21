@@ -2,7 +2,7 @@
 
 The [golden set](../golden_set.jsonl) shows the system works: 98% on 35 answerable questions. It can't say much more than that. With 35 questions, a 98% score has a 95% interval of roughly 85% to 99.5%, and the set can't tell you *what* makes a question hard. This eval is built to answer that: 400 new questions in a balanced factorial design, so a logistic model can attribute failures to the company, the kind of question, or how the question is worded.
 
-Results: [results/results.md](results/results.md) (written by `stats.py` after a run).
+Results: `results/results_<system>.md` for each system, and `results/comparison.md` for the head-to-head (written after a run; see [Running it](#running-it)).
 
 ## Design
 
@@ -90,16 +90,42 @@ Set before running, assuming one observation per question (runs add some precisi
 
 The headline rate is precise; single factors can show large effects (a 10–15 point drop); individual cells are descriptive only. If a smaller wording effect matters, the cheapest fix is more questions per level, not more runs.
 
+## OpenAI vs. a local model
+
+The same 400 questions can be put to the app running on local models (Ollama) instead of OpenAI, the way the Segment Assistant was compared with Cortex Analyst. Setting `LLM_PROFILE=local` points every app model at Ollama's OpenAI-compatible endpoint (`qwen2.5:7b` for answering, query expansion and input screening; `nomic-embed-text` for embeddings, with its own index in `vector_db_local/`); any of these can be overridden in `.env`. **The judge stays on OpenAI in both profiles**, so the two systems are graded identically and the comparison measures the systems, not the graders.
+
+[compare.py](compare.py) pairs the two runs question by question:
+
+- the overall and answerable-only gap, with a paired bootstrap interval and a sign-flip permutation test on per-question differences
+- McNemar's test on the first run (exact and mid-p) with Newcombe's paired interval, for comparison with single-run evaluations
+- the gap by question type, wording and company
+- a Firth logistic model with system × wording and system × type interactions, clustered by question, to ask *where* the local model loses ground (in simulation it catches a 25-point typo-specific gap 20 times in 20 and a 20-point calc gap 19 in 20, and fires in 0 of 20 runs with no effect)
+- how each system's answers end (answered, declined, blocked) by type, latency, and every question the two split on, with both answers
+
+The comparison only sees the questions both files contain, so a 20-question smoke test of each works too.
+
 ## Running it
 
 ```bash
-python -m eval.factorial.build_questions          # rebuild and re-verify questions.jsonl (no API calls)
-python -m eval.factorial.run --runs 1 --limit 20  # smoke test
-python -m eval.factorial.run                      # 3 runs x 400 questions, resumable
-python -m eval.factorial.stats                    # write results/results.md
+python -m eval.factorial.build_questions            # rebuild and re-verify questions.jsonl (no API calls)
+
+# OpenAI system
+python -m eval.factorial.run --runs 1 --limit 20    # smoke test
+python -m eval.factorial.run                        # 3 runs x 400, resumable -> results/attempts_openai.jsonl
+python -m eval.factorial.stats                      # -> results/results_openai.md
+
+# Local system (Ollama running, OPENAI_API_KEY still set for the judge)
+ollama pull qwen2.5:7b && ollama pull nomic-embed-text
+LLM_PROFILE=local python -m src.pipeline.index      # once: builds vector_db_local/
+LLM_PROFILE=local python -m eval.factorial.run --workers 2   # -> results/attempts_local.jsonl
+python -m eval.factorial.stats --attempts attempts_local.jsonl
+
+python -m eval.factorial.compare                    # -> results/comparison.md
 ```
 
-The runner appends each graded attempt to `results/attempts.jsonl` as it finishes, so an interrupted run picks up where it stopped (failed API calls are retried on the next run). Expect about 2M tokens per run of 400 questions, judging included, based on the golden set's ~200k per 41 questions.
+On Windows PowerShell, set the profile with `$env:LLM_PROFILE = "local"` before the command (and `Remove-Item Env:LLM_PROFILE` to switch back).
+
+The runner appends each graded attempt as it finishes, so an interrupted run picks up where it stopped (failed calls are retried on the next run). Expect about 2M OpenAI tokens per OpenAI run of 400 questions, judging included, based on the golden set's ~200k per 41 questions. A local run costs only the judging. Local models run one or two requests at a time, so keep `--workers` low; a single run of each system already gives most of the information (see the intraclass correlation in each report).
 
 ## Files
 
@@ -113,9 +139,10 @@ The runner appends each graded attempt to `results/attempts.jsonl` as it finishe
 | [questions.jsonl](questions.jsonl) | The built question set, as asked |
 | [grading.py](grading.py) | Pass rules and the model-free first pass |
 | [run.py](run.py) | Resumable runner |
-| [stats.py](stats.py) | Analysis and report |
+| [stats.py](stats.py) | Analysis and report for one system |
+| [compare.py](compare.py) | Paired comparison of two systems |
 
-Unit tests in [tests/test_factorial_eval.py](../../tests/test_factorial_eval.py) rebuild the set against the PDFs, check the design, the grading rules and the statistics (including that the model and permutation test find a planted wording effect and stay quiet without one). They need no API key.
+Unit tests in [tests/test_factorial_eval.py](../../tests/test_factorial_eval.py) rebuild the set against the PDFs, check the design, the grading rules and the statistics (including that the model and permutation test find a planted wording effect and stay quiet without one, and the comparison's McNemar, Newcombe and interaction tests). [tests/test_llm_profile.py](../../tests/test_llm_profile.py) covers the provider switch. None need an API key.
 
 ## Limitations
 

@@ -3,10 +3,9 @@ from dataclasses import dataclass, field
 from typing import Literal
 
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_openai import ChatOpenAI
 from pydantic import BaseModel, Field
 
-from config.settings import settings
+from src.llm import chat_model
 from src.pipeline.guardrails import check_question, verify_citations
 from src.pipeline.retrieval import get_retriever
 
@@ -61,7 +60,7 @@ def format_context(docs):
 
 
 def get_llm():
-    return ChatOpenAI(model=settings.chat_model, api_key=settings.openai_api_key, reasoning_effort="low")
+    return chat_model(reasoning_effort="low")
 
 
 def answer_question(question, retriever=None, llm=None):

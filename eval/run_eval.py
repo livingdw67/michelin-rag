@@ -14,11 +14,11 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from langchain_community.callbacks import get_openai_callback
-from langchain_openai import ChatOpenAI
 from pydantic import BaseModel
 
 from config.settings import settings
 from src.agent.graph import run_agent
+from src.llm import judge_model
 from src.pipeline.guardrails import GuardrailError
 from src.pipeline.retrieval import get_retriever
 
@@ -44,7 +44,7 @@ class Grade(BaseModel):
 
 
 def judge():
-    return ChatOpenAI(model=settings.judge_model, api_key=settings.openai_api_key).with_structured_output(Grade)
+    return judge_model().with_structured_output(Grade)
 
 
 def run_case(case, retriever, grader):

@@ -6,11 +6,11 @@ import streamlit as st
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 from ddgs import DDGS  # noqa: E402
-from langchain_openai import ChatOpenAI  # noqa: E402
 
-from config.settings import COMPANIES, settings  # noqa: E402
+from config.settings import COMPANIES  # noqa: E402
 from src.agent.brief import build_brief  # noqa: E402
 from src.agent.graph import run_agent  # noqa: E402
+from src.llm import chat_model  # noqa: E402
 from src.pipeline.guardrails import GuardrailError, check_question, sanitize_untrusted  # noqa: E402
 from src.pipeline.metrics import _year, load_metrics  # noqa: E402
 
@@ -137,7 +137,7 @@ with news:
             if not results:
                 st.info("No recent news found.")
             else:
-                llm = ChatOpenAI(model=settings.chat_model, api_key=settings.openai_api_key, reasoning_effort="low")
+                llm = chat_model(reasoning_effort="low")
                 with st.spinner("Analyzing..."):
                     st.markdown(llm.invoke(SENTIMENT_PROMPT.format(
                         company=company, results=sanitize_untrusted(results))).content)

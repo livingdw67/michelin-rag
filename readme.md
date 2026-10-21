@@ -112,16 +112,25 @@ streamlit run src/ui/app.py
 ```
 
 ```bash
-pytest                               # 67 unit tests: retrieval, guardrails, calculator, API, factorial eval (no API key needed)
+pytest                               # 76 unit tests: retrieval, guardrails, calculator, API, factorial eval (no API key needed)
 python -m eval.run_eval --runs 3     # golden-set evaluation (uses the API; about 200k tokens per run)
 python -m eval.factorial.run         # 400-question factorial evaluation, resumable (about 2M tokens per run)
-python -m eval.factorial.stats       # its report: eval/factorial/results/results.md
+python -m eval.factorial.stats       # its report: eval/factorial/results/results_openai.md
+```
+
+**Local models.** Set `LLM_PROFILE=local` to run the whole app on Ollama (`qwen2.5:7b` and `nomic-embed-text` by default, with a separate index) through its OpenAI-compatible endpoint. All model creation goes through [src/llm.py](src/llm.py). The evaluation judge stays on OpenAI, which is what makes the [OpenAI vs. local comparison](eval/factorial/README.md#openai-vs-a-local-model) fair:
+
+```bash
+LLM_PROFILE=local python -m src.pipeline.index       # once
+LLM_PROFILE=local python -m eval.factorial.run       # same 400 questions, local models
+python -m eval.factorial.compare                     # paired comparison report
 ```
 
 ## Project Structure
 
 ```text
-config/settings.py          Models, retrieval parameters, guardrail and API settings, company registry
+config/settings.py          Models and provider profile, retrieval parameters, guardrail and API settings, company registry
+src/llm.py                  Creates every chat and embedding model (OpenAI, or a local OpenAI-compatible server)
 src/pipeline/documents.py   PDF parsing, table extraction, image-page transcription, chunking
 src/pipeline/index.py       Builds the Chroma vector store and the BM25 chunk file
 src/pipeline/retrieval.py   Company detection, query expansion, hybrid retrieval with rank fusion
