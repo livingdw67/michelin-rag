@@ -74,6 +74,16 @@ def test_verify_citations_accepts_an_id_copied_with_its_label_brackets():
     assert [c.chunk_id for c in verified] == ["G-p1"] and rejected == []  # the clean id, so sources can look it up
 
 
+def test_verify_citations_resolves_a_shortened_id_only_when_unambiguous():
+    docs = [Document(page_content="Capex was 7.6% of sales.", metadata={"chunk_id": "Michelin-p350-text-1328"}),
+            Document(page_content="Capex was 7.6% of sales.", metadata={"chunk_id": "Michelin-p351-table-28"}),
+            Document(page_content="Capex was 7.6% of sales.", metadata={"chunk_id": "Goodyear-p9-table-28"})]
+    short = Citation(chunk_id="350-text-1328", quote="Capex was 7.6% of sales")
+    ambiguous = Citation(chunk_id="table-28", quote="Capex was 7.6% of sales")
+    verified, rejected = verify_citations([short, ambiguous], docs)
+    assert [c.chunk_id for c in verified] == ["Michelin-p350-text-1328"] and rejected == [ambiguous]
+
+
 @pytest.mark.parametrize("question", ["", "   ", "x" * 5000])
 def test_check_question_rejects_empty_or_oversized(question):
     with pytest.raises(GuardrailError):
@@ -141,3 +151,57 @@ def test_company_names_can_overrule_an_off_topic_verdict(monkeypatch, overrule, 
     monkeypatch.setattr(graph.settings, "llm_input_classifier", True)
     monkeypatch.setattr(graph.settings, "company_names_overrule_off_topic", overrule)
     assert graph.run_agent(question).route == expected_route
+
+
+CONTEXT = "Net sales 18,280 ... Cost of goods sold 14,909 ... Interest expense $445 million (2024: $522 million)"
+
+
+@pytest.mark.parametrize("expression, unit, expected", [
+    ("(18,280 - 14,909) / 18,280 * 100", "%", "= **18.44%**"),  # figures from the excerpts, scale factor 100
+    ("(445 - 522) / 522 * 100", "%", "= **-14.75%**"),
+    ("(18,280 - 14,000) / 18,280 * 100", "%", ""),  # 14,000 isn't in the excerpts: no calculation shown
+    ("18280 / 0", "%", ""),
+    ("__import__('os')", "", ""),
+    ("", "", ""),
+])
+def test_local_calculations_use_only_figures_from_the_excerpts(expression, unit, expected):
+    from src.pipeline.answer import LocalGroundedAnswer, apply_calculation
+    result = LocalGroundedAnswer(calculation=expression, result_unit=unit, answer="Gross margin", status="answered")
+    docs = [Document(page_content=line, metadata={"chunk_id": f"G-{i}", "doc": "10-K", "page": i})
+            for i, line in enumerate(CONTEXT.split(" ... "))]
+    calc = apply_calculation(result, docs, CONTEXT)
+    assert (expected in calc.line) if expected else calc is None
+    if calc:  # every figure in the expression is cited from the line it came from
+        assert {s["quote"] for s in calc.sources} <= set(CONTEXT.split(" ... "))
+        quoted = " ".join(s["quote"] for s in calc.sources).replace(",", "")
+        assert all(f in quoted for f in expression.replace(",", "").replace("(", " ").replace(")", " ").split()
+                   if f[0].isdigit() and f != "100")
+
+
+def test_the_models_own_arithmetic_is_dropped_when_the_calculator_answers():
+    from src.pipeline.answer import drop_unsupported_sentences
+    text = "Gross margin uses net sales of 18,280 and costs of 14,909. The gross margin is 18.05%. It fell."
+    assert drop_unsupported_sentences(text, CONTEXT, 18.44) ==         "Gross margin uses net sales of 18,280 and costs of 14,909. It fell."
+    assert "18.4%" in drop_unsupported_sentences("That is 18.4%.", CONTEXT, 18.4415)  # the result, rounded, stays
+
+
+def test_only_the_local_profile_gets_the_calculation_schema(monkeypatch):
+    from src.pipeline import answer
+
+    captured = {}
+
+    class FakeLLM:
+        def with_structured_output(self, schema):
+            captured["schema"] = schema
+            raise RuntimeError("stop")
+
+    class FakeRetriever:
+        def retrieve(self, question):
+            return []
+
+    for profile, schema in (("openai", answer.GroundedAnswer), ("local", answer.LocalGroundedAnswer)):
+        monkeypatch.setattr(answer.settings, "llm_profile", profile)
+        with pytest.raises(RuntimeError):
+            answer.answer_question("Goodyear gross margin 2025", retriever=FakeRetriever(), llm=FakeLLM())
+        assert captured["schema"] is schema
+        assert (answer.system_prompt() == answer.SYSTEM_PROMPT) == (profile == "openai")

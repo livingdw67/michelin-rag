@@ -66,6 +66,9 @@ def quote_in_text(quote, text, threshold=0.85):
     return SequenceMatcher(None, window, q, autojunk=False).ratio() >= threshold
 
 
+_CHUNK_SUFFIX = re.compile(r"(text|table|ocr)-\d+$")  # chunk ids end in kind and a running number
+
+
 def verify_citations(citations, retrieved):
     """Split citations into verified and rejected, checking ids and quotes against retrieved chunks."""
     by_id = {d.metadata["chunk_id"]: d for d in retrieved}
@@ -74,6 +77,11 @@ def verify_citations(citations, retrieved):
         # Excerpts are labelled "[chunk_id] (doc, p. N)"; smaller models copy the brackets into the id
         c = c.model_copy(update={"chunk_id": c.chunk_id.strip().strip("[]\"'` ").strip()})
         doc = by_id.get(c.chunk_id)
+        if doc is None and _CHUNK_SUFFIX.search(c.chunk_id):
+            # ...or shorten it ("350-text-1328"): accept an id that ends exactly one retrieved chunk's id
+            matches = [i for i in by_id if i.endswith(c.chunk_id)]
+            if len(matches) == 1:
+                c, doc = c.model_copy(update={"chunk_id": matches[0]}), by_id[matches[0]]
         (verified if doc is not None and quote_in_text(c.quote, doc.page_content) else rejected).append(c)
     return verified, rejected
 
