@@ -53,21 +53,23 @@ with ask:
     if st.button("Clear conversation"):
         st.session_state.messages = []
         st.rerun()
-    # One bordered card per exchange: the question in bold, the cited answer below it
+    # One bordered card per exchange: the question in bold, the cited answer below it. The cards live in a
+    # container above the input, so a new exchange lands there too instead of below the input box.
+    conversation = st.container()
     card = None
     for message in st.session_state.messages:
         if message["role"] == "user":
-            card = st.container(border=True)
+            card = conversation.container(border=True)
             card.markdown(f"**{message['content']}**")
         else:
-            with card or st.container(border=True):
+            with card or conversation.container(border=True):
                 st.markdown(message["content"])
                 render_sources(message.get("sources", []), message.get("calculations", []))
 
     if prompt := st.chat_input("Ask about revenue, margins, strategy, workforce... or compare companies"):
         history = [(m["role"], m["content"]) for m in st.session_state.messages]
         st.session_state.messages.append({"role": "user", "content": prompt})
-        card = st.container(border=True)
+        card = conversation.container(border=True)
         card.markdown(f"**{prompt}**")
         with card:
             sources, calculations = [], []
