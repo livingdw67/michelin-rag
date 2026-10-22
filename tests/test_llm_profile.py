@@ -39,3 +39,10 @@ def test_judge_stays_on_openai_under_the_local_profile(monkeypatch):
     monkeypatch.setattr(llm.settings, "llm_base_url", "http://localhost:11434/v1")
     monkeypatch.setattr(llm.settings, "openai_api_key", "sk-test")
     assert llm.judge_model().openai_api_base is None
+
+
+def test_a_local_reasoning_effort_is_passed_through(monkeypatch):
+    monkeypatch.setattr(llm.settings, "llm_base_url", "http://localhost:11434/v1")
+    assert llm.chat_model("qwen3-8b-12k", reasoning_effort="low").reasoning_effort is None  # OpenAI's value dropped
+    monkeypatch.setattr(llm.settings, "llm_reasoning_effort", "none")
+    assert llm.chat_model("qwen3-8b-12k", reasoning_effort="low").reasoning_effort == "none"

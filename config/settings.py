@@ -19,6 +19,8 @@ class Settings(BaseSettings):
     llm_base_url: str = ""  # OpenAI-compatible endpoint for the app's models, e.g. http://localhost:11434/v1
     llm_api_key: str = ""  # local servers usually ignore it
     embedding_base_url: str = ""  # endpoint for embeddings; empty means OpenAI
+    # Sent to the local server when set. "none" turns off qwen3's thinking, which takes over a minute per call.
+    llm_reasoning_effort: str = ""
 
     # Paths
     data_dir: Path = BASE_DIR / "data"

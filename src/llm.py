@@ -23,6 +23,8 @@ def chat_model(model=None, **kwargs):
     for key in _OPENAI_ONLY:
         kwargs.pop(key, None)
     kwargs.setdefault("max_tokens", _LOCAL_MAX_TOKENS)
+    if settings.llm_reasoning_effort:
+        kwargs["reasoning_effort"] = settings.llm_reasoning_effort
     return ChatOpenAI(model=model, base_url=settings.llm_base_url, api_key=settings.llm_api_key or "local", **kwargs)
 
 
