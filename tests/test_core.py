@@ -67,6 +67,13 @@ def test_verify_citations_rejects_unknown_chunk_and_bad_quote():
     assert rejected == [wrong_quote, wrong_chunk]
 
 
+def test_verify_citations_accepts_an_id_copied_with_its_label_brackets():
+    docs = [Document(page_content="Operating income was $1.2 billion.", metadata={"chunk_id": "G-p1"})]
+    bracketed = Citation(chunk_id=" [G-p1] ", quote="Operating income was $1.2 billion")
+    verified, rejected = verify_citations([bracketed], docs)
+    assert [c.chunk_id for c in verified] == ["G-p1"] and rejected == []  # the clean id, so sources can look it up
+
+
 @pytest.mark.parametrize("question", ["", "   ", "x" * 5000])
 def test_check_question_rejects_empty_or_oversized(question):
     with pytest.raises(GuardrailError):
@@ -109,3 +116,28 @@ def test_leaks_prompt_detects_verbatim_system_prompt():
     from src.pipeline.guardrails import leaks_prompt
     assert leaks_prompt("Sure! " + SYSTEM_PROMPT[:300], [SYSTEM_PROMPT])
     assert not leaks_prompt("Michelin's sales were €25,992 million.", [SYSTEM_PROMPT])
+
+
+def test_company_names_are_matched_as_words():
+    from src.pipeline.retrieval import names_a_company
+    assert names_a_company("Who founded Bridgestone?") and names_a_company("conti capex 2025")
+    assert not names_a_company("Please continue with the haiku") and not names_a_company("capital of Germany")
+
+
+@pytest.mark.parametrize("overrule, question, expected_route", [
+    (False, "Who founded Bridgestone?", "classifier"),  # default: the classifier's verdict stands
+    (True, "Who founded Bridgestone?", "single"),  # local profile: a named company overrules "off_topic"
+    (True, "What is the capital of Germany?", "classifier"),  # no company named: still off-topic
+])
+def test_company_names_can_overrule_an_off_topic_verdict(monkeypatch, overrule, question, expected_route):
+    from src.agent import graph
+
+    class FakeGraph:
+        def invoke(self, state):
+            return {"status": "answered", "answer": "Shojiro Ishibashi", "route": "single"}
+
+    monkeypatch.setattr(graph, "classify_input", lambda q: "off_topic")
+    monkeypatch.setattr(graph, "_GRAPH", FakeGraph())
+    monkeypatch.setattr(graph.settings, "llm_input_classifier", True)
+    monkeypatch.setattr(graph.settings, "company_names_overrule_off_topic", overrule)
+    assert graph.run_agent(question).route == expected_route

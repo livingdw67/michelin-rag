@@ -71,6 +71,8 @@ def verify_citations(citations, retrieved):
     by_id = {d.metadata["chunk_id"]: d for d in retrieved}
     verified, rejected = [], []
     for c in citations:
+        # Excerpts are labelled "[chunk_id] (doc, p. N)"; smaller models copy the brackets into the id
+        c = c.model_copy(update={"chunk_id": c.chunk_id.strip().strip("[]\"'` ").strip()})
         doc = by_id.get(c.chunk_id)
         (verified if doc is not None and quote_in_text(c.quote, doc.page_content) else rejected).append(c)
     return verified, rejected

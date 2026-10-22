@@ -19,7 +19,7 @@ from src.llm import chat_model
 from src.pipeline.answer import SYSTEM_PROMPT, answer_question
 from src.pipeline.calculator import calculate, ungrounded_numbers
 from src.pipeline.guardrails import GuardrailError, check_question, classify_input, leaks_prompt
-from src.pipeline.retrieval import get_retriever
+from src.pipeline.retrieval import get_retriever, names_a_company
 
 MAX_SUB_QUESTIONS = 8
 MAX_TOOL_ROUNDS = 5
@@ -208,7 +208,7 @@ def run_agent(question, history=None):
                                   if previous else question)
         if category == "injection":
             raise GuardrailError("This assistant only answers questions about the tire company reports.")
-        if category == "off_topic":
+        if category == "off_topic" and not (settings.company_names_overrule_off_topic and names_a_company(question)):
             return AgentResult(question=question, status="out_of_scope", route="classifier",
                                answer="I can only answer questions about the four companies' 2025 annual reports.")
     _GRAPH = _GRAPH or build_graph()

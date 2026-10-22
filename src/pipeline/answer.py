@@ -5,6 +5,7 @@ from typing import Literal
 from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel, Field
 
+from config.settings import settings
 from src.llm import chat_model
 from src.pipeline.guardrails import check_question, verify_citations
 from src.pipeline.retrieval import get_retriever
@@ -29,6 +30,18 @@ an extra trailing digit compared with similar values, treat it as a footnote mar
 8. Keep units and currencies exactly as reported (e.g. "€27,193 million"). Use Markdown tables for comparisons."""
 
 HUMAN_PROMPT = "Question: {question}\n\nReport excerpts:\n{context}"
+
+# A small local model hedges: it writes the right figure, then labels the answer "not_found" because the excerpt
+# words it differently from the question. The OpenAI profile doesn't do this, and its prompt is left unchanged.
+LOCAL_STATUS_RULE = """
+9. Decide the status last, from what you found. If an excerpt gives the asked value or explanation for the asked \
+company, metric and period, the status is "answered", even if the excerpt words it differently from the question. \
+Use "not_found" only when no excerpt has it, and never state the answer while setting "not_found". Use \
+"out_of_scope" only for questions that are not about these companies or their reports."""
+
+
+def system_prompt():
+    return SYSTEM_PROMPT + (LOCAL_STATUS_RULE if settings.llm_profile == "local" else "")
 
 
 class Citation(BaseModel):
@@ -66,7 +79,7 @@ def get_llm():
 def answer_question(question, retriever=None, llm=None):
     question = check_question(question)
     docs = (retriever or get_retriever()).retrieve(question)
-    chain = ChatPromptTemplate.from_messages([("system", SYSTEM_PROMPT), ("human", HUMAN_PROMPT)]) | \
+    chain = ChatPromptTemplate.from_messages([("system", system_prompt()), ("human", HUMAN_PROMPT)]) | \
         (llm or get_llm()).with_structured_output(GroundedAnswer)
     result = chain.invoke({"question": question, "context": format_context(docs)})
 

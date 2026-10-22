@@ -24,6 +24,7 @@ from langchain_core.callbacks import get_usage_metadata_callback
 
 from eval.factorial import run as R
 from eval.factorial.grading import ANSWERABLE
+from eval.factorial.split import load_split
 from eval.run_eval import Grade
 
 PENDING = "PENDING_JUDGE"
@@ -68,12 +69,15 @@ class Deferred:
         return Grade(correct=False, reason=PENDING)
 
 
-def answer(runs, only, workers, max_dollars):
+def answer(runs, only, workers, max_dollars, subset=None, out=None):
     items = R.load_questions()
     if only:
         wanted = set(only.split(","))
         items = [i for i in items if i["id"] in wanted]
-    path = R.RESULTS / f"pending_{R.SYSTEM['profile']}.jsonl"
+    if subset:  # "dev" or "heldout" (eval/factorial/split.py)
+        wanted = set(load_split()[subset])
+        items = [i for i in items if i["id"] in wanted]
+    path = R.RESULTS / (out or f"pending_{R.SYSTEM['profile']}.jsonl")
     R.RESULTS.mkdir(exist_ok=True)
     done, spent = set(), [0.0]
     if path.exists():
@@ -111,7 +115,7 @@ def answer(runs, only, workers, max_dollars):
           f"${spent[0]:.3f} spent" + (f"; cap reached, {skipped} not started" if skipped else ""))
 
 
-def grade(file, max_dollars):
+def grade(file, max_dollars, out=None):
     src = R.RESULTS / file
     rows = read_rows(src)
     # The first scored outcome of each attempt counts. Outages are skipped (their retry is the attempt); a
@@ -125,7 +129,7 @@ def grade(file, max_dollars):
         if ran_away(r):
             ok[key] = {**r, "status": "failed", "answer": r["error"], "judge_reason": "output limit reached",
                        "correct": False}
-    out = R.RESULTS / f"attempts_{rows[0]['system']}.jsonl"
+    out = R.RESULTS / (out or f"attempts_{rows[0]['system']}.jsonl")
     graded = set()
     if out.exists():
         graded = {(r["id"], r["run"]) for r in read_rows(out)}
@@ -165,8 +169,10 @@ if __name__ == "__main__":
     p.add_argument("--workers", type=int, default=2)
     p.add_argument("--file", default="pending_local.jsonl")
     p.add_argument("--max-dollars", type=float, default=float("inf"))
+    p.add_argument("--subset", choices=["dev", "heldout"], help="answer only the development or held-out questions")
+    p.add_argument("--out", help="output file in results/ (default pending_<profile>.jsonl / attempts_<system>.jsonl)")
     a = p.parse_args()
     if a.mode == "answer":
-        answer(a.runs, a.only, a.workers, a.max_dollars)
+        answer(a.runs, a.only, a.workers, a.max_dollars, a.subset, a.out)
     else:
-        grade(a.file, a.max_dollars)
+        grade(a.file, a.max_dollars, a.out)

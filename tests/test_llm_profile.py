@@ -12,7 +12,7 @@ def test_local_profile_fills_ollama_defaults_and_keeps_a_separate_index():
     s = Settings(_env_file=None, llm_profile="local")
     assert s.llm_base_url == "http://localhost:11434/v1" and s.embedding_base_url == s.llm_base_url
     assert s.chat_model == "qwen2.5-7b-16k" and s.embedding_model == "nomic-embed-text"
-    assert s.index_dir == BASE_DIR / "vector_db_local"
+    assert s.index_dir == BASE_DIR / "vector_db_local" and s.company_names_overrule_off_topic
     assert s.judge_model == Settings(_env_file=None).judge_model  # the grader doesn't change
 
 
