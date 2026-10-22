@@ -116,6 +116,7 @@ python -m eval.factorial.stats                      # -> results/results_openai.
 
 # Local system (Ollama running, OPENAI_API_KEY still set for the judge)
 ollama pull qwen2.5:7b && ollama pull nomic-embed-text
+ollama create qwen2.5-7b-16k -f config/ollama/qwen2.5-7b-16k.Modelfile   # 16k context; the 4k default truncates prompts
 LLM_PROFILE=local python -m src.pipeline.index      # once: builds vector_db_local/
 LLM_PROFILE=local python -m eval.factorial.run --workers 2   # -> results/attempts_local.jsonl
 python -m eval.factorial.stats --attempts attempts_local.jsonl

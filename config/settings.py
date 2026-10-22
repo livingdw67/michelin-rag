@@ -58,11 +58,13 @@ class Settings(BaseSettings):
     @model_validator(mode="after")
     def _local_profile_defaults(self):
         """LLM_PROFILE=local fills in Ollama defaults for anything the .env doesn't set, and keeps
-        its own index, since the vectors from a different embedding model aren't interchangeable."""
+        its own index, since the vectors from a different embedding model aren't interchangeable.
+        The chat model is qwen2.5:7b with a 16k context (config/ollama/qwen2.5-7b-16k.Modelfile):
+        Ollama's 4k default truncates the answer prompt."""
         if self.llm_profile != "local":
             return self
         defaults = {"llm_base_url": "http://localhost:11434/v1", "embedding_base_url": "http://localhost:11434/v1",
-                    "chat_model": "qwen2.5:7b", "rewrite_model": "qwen2.5:7b",
+                    "chat_model": "qwen2.5-7b-16k", "rewrite_model": "qwen2.5-7b-16k",
                     "embedding_model": "nomic-embed-text", "index_dir": BASE_DIR / "vector_db_local"}
         for field, value in defaults.items():
             if field not in self.model_fields_set:

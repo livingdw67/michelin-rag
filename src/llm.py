@@ -9,6 +9,10 @@ from config.settings import settings
 
 # OpenAI-only options that local servers reject or don't implement
 _OPENAI_ONLY = ("reasoning_effort", "use_responses_api")
+# A small local model can loop inside a structured reply; cap it so the call fails instead of running forever
+_LOCAL_MAX_TOKENS = 2048
+# Ollama 0.40 intermittently rejects very large embedding requests (500 inputs); small batches don't trip it
+_LOCAL_EMBEDDING_BATCH = 32
 
 
 def chat_model(model=None, **kwargs):
@@ -18,6 +22,7 @@ def chat_model(model=None, **kwargs):
         return ChatOpenAI(model=model, api_key=settings.openai_api_key, **kwargs)
     for key in _OPENAI_ONLY:
         kwargs.pop(key, None)
+    kwargs.setdefault("max_tokens", _LOCAL_MAX_TOKENS)
     return ChatOpenAI(model=model, base_url=settings.llm_base_url, api_key=settings.llm_api_key or "local", **kwargs)
 
 
@@ -31,7 +36,8 @@ def embeddings():
         return OpenAIEmbeddings(model=settings.embedding_model, api_key=settings.openai_api_key)
     # Local servers take raw strings: skip LangChain's tiktoken pre-splitting, which sends token ids
     return OpenAIEmbeddings(model=settings.embedding_model, base_url=settings.embedding_base_url,
-                            api_key=settings.llm_api_key or "local", check_embedding_ctx_length=False)
+                            api_key=settings.llm_api_key or "local", check_embedding_ctx_length=False,
+                            chunk_size=_LOCAL_EMBEDDING_BATCH)
 
 
 def describe():

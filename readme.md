@@ -118,9 +118,11 @@ python -m eval.factorial.run         # 400-question factorial evaluation, resuma
 python -m eval.factorial.stats       # its report: eval/factorial/results/results_openai.md
 ```
 
-**Local models.** Set `LLM_PROFILE=local` to run the whole app on Ollama (`qwen2.5:7b` and `nomic-embed-text` by default, with a separate index) through its OpenAI-compatible endpoint. All model creation goes through [src/llm.py](src/llm.py). The evaluation judge stays on OpenAI, which is what makes the [OpenAI vs. local comparison](eval/factorial/README.md#openai-vs-a-local-model) fair:
+**Local models.** Set `LLM_PROFILE=local` to run the whole app on Ollama (`qwen2.5:7b` with a 16k context, and `nomic-embed-text`, with a separate index) through its OpenAI-compatible endpoint. Ollama's default 4k context would truncate the answer prompt, so the profile uses a variant built from [config/ollama/qwen2.5-7b-16k.Modelfile](config/ollama/qwen2.5-7b-16k.Modelfile). All model creation goes through [src/llm.py](src/llm.py). The evaluation judge stays on OpenAI, which is what makes the [OpenAI vs. local comparison](eval/factorial/README.md#openai-vs-a-local-model) fair:
 
 ```bash
+ollama pull qwen2.5:7b && ollama pull nomic-embed-text
+ollama create qwen2.5-7b-16k -f config/ollama/qwen2.5-7b-16k.Modelfile
 LLM_PROFILE=local python -m src.pipeline.index       # once
 LLM_PROFILE=local python -m eval.factorial.run       # same 400 questions, local models
 python -m eval.factorial.compare                     # paired comparison report

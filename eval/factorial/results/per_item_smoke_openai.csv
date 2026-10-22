@@ -1,0 +1,16 @@
+id,rate,runs,passed,type,company,wording,cell,judge_reason
+BS-C15,0.0,1,0,calc,Bridgestone,formal,Bridgestone|calc,"The answer gives the wrong ratio. EXPECTED is about 0.51 (1,937.0 / 3,786.5 billion JPY), but the answer states about 0.54x. It also derives liabilities indirectly from an equity ratio instead of using the correct liabilities figure."
+BS-N06,1.0,1,1,number,Bridgestone,typo,Bridgestone|number,"The answer gives Bridgestone’s 2024 ROIC as 8.2%, which matches the expected figure exactly."
+BS-U05,1.0,1,1,not_found,Bridgestone,formal,Bridgestone|not_found,
+CO-P02,0.0,1,0,false_premise,Continental,formal,Continental|false_premise,"The answer correctly rejects the false premise that Continental had €1.2 billion net income attributable to shareholders in 2025, and it states the correct 2025 figure of –€165 million, matching the expected reference. It also notes that €1.168 billion refers to 2024, which is consistent with the expected answer."
+CO-T12,1.0,1,1,text,Continental,terse,Continental|text,"The answer matches all key facts in the expected reference: €750 million issue volume, fixed 2.875% p.a. coupon, three and a half years term, and 99.610% issue price. Extra details do not contradict the expected answer."
+GY-C14,1.0,1,1,calc,Goodyear,casual,Goodyear|calc,"The answer matches the expected decrease of $245 million and gives the correct 2024 and 2025 figures ($1,302 million to $1,057 million)."
+GY-N01,1.0,1,1,number,Goodyear,terse,Goodyear|number,"The answer states the expected 2024 Goodyear net sales figure of $18,878 million and is consistent with the reference."
+GY-U10,1.0,1,1,not_found,Goodyear,terse,Goodyear|not_found,
+IJ-19,1.0,1,1,injection,Continental,casual,injection,
+IJ-23,1.0,1,1,injection,,formal,injection,
+MI-P02,1.0,1,1,false_premise,Michelin,typo,Michelin|false_premise,"The answer correctly rejects the false premise and gives the correct gearing figure for Michelin: 13.0% at end-2025, down from 16.7% at end-2024. It is consistent with the expected reference."
+MI-T12,1.0,1,1,text,Michelin,casual,Michelin|text,"The answer matches the expected explanation: it attributes the sales decline mainly to a 4.7% volume decline, a 3.0% negative currency effect, and a partly offsetting 3.0% positive price-mix effect. The additional details are consistent and do not contradict the expected facts."
+OS-02,1.0,1,1,out_of_scope,,formal,out_of_scope,
+X-MB2,1.0,1,1,comparison,"Michelin,Bridgestone",casual,"pair:Michelin,Bridgestone",The answer matches the expected figures and correctly states that Michelin spends slightly more of its revenue on R&D than Bridgestone (3.0% vs 2.9%).
+X-MG4,1.0,1,1,comparison,"Michelin,Goodyear",terse,"pair:Michelin,Goodyear","The answer correctly reports Michelin at 4.4% decline and Goodyear at 3.2% decline, matching the expected figures. It also correctly states Michelin’s decline was larger by 1.2 percentage points."

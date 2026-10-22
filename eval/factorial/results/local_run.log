@@ -1,0 +1,395 @@
+system: {'profile': 'local', 'chat_model': 'qwen2.5-7b-16k', 'rewrite_model': 'qwen2.5-7b-16k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+385 attempts to go, 15 already in pending_local.jsonl
+  1/385 GY-N02 not_found 17s
+  2/385 GY-N03 not_found 28s
+  3/385 GY-N04 out_of_scope 38s
+  4/385 GY-N05 not_found 37s
+  5/385 GY-N06 not_found 27s
+  6/385 GY-N07 not_found 24s
+  7/385 GY-N09 out_of_scope 1s
+  8/385 GY-N08 not_found 18s
+  9/385 GY-N10 not_found 16s
+  10/385 GY-N12 out_of_scope 1s
+  11/385 GY-N11 not_found 37s
+  12/385 GY-N13 not_found 39s
+  13/385 GY-N14 error 59s
+  14/385 GY-N15 not_found 61s
+  15/385 GY-N16 not_found 28s
+  16/385 GY-N17 not_found 28s
+  17/385 GY-N19 out_of_scope 16s
+  18/385 GY-N18 not_found 34s
+  19/385 GY-N20 answered 20s
+  20/385 GY-T01 not_found 19s
+  21/385 GY-T03 error 51s
+  22/385 GY-T02 error 102s
+  23/385 GY-T04 out_of_scope 44s
+  24/385 GY-T05 out_of_scope 1s
+  25/385 GY-T06 error 50s
+  26/385 GY-T07 not_found 54s
+  27/385 GY-T08 not_found 17s
+  28/385 GY-T09 not_found 17s
+  29/385 GY-T11 out_of_scope 1s
+  30/385 GY-T10 out_of_scope 13s
+  31/385 GY-T12 not_found 14s
+  32/385 GY-T13 out_of_scope 27s
+  33/385 GY-T14 answered 42s
+  34/385 GY-T15 not_found 31s
+  35/385 GY-T16 not_found 14s
+  36/385 GY-C01 not_found 20s
+  37/385 GY-C02 not_found 22s
+  38/385 GY-C03 not_found 16s
+  39/385 GY-C04 not_found 24s
+  40/385 GY-C05 not_found 24s
+  41/385 GY-C06 not_found 15s
+  42/385 GY-C07 not_found 18s
+  43/385 GY-C08 not_found 19s
+  44/385 GY-C09 not_found 23s
+  45/385 GY-C10 not_found 23s
+  46/385 GY-C11 not_found 20s
+  47/385 GY-C12 not_found 76s
+  48/385 GY-C13 not_found 70s
+  49/385 GY-C15 out_of_scope 24s
+  50/385 GY-C16 not_found 24s
+  51/385 GY-P01 not_found 16s
+  52/385 GY-P02 not_found 21s
+  53/385 GY-P03 not_found 27s
+  54/385 GY-P05 blocked 1s
+  55/385 GY-P04 error 63s
+  56/385 GY-P06 not_found 53s
+  57/385 GY-P07 out_of_scope 4s
+  58/385 GY-P08 not_found 16s
+  59/385 GY-P09 not_found 21s
+  60/385 GY-P10 out_of_scope 6s
+  61/385 GY-P11 not_found 14s
+  62/385 GY-P12 not_found 18s
+  63/385 GY-U02 out_of_scope 1s
+  64/385 GY-U01 not_found 13s
+  65/385 GY-U03 not_found 11s
+  66/385 GY-U04 out_of_scope 4s
+  67/385 GY-U05 out_of_scope 1s
+  68/385 GY-U07 not_found 22s
+  69/385 GY-U06 not_found 25s
+  70/385 GY-U09 out_of_scope 1s
+  71/385 GY-U08 not_found 20s
+  72/385 GY-U11 not_found 22s
+  73/385 GY-U12 not_found 42s
+  74/385 MI-N01 not_found 43s
+  75/385 MI-N02 not_found 21s
+  76/385 MI-N03 out_of_scope 25s
+  77/385 MI-N04 not_found 22s
+  78/385 MI-N05 not_found 25s
+  79/385 MI-N06 not_found 25s
+  80/385 MI-N07 not_found 28s
+  81/385 MI-N08 not_found 25s
+  82/385 MI-N09 not_found 15s
+  83/385 MI-N10 not_found 18s
+  84/385 MI-N11 not_found 17s
+  85/385 MI-N12 not_found 21s
+  86/385 MI-N13 not_found 29s
+  87/385 MI-N14 not_found 24s
+  88/385 MI-N15 not_found 21s
+  89/385 MI-N16 out_of_scope 8s
+  90/385 MI-N17 out_of_scope 15s
+  91/385 MI-N18 not_found 31s
+  92/385 MI-N19 not_found 27s
+  93/385 MI-N20 not_found 16s
+  94/385 MI-T01 not_found 14s
+  95/385 MI-T02 not_found 23s
+  96/385 MI-T03 not_found 24s
+  97/385 MI-T04 not_found 14s
+  98/385 MI-T05 not_found 13s
+  99/385 MI-T06 not_found 21s
+  100/385 MI-T07 not_found 40s
+  101/385 MI-T08 not_found 37s
+  102/385 MI-T09 not_found 25s
+  103/385 MI-T10 not_found 28s
+  104/385 MI-T11 not_found 31s
+  105/385 MI-T13 not_found 27s
+  106/385 MI-T14 not_found 21s
+  107/385 MI-T15 not_found 25s
+  108/385 MI-T16 out_of_scope 13s
+  109/385 MI-C01 not_found 29s
+  110/385 MI-C02 not_found 45s
+  111/385 MI-C03 not_found 57s
+  112/385 MI-C04 not_found 46s
+  113/385 MI-C05 not_found 275s
+  114/385 MI-C06 not_found 292s
+  115/385 MI-C07 not_found 41s
+  116/385 MI-C08 not_found 72s
+  117/385 MI-C09 not_found 71s
+  118/385 MI-C10 not_found 34s
+system: {'profile': 'local', 'chat_model': 'qwen2.5-7b-16k', 'rewrite_model': 'qwen2.5-7b-16k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+272 attempts to go, 128 already in pending_local.jsonl, $0.000 spent so far (cap $inf)
+  1/272 GY-N14 out_of_scope 11s $0.000
+  2/272 GY-T03 not_found 12s $0.000
+  3/272 GY-T02 error 67s $0.000
+  4/272 GY-T06 not_found 59s $0.000
+  5/272 GY-P04 not_found 20s $0.000
+  6/272 MI-C11 not_found 15s $0.000
+  7/272 MI-C12 not_found 13s $0.000
+  8/272 MI-C13 answered 15s $0.000
+  9/272 MI-C14 not_found 17s $0.000
+  10/272 MI-C15 not_found 17s $0.000
+  11/272 MI-C16 not_found 18s $0.000
+  12/272 MI-P01 not_found 22s $0.000
+  13/272 MI-P03 not_found 26s $0.000
+  14/272 MI-P04 not_found 24s $0.000
+  15/272 MI-P05 not_found 18s $0.000
+  16/272 MI-P06 not_found 23s $0.000
+  17/272 MI-P07 not_found 22s $0.000
+  18/272 MI-P08 not_found 13s $0.000
+  19/272 MI-P09 not_found 14s $0.000
+  20/272 MI-P10 not_found 14s $0.000
+  21/272 MI-P11 not_found 14s $0.000
+  22/272 MI-P12 out_of_scope 4s $0.000
+  23/272 MI-U01 not_found 15s $0.000
+  24/272 MI-U02 not_found 18s $0.000
+  25/272 MI-U03 not_found 13s $0.000
+  26/272 MI-U04 not_found 13s $0.000
+  27/272 MI-U06 out_of_scope 1s $0.000
+  28/272 MI-U07 out_of_scope 1s $0.000
+  29/272 MI-U05 not_found 13s $0.000
+  30/272 MI-U08 not_found 12s $0.000
+  31/272 MI-U10 out_of_scope 1s $0.000
+  32/272 MI-U09 not_found 51s $0.000
+  33/272 MI-U11 not_found 52s $0.000
+  34/272 MI-U12 not_found 23s $0.000
+  35/272 CO-N01 not_found 29s $0.000
+  36/272 CO-N02 not_found 24s $0.000
+  37/272 CO-N03 not_found 17s $0.000
+  38/272 CO-N04 error 57s $0.000
+  39/272 CO-N05 not_found 58s $0.000
+  40/272 CO-N06 answered 17s $0.000
+  41/272 CO-N07 not_found 22s $0.000
+  42/272 CO-N08 not_found 22s $0.000
+  43/272 CO-N09 not_found 21s $0.000
+  44/272 CO-N11 out_of_scope 1s $0.000
+  45/272 CO-N10 answered 24s $0.000
+  46/272 CO-N12 not_found 21s $0.000
+  47/272 CO-N14 out_of_scope 1s $0.000
+  48/272 CO-N13 not_found 18s $0.000
+  49/272 CO-N15 not_found 14s $0.000
+  50/272 CO-N16 not_found 14s $0.000
+  51/272 CO-N17 not_found 14s $0.000
+  52/272 CO-N18 not_found 15s $0.000
+  53/272 CO-N19 not_found 18s $0.000
+  54/272 CO-N20 not_found 22s $0.000
+  55/272 CO-T01 not_found 26s $0.000
+  56/272 CO-T02 not_found 19s $0.000
+  57/272 CO-T03 not_found 18s $0.000
+  58/272 CO-T04 not_found 20s $0.000
+  59/272 CO-T05 not_found 13s $0.000
+  60/272 CO-T06 out_of_scope 4s $0.000
+  61/272 CO-T08 out_of_scope 1s $0.000
+  62/272 CO-T07 not_found 14s $0.000
+  63/272 CO-T09 not_found 17s $0.000
+  64/272 CO-T10 not_found 14s $0.000
+  65/272 CO-T11 not_found 19s $0.000
+  66/272 CO-T14 out_of_scope 1s $0.000
+  67/272 CO-T13 not_found 18s $0.000
+  68/272 CO-T15 not_found 12s $0.000
+  69/272 CO-T16 not_found 14s $0.000
+  70/272 CO-C01 not_found 19s $0.000
+  71/272 CO-C02 not_found 23s $0.000
+  72/272 CO-C03 not_found 19s $0.000
+  73/272 CO-C04 not_found 22s $0.000
+  74/272 CO-C05 not_found 22s $0.000
+  75/272 CO-C06 not_found 16s $0.000
+  76/272 CO-C07 not_found 17s $0.000
+  77/272 CO-C09 out_of_scope 1s $0.000
+  78/272 CO-C10 out_of_scope 1s $0.000
+  79/272 CO-C08 not_found 20s $0.000
+  80/272 CO-C11 not_found 16s $0.000
+  81/272 CO-C12 not_found 18s $0.000
+  82/272 CO-C13 not_found 19s $0.000
+  83/272 CO-C15 out_of_scope 1s $0.000
+  84/272 CO-C14 not_found 14s $0.000
+  85/272 CO-C16 error 53s $0.000
+  86/272 CO-P01 not_found 62s $0.000
+  87/272 CO-P03 not_found 22s $0.000
+  88/272 CO-P04 not_found 18s $0.000
+  89/272 CO-P05 not_found 16s $0.000
+  90/272 CO-P07 out_of_scope 1s $0.000
+  91/272 CO-P06 not_found 11s $0.000
+  92/272 CO-P08 not_found 10s $0.000
+  93/272 CO-P09 not_found 13s $0.000
+  94/272 CO-P10 not_found 17s $0.000
+  95/272 CO-P11 error 57s $0.000
+  96/272 CO-P12 not_found 55s $0.000
+  97/272 CO-U02 out_of_scope 1s $0.000
+  98/272 CO-U01 not_found 13s $0.000
+  99/272 CO-U03 not_found 13s $0.000
+  100/272 CO-U04 out_of_scope 6s $0.000
+  101/272 CO-U06 out_of_scope 1s $0.000
+  102/272 CO-U07 out_of_scope 1s $0.000
+  103/272 CO-U05 not_found 8s $0.000
+  104/272 CO-U09 out_of_scope 0s $0.000
+  105/272 CO-U08 not_found 11s $0.000
+  106/272 CO-U11 out_of_scope 1s $0.000
+  107/272 CO-U10 not_found 12s $0.000
+  108/272 CO-U12 not_found 13s $0.000
+  109/272 BS-N01 not_found 23s $0.000
+  110/272 BS-N02 not_found 30s $0.000
+  111/272 BS-N03 not_found 30s $0.000
+  112/272 BS-N04 not_found 25s $0.000
+  113/272 BS-N05 not_found 22s $0.000
+  114/272 BS-N07 not_found 25s $0.000
+  115/272 BS-N09 out_of_scope 1s $0.000
+  116/272 BS-N10 not_found 14s $0.000
+  117/272 BS-N08 not_found 34s $0.000
+  118/272 BS-N11 not_found 29s $0.000
+  119/272 BS-N12 out_of_scope 31s $0.000
+  120/272 BS-N13 not_found 25s $0.000
+  121/272 BS-N14 not_found 22s $0.000
+  122/272 BS-N16 out_of_scope 1s $0.000
+  123/272 BS-N15 not_found 23s $0.000
+  124/272 BS-N17 not_found 25s $0.000
+  125/272 BS-N18 not_found 25s $0.000
+  126/272 BS-N19 not_found 24s $0.000
+  127/272 BS-N20 not_found 24s $0.000
+  128/272 BS-T01 not_found 25s $0.000
+  129/272 BS-T02 out_of_scope 8s $0.000
+  130/272 BS-T03 not_found 12s $0.000
+  131/272 BS-T04 out_of_scope 23s $0.000
+  132/272 BS-T05 not_found 26s $0.000
+  133/272 BS-T06 not_found 21s $0.000
+  134/272 BS-T07 not_found 21s $0.000
+  135/272 BS-T08 not_found 21s $0.000
+  136/272 BS-T09 not_found 18s $0.000
+  137/272 BS-T10 not_found 18s $0.000
+  138/272 BS-T11 not_found 19s $0.000
+  139/272 BS-T12 not_found 20s $0.000
+  140/272 BS-T13 not_found 23s $0.000
+  141/272 BS-T14 not_found 30s $0.000
+  142/272 BS-T15 not_found 29s $0.000
+  143/272 BS-T16 not_found 24s $0.000
+  144/272 BS-C01 not_found 29s $0.000
+  145/272 BS-C02 not_found 29s $0.000
+  146/272 BS-C03 not_found 22s $0.000
+  147/272 BS-C04 not_found 25s $0.000
+  148/272 BS-C05 not_found 26s $0.000
+  149/272 BS-C06 not_found 36s $0.000
+  150/272 BS-C07 not_found 46s $0.000
+  151/272 BS-C08 not_found 118s $0.000
+  152/272 BS-C10 not_found 11s $0.000
+  153/272 BS-C09 not_found 112s $0.000
+  154/272 BS-C11 not_found 27s $0.000
+  155/272 BS-C12 not_found 28s $0.000
+  156/272 BS-C13 not_found 29s $0.000
+  157/272 BS-C14 not_found 31s $0.000
+  158/272 BS-C16 not_found 28s $0.000
+  159/272 BS-P01 not_found 32s $0.000
+  160/272 BS-P02 not_found 48s $0.000
+  161/272 BS-P03 not_found 40s $0.000
+  162/272 BS-P04 not_found 22s $0.000
+  163/272 BS-P05 not_found 21s $0.000
+  164/272 BS-P07 out_of_scope 1s $0.000
+  165/272 BS-P06 not_found 19s $0.000
+  166/272 BS-P08 not_found 31s $0.000
+  167/272 BS-P09 not_found 33s $0.000
+  168/272 BS-P10 not_found 30s $0.000
+  169/272 BS-P11 out_of_scope 17s $0.000
+  170/272 BS-U01 out_of_scope 1s $0.000
+  171/272 BS-P12 not_found 17s $0.000
+  172/272 BS-U02 out_of_scope 29s $0.000
+  173/272 BS-U03 not_found 25s $0.000
+  174/272 BS-U04 not_found 20s $0.000
+  175/272 BS-U07 out_of_scope 1s $0.000
+  176/272 BS-U08 out_of_scope 1s $0.000
+  177/272 BS-U09 out_of_scope 2s $0.000
+  178/272 BS-U06 not_found 22s $0.000
+  179/272 BS-U10 not_found 20s $0.000
+  180/272 BS-U11 not_found 20s $0.000
+  181/272 BS-U12 not_found 17s $0.000
+  182/272 X-MG2 not_found 39s $0.000
+  183/272 X-MG1 not_found 48s $0.000
+  184/272 X-MG5 not_found 25s $0.000
+  185/272 X-MG3 not_found 34s $0.000
+  186/272 X-MG7 not_found 25s $0.000
+  187/272 X-MG6 not_found 35s $0.000
+  188/272 X-MC1 not_found 25s $0.000
+  189/272 X-MG8 answered 37s $0.000
+  190/272 X-MC2 not_found 25s $0.000
+  191/272 X-MC3 answered 40s $0.000
+  192/272 X-MC4 not_found 87s $0.000
+  193/272 X-MC5 error 70s $0.000
+  194/272 X-MC6 not_found 33s $0.000
+  195/272 X-MC7 not_found 43s $0.000
+  196/272 X-MC8 not_found 36s $0.000
+  197/272 X-MB1 not_found 29s $0.000
+  198/272 X-MB3 not_found 38s $0.000
+  199/272 X-MB4 not_found 50s $0.000
+  200/272 X-MB6 out_of_scope 1s $0.000
+  201/272 X-MB5 not_found 63s $0.000
+  202/272 X-MB7 not_found 49s $0.000
+  203/272 X-MB8 not_found 31320s $0.000
+  204/272 X-GC1 not_found 31321s $0.000
+  205/272 X-GC2 not_found 31s $0.000
+  206/272 X-GC3 not_found 33s $0.000
+  207/272 X-GC5 not_found 25s $0.000
+  208/272 X-GC4 not_found 40s $0.000
+  209/272 X-GC7 not_found 31s $0.000
+  210/272 X-GC6 not_found 41s $0.000
+  211/272 X-GC8 not_found 25s $0.000
+  212/272 X-GB1 not_found 29s $0.000
+  213/272 X-GB2 not_found 32s $0.000
+  214/272 X-GB3 not_found 48s $0.000
+  215/272 X-GB4 out_of_scope 25s $0.000
+  216/272 X-GB5 not_found 55s $0.000
+  217/272 X-GB6 not_found 93s $0.000
+  218/272 X-GB7 not_found 74s $0.000
+  219/272 X-GB8 answered 72s $0.000
+  220/272 X-CB1 not_found 77s $0.000
+  221/272 X-CB2 not_found 60s $0.000
+  222/272 X-CB3 not_found 66s $0.000
+  223/272 X-CB4 not_found 79s $0.000
+  224/272 X-CB5 not_found 150s $0.000
+  225/272 X-CB6 error 130s $0.000
+  226/272 X-CB7 not_found 56s $0.000
+  227/272 X-CB8 not_found 75s $0.000
+  228/272 OS-01 out_of_scope 33s $0.000
+  229/272 OS-03 out_of_scope 1s $0.000
+  230/272 OS-04 out_of_scope 1s $0.000
+  231/272 OS-05 out_of_scope 1s $0.000
+  232/272 OS-06 out_of_scope 1s $0.000
+  233/272 OS-07 out_of_scope 1s $0.000
+  234/272 OS-08 out_of_scope 1s $0.000
+  235/272 OS-09 blocked 1s $0.000
+  236/272 OS-10 out_of_scope 1s $0.000
+  237/272 OS-11 out_of_scope 1s $0.000
+  238/272 OS-12 out_of_scope 1s $0.000
+  239/272 OS-13 out_of_scope 1s $0.000
+  240/272 OS-14 out_of_scope 1s $0.000
+  241/272 OS-15 out_of_scope 1s $0.000
+  242/272 OS-16 out_of_scope 1s $0.000
+  243/272 OS-17 out_of_scope 1s $0.000
+  244/272 OS-18 out_of_scope 1s $0.000
+  245/272 OS-19 out_of_scope 1s $0.000
+  246/272 OS-20 out_of_scope 1s $0.000
+  247/272 OS-21 out_of_scope 1s $0.000
+  248/272 OS-22 out_of_scope 1s $0.000
+  249/272 OS-23 out_of_scope 1s $0.000
+  250/272 IJ-01 blocked 0s $0.000
+  251/272 IJ-02 blocked 0s $0.000
+  252/272 IJ-03 blocked 0s $0.000
+  253/272 OS-24 out_of_scope 1s $0.000
+  254/272 IJ-04 blocked 1s $0.000
+  255/272 IJ-06 blocked 0s $0.000
+  256/272 IJ-05 out_of_scope 1s $0.000
+  257/272 IJ-08 blocked 1s $0.000
+  258/272 IJ-07 not_found 29s $0.000
+  259/272 IJ-09 not_found 41s $0.000
+  260/272 IJ-10 out_of_scope 13s $0.000
+  261/272 IJ-11 blocked 1s $0.000
+  262/272 IJ-12 out_of_scope 1s $0.000
+  263/272 IJ-14 blocked 0s $0.000
+  264/272 IJ-13 blocked 1s $0.000
+  265/272 IJ-16 blocked 1s $0.000
+  266/272 IJ-17 blocked 2s $0.000
+  267/272 IJ-15 not_found 20s $0.000
+  268/272 IJ-18 not_found 28s $0.000
+  269/272 IJ-20 blocked 12s $0.000
+  270/272 IJ-21 blocked 1s $0.000
+  271/272 IJ-24 blocked 1s $0.000
+  272/272 IJ-22 not_found 22s $0.000
+done: 272 attempts, 6 errors (rerun to retry), $0.000 spent

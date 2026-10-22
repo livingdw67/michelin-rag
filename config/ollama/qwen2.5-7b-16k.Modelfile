@@ -1,0 +1,7 @@
+# Ollama serves qwen2.5:7b with a 4,096-token context by default, which truncates the answer prompt
+# (10 retrieved chunks, up to about 10.5k tokens). Its OpenAI-compatible endpoint cannot change num_ctx per
+# request, so the local profile uses this variant. num_predict stops a structured-output reply that never ends.
+#   ollama create qwen2.5-7b-16k -f config/ollama/qwen2.5-7b-16k.Modelfile
+FROM qwen2.5:7b
+PARAMETER num_ctx 16384
+PARAMETER num_predict 2048

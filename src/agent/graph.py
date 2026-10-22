@@ -5,11 +5,11 @@ questions are split into single-company, single-fact sub-questions, each answere
 citation-verified independently, then combined. Arithmetic goes through a calculator tool,
 and a final check confirms every number in the combined answer is grounded.
 """
-from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from typing import Literal, Optional, TypedDict
 
 from langchain_core.messages import HumanMessage, SystemMessage, ToolMessage
+from langchain_core.runnables.config import ContextThreadPoolExecutor
 from langchain_core.tools import tool
 from langgraph.graph import END, START, StateGraph
 from pydantic import BaseModel, Field
@@ -135,7 +135,8 @@ def answer_single(state: AgentState):
 
 def answer_subs(state: AgentState):
     retriever = get_retriever()
-    with ThreadPoolExecutor(max_workers=4) as pool:
+    # The context-copying pool keeps sub-question calls visible to callbacks (token counts, tracing)
+    with ContextThreadPoolExecutor(max_workers=4) as pool:
         results = list(pool.map(lambda q: answer_question(q, retriever=retriever), state["sub_questions"]))
     return {"sub_results": results}
 
