@@ -203,3 +203,20 @@ def test_paired_difference_has_the_right_sign_and_interval():
     b = pd.Series([1.0] * 60 + [0.0] * 40)
     r = paired_diff(a, b, np.random.default_rng(0), boot=500, perms=500)
     assert r["difference"] == pytest.approx(0.2) and r["ci_95"][0] > 0 and r["p"] < 0.01
+
+
+# --- the development / held-out split -----------------------------------------------------------
+
+def test_split_is_committed_reproducible_and_a_quarter_of_every_cell():
+    from collections import Counter
+
+    from eval.factorial.design import cell
+    from eval.factorial.split import load_split, make_split
+
+    committed = [json.loads(line) for line in open(COMMITTED, encoding="utf-8")]
+    frozen = load_split()
+    assert make_split(committed) == (frozen["dev"], frozen["heldout"])
+    assert not set(frozen["dev"]) & set(frozen["heldout"])
+    assert len(frozen["dev"]) + len(frozen["heldout"]) == len(committed)
+    cells, dev_cells = Counter(cell(i) for i in committed), Counter(cell(BY_ID[i]) for i in frozen["dev"])
+    assert all(dev_cells[c] == max(1, round(n / 4)) for c, n in cells.items())

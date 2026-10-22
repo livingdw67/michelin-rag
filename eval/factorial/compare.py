@@ -27,6 +27,7 @@ import numpy as np
 import pandas as pd
 
 from eval.factorial.design import SINGLE_COMPANY_TYPES, WORDINGS
+from eval.factorial.split import load_split
 from eval.factorial.stats import (ANSWERABLE, COMPANIES, SEED, TYPES, chi2_sf, cluster_cov, firth_logit,
                                   norm_cdf, pct, wilson)
 
@@ -247,15 +248,19 @@ def markdown(c):
     return "\n".join(md) + "\n"
 
 
-def main(file_a, file_b, boot, perms):
+def main(file_a, file_b, boot, perms, subset=None):
     a, b = load(file_a), load(file_b)
+    name = "comparison"
+    if subset:  # "dev" or "heldout" (eval/factorial/split.py)
+        ids = load_split()[subset]
+        a, b, name = a[a["id"].isin(ids)], b[b["id"].isin(ids)], f"comparison_{subset}"
     c = compare(a, b, label(a, file_a), label(b, file_b), boot, perms)
-    (RESULTS / "comparison.json").write_text(json.dumps(c, indent=2, default=float), encoding="utf-8")
-    (RESULTS / "comparison.md").write_text(markdown(c), encoding="utf-8")
+    (RESULTS / f"{name}.json").write_text(json.dumps(c, indent=2, default=float), encoding="utf-8")
+    (RESULTS / f"{name}.md").write_text(markdown(c), encoding="utf-8")
     o = c["overall"]
     print(f"{c['a']} {pct(o['a'])} vs {c['b']} {pct(o['b'])}: difference {_pp(o['difference'])} "
           f"(95% {_pp(o['ci_95'][0])} to {_pp(o['ci_95'][1])}), p = {o['p']:.3f}")
-    print(f"wrote {RESULTS / 'comparison.md'}")
+    print(f"wrote {RESULTS / f'{name}.md'}")
 
 
 if __name__ == "__main__":
@@ -264,5 +269,6 @@ if __name__ == "__main__":
     parser.add_argument("--b", default="attempts_local.jsonl")
     parser.add_argument("--boot", type=int, default=2000)
     parser.add_argument("--perms", type=int, default=10000)
+    parser.add_argument("--subset", choices=["dev", "heldout"], help="only the development or held-out questions")
     args = parser.parse_args()
-    main(args.a, args.b, args.boot, args.perms)
+    main(args.a, args.b, args.boot, args.perms, args.subset)

@@ -1,0 +1,969 @@
+{
+  "attempts": 400,
+  "questions": 400,
+  "runs": 1,
+  "errors_excluded": 0,
+  "headline": {
+    "answerable": {
+      "questions": 304,
+      "attempts": 304,
+      "accuracy": 0.01644736842105263,
+      "wilson_95": [
+        0.007045165412712931,
+        0.037918218353483704
+      ],
+      "question_mean": 0.01644736842105263,
+      "cluster_boot_95": [
+        0.003289473684210526,
+        0.03289473684210526
+      ]
+    },
+    "decline": {
+      "questions": 96,
+      "attempts": 96,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.9615230525151842,
+        1.0
+      ],
+      "question_mean": 1.0,
+      "cluster_boot_95": [
+        1.0,
+        1.0
+      ]
+    },
+    "all": {
+      "questions": 400,
+      "attempts": 400,
+      "accuracy": 0.2525,
+      "wilson_95": [
+        0.21241625232287653,
+        0.2972925047739654
+      ],
+      "question_mean": 0.2525,
+      "cluster_boot_95": [
+        0.21,
+        0.295
+      ]
+    }
+  },
+  "by_type": [
+    {
+      "type": "number",
+      "questions": 80,
+      "attempts": 80,
+      "correct": 3,
+      "accuracy": 0.0375,
+      "wilson_95": [
+        0.012834336300788757,
+        0.10454891974394322
+      ],
+      "question_mean": 0.0375,
+      "cluster_boot_95": [
+        0.0,
+        0.0875
+      ]
+    },
+    {
+      "type": "text",
+      "questions": 64,
+      "attempts": 64,
+      "correct": 0,
+      "accuracy": 0.0,
+      "wilson_95": [
+        0.0,
+        0.056626022971156334
+      ],
+      "question_mean": 0.0,
+      "cluster_boot_95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "type": "calc",
+      "questions": 64,
+      "attempts": 64,
+      "correct": 1,
+      "accuracy": 0.015625,
+      "wilson_95": [
+        0.0027634707504014047,
+        0.08334298900290629
+      ],
+      "question_mean": 0.015625,
+      "cluster_boot_95": [
+        0.0,
+        0.046875
+      ]
+    },
+    {
+      "type": "comparison",
+      "questions": 48,
+      "attempts": 48,
+      "correct": 1,
+      "accuracy": 0.020833333333333332,
+      "wilson_95": [
+        0.003687015979399688,
+        0.10899469137531158
+      ],
+      "question_mean": 0.020833333333333332,
+      "cluster_boot_95": [
+        0.0,
+        0.0625
+      ]
+    },
+    {
+      "type": "false_premise",
+      "questions": 48,
+      "attempts": 48,
+      "correct": 0,
+      "accuracy": 0.0,
+      "wilson_95": [
+        0.0,
+        0.0741026511527422
+      ],
+      "question_mean": 0.0,
+      "cluster_boot_95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "type": "not_found",
+      "questions": 48,
+      "attempts": 48,
+      "correct": 48,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.9258973488472576,
+        0.9999999999999999
+      ],
+      "question_mean": 1.0,
+      "cluster_boot_95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "type": "out_of_scope",
+      "questions": 24,
+      "attempts": 24,
+      "correct": 24,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.8620194241710247,
+        1.0
+      ],
+      "question_mean": 1.0,
+      "cluster_boot_95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "type": "injection",
+      "questions": 24,
+      "attempts": 24,
+      "correct": 24,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.8620194241710247,
+        1.0
+      ],
+      "question_mean": 1.0,
+      "cluster_boot_95": [
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "by_company": [
+    {
+      "company": "Michelin",
+      "questions": 76,
+      "attempts": 76,
+      "correct": 13,
+      "accuracy": 0.17105263157894737,
+      "wilson_95": [
+        0.10277922110932626,
+        0.27098082377955374
+      ],
+      "question_mean": 0.17105263157894737,
+      "cluster_boot_95": [
+        0.09210526315789473,
+        0.2631578947368421
+      ]
+    },
+    {
+      "company": "Goodyear",
+      "questions": 76,
+      "attempts": 76,
+      "correct": 13,
+      "accuracy": 0.17105263157894737,
+      "wilson_95": [
+        0.10277922110932626,
+        0.27098082377955374
+      ],
+      "question_mean": 0.17105263157894737,
+      "cluster_boot_95": [
+        0.09210526315789473,
+        0.2631578947368421
+      ]
+    },
+    {
+      "company": "Continental",
+      "questions": 76,
+      "attempts": 76,
+      "correct": 14,
+      "accuracy": 0.18421052631578946,
+      "wilson_95": [
+        0.11302493284924942,
+        0.2857847102440753
+      ],
+      "question_mean": 0.18421052631578946,
+      "cluster_boot_95": [
+        0.09210526315789473,
+        0.27631578947368424
+      ]
+    },
+    {
+      "company": "Bridgestone",
+      "questions": 76,
+      "attempts": 76,
+      "correct": 12,
+      "accuracy": 0.15789473684210525,
+      "wilson_95": [
+        0.09269405994267452,
+        0.25601638674176064
+      ],
+      "question_mean": 0.15789473684210525,
+      "cluster_boot_95": [
+        0.07894736842105263,
+        0.25
+      ]
+    }
+  ],
+  "by_wording": [
+    {
+      "wording": "formal",
+      "questions": 100,
+      "attempts": 100,
+      "correct": 27,
+      "accuracy": 0.27,
+      "wilson_95": [
+        0.1926946091766482,
+        0.3643230022623127
+      ],
+      "question_mean": 0.27,
+      "cluster_boot_95": [
+        0.18,
+        0.36
+      ]
+    },
+    {
+      "wording": "casual",
+      "questions": 100,
+      "attempts": 100,
+      "correct": 25,
+      "accuracy": 0.25,
+      "wilson_95": [
+        0.1754509400372426,
+        0.3430464637007583
+      ],
+      "question_mean": 0.25,
+      "cluster_boot_95": [
+        0.17,
+        0.34
+      ]
+    },
+    {
+      "wording": "terse",
+      "questions": 100,
+      "attempts": 100,
+      "correct": 24,
+      "accuracy": 0.24,
+      "wilson_95": [
+        0.16691211265459965,
+        0.3323251872329213
+      ],
+      "question_mean": 0.24,
+      "cluster_boot_95": [
+        0.16,
+        0.33
+      ]
+    },
+    {
+      "wording": "typo",
+      "questions": 100,
+      "attempts": 100,
+      "correct": 25,
+      "accuracy": 0.25,
+      "wilson_95": [
+        0.1754509400372426,
+        0.3430464637007583
+      ],
+      "question_mean": 0.25,
+      "cluster_boot_95": [
+        0.17,
+        0.34
+      ]
+    }
+  ],
+  "by_wording_answerable": [
+    {
+      "wording": "formal",
+      "questions": 76,
+      "attempts": 76,
+      "correct": 3,
+      "accuracy": 0.039473684210526314,
+      "wilson_95": [
+        0.013514390129808602,
+        0.10974967271462335
+      ],
+      "question_mean": 0.039473684210526314,
+      "cluster_boot_95": [
+        0.0,
+        0.09210526315789473
+      ]
+    },
+    {
+      "wording": "casual",
+      "questions": 76,
+      "attempts": 76,
+      "correct": 1,
+      "accuracy": 0.013157894736842105,
+      "wilson_95": [
+        0.002326420140567463,
+        0.0708384462949749
+      ],
+      "question_mean": 0.013157894736842105,
+      "cluster_boot_95": [
+        0.0,
+        0.039473684210526314
+      ]
+    },
+    {
+      "wording": "terse",
+      "questions": 76,
+      "attempts": 76,
+      "correct": 0,
+      "accuracy": 0.0,
+      "wilson_95": [
+        0.0,
+        0.04811526823109757
+      ],
+      "question_mean": 0.0,
+      "cluster_boot_95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "wording": "typo",
+      "questions": 76,
+      "attempts": 76,
+      "correct": 1,
+      "accuracy": 0.013157894736842105,
+      "wilson_95": [
+        0.002326420140567463,
+        0.0708384462949749
+      ],
+      "question_mean": 0.013157894736842105,
+      "cluster_boot_95": [
+        0.0,
+        0.039473684210526314
+      ]
+    }
+  ],
+  "by_pair": [
+    {
+      "company": "Continental,Bridgestone",
+      "questions": 8,
+      "attempts": 8,
+      "correct": 0,
+      "accuracy": 0.0,
+      "wilson_95": [
+        0.0,
+        0.3244156195108769
+      ],
+      "question_mean": 0.0,
+      "cluster_boot_95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "company": "Goodyear,Bridgestone",
+      "questions": 8,
+      "attempts": 8,
+      "correct": 0,
+      "accuracy": 0.0,
+      "wilson_95": [
+        0.0,
+        0.3244156195108769
+      ],
+      "question_mean": 0.0,
+      "cluster_boot_95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "company": "Goodyear,Continental",
+      "questions": 8,
+      "attempts": 8,
+      "correct": 0,
+      "accuracy": 0.0,
+      "wilson_95": [
+        0.0,
+        0.3244156195108769
+      ],
+      "question_mean": 0.0,
+      "cluster_boot_95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "company": "Michelin,Bridgestone",
+      "questions": 8,
+      "attempts": 8,
+      "correct": 0,
+      "accuracy": 0.0,
+      "wilson_95": [
+        0.0,
+        0.3244156195108769
+      ],
+      "question_mean": 0.0,
+      "cluster_boot_95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "company": "Michelin,Continental",
+      "questions": 8,
+      "attempts": 8,
+      "correct": 0,
+      "accuracy": 0.0,
+      "wilson_95": [
+        0.0,
+        0.3244156195108769
+      ],
+      "question_mean": 0.0,
+      "cluster_boot_95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "company": "Michelin,Goodyear",
+      "questions": 8,
+      "attempts": 8,
+      "correct": 1,
+      "accuracy": 0.125,
+      "wilson_95": [
+        0.02241690886329617,
+        0.4708948057698615
+      ],
+      "question_mean": 0.125,
+      "cluster_boot_95": [
+        0.0,
+        0.375
+      ]
+    }
+  ],
+  "type_by_wording": {
+    "number": {
+      "formal": {
+        "questions": 20,
+        "question_mean": 0.05
+      },
+      "casual": {
+        "questions": 20,
+        "question_mean": 0.05
+      },
+      "terse": {
+        "questions": 20,
+        "question_mean": 0.0
+      },
+      "typo": {
+        "questions": 20,
+        "question_mean": 0.05
+      }
+    },
+    "text": {
+      "formal": {
+        "questions": 16,
+        "question_mean": 0.0
+      },
+      "casual": {
+        "questions": 16,
+        "question_mean": 0.0
+      },
+      "terse": {
+        "questions": 16,
+        "question_mean": 0.0
+      },
+      "typo": {
+        "questions": 16,
+        "question_mean": 0.0
+      }
+    },
+    "calc": {
+      "formal": {
+        "questions": 16,
+        "question_mean": 0.0625
+      },
+      "casual": {
+        "questions": 16,
+        "question_mean": 0.0
+      },
+      "terse": {
+        "questions": 16,
+        "question_mean": 0.0
+      },
+      "typo": {
+        "questions": 16,
+        "question_mean": 0.0
+      }
+    },
+    "comparison": {
+      "formal": {
+        "questions": 12,
+        "question_mean": 0.08333333333333333
+      },
+      "casual": {
+        "questions": 12,
+        "question_mean": 0.0
+      },
+      "terse": {
+        "questions": 12,
+        "question_mean": 0.0
+      },
+      "typo": {
+        "questions": 12,
+        "question_mean": 0.0
+      }
+    },
+    "false_premise": {
+      "formal": {
+        "questions": 12,
+        "question_mean": 0.0
+      },
+      "casual": {
+        "questions": 12,
+        "question_mean": 0.0
+      },
+      "terse": {
+        "questions": 12,
+        "question_mean": 0.0
+      },
+      "typo": {
+        "questions": 12,
+        "question_mean": 0.0
+      }
+    },
+    "not_found": {
+      "formal": {
+        "questions": 12,
+        "question_mean": 1.0
+      },
+      "casual": {
+        "questions": 12,
+        "question_mean": 1.0
+      },
+      "terse": {
+        "questions": 12,
+        "question_mean": 1.0
+      },
+      "typo": {
+        "questions": 12,
+        "question_mean": 1.0
+      }
+    },
+    "out_of_scope": {
+      "formal": {
+        "questions": 6,
+        "question_mean": 1.0
+      },
+      "casual": {
+        "questions": 6,
+        "question_mean": 1.0
+      },
+      "terse": {
+        "questions": 6,
+        "question_mean": 1.0
+      },
+      "typo": {
+        "questions": 6,
+        "question_mean": 1.0
+      }
+    },
+    "injection": {
+      "formal": {
+        "questions": 6,
+        "question_mean": 1.0
+      },
+      "casual": {
+        "questions": 6,
+        "question_mean": 1.0
+      },
+      "terse": {
+        "questions": 6,
+        "question_mean": 1.0
+      },
+      "typo": {
+        "questions": 6,
+        "question_mean": 1.0
+      }
+    }
+  },
+  "company_by_type": {
+    "Michelin": {
+      "number": {
+        "questions": 20,
+        "question_mean": 0.0
+      },
+      "text": {
+        "questions": 16,
+        "question_mean": 0.0
+      },
+      "calc": {
+        "questions": 16,
+        "question_mean": 0.0625
+      },
+      "false_premise": {
+        "questions": 12,
+        "question_mean": 0.0
+      },
+      "not_found": {
+        "questions": 12,
+        "question_mean": 1.0
+      }
+    },
+    "Goodyear": {
+      "number": {
+        "questions": 20,
+        "question_mean": 0.05
+      },
+      "text": {
+        "questions": 16,
+        "question_mean": 0.0
+      },
+      "calc": {
+        "questions": 16,
+        "question_mean": 0.0
+      },
+      "false_premise": {
+        "questions": 12,
+        "question_mean": 0.0
+      },
+      "not_found": {
+        "questions": 12,
+        "question_mean": 1.0
+      }
+    },
+    "Continental": {
+      "number": {
+        "questions": 20,
+        "question_mean": 0.1
+      },
+      "text": {
+        "questions": 16,
+        "question_mean": 0.0
+      },
+      "calc": {
+        "questions": 16,
+        "question_mean": 0.0
+      },
+      "false_premise": {
+        "questions": 12,
+        "question_mean": 0.0
+      },
+      "not_found": {
+        "questions": 12,
+        "question_mean": 1.0
+      }
+    },
+    "Bridgestone": {
+      "number": {
+        "questions": 20,
+        "question_mean": 0.0
+      },
+      "text": {
+        "questions": 16,
+        "question_mean": 0.0
+      },
+      "calc": {
+        "questions": 16,
+        "question_mean": 0.0
+      },
+      "false_premise": {
+        "questions": 12,
+        "question_mean": 0.0
+      },
+      "not_found": {
+        "questions": 12,
+        "question_mean": 1.0
+      }
+    }
+  },
+  "model": {
+    "n_attempts": 304,
+    "n_questions": 304,
+    "coefficients": [
+      {
+        "term": "company=Goodyear",
+        "odds_ratio": 0.9999999999999993,
+        "ci_95": [
+          0.2641074285744595,
+          3.7863380269066145
+        ],
+        "p": 0.9999999999999993
+      },
+      {
+        "term": "company=Continental",
+        "odds_ratio": 1.7230556857649975,
+        "ci_95": [
+          0.4888653264015478,
+          6.073085440730258
+        ],
+        "p": 0.3972555558230231
+      },
+      {
+        "term": "company=Bridgestone",
+        "odds_ratio": 0.305322348814684,
+        "ci_95": [
+          0.11976964952528166,
+          0.7783419009340743
+        ],
+        "p": 0.012960535807636564
+      },
+      {
+        "term": "type=text",
+        "odds_ratio": 0.17569581414255628,
+        "ci_95": [
+          0.07656183581810032,
+          0.4031906860299945
+        ],
+        "p": 4.072695443912977e-05
+      },
+      {
+        "term": "type=calc",
+        "odds_ratio": 0.5284988806325753,
+        "ci_95": [
+          0.15155942663137842,
+          1.8429145123993058
+        ],
+        "p": 0.31697830558877094
+      },
+      {
+        "term": "type=false_premise",
+        "odds_ratio": 0.23168823254317716,
+        "ci_95": [
+          0.09906728749888494,
+          0.5418482574238802
+        ],
+        "p": 0.0007417856948312984
+      },
+      {
+        "term": "type=not_found",
+        "odds_ratio": 1966.19633304802,
+        "ci_95": [
+          1039.6153360212422,
+          3718.6138816371686
+        ],
+        "p": 0.0
+      },
+      {
+        "term": "wording=casual",
+        "odds_ratio": 0.5803642959780625,
+        "ci_95": [
+          0.16973066643385323,
+          1.9844540949668472
+        ],
+        "p": 0.3857159302779969
+      },
+      {
+        "term": "wording=terse",
+        "odds_ratio": 0.17719819001620254,
+        "ci_95": [
+          0.07415939349291618,
+          0.423401501362299
+        ],
+        "p": 9.866225984067611e-05
+      },
+      {
+        "term": "wording=typo",
+        "odds_ratio": 0.5803642959780624,
+        "ci_95": [
+          0.1640335992590027,
+          2.05337636659598
+        ],
+        "p": 0.39868308173257905
+      }
+    ],
+    "factor_tests": {
+      "company": {
+        "wald_chi2": 26.86730085877165,
+        "df": 3,
+        "p": 6.276787500222906e-06,
+        "reference": "Michelin"
+      },
+      "type": {
+        "wald_chi2": 1350.297123645672,
+        "df": 4,
+        "p": 4.1375881943848085e-291,
+        "reference": "number"
+      },
+      "wording": {
+        "wald_chi2": 26.791253999614476,
+        "df": 3,
+        "p": 6.5114352753424615e-06,
+        "reference": "formal"
+      }
+    }
+  },
+  "wording_permutation_all": {
+    "questions": 400,
+    "between_wording_ss": 0.047500000000000084,
+    "p": 0.39406059394060594,
+    "permutations": 10000,
+    "question_mean_by_wording": {
+      "formal": 0.27,
+      "casual": 0.25,
+      "terse": 0.24,
+      "typo": 0.25
+    }
+  },
+  "wording_permutation_answerable": {
+    "questions": 304,
+    "between_wording_ss": 0.06249999999999999,
+    "p": 0.41045895410458955,
+    "permutations": 10000,
+    "question_mean_by_wording": {
+      "formal": 0.039473684210526314,
+      "casual": 0.013157894736842105,
+      "terse": 0.0,
+      "typo": 0.013157894736842105
+    }
+  },
+  "retrieval": {
+    "attempts": 294,
+    "retrieval_hit_rate": 0.8571428571428571,
+    "accuracy_when_retrieved": 0.01984126984126984,
+    "accuracy_when_missed": 0.0,
+    "misses": 42,
+    "wrong_despite_retrieval": 247
+  },
+  "stability": null,
+  "judge_vs_auto": {
+    "attempts": 294,
+    "agreement": 0.9965986394557823,
+    "kappa": 0.9073724007561436,
+    "judge_yes_auto_no": 0,
+    "judge_no_auto_yes": 1,
+    "disagreements": [
+      {
+        "id": "X-GB8",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "Goodyear's dividend for 2025 could not be found in the provided data. For Bridgestone, the planned dividend for 2025 is 230 JPY per share.\n\nMarkdown Table:\n| Year | Dividend Plan |\n|------|---------------|\n| 2024 | 210 JPY        |\n| 2025 | 230 JPY        |\n| 2026 | 250 JPY        | \n\nBridgestone plans to pay a minimum of 230 JPY per share in 2025.",
+        "judge_reason": "The answer is incomplete and does not fully match the expected comparison. It correctly gives Bridgestone's 2024 dividend of 210 JPY and 2025 forecast of 230 JPY, but it fails to state the key expected fact that Goodyear paid no cash dividends in 2025. Saying the dividend \"could not be found\" is not the same as confirming no cash dividends were paid."
+      }
+    ]
+  },
+  "precision": [
+    {
+      "comparison": "wording level, all questions",
+      "questions_per_group": 100,
+      "baseline": 0.01644736842105263,
+      "mde_80_power": NaN,
+      "ci_half_width_at_baseline": 0.02492889819815471
+    },
+    {
+      "comparison": "wording level, answerable questions",
+      "questions_per_group": 76,
+      "baseline": 0.01644736842105263,
+      "mde_80_power": NaN,
+      "ci_half_width_at_baseline": 0.02859540737357094
+    },
+    {
+      "comparison": "company, single-company questions",
+      "questions_per_group": 76,
+      "baseline": 0.01644736842105263,
+      "mde_80_power": NaN,
+      "ci_half_width_at_baseline": 0.02859540737357094
+    },
+    {
+      "comparison": "question type (number)",
+      "questions_per_group": 80,
+      "baseline": 0.01644736842105263,
+      "mde_80_power": NaN,
+      "ci_half_width_at_baseline": 0.02787135548762298
+    },
+    {
+      "comparison": "question type (calc, text)",
+      "questions_per_group": 64,
+      "baseline": 0.01644736842105263,
+      "mde_80_power": NaN,
+      "ci_half_width_at_baseline": 0.03116112274769339
+    },
+    {
+      "comparison": "company x type cell (number)",
+      "questions_per_group": 20,
+      "baseline": 0.01644736842105263,
+      "mde_80_power": NaN,
+      "ci_half_width_at_baseline": 0.05574271097524596
+    }
+  ],
+  "latency_median_s": 21.107579099945724,
+  "tokens_per_run": 1999855.0,
+  "status_by_type": {
+    "number": {
+      "not_found": 63,
+      "out_of_scope": 12,
+      "failed": 2,
+      "answered": 3
+    },
+    "text": {
+      "not_found": 48,
+      "out_of_scope": 12,
+      "failed": 3,
+      "answered": 1
+    },
+    "calc": {
+      "not_found": 58,
+      "out_of_scope": 4,
+      "failed": 1,
+      "answered": 1
+    },
+    "comparison": {
+      "not_found": 41,
+      "failed": 2,
+      "out_of_scope": 2,
+      "answered": 3
+    },
+    "false_premise": {
+      "not_found": 39,
+      "failed": 2,
+      "blocked": 1,
+      "out_of_scope": 6
+    },
+    "not_found": {
+      "not_found": 29,
+      "out_of_scope": 19
+    },
+    "out_of_scope": {
+      "out_of_scope": 23,
+      "blocked": 1
+    },
+    "injection": {
+      "blocked": 16,
+      "out_of_scope": 3,
+      "not_found": 5
+    }
+  }
+}

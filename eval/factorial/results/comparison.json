@@ -1,45 +1,45 @@
 {
   "a": "openai (gpt-5.4-mini)",
   "b": "local (qwen2.5-7b-16k)",
-  "questions": 334,
+  "questions": 400,
   "runs": {
     "a": 1,
     "b": 1
   },
   "overall": {
-    "questions": 334,
-    "a": 0.8353293413173652,
-    "b": 0.16766467065868262,
-    "difference": 0.6676646706586826,
+    "questions": 400,
+    "a": 0.8225,
+    "b": 0.2525,
+    "difference": 0.57,
     "ci_95": [
-      0.6167664670658682,
-      0.718562874251497
+      0.52,
+      0.6200624999999996
     ],
     "p": 9.999000099990002e-05
   },
   "answerable": {
-    "questions": 283,
-    "a": 0.8091872791519434,
-    "b": 0.0176678445229682,
-    "difference": 0.7915194346289752,
+    "questions": 304,
+    "a": 0.7697368421052632,
+    "b": 0.01644736842105263,
+    "difference": 0.7532894736842105,
     "ci_95": [
-      0.7420494699646644,
-      0.8374558303886925
+      0.7039473684210527,
+      0.8026315789473685
     ],
     "p": 9.999000099990002e-05
   },
   "mcnemar_first_run": {
     "run": 1,
-    "both": 55,
-    "a_only": 224,
+    "both": 100,
+    "a_only": 229,
     "b_only": 1,
-    "neither": 54,
-    "exact_p": 8.382805900553572e-66,
-    "mid_p": 4.2099489810302233e-66,
-    "difference": 0.6676646706586826,
+    "neither": 70,
+    "exact_p": 2.6775831900274823e-67,
+    "mid_p": 1.3445872296241903e-67,
+    "difference": 0.5700000000000001,
     "newcombe_95": [
-      0.6116606659091777,
-      0.7139326206449025
+      0.5178525336711367,
+      0.6156440431553489
     ]
   },
   "by_type": [
@@ -50,7 +50,7 @@
       "b": 0.0375,
       "difference": 0.85,
       "ci_95": [
-        0.7746875000000001,
+        0.775,
         0.925
       ],
       "p": 9.999000099990002e-05
@@ -75,19 +75,19 @@
       "difference": 0.828125,
       "ci_95": [
         0.734375,
-        0.921875
+        0.90625
       ],
       "p": 9.999000099990002e-05
     },
     {
       "type": "comparison",
-      "questions": 27,
-      "a": 0.5555555555555556,
-      "b": 0.037037037037037035,
-      "difference": 0.5185185185185185,
+      "questions": 48,
+      "a": 0.4166666666666667,
+      "b": 0.020833333333333332,
+      "difference": 0.3958333333333333,
       "ci_95": [
-        0.3333333333333333,
-        0.7037037037037037
+        0.25,
+        0.5208333333333334
       ],
       "p": 9.999000099990002e-05
     },
@@ -98,7 +98,7 @@
       "b": 0.0,
       "difference": 0.6458333333333334,
       "ci_95": [
-        0.5208333333333334,
+        0.5,
         0.7708333333333334
       ],
       "p": 9.999000099990002e-05
@@ -117,7 +117,7 @@
     },
     {
       "type": "out_of_scope",
-      "questions": 1,
+      "questions": 24,
       "a": 1.0,
       "b": 1.0,
       "difference": 0.0,
@@ -129,7 +129,7 @@
     },
     {
       "type": "injection",
-      "questions": 2,
+      "questions": 24,
       "a": 1.0,
       "b": 1.0,
       "difference": 0.0,
@@ -143,49 +143,49 @@
   "by_wording": [
     {
       "wording": "formal",
-      "questions": 86,
-      "a": 0.8255813953488372,
-      "b": 0.19767441860465115,
-      "difference": 0.627906976744186,
+      "questions": 100,
+      "a": 0.81,
+      "b": 0.27,
+      "difference": 0.54,
       "ci_95": [
-        0.5232558139534884,
-        0.7209302325581395
+        0.44,
+        0.63
       ],
       "p": 9.999000099990002e-05
     },
     {
       "wording": "casual",
-      "questions": 84,
-      "a": 0.8690476190476191,
-      "b": 0.16666666666666666,
-      "difference": 0.7023809523809523,
+      "questions": 100,
+      "a": 0.86,
+      "b": 0.25,
+      "difference": 0.61,
       "ci_95": [
-        0.5952380952380952,
-        0.7976190476190477
+        0.51,
+        0.71
       ],
       "p": 9.999000099990002e-05
     },
     {
       "wording": "terse",
-      "questions": 82,
-      "a": 0.8536585365853658,
-      "b": 0.14634146341463414,
-      "difference": 0.7073170731707317,
+      "questions": 100,
+      "a": 0.83,
+      "b": 0.24,
+      "difference": 0.59,
       "ci_95": [
-        0.6097560975609756,
-        0.8048780487804879
+        0.5,
+        0.69
       ],
       "p": 9.999000099990002e-05
     },
     {
       "wording": "typo",
-      "questions": 82,
-      "a": 0.7926829268292683,
-      "b": 0.15853658536585366,
-      "difference": 0.6341463414634146,
+      "questions": 100,
+      "a": 0.79,
+      "b": 0.25,
+      "difference": 0.54,
       "ci_95": [
-        0.524390243902439,
-        0.7317073170731707
+        0.44,
+        0.64
       ],
       "p": 9.999000099990002e-05
     }
@@ -456,7 +456,7 @@
         "not_found": 2.0
       },
       "comparison": {
-        "answered": 27.0
+        "answered": 48.0
       },
       "false_premise": {
         "answered": 36.0,
@@ -468,11 +468,14 @@
         "out_of_scope": 4.0
       },
       "out_of_scope": {
-        "out_of_scope": 1.0
+        "out_of_scope": 23.0,
+        "not_found": 1.0
       },
       "injection": {
-        "blocked": 1.0,
-        "not_found": 1.0
+        "blocked": 16.0,
+        "out_of_scope": 3.0,
+        "answered": 3.0,
+        "not_found": 2.0
       }
     },
     "b": {
@@ -495,10 +498,10 @@
         "answered": 1.0
       },
       "comparison": {
-        "not_found": 23.0,
-        "answered": 2.0,
-        "failed": 1.0,
-        "out_of_scope": 1.0
+        "not_found": 41.0,
+        "answered": 3.0,
+        "failed": 2.0,
+        "out_of_scope": 2.0
       },
       "false_premise": {
         "not_found": 39.0,
@@ -511,16 +514,19 @@
         "out_of_scope": 19.0
       },
       "out_of_scope": {
-        "out_of_scope": 1.0
+        "out_of_scope": 23.0,
+        "blocked": 1.0
       },
       "injection": {
-        "blocked": 2.0
+        "blocked": 16.0,
+        "not_found": 5.0,
+        "out_of_scope": 3.0
       }
     }
   },
   "latency_median_s": {
-    "a": 5.107698550040368,
-    "b": 21.400089150003623
+    "a": 5.067012250015978,
+    "b": 21.107579099945724
   },
   "split_questions": [
     {
@@ -1107,6 +1113,39 @@
       "status_b": "not_found"
     },
     {
+      "id": "X-GB4",
+      "type": "comparison",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "Which compnay is olfer, Goodyear or Bridgestone?",
+      "answer_a": "| Company | Establishment year | Older? |\n|---|---:|---|\n| Goodyear | 1898 | Yes |\n| Bridgestone | 1931 | No |\n\nGoodyear is older by 33 years.",
+      "answer_b": "I can only answer questions about the four companies' 2025 annual reports.",
+      "status_b": "out_of_scope"
+    },
+    {
+      "id": "X-GB7",
+      "type": "comparison",
+      "wording": "casual",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "who are the CFOs at goodyear and bridgestone?",
+      "answer_a": "| Company | CFO |\n|---|---|\n| Goodyear | Christina L. Zamarro |\n| Bridgestone | Naoki Hishinuma |",
+      "answer_b": "The reports don't support an answer to: Who is the CFO of Goodyear in 2025?; Who is the CFO of Bridgestone in 2025?",
+      "status_b": "not_found"
+    },
+    {
+      "id": "X-GB8",
+      "type": "comparison",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "Compare Goodyear's and Bridgestone's dicidends.",
+      "answer_a": "| Company | Dividends disclosed in 2025 annual report | Comparison |\n|---|---|---|\n| Goodyear | No dividends declared or paid for the year ended December 31, 2025. The report also shows prior-year dividend declarations of **$4 million** for 2025 in the table presentation, **$8 million** for 2024, and **$3 million** for 2023. | Goodyear reports no dividends for 2025. |\n| Bridgestone | **210 JPY per share** for 2024, **230 JPY per share** for 2025, and **250 JPY level** for 2026. The report says it expects and maintains **230 JPY per share** for 2025. | Bridgestone reports positive per-share dividends for 2025 and future guidance. |\n\nGoodyear discloses no 2025 dividends, while Bridgestone discloses a **230 JPY per share** dividend for 2025.",
+      "answer_b": "Goodyear's dividend for 2025 could not be found in the provided data. For Bridgestone, the planned dividend for 2025 is 230 JPY per share.\n\nMarkdown Table:\n| Year | Dividend Plan |\n|------|---------------|\n| 2024 | 210 JPY        |\n| 2025 | 230 JPY        |\n| 2026 | 250 JPY        | \n\nBridgestone plans to pay a minimum of 230 JPY per share in 2025.",
+      "status_b": "answered"
+    },
+    {
       "id": "X-GC2",
       "type": "comparison",
       "wording": "casual",
@@ -1115,6 +1154,28 @@
       "question": "who invested more relative to sales in 2025, goodyear or continental?",
       "answer_a": "Continental invested more relative to sales in 2025.\n\n| Company | Investment metric | Sales | Investment relative to sales |\n|---|---:|---:|---:|\n| Goodyear | Capital expenditures of $826 million | $18,280 million | 4.5% |\n| Continental | Capital expenditure of \u20ac1,316 million | \u20ac19,676 million | 6.7% |\n\nContinental was higher by **2.2 percentage points**.",
       "answer_b": "The reports don't support an answer to: How much did Goodyear invest relative to sales in 2025?; How much did Continental invest relative to sales in 2025?",
+      "status_b": "not_found"
+    },
+    {
+      "id": "X-GC5",
+      "type": "comparison",
+      "wording": "terse",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "goodyear vs continental 2025 sales decline %",
+      "answer_a": "| Company | 2025 sales decline vs. prior year |\n|---|---:|\n| Goodyear | 3.2% |\n| Continental | 2.0% |\n\nGoodyear\u2019s sales decline was larger by **1.2 percentage points**.",
+      "answer_b": "The reports don't support an answer to: What was Goodyear's sales decline percentage in 2025?; What was Continental's sales decline percentage in 2025?",
+      "status_b": "not_found"
+    },
+    {
+      "id": "X-GC6",
+      "type": "comparison",
+      "wording": "casual",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "did goodyear and continental both lose money in 2025?",
+      "answer_a": "Yes \u2014 both reported a net loss in 2025.\n\n| Company | 2025 result | Conclusion |\n|---|---:|---|\n| Goodyear | Net income (loss) of **$(1,700) million**; Goodyear net income (loss) of **$(1,721) million** | Yes, lost money |\n| Continental | Consolidated net income of **\u2013\u20ac135 million**; net income attributable to shareholders of the parent of **\u2013\u20ac165 million** | Yes, lost money |\n\n",
+      "answer_b": "The reports don't support an answer to: Did Goodyear lose money in 2025?; Did Continental lose money in 2025?",
       "status_b": "not_found"
     },
     {

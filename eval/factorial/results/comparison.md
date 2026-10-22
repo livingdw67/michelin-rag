@@ -1,6 +1,6 @@
 # System Comparison
 
-**A:** openai (gpt-5.4-mini) (1 run(s)) · **B:** local (qwen2.5-7b-16k) (1 run(s)) · 334 matched questions, both graded by the same OpenAI judge.
+**A:** openai (gpt-5.4-mini) (1 run(s)) · **B:** local (qwen2.5-7b-16k) (1 run(s)) · 400 matched questions, both graded by the same OpenAI judge.
 
 Each question contributes its pass rate across runs; differences are paired by question.
 
@@ -8,10 +8,10 @@ Each question contributes its pass rate across runs; differences are paired by q
 
 | | Questions | A | B | A − B | Paired bootstrap 95% | Sign-flip p |
 |---|---:|---:|---:|---:|---|---:|
-| All questions | 334 | 83.5% | 16.8% | +66.8 pts | +61.7 pts to +71.9 pts | 0.000 |
-| Answerable | 283 | 80.9% | 1.8% | +79.2 pts | +74.2 pts to +83.7 pts | 0.000 |
+| All questions | 400 | 82.2% | 25.2% | +57.0 pts | +52.0 pts to +62.0 pts | 0.000 |
+| Answerable | 304 | 77.0% | 1.6% | +75.3 pts | +70.4 pts to +80.3 pts | 0.000 |
 
-First run only (run 1): both right 55, A only 224, B only 1, neither 54. McNemar exact p = 0.0000 (mid-p 0.0000); A − B = +66.8 pts, Newcombe 95% +61.2 pts to +71.4 pts.
+First run only (run 1): both right 100, A only 229, B only 1, neither 70. McNemar exact p = 0.0000 (mid-p 0.0000); A − B = +57.0 pts, Newcombe 95% +51.8 pts to +61.6 pts.
 
 ## By question type
 
@@ -19,21 +19,21 @@ First run only (run 1): both right 55, A only 224, B only 1, neither 54. McNemar
 |---|---:|---:|---:|---:|---|---:|
 | number | 80 | 88.8% | 3.8% | +85.0 pts | +77.5 pts to +92.5 pts | 0.000 |
 | text | 64 | 90.6% | 0.0% | +90.6 pts | +82.8 pts to +96.9 pts | 0.000 |
-| calc | 64 | 84.4% | 1.6% | +82.8 pts | +73.4 pts to +92.2 pts | 0.000 |
-| comparison | 27 | 55.6% | 3.7% | +51.9 pts | +33.3 pts to +70.4 pts | 0.000 |
-| false_premise | 48 | 64.6% | 0.0% | +64.6 pts | +52.1 pts to +77.1 pts | 0.000 |
+| calc | 64 | 84.4% | 1.6% | +82.8 pts | +73.4 pts to +90.6 pts | 0.000 |
+| comparison | 48 | 41.7% | 2.1% | +39.6 pts | +25.0 pts to +52.1 pts | 0.000 |
+| false_premise | 48 | 64.6% | 0.0% | +64.6 pts | +50.0 pts to +77.1 pts | 0.000 |
 | not_found | 48 | 97.9% | 100.0% | -2.1 pts | -6.2 pts to +0.0 pts | 1.000 |
-| out_of_scope | 1 | 100.0% | 100.0% | +0.0 pts | +0.0 pts to +0.0 pts | 1.000 |
-| injection | 2 | 100.0% | 100.0% | +0.0 pts | +0.0 pts to +0.0 pts | 1.000 |
+| out_of_scope | 24 | 100.0% | 100.0% | +0.0 pts | +0.0 pts to +0.0 pts | 1.000 |
+| injection | 24 | 100.0% | 100.0% | +0.0 pts | +0.0 pts to +0.0 pts | 1.000 |
 
 ## By wording
 
 | Wording | Questions | A | B | A − B | Paired bootstrap 95% | Sign-flip p |
 |---|---:|---:|---:|---:|---|---:|
-| formal | 86 | 82.6% | 19.8% | +62.8 pts | +52.3 pts to +72.1 pts | 0.000 |
-| casual | 84 | 86.9% | 16.7% | +70.2 pts | +59.5 pts to +79.8 pts | 0.000 |
-| terse | 82 | 85.4% | 14.6% | +70.7 pts | +61.0 pts to +80.5 pts | 0.000 |
-| typo | 82 | 79.3% | 15.9% | +63.4 pts | +52.4 pts to +73.2 pts | 0.000 |
+| formal | 100 | 81.0% | 27.0% | +54.0 pts | +44.0 pts to +63.0 pts | 0.000 |
+| casual | 100 | 86.0% | 25.0% | +61.0 pts | +51.0 pts to +71.0 pts | 0.000 |
+| terse | 100 | 83.0% | 24.0% | +59.0 pts | +50.0 pts to +69.0 pts | 0.000 |
+| typo | 100 | 79.0% | 25.0% | +54.0 pts | +44.0 pts to +64.0 pts | 0.000 |
 
 ## By company (single-company questions)
 
@@ -75,13 +75,13 @@ Firth logistic regression on 608 attempts (304 single-company questions, both sy
 | number | answered 76, not_found 4 | not_found 63, out_of_scope 12, answered 3, failed 2 |
 | text | answered 59, not_found 4, out_of_scope 1 | not_found 48, out_of_scope 12, failed 3, answered 1 |
 | calc | answered 62, not_found 2 | not_found 58, out_of_scope 4, failed 1, answered 1 |
-| comparison | answered 27 | not_found 23, answered 2, failed 1, out_of_scope 1 |
+| comparison | answered 48 | not_found 41, answered 3, failed 2, out_of_scope 2 |
 | false_premise | answered 36, not_found 12 | not_found 39, out_of_scope 6, failed 2, blocked 1 |
 | not_found | not_found 39, answered 5, out_of_scope 4 | not_found 29, out_of_scope 19 |
-| out_of_scope | out_of_scope 1 | out_of_scope 1 |
-| injection | blocked 1, not_found 1 | blocked 2 |
+| out_of_scope | out_of_scope 23, not_found 1 | out_of_scope 23, blocked 1 |
+| injection | blocked 16, out_of_scope 3, answered 3, not_found 2 | blocked 16, not_found 5, out_of_scope 3 |
 
-Median latency: A 5.1 s, B 21.4 s.
+Median latency: A 5.1 s, B 21.1 s.
 
 ## Questions the systems split on
 
@@ -142,7 +142,12 @@ Pass rates differ by at least half (most recent answers shown).
 | MI-C11 | calc | casual | 100.0% | 0.0% | what % of michelin's workforce is in europe? | Michelin’s workforce in Europe was **about 49.5%** in 2025, based on **60,621** employees in Europe out of **122,586** t | The excerpts provided do not contain the exact workforce numbers or total employee count for Michelin in 2025 to calcula |
 | MI-C12 | calc | typo | 100.0% | 0.0% | What were Michelin's 2025 saels per emploeye? | Michelin’s 2025 sales per employee were approximately **€212,000 per employee**. Calculation: **€26bn sales / 122,600 gl | The provided excerpts do not contain specific financial metrics for sales per employee for Michelin in 2025. The excerpt |
 | MI-C15 | calc | terse | 100.0% | 0.0% | michelin ROCE change 2025 percentage points | Michelin’s ROCE **decreased by 1.3 percentage points** in 2025, from **10.5%** in 2024 to **9.2%** in 2025. The report s | The provided excerpts do not contain the exact change in Michelin's ROCE for 2025 in percentage points. The report menti |
+| X-GB4 | comparison | typo | 100.0% | 0.0% | Which compnay is olfer, Goodyear or Bridgestone? | / Company / Establishment year / Older? / /---/---:/---/ / Goodyear / 1898 / Yes / / Bridgestone / 1931 / No / Goodyear  | I can only answer questions about the four companies' 2025 annual reports. |
+| X-GB7 | comparison | casual | 100.0% | 0.0% | who are the CFOs at goodyear and bridgestone? | / Company / CFO / /---/---/ / Goodyear / Christina L. Zamarro / / Bridgestone / Naoki Hishinuma / | The reports don't support an answer to: Who is the CFO of Goodyear in 2025?; Who is the CFO of Bridgestone in 2025? |
+| X-GB8 | comparison | typo | 100.0% | 0.0% | Compare Goodyear's and Bridgestone's dicidends. | / Company / Dividends disclosed in 2025 annual report / Comparison / /---/---/---/ / Goodyear / No dividends declared or | Goodyear's dividend for 2025 could not be found in the provided data. For Bridgestone, the planned dividend for 2025 is  |
 | X-GC2 | comparison | casual | 100.0% | 0.0% | who invested more relative to sales in 2025, goodyear or continental? | Continental invested more relative to sales in 2025. / Company / Investment metric / Sales / Investment relative to sale | The reports don't support an answer to: How much did Goodyear invest relative to sales in 2025?; How much did Continenta |
+| X-GC5 | comparison | terse | 100.0% | 0.0% | goodyear vs continental 2025 sales decline % | / Company / 2025 sales decline vs. prior year / /---/---:/ / Goodyear / 3.2% / / Continental / 2.0% / Goodyear’s sales d | The reports don't support an answer to: What was Goodyear's sales decline percentage in 2025?; What was Continental's sa |
+| X-GC6 | comparison | casual | 100.0% | 0.0% | did goodyear and continental both lose money in 2025? | Yes — both reported a net loss in 2025. / Company / 2025 result / Conclusion / /---/---:/---/ / Goodyear / Net income (l | The reports don't support an answer to: Did Goodyear lose money in 2025?; Did Continental lose money in 2025? |
 | X-MB1 | comparison | typo | 100.0% | 0.0% | Which has moore emmployees, Michelin or Bridgestone? | / Company / Employees / /---/---:/ / Michelin / 122,586 / / Bridgestone / 121,464 / Michelin has more employees. | The provided excerpts do not contain the number of employees for either Michelin or Bridgestone. Therefore, it is not po |
 | X-MB6 | comparison | casual | 100.0% | 0.0% | who runs michelin and who runs bridgestone? | / Company / Top executive / /---/---/ / Michelin / Florent Menegaux, **Managing Chairman** / / Bridgestone / Shuichi Ish | I can only answer questions about the four companies' 2025 annual reports. |
 | X-MC3 | comparison | casual | 100.0% | 0.0% | michelin's net income vs continental's (attributable to shareholders) in 2025 - how do they compare? | / Company / 2025 figure / Comparison / /---/---:/---:/ / Michelin / €1,664 million net income / Higher by €1,829 million | Not found. The provided information did not contain a specific net income figure for Michelin attributable to shareholde |

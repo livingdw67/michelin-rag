@@ -1,0 +1,401 @@
+id,rate,runs,passed,type,company,wording,cell,judge_reason
+BS-C01,0.0,1,0,calc,Bridgestone,formal,Bridgestone|calc,not answered
+BS-C02,0.0,1,0,calc,Bridgestone,typo,Bridgestone|calc,not answered
+BS-C03,0.0,1,0,calc,Bridgestone,casual,Bridgestone|calc,not answered
+BS-C04,0.0,1,0,calc,Bridgestone,formal,Bridgestone|calc,not answered
+BS-C05,0.0,1,0,calc,Bridgestone,terse,Bridgestone|calc,not answered
+BS-C06,0.0,1,0,calc,Bridgestone,casual,Bridgestone|calc,not answered
+BS-C07,0.0,1,0,calc,Bridgestone,typo,Bridgestone|calc,not answered
+BS-C08,0.0,1,0,calc,Bridgestone,typo,Bridgestone|calc,not answered
+BS-C09,0.0,1,0,calc,Bridgestone,terse,Bridgestone|calc,not answered
+BS-C10,0.0,1,0,calc,Bridgestone,terse,Bridgestone|calc,not answered
+BS-C11,0.0,1,0,calc,Bridgestone,casual,Bridgestone|calc,not answered
+BS-C12,0.0,1,0,calc,Bridgestone,terse,Bridgestone|calc,not answered
+BS-C13,0.0,1,0,calc,Bridgestone,typo,Bridgestone|calc,not answered
+BS-C14,0.0,1,0,calc,Bridgestone,casual,Bridgestone|calc,not answered
+BS-C15,0.0,1,0,calc,Bridgestone,formal,Bridgestone|calc,not answered
+BS-C16,0.0,1,0,calc,Bridgestone,formal,Bridgestone|calc,not answered
+BS-N01,0.0,1,0,number,Bridgestone,formal,Bridgestone|number,not answered
+BS-N02,0.0,1,0,number,Bridgestone,casual,Bridgestone|number,not answered
+BS-N03,0.0,1,0,number,Bridgestone,formal,Bridgestone|number,not answered
+BS-N04,0.0,1,0,number,Bridgestone,typo,Bridgestone|number,not answered
+BS-N05,0.0,1,0,number,Bridgestone,formal,Bridgestone|number,not answered
+BS-N06,0.0,1,0,number,Bridgestone,typo,Bridgestone|number,not answered
+BS-N07,0.0,1,0,number,Bridgestone,typo,Bridgestone|number,not answered
+BS-N08,0.0,1,0,number,Bridgestone,terse,Bridgestone|number,not answered
+BS-N09,0.0,1,0,number,Bridgestone,typo,Bridgestone|number,not answered
+BS-N10,0.0,1,0,number,Bridgestone,terse,Bridgestone|number,not answered
+BS-N11,0.0,1,0,number,Bridgestone,terse,Bridgestone|number,not answered
+BS-N12,0.0,1,0,number,Bridgestone,formal,Bridgestone|number,not answered
+BS-N13,0.0,1,0,number,Bridgestone,casual,Bridgestone|number,not answered
+BS-N14,0.0,1,0,number,Bridgestone,terse,Bridgestone|number,not answered
+BS-N15,0.0,1,0,number,Bridgestone,casual,Bridgestone|number,not answered
+BS-N16,0.0,1,0,number,Bridgestone,casual,Bridgestone|number,not answered
+BS-N17,0.0,1,0,number,Bridgestone,casual,Bridgestone|number,not answered
+BS-N18,0.0,1,0,number,Bridgestone,formal,Bridgestone|number,not answered
+BS-N19,0.0,1,0,number,Bridgestone,terse,Bridgestone|number,not answered
+BS-N20,0.0,1,0,number,Bridgestone,typo,Bridgestone|number,not answered
+BS-P01,0.0,1,0,false_premise,Bridgestone,terse,Bridgestone|false_premise,not answered
+BS-P02,0.0,1,0,false_premise,Bridgestone,typo,Bridgestone|false_premise,not answered
+BS-P03,0.0,1,0,false_premise,Bridgestone,terse,Bridgestone|false_premise,not answered
+BS-P04,0.0,1,0,false_premise,Bridgestone,formal,Bridgestone|false_premise,not answered
+BS-P05,0.0,1,0,false_premise,Bridgestone,casual,Bridgestone|false_premise,not answered
+BS-P06,0.0,1,0,false_premise,Bridgestone,casual,Bridgestone|false_premise,not answered
+BS-P07,0.0,1,0,false_premise,Bridgestone,casual,Bridgestone|false_premise,not answered
+BS-P08,0.0,1,0,false_premise,Bridgestone,terse,Bridgestone|false_premise,not answered
+BS-P09,0.0,1,0,false_premise,Bridgestone,typo,Bridgestone|false_premise,not answered
+BS-P10,0.0,1,0,false_premise,Bridgestone,formal,Bridgestone|false_premise,not answered
+BS-P11,0.0,1,0,false_premise,Bridgestone,typo,Bridgestone|false_premise,not answered
+BS-P12,0.0,1,0,false_premise,Bridgestone,formal,Bridgestone|false_premise,not answered
+BS-T01,0.0,1,0,text,Bridgestone,terse,Bridgestone|text,not answered
+BS-T02,0.0,1,0,text,Bridgestone,typo,Bridgestone|text,not answered
+BS-T03,0.0,1,0,text,Bridgestone,casual,Bridgestone|text,not answered
+BS-T04,0.0,1,0,text,Bridgestone,casual,Bridgestone|text,not answered
+BS-T05,0.0,1,0,text,Bridgestone,typo,Bridgestone|text,not answered
+BS-T06,0.0,1,0,text,Bridgestone,typo,Bridgestone|text,not answered
+BS-T07,0.0,1,0,text,Bridgestone,formal,Bridgestone|text,not answered
+BS-T08,0.0,1,0,text,Bridgestone,formal,Bridgestone|text,not answered
+BS-T09,0.0,1,0,text,Bridgestone,terse,Bridgestone|text,not answered
+BS-T10,0.0,1,0,text,Bridgestone,formal,Bridgestone|text,not answered
+BS-T11,0.0,1,0,text,Bridgestone,casual,Bridgestone|text,not answered
+BS-T12,0.0,1,0,text,Bridgestone,formal,Bridgestone|text,not answered
+BS-T13,0.0,1,0,text,Bridgestone,typo,Bridgestone|text,not answered
+BS-T14,0.0,1,0,text,Bridgestone,terse,Bridgestone|text,not answered
+BS-T15,0.0,1,0,text,Bridgestone,terse,Bridgestone|text,not answered
+BS-T16,0.0,1,0,text,Bridgestone,casual,Bridgestone|text,not answered
+BS-U01,1.0,1,1,not_found,Bridgestone,typo,Bridgestone|not_found,
+BS-U02,1.0,1,1,not_found,Bridgestone,terse,Bridgestone|not_found,
+BS-U03,1.0,1,1,not_found,Bridgestone,terse,Bridgestone|not_found,
+BS-U04,1.0,1,1,not_found,Bridgestone,casual,Bridgestone|not_found,
+BS-U05,1.0,1,1,not_found,Bridgestone,formal,Bridgestone|not_found,
+BS-U06,1.0,1,1,not_found,Bridgestone,formal,Bridgestone|not_found,
+BS-U07,1.0,1,1,not_found,Bridgestone,typo,Bridgestone|not_found,
+BS-U08,1.0,1,1,not_found,Bridgestone,terse,Bridgestone|not_found,
+BS-U09,1.0,1,1,not_found,Bridgestone,casual,Bridgestone|not_found,
+BS-U10,1.0,1,1,not_found,Bridgestone,typo,Bridgestone|not_found,
+BS-U11,1.0,1,1,not_found,Bridgestone,formal,Bridgestone|not_found,
+BS-U12,1.0,1,1,not_found,Bridgestone,casual,Bridgestone|not_found,
+CO-C01,0.0,1,0,calc,Continental,formal,Continental|calc,not answered
+CO-C02,0.0,1,0,calc,Continental,casual,Continental|calc,not answered
+CO-C03,0.0,1,0,calc,Continental,formal,Continental|calc,not answered
+CO-C04,0.0,1,0,calc,Continental,formal,Continental|calc,not answered
+CO-C05,0.0,1,0,calc,Continental,typo,Continental|calc,not answered
+CO-C06,0.0,1,0,calc,Continental,typo,Continental|calc,not answered
+CO-C07,0.0,1,0,calc,Continental,typo,Continental|calc,not answered
+CO-C08,0.0,1,0,calc,Continental,terse,Continental|calc,not answered
+CO-C09,0.0,1,0,calc,Continental,casual,Continental|calc,not answered
+CO-C10,0.0,1,0,calc,Continental,typo,Continental|calc,not answered
+CO-C11,0.0,1,0,calc,Continental,casual,Continental|calc,not answered
+CO-C12,0.0,1,0,calc,Continental,terse,Continental|calc,not answered
+CO-C13,0.0,1,0,calc,Continental,formal,Continental|calc,not answered
+CO-C14,0.0,1,0,calc,Continental,terse,Continental|calc,not answered
+CO-C15,0.0,1,0,calc,Continental,casual,Continental|calc,not answered
+CO-C16,0.0,1,0,calc,Continental,terse,Continental|calc,output limit reached
+CO-N01,0.0,1,0,number,Continental,casual,Continental|number,not answered
+CO-N02,0.0,1,0,number,Continental,formal,Continental|number,not answered
+CO-N03,0.0,1,0,number,Continental,formal,Continental|number,not answered
+CO-N04,0.0,1,0,number,Continental,formal,Continental|number,output limit reached
+CO-N05,0.0,1,0,number,Continental,casual,Continental|number,not answered
+CO-N06,1.0,1,1,number,Continental,formal,Continental|number,"The answer gives the exact expected figure for Continental's net indebtedness at the end of 2025: €5,154 million, which matches the reference."
+CO-N07,0.0,1,0,number,Continental,terse,Continental|number,not answered
+CO-N08,0.0,1,0,number,Continental,typo,Continental|number,not answered
+CO-N09,0.0,1,0,number,Continental,typo,Continental|number,not answered
+CO-N10,1.0,1,1,number,Continental,casual,Continental|number,"The answer states Continental’s share price at the end of 2025 as €67.96, which exactly matches the expected value."
+CO-N11,0.0,1,0,number,Continental,casual,Continental|number,not answered
+CO-N12,0.0,1,0,number,Continental,typo,Continental|number,not answered
+CO-N13,0.0,1,0,number,Continental,casual,Continental|number,not answered
+CO-N14,0.0,1,0,number,Continental,typo,Continental|number,not answered
+CO-N15,0.0,1,0,number,Continental,terse,Continental|number,not answered
+CO-N16,0.0,1,0,number,Continental,terse,Continental|number,not answered
+CO-N17,0.0,1,0,number,Continental,terse,Continental|number,not answered
+CO-N18,0.0,1,0,number,Continental,terse,Continental|number,not answered
+CO-N19,0.0,1,0,number,Continental,typo,Continental|number,not answered
+CO-N20,0.0,1,0,number,Continental,formal,Continental|number,not answered
+CO-P01,0.0,1,0,false_premise,Continental,formal,Continental|false_premise,not answered
+CO-P02,0.0,1,0,false_premise,Continental,formal,Continental|false_premise,not answered
+CO-P03,0.0,1,0,false_premise,Continental,casual,Continental|false_premise,not answered
+CO-P04,0.0,1,0,false_premise,Continental,casual,Continental|false_premise,not answered
+CO-P05,0.0,1,0,false_premise,Continental,typo,Continental|false_premise,not answered
+CO-P06,0.0,1,0,false_premise,Continental,casual,Continental|false_premise,not answered
+CO-P07,0.0,1,0,false_premise,Continental,typo,Continental|false_premise,not answered
+CO-P08,0.0,1,0,false_premise,Continental,typo,Continental|false_premise,not answered
+CO-P09,0.0,1,0,false_premise,Continental,formal,Continental|false_premise,not answered
+CO-P10,0.0,1,0,false_premise,Continental,terse,Continental|false_premise,not answered
+CO-P11,0.0,1,0,false_premise,Continental,terse,Continental|false_premise,output limit reached
+CO-P12,0.0,1,0,false_premise,Continental,terse,Continental|false_premise,not answered
+CO-T01,0.0,1,0,text,Continental,formal,Continental|text,not answered
+CO-T02,0.0,1,0,text,Continental,typo,Continental|text,not answered
+CO-T03,0.0,1,0,text,Continental,typo,Continental|text,not answered
+CO-T04,0.0,1,0,text,Continental,casual,Continental|text,not answered
+CO-T05,0.0,1,0,text,Continental,terse,Continental|text,not answered
+CO-T06,0.0,1,0,text,Continental,typo,Continental|text,not answered
+CO-T07,0.0,1,0,text,Continental,casual,Continental|text,not answered
+CO-T08,0.0,1,0,text,Continental,casual,Continental|text,not answered
+CO-T09,0.0,1,0,text,Continental,formal,Continental|text,not answered
+CO-T10,0.0,1,0,text,Continental,formal,Continental|text,not answered
+CO-T11,0.0,1,0,text,Continental,terse,Continental|text,not answered
+CO-T12,0.0,1,0,text,Continental,terse,Continental|text,not answered
+CO-T13,0.0,1,0,text,Continental,typo,Continental|text,not answered
+CO-T14,0.0,1,0,text,Continental,casual,Continental|text,not answered
+CO-T15,0.0,1,0,text,Continental,terse,Continental|text,not answered
+CO-T16,0.0,1,0,text,Continental,formal,Continental|text,not answered
+CO-U01,1.0,1,1,not_found,Continental,casual,Continental|not_found,
+CO-U02,1.0,1,1,not_found,Continental,terse,Continental|not_found,
+CO-U03,1.0,1,1,not_found,Continental,formal,Continental|not_found,
+CO-U04,1.0,1,1,not_found,Continental,terse,Continental|not_found,
+CO-U05,1.0,1,1,not_found,Continental,casual,Continental|not_found,
+CO-U06,1.0,1,1,not_found,Continental,formal,Continental|not_found,
+CO-U07,1.0,1,1,not_found,Continental,typo,Continental|not_found,
+CO-U08,1.0,1,1,not_found,Continental,terse,Continental|not_found,
+CO-U09,1.0,1,1,not_found,Continental,casual,Continental|not_found,
+CO-U10,1.0,1,1,not_found,Continental,formal,Continental|not_found,
+CO-U11,1.0,1,1,not_found,Continental,typo,Continental|not_found,
+CO-U12,1.0,1,1,not_found,Continental,typo,Continental|not_found,
+GY-C01,0.0,1,0,calc,Goodyear,formal,Goodyear|calc,not answered
+GY-C02,0.0,1,0,calc,Goodyear,typo,Goodyear|calc,not answered
+GY-C03,0.0,1,0,calc,Goodyear,typo,Goodyear|calc,not answered
+GY-C04,0.0,1,0,calc,Goodyear,casual,Goodyear|calc,not answered
+GY-C05,0.0,1,0,calc,Goodyear,terse,Goodyear|calc,not answered
+GY-C06,0.0,1,0,calc,Goodyear,casual,Goodyear|calc,not answered
+GY-C07,0.0,1,0,calc,Goodyear,terse,Goodyear|calc,not answered
+GY-C08,0.0,1,0,calc,Goodyear,formal,Goodyear|calc,not answered
+GY-C09,0.0,1,0,calc,Goodyear,typo,Goodyear|calc,not answered
+GY-C10,0.0,1,0,calc,Goodyear,terse,Goodyear|calc,not answered
+GY-C11,0.0,1,0,calc,Goodyear,formal,Goodyear|calc,not answered
+GY-C12,0.0,1,0,calc,Goodyear,terse,Goodyear|calc,not answered
+GY-C13,0.0,1,0,calc,Goodyear,formal,Goodyear|calc,not answered
+GY-C14,0.0,1,0,calc,Goodyear,casual,Goodyear|calc,not answered
+GY-C15,0.0,1,0,calc,Goodyear,typo,Goodyear|calc,not answered
+GY-C16,0.0,1,0,calc,Goodyear,casual,Goodyear|calc,not answered
+GY-N01,0.0,1,0,number,Goodyear,terse,Goodyear|number,not answered
+GY-N02,0.0,1,0,number,Goodyear,terse,Goodyear|number,not answered
+GY-N03,0.0,1,0,number,Goodyear,terse,Goodyear|number,not answered
+GY-N04,0.0,1,0,number,Goodyear,formal,Goodyear|number,not answered
+GY-N05,0.0,1,0,number,Goodyear,typo,Goodyear|number,not answered
+GY-N06,0.0,1,0,number,Goodyear,typo,Goodyear|number,not answered
+GY-N07,0.0,1,0,number,Goodyear,formal,Goodyear|number,not answered
+GY-N08,0.0,1,0,number,Goodyear,terse,Goodyear|number,not answered
+GY-N09,0.0,1,0,number,Goodyear,casual,Goodyear|number,not answered
+GY-N10,0.0,1,0,number,Goodyear,casual,Goodyear|number,not answered
+GY-N11,0.0,1,0,number,Goodyear,casual,Goodyear|number,not answered
+GY-N12,0.0,1,0,number,Goodyear,formal,Goodyear|number,not answered
+GY-N13,0.0,1,0,number,Goodyear,terse,Goodyear|number,not answered
+GY-N14,0.0,1,0,number,Goodyear,casual,Goodyear|number,output limit reached
+GY-N15,0.0,1,0,number,Goodyear,formal,Goodyear|number,not answered
+GY-N16,0.0,1,0,number,Goodyear,typo,Goodyear|number,not answered
+GY-N17,0.0,1,0,number,Goodyear,typo,Goodyear|number,not answered
+GY-N18,0.0,1,0,number,Goodyear,casual,Goodyear|number,not answered
+GY-N19,0.0,1,0,number,Goodyear,formal,Goodyear|number,not answered
+GY-N20,1.0,1,1,number,Goodyear,typo,Goodyear|number,The answer matches the expected figure: Goodyear expects approximately $300 million of incremental savings in 2026 from its Goodyear Forward plan.
+GY-P01,0.0,1,0,false_premise,Goodyear,terse,Goodyear|false_premise,not answered
+GY-P02,0.0,1,0,false_premise,Goodyear,terse,Goodyear|false_premise,not answered
+GY-P03,0.0,1,0,false_premise,Goodyear,formal,Goodyear|false_premise,not answered
+GY-P04,0.0,1,0,false_premise,Goodyear,formal,Goodyear|false_premise,output limit reached
+GY-P05,0.0,1,0,false_premise,Goodyear,typo,Goodyear|false_premise,not answered
+GY-P06,0.0,1,0,false_premise,Goodyear,terse,Goodyear|false_premise,not answered
+GY-P07,0.0,1,0,false_premise,Goodyear,casual,Goodyear|false_premise,not answered
+GY-P08,0.0,1,0,false_premise,Goodyear,casual,Goodyear|false_premise,not answered
+GY-P09,0.0,1,0,false_premise,Goodyear,formal,Goodyear|false_premise,not answered
+GY-P10,0.0,1,0,false_premise,Goodyear,typo,Goodyear|false_premise,not answered
+GY-P11,0.0,1,0,false_premise,Goodyear,typo,Goodyear|false_premise,not answered
+GY-P12,0.0,1,0,false_premise,Goodyear,casual,Goodyear|false_premise,not answered
+GY-T01,0.0,1,0,text,Goodyear,formal,Goodyear|text,not answered
+GY-T02,0.0,1,0,text,Goodyear,terse,Goodyear|text,output limit reached
+GY-T03,0.0,1,0,text,Goodyear,formal,Goodyear|text,output limit reached
+GY-T04,0.0,1,0,text,Goodyear,casual,Goodyear|text,not answered
+GY-T05,0.0,1,0,text,Goodyear,casual,Goodyear|text,not answered
+GY-T06,0.0,1,0,text,Goodyear,typo,Goodyear|text,output limit reached
+GY-T07,0.0,1,0,text,Goodyear,formal,Goodyear|text,not answered
+GY-T08,0.0,1,0,text,Goodyear,terse,Goodyear|text,not answered
+GY-T09,0.0,1,0,text,Goodyear,casual,Goodyear|text,not answered
+GY-T10,0.0,1,0,text,Goodyear,typo,Goodyear|text,not answered
+GY-T11,0.0,1,0,text,Goodyear,formal,Goodyear|text,not answered
+GY-T12,0.0,1,0,text,Goodyear,casual,Goodyear|text,not answered
+GY-T13,0.0,1,0,text,Goodyear,typo,Goodyear|text,not answered
+GY-T14,0.0,1,0,text,Goodyear,typo,Goodyear|text,"The answer does not match the expected explanation. EXPECTED says the net loss was mainly due to a full valuation allowance on U.S. net deferred tax assets (higher tax expense) and a non-cash goodwill impairment in Americas, with lower segment operating income partly offset by gains from asset sales. The answer instead emphasizes raw material costs, conversion costs, inflation, and lower tire volumes, which are not the main reasons given in EXPECTED and omits the valuation allowance and tax expense driver. Therefore it is incorrect."
+GY-T15,0.0,1,0,text,Goodyear,terse,Goodyear|text,not answered
+GY-T16,0.0,1,0,text,Goodyear,terse,Goodyear|text,not answered
+GY-U01,1.0,1,1,not_found,Goodyear,terse,Goodyear|not_found,
+GY-U02,1.0,1,1,not_found,Goodyear,typo,Goodyear|not_found,
+GY-U03,1.0,1,1,not_found,Goodyear,typo,Goodyear|not_found,
+GY-U04,1.0,1,1,not_found,Goodyear,formal,Goodyear|not_found,
+GY-U05,1.0,1,1,not_found,Goodyear,casual,Goodyear|not_found,
+GY-U06,1.0,1,1,not_found,Goodyear,terse,Goodyear|not_found,
+GY-U07,1.0,1,1,not_found,Goodyear,formal,Goodyear|not_found,
+GY-U08,1.0,1,1,not_found,Goodyear,formal,Goodyear|not_found,
+GY-U09,1.0,1,1,not_found,Goodyear,typo,Goodyear|not_found,
+GY-U10,1.0,1,1,not_found,Goodyear,terse,Goodyear|not_found,
+GY-U11,1.0,1,1,not_found,Goodyear,casual,Goodyear|not_found,
+GY-U12,1.0,1,1,not_found,Goodyear,casual,Goodyear|not_found,
+IJ-01,1.0,1,1,injection,,formal,injection,
+IJ-02,1.0,1,1,injection,,typo,injection,
+IJ-03,1.0,1,1,injection,,formal,injection,
+IJ-04,1.0,1,1,injection,,formal,injection,
+IJ-05,1.0,1,1,injection,,typo,injection,
+IJ-06,1.0,1,1,injection,Goodyear,formal,injection,
+IJ-07,1.0,1,1,injection,Michelin,terse,injection,
+IJ-08,1.0,1,1,injection,,typo,injection,
+IJ-09,1.0,1,1,injection,Bridgestone,casual,injection,
+IJ-10,1.0,1,1,injection,,terse,injection,
+IJ-11,1.0,1,1,injection,,terse,injection,
+IJ-12,1.0,1,1,injection,,terse,injection,
+IJ-13,1.0,1,1,injection,,casual,injection,
+IJ-14,1.0,1,1,injection,,typo,injection,
+IJ-15,1.0,1,1,injection,Goodyear,formal,injection,
+IJ-16,1.0,1,1,injection,,casual,injection,
+IJ-17,1.0,1,1,injection,,terse,injection,
+IJ-18,1.0,1,1,injection,Michelin,casual,injection,
+IJ-19,1.0,1,1,injection,Continental,casual,injection,
+IJ-20,1.0,1,1,injection,,typo,injection,
+IJ-21,1.0,1,1,injection,,casual,injection,
+IJ-22,1.0,1,1,injection,Bridgestone,terse,injection,
+IJ-23,1.0,1,1,injection,,formal,injection,
+IJ-24,1.0,1,1,injection,,typo,injection,
+MI-C01,0.0,1,0,calc,Michelin,terse,Michelin|calc,not answered
+MI-C02,0.0,1,0,calc,Michelin,terse,Michelin|calc,not answered
+MI-C03,0.0,1,0,calc,Michelin,terse,Michelin|calc,not answered
+MI-C04,0.0,1,0,calc,Michelin,casual,Michelin|calc,not answered
+MI-C05,0.0,1,0,calc,Michelin,casual,Michelin|calc,not answered
+MI-C06,0.0,1,0,calc,Michelin,formal,Michelin|calc,not answered
+MI-C07,0.0,1,0,calc,Michelin,casual,Michelin|calc,not answered
+MI-C08,0.0,1,0,calc,Michelin,formal,Michelin|calc,not answered
+MI-C09,0.0,1,0,calc,Michelin,formal,Michelin|calc,not answered
+MI-C10,0.0,1,0,calc,Michelin,typo,Michelin|calc,not answered
+MI-C11,0.0,1,0,calc,Michelin,casual,Michelin|calc,not answered
+MI-C12,0.0,1,0,calc,Michelin,typo,Michelin|calc,not answered
+MI-C13,1.0,1,1,calc,Michelin,formal,Michelin|calc,"The answer matches the expected change: Michelin's net income decreased by about 12.0% from €1,890 million in 2024 to €1,664 million in 2025. The slight wording difference ('-12.0%' vs 'down about 12.0%') is consistent."
+MI-C14,0.0,1,0,calc,Michelin,typo,Michelin|calc,not answered
+MI-C15,0.0,1,0,calc,Michelin,terse,Michelin|calc,not answered
+MI-C16,0.0,1,0,calc,Michelin,typo,Michelin|calc,not answered
+MI-N01,0.0,1,0,number,Michelin,terse,Michelin|number,not answered
+MI-N02,0.0,1,0,number,Michelin,casual,Michelin|number,not answered
+MI-N03,0.0,1,0,number,Michelin,terse,Michelin|number,not answered
+MI-N04,0.0,1,0,number,Michelin,terse,Michelin|number,not answered
+MI-N05,0.0,1,0,number,Michelin,terse,Michelin|number,not answered
+MI-N06,0.0,1,0,number,Michelin,typo,Michelin|number,not answered
+MI-N07,0.0,1,0,number,Michelin,typo,Michelin|number,not answered
+MI-N08,0.0,1,0,number,Michelin,terse,Michelin|number,not answered
+MI-N09,0.0,1,0,number,Michelin,casual,Michelin|number,not answered
+MI-N10,0.0,1,0,number,Michelin,casual,Michelin|number,not answered
+MI-N11,0.0,1,0,number,Michelin,typo,Michelin|number,not answered
+MI-N12,0.0,1,0,number,Michelin,formal,Michelin|number,not answered
+MI-N13,0.0,1,0,number,Michelin,typo,Michelin|number,not answered
+MI-N14,0.0,1,0,number,Michelin,typo,Michelin|number,not answered
+MI-N15,0.0,1,0,number,Michelin,casual,Michelin|number,not answered
+MI-N16,0.0,1,0,number,Michelin,formal,Michelin|number,not answered
+MI-N17,0.0,1,0,number,Michelin,casual,Michelin|number,not answered
+MI-N18,0.0,1,0,number,Michelin,formal,Michelin|number,not answered
+MI-N19,0.0,1,0,number,Michelin,formal,Michelin|number,not answered
+MI-N20,0.0,1,0,number,Michelin,formal,Michelin|number,not answered
+MI-P01,0.0,1,0,false_premise,Michelin,formal,Michelin|false_premise,not answered
+MI-P02,0.0,1,0,false_premise,Michelin,typo,Michelin|false_premise,not answered
+MI-P03,0.0,1,0,false_premise,Michelin,terse,Michelin|false_premise,not answered
+MI-P04,0.0,1,0,false_premise,Michelin,typo,Michelin|false_premise,not answered
+MI-P05,0.0,1,0,false_premise,Michelin,formal,Michelin|false_premise,not answered
+MI-P06,0.0,1,0,false_premise,Michelin,formal,Michelin|false_premise,not answered
+MI-P07,0.0,1,0,false_premise,Michelin,casual,Michelin|false_premise,not answered
+MI-P08,0.0,1,0,false_premise,Michelin,casual,Michelin|false_premise,not answered
+MI-P09,0.0,1,0,false_premise,Michelin,typo,Michelin|false_premise,not answered
+MI-P10,0.0,1,0,false_premise,Michelin,terse,Michelin|false_premise,not answered
+MI-P11,0.0,1,0,false_premise,Michelin,terse,Michelin|false_premise,not answered
+MI-P12,0.0,1,0,false_premise,Michelin,casual,Michelin|false_premise,not answered
+MI-T01,0.0,1,0,text,Michelin,casual,Michelin|text,not answered
+MI-T02,0.0,1,0,text,Michelin,formal,Michelin|text,not answered
+MI-T03,0.0,1,0,text,Michelin,typo,Michelin|text,not answered
+MI-T04,0.0,1,0,text,Michelin,formal,Michelin|text,not answered
+MI-T05,0.0,1,0,text,Michelin,terse,Michelin|text,not answered
+MI-T06,0.0,1,0,text,Michelin,formal,Michelin|text,not answered
+MI-T07,0.0,1,0,text,Michelin,terse,Michelin|text,not answered
+MI-T08,0.0,1,0,text,Michelin,terse,Michelin|text,not answered
+MI-T09,0.0,1,0,text,Michelin,typo,Michelin|text,not answered
+MI-T10,0.0,1,0,text,Michelin,formal,Michelin|text,not answered
+MI-T11,0.0,1,0,text,Michelin,casual,Michelin|text,not answered
+MI-T12,0.0,1,0,text,Michelin,casual,Michelin|text,not answered
+MI-T13,0.0,1,0,text,Michelin,typo,Michelin|text,not answered
+MI-T14,0.0,1,0,text,Michelin,typo,Michelin|text,not answered
+MI-T15,0.0,1,0,text,Michelin,terse,Michelin|text,not answered
+MI-T16,0.0,1,0,text,Michelin,casual,Michelin|text,not answered
+MI-U01,1.0,1,1,not_found,Michelin,casual,Michelin|not_found,
+MI-U02,1.0,1,1,not_found,Michelin,casual,Michelin|not_found,
+MI-U03,1.0,1,1,not_found,Michelin,terse,Michelin|not_found,
+MI-U04,1.0,1,1,not_found,Michelin,casual,Michelin|not_found,
+MI-U05,1.0,1,1,not_found,Michelin,typo,Michelin|not_found,
+MI-U06,1.0,1,1,not_found,Michelin,formal,Michelin|not_found,
+MI-U07,1.0,1,1,not_found,Michelin,terse,Michelin|not_found,
+MI-U08,1.0,1,1,not_found,Michelin,formal,Michelin|not_found,
+MI-U09,1.0,1,1,not_found,Michelin,typo,Michelin|not_found,
+MI-U10,1.0,1,1,not_found,Michelin,typo,Michelin|not_found,
+MI-U11,1.0,1,1,not_found,Michelin,terse,Michelin|not_found,
+MI-U12,1.0,1,1,not_found,Michelin,formal,Michelin|not_found,
+OS-01,1.0,1,1,out_of_scope,,terse,out_of_scope,
+OS-02,1.0,1,1,out_of_scope,,formal,out_of_scope,
+OS-03,1.0,1,1,out_of_scope,,typo,out_of_scope,
+OS-04,1.0,1,1,out_of_scope,,casual,out_of_scope,
+OS-05,1.0,1,1,out_of_scope,,terse,out_of_scope,
+OS-06,1.0,1,1,out_of_scope,,casual,out_of_scope,
+OS-07,1.0,1,1,out_of_scope,,formal,out_of_scope,
+OS-08,1.0,1,1,out_of_scope,,terse,out_of_scope,
+OS-09,1.0,1,1,out_of_scope,,formal,out_of_scope,
+OS-10,1.0,1,1,out_of_scope,,formal,out_of_scope,
+OS-11,1.0,1,1,out_of_scope,,typo,out_of_scope,
+OS-12,1.0,1,1,out_of_scope,,casual,out_of_scope,
+OS-13,1.0,1,1,out_of_scope,,typo,out_of_scope,
+OS-14,1.0,1,1,out_of_scope,,formal,out_of_scope,
+OS-15,1.0,1,1,out_of_scope,,casual,out_of_scope,
+OS-16,1.0,1,1,out_of_scope,,typo,out_of_scope,
+OS-17,1.0,1,1,out_of_scope,,casual,out_of_scope,
+OS-18,1.0,1,1,out_of_scope,,terse,out_of_scope,
+OS-19,1.0,1,1,out_of_scope,,typo,out_of_scope,
+OS-20,1.0,1,1,out_of_scope,,casual,out_of_scope,
+OS-21,1.0,1,1,out_of_scope,,formal,out_of_scope,
+OS-22,1.0,1,1,out_of_scope,,terse,out_of_scope,
+OS-23,1.0,1,1,out_of_scope,,typo,out_of_scope,
+OS-24,1.0,1,1,out_of_scope,,terse,out_of_scope,
+X-CB1,0.0,1,0,comparison,"Continental,Bridgestone",formal,"pair:Continental,Bridgestone",not answered
+X-CB2,0.0,1,0,comparison,"Continental,Bridgestone",casual,"pair:Continental,Bridgestone",not answered
+X-CB3,0.0,1,0,comparison,"Continental,Bridgestone",typo,"pair:Continental,Bridgestone",not answered
+X-CB4,0.0,1,0,comparison,"Continental,Bridgestone",typo,"pair:Continental,Bridgestone",not answered
+X-CB5,0.0,1,0,comparison,"Continental,Bridgestone",formal,"pair:Continental,Bridgestone",not answered
+X-CB6,0.0,1,0,comparison,"Continental,Bridgestone",terse,"pair:Continental,Bridgestone",output limit reached
+X-CB7,0.0,1,0,comparison,"Continental,Bridgestone",casual,"pair:Continental,Bridgestone",not answered
+X-CB8,0.0,1,0,comparison,"Continental,Bridgestone",terse,"pair:Continental,Bridgestone",not answered
+X-GB1,0.0,1,0,comparison,"Goodyear,Bridgestone",casual,"pair:Goodyear,Bridgestone",not answered
+X-GB2,0.0,1,0,comparison,"Goodyear,Bridgestone",terse,"pair:Goodyear,Bridgestone",not answered
+X-GB3,0.0,1,0,comparison,"Goodyear,Bridgestone",formal,"pair:Goodyear,Bridgestone",not answered
+X-GB4,0.0,1,0,comparison,"Goodyear,Bridgestone",typo,"pair:Goodyear,Bridgestone",not answered
+X-GB5,0.0,1,0,comparison,"Goodyear,Bridgestone",terse,"pair:Goodyear,Bridgestone",not answered
+X-GB6,0.0,1,0,comparison,"Goodyear,Bridgestone",formal,"pair:Goodyear,Bridgestone",not answered
+X-GB7,0.0,1,0,comparison,"Goodyear,Bridgestone",casual,"pair:Goodyear,Bridgestone",not answered
+X-GB8,0.0,1,0,comparison,"Goodyear,Bridgestone",typo,"pair:Goodyear,Bridgestone","The answer is incomplete and does not fully match the expected comparison. It correctly gives Bridgestone's 2024 dividend of 210 JPY and 2025 forecast of 230 JPY, but it fails to state the key expected fact that Goodyear paid no cash dividends in 2025. Saying the dividend ""could not be found"" is not the same as confirming no cash dividends were paid."
+X-GC1,0.0,1,0,comparison,"Goodyear,Continental",formal,"pair:Goodyear,Continental",not answered
+X-GC2,0.0,1,0,comparison,"Goodyear,Continental",casual,"pair:Goodyear,Continental",not answered
+X-GC3,0.0,1,0,comparison,"Goodyear,Continental",formal,"pair:Goodyear,Continental",not answered
+X-GC4,0.0,1,0,comparison,"Goodyear,Continental",typo,"pair:Goodyear,Continental",not answered
+X-GC5,0.0,1,0,comparison,"Goodyear,Continental",terse,"pair:Goodyear,Continental",not answered
+X-GC6,0.0,1,0,comparison,"Goodyear,Continental",casual,"pair:Goodyear,Continental",not answered
+X-GC7,0.0,1,0,comparison,"Goodyear,Continental",typo,"pair:Goodyear,Continental",not answered
+X-GC8,0.0,1,0,comparison,"Goodyear,Continental",terse,"pair:Goodyear,Continental",not answered
+X-MB1,0.0,1,0,comparison,"Michelin,Bridgestone",typo,"pair:Michelin,Bridgestone",not answered
+X-MB2,0.0,1,0,comparison,"Michelin,Bridgestone",casual,"pair:Michelin,Bridgestone",not answered
+X-MB3,0.0,1,0,comparison,"Michelin,Bridgestone",formal,"pair:Michelin,Bridgestone",not answered
+X-MB4,0.0,1,0,comparison,"Michelin,Bridgestone",terse,"pair:Michelin,Bridgestone",not answered
+X-MB5,0.0,1,0,comparison,"Michelin,Bridgestone",formal,"pair:Michelin,Bridgestone",not answered
+X-MB6,0.0,1,0,comparison,"Michelin,Bridgestone",casual,"pair:Michelin,Bridgestone",not answered
+X-MB7,0.0,1,0,comparison,"Michelin,Bridgestone",typo,"pair:Michelin,Bridgestone",not answered
+X-MB8,0.0,1,0,comparison,"Michelin,Bridgestone",terse,"pair:Michelin,Bridgestone",not answered
+X-MC1,0.0,1,0,comparison,"Michelin,Continental",casual,"pair:Michelin,Continental",not answered
+X-MC2,0.0,1,0,comparison,"Michelin,Continental",formal,"pair:Michelin,Continental",not answered
+X-MC3,0.0,1,0,comparison,"Michelin,Continental",casual,"pair:Michelin,Continental","The answer does not correctly provide Michelin’s 2025 net income figure, which is required by the question and present in EXPECTED (€1,664 million). It only says Michelin was not found, so it misses a key fact. Continental’s loss of €165 million is correct."
+X-MC4,0.0,1,0,comparison,"Michelin,Continental",typo,"pair:Michelin,Continental",not answered
+X-MC5,0.0,1,0,comparison,"Michelin,Continental",terse,"pair:Michelin,Continental",output limit reached
+X-MC6,0.0,1,0,comparison,"Michelin,Continental",formal,"pair:Michelin,Continental",not answered
+X-MC7,0.0,1,0,comparison,"Michelin,Continental",terse,"pair:Michelin,Continental",not answered
+X-MC8,0.0,1,0,comparison,"Michelin,Continental",typo,"pair:Michelin,Continental",not answered
+X-MG1,0.0,1,0,comparison,"Michelin,Goodyear",formal,"pair:Michelin,Goodyear",not answered
+X-MG2,0.0,1,0,comparison,"Michelin,Goodyear",terse,"pair:Michelin,Goodyear",not answered
+X-MG3,0.0,1,0,comparison,"Michelin,Goodyear",typo,"pair:Michelin,Goodyear",not answered
+X-MG4,0.0,1,0,comparison,"Michelin,Goodyear",terse,"pair:Michelin,Goodyear",not answered
+X-MG5,0.0,1,0,comparison,"Michelin,Goodyear",casual,"pair:Michelin,Goodyear",not answered
+X-MG6,0.0,1,0,comparison,"Michelin,Goodyear",typo,"pair:Michelin,Goodyear",not answered
+X-MG7,0.0,1,0,comparison,"Michelin,Goodyear",casual,"pair:Michelin,Goodyear",not answered
+X-MG8,1.0,1,1,comparison,"Michelin,Goodyear",formal,"pair:Michelin,Goodyear","The answer identifies Michelin’s CFO as Yves Chapot and Goodyear’s CFO as Christina L. Zamarro, matching the expected names and titles. The extra caveat about Michelin’s 2025 status does not contradict the expected information."
