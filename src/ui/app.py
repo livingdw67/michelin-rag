@@ -14,8 +14,13 @@ from src.llm import chat_model  # noqa: E402
 from src.pipeline.guardrails import GuardrailError, check_question, sanitize_untrusted  # noqa: E402
 from src.pipeline.metrics import _year, load_metrics  # noqa: E402
 
-st.set_page_config(page_title="Tire Industry Report Analyst", layout="wide")
+# Theme comes from .streamlit/config.toml (Daniel Livingston brand: navy, teal, one amber highlight)
+st.set_page_config(page_title="Tire Industry Report Analyst", layout="wide",
+                   page_icon=os.path.join(os.path.dirname(__file__), "../../assets/favicon.png"))
 st.title("Tire Industry Report Analyst")
+# The brand's short amber rule under the headline
+st.markdown('<div style="width:56px;height:4px;background:#f0a742;border-radius:2px;margin:-0.5rem 0 1rem"></div>',
+            unsafe_allow_html=True)
 st.caption("Answers come only from the 2025 annual reports of " + ", ".join(COMPANIES) +
            ". Every figure is cited to the page it came from; if the reports don't support an answer, it says so.")
 
@@ -48,17 +53,25 @@ with ask:
     if st.button("Clear conversation"):
         st.session_state.messages = []
         st.rerun()
+    # One bordered card per exchange: the question in bold, the cited answer below it. The cards live in a
+    # container above the input, so a new exchange lands there too instead of below the input box.
+    conversation = st.container()
+    card = None
     for message in st.session_state.messages:
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
-            render_sources(message.get("sources", []), message.get("calculations", []))
+        if message["role"] == "user":
+            card = conversation.container(border=True)
+            card.markdown(f"**{message['content']}**")
+        else:
+            with card or conversation.container(border=True):
+                st.markdown(message["content"])
+                render_sources(message.get("sources", []), message.get("calculations", []))
 
     if prompt := st.chat_input("Ask about revenue, margins, strategy, workforce... or compare companies"):
         history = [(m["role"], m["content"]) for m in st.session_state.messages]
         st.session_state.messages.append({"role": "user", "content": prompt})
-        with st.chat_message("user"):
-            st.markdown(prompt)
-        with st.chat_message("assistant"):
+        card = conversation.container(border=True)
+        card.markdown(f"**{prompt}**")
+        with card:
             sources, calculations = [], []
             try:
                 with st.spinner("Searching the reports..."):
