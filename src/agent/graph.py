@@ -5,11 +5,11 @@ questions are split into single-company, single-fact sub-questions, each answere
 citation-verified independently, then combined. Arithmetic goes through a calculator tool,
 and a final check confirms every number in the combined answer is grounded.
 """
-from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from typing import Literal, Optional, TypedDict
 
 from langchain_core.messages import HumanMessage, SystemMessage, ToolMessage
+from langchain_core.runnables.config import ContextThreadPoolExecutor
 from langchain_core.tools import tool
 from langgraph.graph import END, START, StateGraph
 from pydantic import BaseModel, Field
@@ -19,7 +19,7 @@ from src.llm import chat_model
 from src.pipeline.answer import SYSTEM_PROMPT, answer_question
 from src.pipeline.calculator import calculate, ungrounded_numbers
 from src.pipeline.guardrails import GuardrailError, check_question, classify_input, leaks_prompt
-from src.pipeline.retrieval import get_retriever
+from src.pipeline.retrieval import get_retriever, names_a_company
 
 MAX_SUB_QUESTIONS = 8
 MAX_TOOL_ROUNDS = 5
@@ -135,7 +135,8 @@ def answer_single(state: AgentState):
 
 def answer_subs(state: AgentState):
     retriever = get_retriever()
-    with ThreadPoolExecutor(max_workers=4) as pool:
+    # The context-copying pool keeps sub-question calls visible to callbacks (token counts, tracing)
+    with ContextThreadPoolExecutor(max_workers=4) as pool:
         results = list(pool.map(lambda q: answer_question(q, retriever=retriever), state["sub_questions"]))
     return {"sub_results": results}
 
@@ -207,7 +208,7 @@ def run_agent(question, history=None):
                                   if previous else question)
         if category == "injection":
             raise GuardrailError("This assistant only answers questions about the tire company reports.")
-        if category == "off_topic":
+        if category == "off_topic" and not (settings.company_names_overrule_off_topic and names_a_company(question)):
             return AgentResult(question=question, status="out_of_scope", route="classifier",
                                answer="I can only answer questions about the four companies' 2025 annual reports.")
     _GRAPH = _GRAPH or build_graph()

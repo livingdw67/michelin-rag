@@ -19,6 +19,8 @@ class Settings(BaseSettings):
     llm_base_url: str = ""  # OpenAI-compatible endpoint for the app's models, e.g. http://localhost:11434/v1
     llm_api_key: str = ""  # local servers usually ignore it
     embedding_base_url: str = ""  # endpoint for embeddings; empty means OpenAI
+    # Sent to the local server when set. "none" turns off qwen3's thinking, which takes over a minute per call.
+    llm_reasoning_effort: str = ""
 
     # Paths
     data_dir: Path = BASE_DIR / "data"
@@ -46,6 +48,9 @@ class Settings(BaseSettings):
     # Guardrails
     max_question_chars: int = 1000
     llm_input_classifier: bool = True  # second layer after pattern checks: off-topic / injection classifier
+    # An "off_topic" verdict is overruled when the question names one of the companies (an "injection" verdict
+    # never is). The local profile turns this on: its small classifier calls plain company questions off-topic.
+    company_names_overrule_off_topic: bool = False
 
     # API and operations
     api_auth_token: str = ""  # if set, API requests must send this in the X-API-Key header
@@ -58,12 +63,15 @@ class Settings(BaseSettings):
     @model_validator(mode="after")
     def _local_profile_defaults(self):
         """LLM_PROFILE=local fills in Ollama defaults for anything the .env doesn't set, and keeps
-        its own index, since the vectors from a different embedding model aren't interchangeable."""
+        its own index, since the vectors from a different embedding model aren't interchangeable.
+        The chat model is qwen2.5:7b with a 16k context (config/ollama/qwen2.5-7b-16k.Modelfile):
+        Ollama's 4k default truncates the answer prompt."""
         if self.llm_profile != "local":
             return self
         defaults = {"llm_base_url": "http://localhost:11434/v1", "embedding_base_url": "http://localhost:11434/v1",
-                    "chat_model": "qwen2.5:7b", "rewrite_model": "qwen2.5:7b",
-                    "embedding_model": "nomic-embed-text", "index_dir": BASE_DIR / "vector_db_local"}
+                    "chat_model": "qwen2.5-7b-16k", "rewrite_model": "qwen2.5-7b-16k",
+                    "embedding_model": "nomic-embed-text", "index_dir": BASE_DIR / "vector_db_local",
+                    "company_names_overrule_off_topic": True}
         for field, value in defaults.items():
             if field not in self.model_fields_set:
                 object.__setattr__(self, field, value)

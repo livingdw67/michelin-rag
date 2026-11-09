@@ -24,6 +24,8 @@ The set covers financial figures, leadership, workforce, and strategy for all fo
 
 **Factorial evaluation (400 questions).** 41 questions show the system works but can't say what makes a question hard: a 98% score on 35 answerable questions has a 95% interval of roughly 85–99.5%. A second, [400-question set](eval/factorial/README.md) crosses company × question type × wording (formal, casual, terse, typo; randomly assigned and balanced within every cell), adds 48 comparisons, 48 false premises, 48 unanswerable questions and 48 off-topic or injection attempts, and is analyzed with a Firth logistic model (errors clustered by question), a stratified permutation test for wording, and a check of the LLM judge against a model-free grader. Every figure is pinned to its page, calculation answers are computed in code, and each "not in the reports" question is checked to be absent before the set can be built.
 
+**What the 400 questions found.** On the 300 questions held out from any tuning, the app on gpt-5.4-mini scored **82.3%**: 77.2% on answerable questions and 98.6% on questions it should decline or block. That is well below the golden set's 98%, though the two aren't like for like: this set is harder by design, and a cheaper judge graded it. The app is weakest on comparisons (41.7%) and false premises (66.7%). The same app on an untuned local model, qwen2.5:7b, scored 25.7%, nearly all refusals (2.2% on answerable questions). The two split on 172 questions and gpt-5.4-mini won 171 (McNemar p < 0.0001). Tuning the local system on a separate 100 questions is under way: qwen3:8b now passes 47 of 76 answerable development questions against gpt-5.4-mini's 65, and its held-out score is still to come. [Results and how to read the tests](eval/factorial/README.md#results).
+
 ## Features
 
 | Tab | What it does |
@@ -118,9 +120,11 @@ python -m eval.factorial.run         # 400-question factorial evaluation, resuma
 python -m eval.factorial.stats       # its report: eval/factorial/results/results_openai.md
 ```
 
-**Local models.** Set `LLM_PROFILE=local` to run the whole app on Ollama (`qwen2.5:7b` and `nomic-embed-text` by default, with a separate index) through its OpenAI-compatible endpoint. All model creation goes through [src/llm.py](src/llm.py). The evaluation judge stays on OpenAI, which is what makes the [OpenAI vs. local comparison](eval/factorial/README.md#openai-vs-a-local-model) fair:
+**Local models.** Set `LLM_PROFILE=local` to run the whole app on Ollama (`qwen2.5:7b` with a 16k context, and `nomic-embed-text`, with a separate index) through its OpenAI-compatible endpoint. Ollama's default 4k context would truncate the answer prompt, so the profile uses a variant built from [config/ollama/qwen2.5-7b-16k.Modelfile](config/ollama/qwen2.5-7b-16k.Modelfile). All model creation goes through [src/llm.py](src/llm.py). The evaluation judge stays on OpenAI, which is what makes the [OpenAI vs. local comparison](eval/factorial/README.md#openai-vs-a-local-model) fair:
 
 ```bash
+ollama pull qwen2.5:7b && ollama pull nomic-embed-text
+ollama create qwen2.5-7b-16k -f config/ollama/qwen2.5-7b-16k.Modelfile
 LLM_PROFILE=local python -m src.pipeline.index       # once
 LLM_PROFILE=local python -m eval.factorial.run       # same 400 questions, local models
 python -m eval.factorial.compare                     # paired comparison report

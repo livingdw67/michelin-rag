@@ -1,0 +1,1113 @@
+{
+  "attempts": 400,
+  "questions": 400,
+  "runs": 1,
+  "errors_excluded": 0,
+  "headline": {
+    "answerable": {
+      "questions": 304,
+      "attempts": 304,
+      "accuracy": 0.7697368421052632,
+      "wilson_95": [
+        0.7192203632934027,
+        0.8135211505240931
+      ],
+      "question_mean": 0.7697368421052632,
+      "cluster_boot_95": [
+        0.7203947368421053,
+        0.8157894736842105
+      ]
+    },
+    "decline": {
+      "questions": 96,
+      "attempts": 96,
+      "accuracy": 0.9895833333333334,
+      "wilson_95": [
+        0.9433324450728878,
+        0.9981588771815634
+      ],
+      "question_mean": 0.9895833333333334,
+      "cluster_boot_95": [
+        0.96875,
+        1.0
+      ]
+    },
+    "all": {
+      "questions": 400,
+      "attempts": 400,
+      "accuracy": 0.8225,
+      "wilson_95": [
+        0.7820396924303856,
+        0.8568246543828204
+      ],
+      "question_mean": 0.8225,
+      "cluster_boot_95": [
+        0.785,
+        0.8575
+      ]
+    }
+  },
+  "by_type": [
+    {
+      "type": "number",
+      "questions": 80,
+      "attempts": 80,
+      "correct": 71,
+      "accuracy": 0.8875,
+      "wilson_95": [
+        0.7998158913432244,
+        0.9396738130517298
+      ],
+      "question_mean": 0.8875,
+      "cluster_boot_95": [
+        0.8125,
+        0.95
+      ]
+    },
+    {
+      "type": "text",
+      "questions": 64,
+      "attempts": 64,
+      "correct": 58,
+      "accuracy": 0.90625,
+      "wilson_95": [
+        0.8101690141672233,
+        0.9563223421687121
+      ],
+      "question_mean": 0.90625,
+      "cluster_boot_95": [
+        0.828125,
+        0.96875
+      ]
+    },
+    {
+      "type": "calc",
+      "questions": 64,
+      "attempts": 64,
+      "correct": 54,
+      "accuracy": 0.84375,
+      "wilson_95": [
+        0.7357170979769467,
+        0.9128525112303834
+      ],
+      "question_mean": 0.84375,
+      "cluster_boot_95": [
+        0.75,
+        0.921875
+      ]
+    },
+    {
+      "type": "comparison",
+      "questions": 48,
+      "attempts": 48,
+      "correct": 20,
+      "accuracy": 0.4166666666666667,
+      "wilson_95": [
+        0.28849459734577015,
+        0.5571891778463536
+      ],
+      "question_mean": 0.4166666666666667,
+      "cluster_boot_95": [
+        0.2916666666666667,
+        0.5625
+      ]
+    },
+    {
+      "type": "false_premise",
+      "questions": 48,
+      "attempts": 48,
+      "correct": 31,
+      "accuracy": 0.6458333333333334,
+      "wilson_95": [
+        0.5043879645406409,
+        0.7656654288731427
+      ],
+      "question_mean": 0.6458333333333334,
+      "cluster_boot_95": [
+        0.5,
+        0.7916666666666666
+      ]
+    },
+    {
+      "type": "not_found",
+      "questions": 48,
+      "attempts": 48,
+      "correct": 47,
+      "accuracy": 0.9791666666666666,
+      "wilson_95": [
+        0.8910053086246883,
+        0.9963129840206002
+      ],
+      "question_mean": 0.9791666666666666,
+      "cluster_boot_95": [
+        0.9375,
+        1.0
+      ]
+    },
+    {
+      "type": "out_of_scope",
+      "questions": 24,
+      "attempts": 24,
+      "correct": 24,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.8620194241710247,
+        1.0
+      ],
+      "question_mean": 1.0,
+      "cluster_boot_95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "type": "injection",
+      "questions": 24,
+      "attempts": 24,
+      "correct": 24,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.8620194241710247,
+        1.0
+      ],
+      "question_mean": 1.0,
+      "cluster_boot_95": [
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "by_company": [
+    {
+      "company": "Michelin",
+      "questions": 76,
+      "attempts": 76,
+      "correct": 66,
+      "accuracy": 0.868421052631579,
+      "wilson_95": [
+        0.7744567799430048,
+        0.9269319697814496
+      ],
+      "question_mean": 0.868421052631579,
+      "cluster_boot_95": [
+        0.7763157894736842,
+        0.9342105263157895
+      ]
+    },
+    {
+      "company": "Goodyear",
+      "questions": 76,
+      "attempts": 76,
+      "correct": 72,
+      "accuracy": 0.9473684210526315,
+      "wilson_95": [
+        0.8723414339669251,
+        0.979344904984198
+      ],
+      "question_mean": 0.9473684210526315,
+      "cluster_boot_95": [
+        0.8947368421052632,
+        0.9868421052631579
+      ]
+    },
+    {
+      "company": "Continental",
+      "questions": 76,
+      "attempts": 76,
+      "correct": 63,
+      "accuracy": 0.8289473684210527,
+      "wilson_95": [
+        0.7290191762204462,
+        0.8972207788906738
+      ],
+      "question_mean": 0.8289473684210527,
+      "cluster_boot_95": [
+        0.7368421052631579,
+        0.9078947368421053
+      ]
+    },
+    {
+      "company": "Bridgestone",
+      "questions": 76,
+      "attempts": 76,
+      "correct": 60,
+      "accuracy": 0.7894736842105263,
+      "wilson_95": [
+        0.6850414943195869,
+        0.8660496661781988
+      ],
+      "question_mean": 0.7894736842105263,
+      "cluster_boot_95": [
+        0.6973684210526315,
+        0.881578947368421
+      ]
+    }
+  ],
+  "by_wording": [
+    {
+      "wording": "formal",
+      "questions": 100,
+      "attempts": 100,
+      "correct": 81,
+      "accuracy": 0.81,
+      "wilson_95": [
+        0.7222097592919214,
+        0.8748534600729574
+      ],
+      "question_mean": 0.81,
+      "cluster_boot_95": [
+        0.73,
+        0.88
+      ]
+    },
+    {
+      "wording": "casual",
+      "questions": 100,
+      "attempts": 100,
+      "correct": 86,
+      "accuracy": 0.86,
+      "wilson_95": [
+        0.7786263961619276,
+        0.914737342455351
+      ],
+      "question_mean": 0.86,
+      "cluster_boot_95": [
+        0.79,
+        0.93
+      ]
+    },
+    {
+      "wording": "terse",
+      "questions": 100,
+      "attempts": 100,
+      "correct": 83,
+      "accuracy": 0.83,
+      "wilson_95": [
+        0.7445181876635703,
+        0.8910652394022684
+      ],
+      "question_mean": 0.83,
+      "cluster_boot_95": [
+        0.75975,
+        0.9
+      ]
+    },
+    {
+      "wording": "typo",
+      "questions": 100,
+      "attempts": 100,
+      "correct": 79,
+      "accuracy": 0.79,
+      "wilson_95": [
+        0.7001985069803768,
+        0.8583445046835422
+      ],
+      "question_mean": 0.79,
+      "cluster_boot_95": [
+        0.71,
+        0.87
+      ]
+    }
+  ],
+  "by_wording_answerable": [
+    {
+      "wording": "formal",
+      "questions": 76,
+      "attempts": 76,
+      "correct": 57,
+      "accuracy": 0.75,
+      "wilson_95": [
+        0.6422303597102302,
+        0.833712006174221
+      ],
+      "question_mean": 0.75,
+      "cluster_boot_95": [
+        0.6447368421052632,
+        0.8421052631578947
+      ]
+    },
+    {
+      "wording": "casual",
+      "questions": 76,
+      "attempts": 76,
+      "correct": 63,
+      "accuracy": 0.8289473684210527,
+      "wilson_95": [
+        0.7290191762204462,
+        0.8972207788906738
+      ],
+      "question_mean": 0.8289473684210527,
+      "cluster_boot_95": [
+        0.7368421052631579,
+        0.9078947368421053
+      ]
+    },
+    {
+      "wording": "terse",
+      "questions": 76,
+      "attempts": 76,
+      "correct": 59,
+      "accuracy": 0.7763157894736842,
+      "wilson_95": [
+        0.6706522065000313,
+        0.8553893557933094
+      ],
+      "question_mean": 0.7763157894736842,
+      "cluster_boot_95": [
+        0.6842105263157895,
+        0.868421052631579
+      ]
+    },
+    {
+      "wording": "typo",
+      "questions": 76,
+      "attempts": 76,
+      "correct": 55,
+      "accuracy": 0.7236842105263158,
+      "wilson_95": [
+        0.6142442230029846,
+        0.8115989464725769
+      ],
+      "question_mean": 0.7236842105263158,
+      "cluster_boot_95": [
+        0.618421052631579,
+        0.8157894736842105
+      ]
+    }
+  ],
+  "by_pair": [
+    {
+      "company": "Continental,Bridgestone",
+      "questions": 8,
+      "attempts": 8,
+      "correct": 0,
+      "accuracy": 0.0,
+      "wilson_95": [
+        0.0,
+        0.3244156195108769
+      ],
+      "question_mean": 0.0,
+      "cluster_boot_95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "company": "Goodyear,Bridgestone",
+      "questions": 8,
+      "attempts": 8,
+      "correct": 3,
+      "accuracy": 0.375,
+      "wilson_95": [
+        0.13684175946152105,
+        0.6942621454161981
+      ],
+      "question_mean": 0.375,
+      "cluster_boot_95": [
+        0.125,
+        0.75
+      ]
+    },
+    {
+      "company": "Goodyear,Continental",
+      "questions": 8,
+      "attempts": 8,
+      "correct": 3,
+      "accuracy": 0.375,
+      "wilson_95": [
+        0.13684175946152105,
+        0.6942621454161981
+      ],
+      "question_mean": 0.375,
+      "cluster_boot_95": [
+        0.125,
+        0.75
+      ]
+    },
+    {
+      "company": "Michelin,Bridgestone",
+      "questions": 8,
+      "attempts": 8,
+      "correct": 2,
+      "accuracy": 0.25,
+      "wilson_95": [
+        0.07147768885802763,
+        0.5907301208974108
+      ],
+      "question_mean": 0.25,
+      "cluster_boot_95": [
+        0.0,
+        0.625
+      ]
+    },
+    {
+      "company": "Michelin,Continental",
+      "questions": 8,
+      "attempts": 8,
+      "correct": 4,
+      "accuracy": 0.5,
+      "wilson_95": [
+        0.21521252682444186,
+        0.7847874731755582
+      ],
+      "question_mean": 0.5,
+      "cluster_boot_95": [
+        0.125,
+        0.875
+      ]
+    },
+    {
+      "company": "Michelin,Goodyear",
+      "questions": 8,
+      "attempts": 8,
+      "correct": 8,
+      "accuracy": 1.0,
+      "wilson_95": [
+        0.6755843804891231,
+        1.0
+      ],
+      "question_mean": 1.0,
+      "cluster_boot_95": [
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "type_by_wording": {
+    "number": {
+      "formal": {
+        "questions": 20,
+        "question_mean": 0.85
+      },
+      "casual": {
+        "questions": 20,
+        "question_mean": 0.95
+      },
+      "terse": {
+        "questions": 20,
+        "question_mean": 0.85
+      },
+      "typo": {
+        "questions": 20,
+        "question_mean": 0.9
+      }
+    },
+    "text": {
+      "formal": {
+        "questions": 16,
+        "question_mean": 0.875
+      },
+      "casual": {
+        "questions": 16,
+        "question_mean": 0.875
+      },
+      "terse": {
+        "questions": 16,
+        "question_mean": 1.0
+      },
+      "typo": {
+        "questions": 16,
+        "question_mean": 0.875
+      }
+    },
+    "calc": {
+      "formal": {
+        "questions": 16,
+        "question_mean": 0.9375
+      },
+      "casual": {
+        "questions": 16,
+        "question_mean": 0.875
+      },
+      "terse": {
+        "questions": 16,
+        "question_mean": 0.875
+      },
+      "typo": {
+        "questions": 16,
+        "question_mean": 0.6875
+      }
+    },
+    "comparison": {
+      "formal": {
+        "questions": 12,
+        "question_mean": 0.25
+      },
+      "casual": {
+        "questions": 12,
+        "question_mean": 0.5833333333333334
+      },
+      "terse": {
+        "questions": 12,
+        "question_mean": 0.3333333333333333
+      },
+      "typo": {
+        "questions": 12,
+        "question_mean": 0.5
+      }
+    },
+    "false_premise": {
+      "formal": {
+        "questions": 12,
+        "question_mean": 0.6666666666666666
+      },
+      "casual": {
+        "questions": 12,
+        "question_mean": 0.75
+      },
+      "terse": {
+        "questions": 12,
+        "question_mean": 0.6666666666666666
+      },
+      "typo": {
+        "questions": 12,
+        "question_mean": 0.5
+      }
+    },
+    "not_found": {
+      "formal": {
+        "questions": 12,
+        "question_mean": 1.0
+      },
+      "casual": {
+        "questions": 12,
+        "question_mean": 0.9166666666666666
+      },
+      "terse": {
+        "questions": 12,
+        "question_mean": 1.0
+      },
+      "typo": {
+        "questions": 12,
+        "question_mean": 1.0
+      }
+    },
+    "out_of_scope": {
+      "formal": {
+        "questions": 6,
+        "question_mean": 1.0
+      },
+      "casual": {
+        "questions": 6,
+        "question_mean": 1.0
+      },
+      "terse": {
+        "questions": 6,
+        "question_mean": 1.0
+      },
+      "typo": {
+        "questions": 6,
+        "question_mean": 1.0
+      }
+    },
+    "injection": {
+      "formal": {
+        "questions": 6,
+        "question_mean": 1.0
+      },
+      "casual": {
+        "questions": 6,
+        "question_mean": 1.0
+      },
+      "terse": {
+        "questions": 6,
+        "question_mean": 1.0
+      },
+      "typo": {
+        "questions": 6,
+        "question_mean": 1.0
+      }
+    }
+  },
+  "company_by_type": {
+    "Michelin": {
+      "number": {
+        "questions": 20,
+        "question_mean": 0.95
+      },
+      "text": {
+        "questions": 16,
+        "question_mean": 0.8125
+      },
+      "calc": {
+        "questions": 16,
+        "question_mean": 0.8125
+      },
+      "false_premise": {
+        "questions": 12,
+        "question_mean": 0.75
+      },
+      "not_found": {
+        "questions": 12,
+        "question_mean": 1.0
+      }
+    },
+    "Goodyear": {
+      "number": {
+        "questions": 20,
+        "question_mean": 1.0
+      },
+      "text": {
+        "questions": 16,
+        "question_mean": 1.0
+      },
+      "calc": {
+        "questions": 16,
+        "question_mean": 1.0
+      },
+      "false_premise": {
+        "questions": 12,
+        "question_mean": 0.6666666666666666
+      },
+      "not_found": {
+        "questions": 12,
+        "question_mean": 1.0
+      }
+    },
+    "Continental": {
+      "number": {
+        "questions": 20,
+        "question_mean": 0.85
+      },
+      "text": {
+        "questions": 16,
+        "question_mean": 0.875
+      },
+      "calc": {
+        "questions": 16,
+        "question_mean": 0.8125
+      },
+      "false_premise": {
+        "questions": 12,
+        "question_mean": 0.6666666666666666
+      },
+      "not_found": {
+        "questions": 12,
+        "question_mean": 0.9166666666666666
+      }
+    },
+    "Bridgestone": {
+      "number": {
+        "questions": 20,
+        "question_mean": 0.75
+      },
+      "text": {
+        "questions": 16,
+        "question_mean": 0.9375
+      },
+      "calc": {
+        "questions": 16,
+        "question_mean": 0.75
+      },
+      "false_premise": {
+        "questions": 12,
+        "question_mean": 0.5
+      },
+      "not_found": {
+        "questions": 12,
+        "question_mean": 1.0
+      }
+    }
+  },
+  "model": {
+    "n_attempts": 304,
+    "n_questions": 304,
+    "coefficients": [
+      {
+        "term": "company=Goodyear",
+        "odds_ratio": 2.6899288322473702,
+        "ci_95": [
+          0.9508902358683281,
+          7.609413631162417
+        ],
+        "p": 0.06216944060513496
+      },
+      {
+        "term": "company=Continental",
+        "odds_ratio": 0.7234700642885249,
+        "ci_95": [
+          0.29276496777497985,
+          1.7878127219235338
+        ],
+        "p": 0.4831255022157923
+      },
+      {
+        "term": "company=Bridgestone",
+        "odds_ratio": 0.5499268677718105,
+        "ci_95": [
+          0.2317442552807704,
+          1.3049711179719092
+        ],
+        "p": 0.17501355918627226
+      },
+      {
+        "term": "type=text",
+        "odds_ratio": 1.2005715266496217,
+        "ci_95": [
+          0.43593319485791926,
+          3.306405677758905
+        ],
+        "p": 0.7235912515687488
+      },
+      {
+        "term": "type=calc",
+        "odds_ratio": 0.684832885718525,
+        "ci_95": [
+          0.27665883552946696,
+          1.6952145427201057
+        ],
+        "p": 0.4129850682665479
+      },
+      {
+        "term": "type=false_premise",
+        "odds_ratio": 0.22818055661080947,
+        "ci_95": [
+          0.09354518381504454,
+          0.5565905618205134
+        ],
+        "p": 0.001162588492242822
+      },
+      {
+        "term": "type=not_found",
+        "odds_ratio": 4.2808676379091635,
+        "ci_95": [
+          0.9928082371209594,
+          18.45857744536949
+        ],
+        "p": 0.05113804669670907
+      },
+      {
+        "term": "wording=casual",
+        "odds_ratio": 1.1352422487463931,
+        "ci_95": [
+          0.4288491224403093,
+          3.0051943583448733
+        ],
+        "p": 0.798424198851825
+      },
+      {
+        "term": "wording=terse",
+        "odds_ratio": 1.1352422487463931,
+        "ci_95": [
+          0.43433226344005593,
+          2.967255881778713
+        ],
+        "p": 0.7958173135884499
+      },
+      {
+        "term": "wording=typo",
+        "odds_ratio": 0.5919164464240854,
+        "ci_95": [
+          0.24340593269294297,
+          1.4394270331500236
+        ],
+        "p": 0.2474317611929382
+      }
+    ],
+    "factor_tests": {
+      "company": {
+        "wald_chi2": 10.968991082714039,
+        "df": 3,
+        "p": 0.011894739685815454,
+        "reference": "Michelin"
+      },
+      "type": {
+        "wald_chi2": 22.617816320008423,
+        "df": 4,
+        "p": 0.00015094652557864669,
+        "reference": "number"
+      },
+      "wording": {
+        "wald_chi2": 3.0488362890662657,
+        "df": 3,
+        "p": 0.38415669909254113,
+        "reference": "formal"
+      }
+    }
+  },
+  "wording_permutation_all": {
+    "questions": 400,
+    "between_wording_ss": 0.26749999999999946,
+    "p": 0.48925107489251074,
+    "permutations": 10000,
+    "question_mean_by_wording": {
+      "formal": 0.81,
+      "casual": 0.86,
+      "terse": 0.83,
+      "typo": 0.79
+    }
+  },
+  "wording_permutation_answerable": {
+    "questions": 304,
+    "between_wording_ss": 0.4605263157894737,
+    "p": 0.3514648535146485,
+    "permutations": 10000,
+    "question_mean_by_wording": {
+      "formal": 0.75,
+      "casual": 0.8289473684210527,
+      "terse": 0.7763157894736842,
+      "typo": 0.7236842105263158
+    }
+  },
+  "retrieval": {
+    "attempts": 304,
+    "retrieval_hit_rate": 0.9769736842105263,
+    "accuracy_when_retrieved": 0.7845117845117845,
+    "accuracy_when_missed": 0.14285714285714285,
+    "misses": 7,
+    "wrong_despite_retrieval": 64
+  },
+  "stability": null,
+  "judge_vs_auto": {
+    "attempts": 304,
+    "agreement": 0.9342105263157895,
+    "kappa": 0.796027911969941,
+    "judge_yes_auto_no": 1,
+    "judge_no_auto_yes": 19,
+    "disagreements": [
+      {
+        "id": "MI-N18",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "Michelin\u2019s 2025 share buyback program cost **\u20ac665,000,000**. The report says the Group had \u201c**\u20ac665 million worth of share buybacks**\u201d in 2025, and the table lists \u201c**Total cost of shares repurchased \u20ac665,000,000**.\u201d",
+        "judge_reason": "The expected cost is \u20ac668 million, but the answer states \u20ac665 million (\u20ac665,000,000). The figure for the asked metric does not match."
+      },
+      {
+        "id": "MI-T12",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "Michelin\u2019s consolidated sales fell in 2025 mainly because volumes declined, especially in Original Equipment (OE) markets, while some of the impact was only partly offset by positive price-mix effects.\n\nKey drivers cited in the report:\n\n- Consolidated sales were down 4.4% year on year to \u20ac25,992 million, and the report says this reflected a 4.7% decline in sales volumes. The volume drop came \u201cprimarily\u201d from very low OE output, a cyclical downturn in specialty businesses, and the Group\u2019s selectivity strategy. [Michelin-p329-text-1241: \u201cConsolidated sales amounted to \u20ac25,992 million in 2025\u201d]\n- In road transportation, sales were down 8.7% because volumes fell 8.8%, mainly due to the contraction of OE markets in North America and Europe. Replacement sales were also hurt by \u201chigh levels of imports of budget tires from Asia,\u201d and exchange rates weighed on sales. [Michelin-p333-text-1255: \u201cVolumes sold fell by 8.8%\u201d]\n- In North America, sales decreased mainly because of the contraction in the OE market amid macro-economic and regulatory uncertainty. [Michelin-p332-text-1251: \u201cweighed down mainly by the contraction in the Original Equipment market\u201d]\n- For specialty businesses, sales declined 4.4% because of lower volumes in segments exposed to OE markets, partly offset by resilient replacement sales and favorable mix; the strong US dollar also held back sales. [Michelin-p334-text-1259: \u201cdeclined by 4.4% year-on-year\u201d]\n\nSo, in short: Michelin\u2019s sales went down because the Group sold fewer tires, especially in OE markets, and because some segments faced weak demand, competitive pressure from budget imports, and unfavorable exchange rates. The positive price-mix effect helped, but not enough to offset the volume decline. [Michelin-p329-text-1241: \u201ca 4.7% decline in sales volumes\u201d; Michelin-p329-text-1241: \u201ca 3.0% increase from the positive price-mix effect\u201d]",
+        "judge_reason": "The answer captures the main idea that Michelin\u2019s sales fell mainly due to lower volumes and that price-mix partly offset this, but it misses a key EXPECTED factor: the 3.0% negative currency effect. EXPECTED says sales went down mainly because of a 4.7% volume decline and a 3.0% negative currency effect, partly offset by a 3.0% positive price-mix effect. Since one of the key drivers is omitted, the answer is incomplete and therefore incorrect."
+      },
+      {
+        "id": "MI-C10",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "Michelin\u2019s net cash from operating activities **decreased by about 11.9% in 2025** versus 2024, from **3,819** to **4,336** (a change of **-517**). Calculation: **-517 / 4,336 \u00d7 100 \u2248 -11.9%**. [Michelin-p350-text-1327: \"NET CASH FROM OPERATING ACTIVITIES 3,819 4,336 -517\"]",
+        "judge_reason": "The answer gives the right percentage change (down about 11.9%) but reverses the direction of the figures. EXPECTED says net cash from operating activities went from \u20ac4,336 million to \u20ac3,819 million, while the answer states from 3,819 to 4,336. Because the asked metric\u2019s values are incorrect, the answer is not fully correct."
+      },
+      {
+        "id": "MI-P04",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "Michelin\u2019s reported 2025 workforce is **122,586**, not 200,000: \u201cThe Group's workforce at December 31, 2025 totaled **122,586 people**\u201d [Michelin-p270-text-1026]. The regional split is:",
+        "judge_reason": "The answer correctly rejects the false premise and gives the overall workforce figure, but it does not provide the required regional split. EXPECTED specifies Europe 60,600, North America 22,700, and other regions 39,300, and the answer ends before listing them."
+      },
+      {
+        "id": "CO-N18",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "Continental\u2019s **cash flow from operating activities** in **2025** was **\u20ac2,193 million** for the **Continental Group**. The report also shows **\u20ac2,014 million** for **continuing operations** only.\n\n| Metric | 2025 |\n|---|---:|\n| Cash flow from operating activities (Continental Group) | \u20ac2,193 million |\n| Cash flow from operating activities \u2013 continuing operations | \u20ac2,014 million |\n\nIf you meant the group total, use **\u20ac2,193 million**; if you meant continuing operations only, use **\u20ac2,014 million**.",
+        "judge_reason": "The expected figure for \u2018continental operating cash flow 2025\u2019 is \u20ac2,014 million. The answer does mention \u20ac2,014 million, but it gives it only as \u2018continuing operations\u2019 and says the group total is \u20ac2,193 million. Since the question asks for the operating cash flow figure and the answer does not straightforwardly give the expected metric as the main answer, it is not a correct match."
+      },
+      {
+        "id": "CO-C10",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "Continental says its share price **increased by 40.1% in 2025**, compared with the **2024 year-end price, adjusted for the spin-off of Aumovio, of \u20ac48.49**; the share price at the end of 2025 was **\u20ac67.96**. The report also says that, **taking into account a reinvestment of the dividend**, the share price **rose by 38.8% in 2025**.\n\n| Measure | 2025 report statement |\n|---|---|\n| Share price change | **+40.1%** |\n| Share price change incl. dividend reinvestment | **+38.8%** |\n\nIf you mean the plain year-end share-price change, the report\u2019s explicit figure is **40.1%**.",
+        "judge_reason": "EXPECTED says Continental's share price was up about 40.2% in 2025, from \u20ac48.49 to \u20ac67.96 adjusted for the Aumovio spin-off. The answer gives 40.1% instead, which does not match the expected figure."
+      },
+      {
+        "id": "CO-P04",
+        "run": 1,
+        "correct": true,
+        "auto_correct": false,
+        "answer": "Continental had **56,187 employees in the Tires group sector** as of December 31, 2025. The excerpt says: \u201cThe number of employees in the Tires group sector fell by 882 to **56,187** as at December 31, 2025\u201d and the segment report lists \u201c**Number of employees as at Dec. 31** \u2026 **Tires 56,187**.\u201d",
+        "judge_reason": "The answer gives the correct number of employees in Continental's Tires segment: 56,187. It matches the expected figure and is consistent with the premise being corrected by the response."
+      },
+      {
+        "id": "CO-P08",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "Continental\u2019s **group** free cash flow declined in 2025 because the **discontinued operations** swung from a positive contribution to a negative one, outweighing the improvement in continuing operations.\n\n| Measure | 2025 | 2024 | What changed |\n|---|---:|---:|---|\n| Cash flow before financing activities (free cash flow) \u2013 continuing operations | \u20ac967 million | \u20ac603 million | Improved |\n| Cash flow before financing activities (free cash flow) \u2013 discontinued operations | \u2013\u20ac192 million | \u20ac511 million | Turned sharply negative |\n| Cash flow before financing activities (free cash flow) | \u20ac775 million | \u20ac1,114 million | Declined |\n\nContinental says that \u201c**free cash flow for discontinued operations amounted to -\u20ac192 million (PY: \u20ac511 million)**,\u201d so combined free cash flow fell to \u201c**\u20ac775 million in the reporting year, compared with \u20ac1,114 million for 2024**.\u201d The report also notes that continuing operations alone improved to \u201c**\u20ac967 million**.\u201d",
+        "judge_reason": "EXPECTED says Continental\u2019s free cash flow from continuing operations increased to \u20ac967 million from \u20ac603 million, so the premise that it declined is false. The answer instead discusses group free cash flow and says it declined because discontinued operations turned negative, which does not answer the question as asked."
+      },
+      {
+        "id": "CO-P06",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "Wolfgang Reitzle says his priority as CEO is Continental\u2019s **far-reaching transformation and realignment**: the company is **\u201cundertaking the most far-reaching transformation\u201d** and is **\u201crealigning Continental\u201d** through the spin-off of Aumovio, the sale of the ContiTech hoses and bearing elements business, and the planned sale of the ContiTech group sector. He says the goal is to create **\u201ca focused, global tire manufacturer\u201d** with **\u201coutstanding technological capabilities and economic resilience.\u201d** [Continental-p7-text-11: \u201cthe most far-reaching transformation in our company\u2019s more than 150-year history\u201d; \u201cwe are realigning Continental\u201d; \u201ccreating a focused, global tire manufacturer\u201d]",
+        "judge_reason": "The answer does not match the expected reference. The question is based on a false premise: Wolfgang Reitzle is not Continental\u2019s CEO; he chairs the Supervisory Board, while the CEO is Christian K\u00f6tz. The answer incorrectly treats Reitzle as CEO and then answers about his priorities instead of correcting the premise and identifying the actual CEO."
+      },
+      {
+        "id": "CO-P10",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "Continental\u2019s **net indebtedness did not fall in 2025**; it **rose** from **\u20ac3,712 million** at the beginning of the reporting period to **\u20ac5,154 million** at year-end, according to the reconciliation table. The reported **change in net indebtedness** for 2025 was **\u2013\u20ac346 million**. The main items shown in the reconciliation were **cash flow before financing activities (free cash flow) of \u20ac775 million**, offset by **dividends paid of \u2013\u20ac500 million**, **Other of \u2013\u20ac494 million**, **exchange-rate effects of \u2013\u20ac128 million**, and **\u201cLess surplus of cash and cash equivalents of discontinued operations at the time of disposal\u201d of \u2013\u20ac1,095 million**. So the report does not show a fall in net indebtedness overall; it shows an increase, mainly after the disposal-related cash effect and other outflows. [Continental-p56-text-238: \u201cNet indebtedness at the end of the reporting period 5,154 3,712\u201d; Continental-p56-text-238: \u201cChange in net indebtedness \u2013346 326\u201d; Continental-p56-text-238: \u201cCash flow before financing activities (free cash flow) 775 1,114\u201d]",
+        "judge_reason": "The answer gets the direction right that net indebtedness did not fall and ended at \u20ac5,154 million, but it does not match EXPECTED on the reason. EXPECTED says the increase was mainly due to the Aumovio spin-off. The answer instead attributes it to disposal-related cash effects and other outflows, without identifying the Aumovio spin-off as the main reason. It also gives a different change figure that is not in EXPECTED."
+      },
+      {
+        "id": "BS-N01",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "Bridgestone\u2019s adjusted operating profit in 2024 was **approximately 485.6 billion JPY**. This is inferred from the 2025 plan showing **\u201cAdj. Operating Profit 505.0 B JPY\u201d** as **\u201c[104% of 2024]\u201d**; dividing 505.0 by 1.04 gives about 485.6.\n\n| Company | 2024 adjusted operating profit |\n|---|---:|\n| Bridgestone | approximately **485.6 billion JPY** |",
+        "judge_reason": "The answer gives 485.6 billion JPY, but the expected adjusted operating profit for Bridgestone in 2024 is 483.3 billion JPY. The figure does not match, so the answer is incorrect."
+      },
+      {
+        "id": "BS-C15",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "Bridgestone\u2019s ratio of total liabilities to total equity at the end of 2024 was **about 0.54:1** (or **53.8%**). This is derived from the reported **equity ratio of 65% at the end of 2024**, meaning liabilities were the remaining 35% of total assets, so liabilities \u00f7 equity = 35% \u00f7 65% = 0.538. The report also states **\u201cTotal equity (as of the end of 2024) 3,786.5 B JPY.\u201d**\n\n| Item | Value |\n|---|---:|\n| Equity ratio at end of 2024 | 65% |\n| Total liabilities / total equity | 0.54:1 |\n\n",
+        "judge_reason": "The answer gives the ratio as about 0.54, but EXPECTED is about 0.51 (1,937.0 / 3,786.5 billion JPY). Since the asked-about metric differs, it is incorrect."
+      },
+      {
+        "id": "X-MC7",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "| Company | Employees |\n|---|---:|\n| Michelin | 122,586 |\n| Continental | 92,653 |\n| Difference (Michelin minus Continental) | 29,933 |",
+        "judge_reason": "The answer gives Michelin employees as 122,586 instead of the expected 122,600, and therefore the difference is 29,933 instead of about 29,947. Since the asked-about figure differs from EXPECTED, it is incorrect."
+      },
+      {
+        "id": "X-MB2",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "| Company | R&D as % of revenue/sales |\n|---|---:|\n| Michelin | 3.0% |\n| Bridgestone | 3% |\n\nThey spend the same share of revenue on R&D.",
+        "judge_reason": "The answer gives Bridgestone as 3%, but the expected figure is 2.9%. Since the asked-about metric differs from EXPECTED, the comparison is not correctly answered. It also concludes they spend the same share, which is inconsistent with Michelin being slightly higher."
+      },
+      {
+        "id": "X-MB3",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "| Company | 2025 margin |\n|---|---:|\n| Michelin | 6.4% |\n| Bridgestone | 5.8% |\n\nMichelin\u2019s margin was higher by **0.6 percentage points**. Bridgestone\u2019s figure is the report\u2019s **profit margin from continuing operations**, not the exact phrase \u201cnet profit margin.\u201d",
+        "judge_reason": "The answer gets Michelin correct at 6.4%, but Bridgestone is wrong: EXPECTED says Bridgestone\u2019s net profit margin was about 6.4% (profit attributable to owners) in 2024, not 5.8%. Since the asked-about figure differs, the comparison is incorrect."
+      },
+      {
+        "id": "X-GC7",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "No.\n\n| Company | Auditor |\n|---|---|\n| Goodyear | PricewaterhouseCoopers LLP |\n| Continental | PricewaterhouseCoopers GmbH Wirtschaftspr\u00fcfungsgesellschaft, Hanover branch, Germany |\n\nThey are both PricewaterhouseCoopers entities, but the auditors are not the same name.",
+        "judge_reason": "The question asks whether Goodyear and Continental use the same auditor. Expected answer is yes: both are audited by PricewaterhouseCoopers (PwC). The response says no, which contradicts the expected answer even though it notes both are PwC entities."
+      },
+      {
+        "id": "X-GC4",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "| Company | 2025 operating margin |\n|---|---:|\n| Goodyear | 5.8% |\n| Continental | 1.4% |\n\nGoodyear\u2019s reported operating margin was higher by **4.4 percentage points**.\n\nIf you meant Continental\u2019s **adjusted EBIT margin**, that figure was **10.3%**.",
+        "judge_reason": "The answer gets Goodyear correct at 5.8%, but it gives Continental as 1.4% instead of the expected 10.3% adjusted EBIT margin. Although it later mentions 10.3% in a note, the main comparison table reports the wrong figure, so the answer is incorrect."
+      },
+      {
+        "id": "X-GC8",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "| Company | Head of finance |\n|---|---|\n| Goodyear | **Christina L. Zamarro** \u2014 listed as **Executive Vice President and Chief Financial Officer** and described as Goodyear\u2019s **principal financial officer** |\n| Continental | **Not named in the provided excerpts** \u2014 the excerpts only confirm that there is a **chief financial officer** role |\n\n",
+        "judge_reason": "The answer is incorrect because it fails to identify Continental\u2019s head of finance as expected. Expected: Goodyear CFO Christina L. Zamarro; Continental Roland Welzbacher (Group Finance and Controlling). The answer only gives Goodyear correctly and says Continental is not named, which does not match the expected figure/name."
+      },
+      {
+        "id": "X-CB8",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "| Company | R&D as % of revenue |\n|---|---:|\n| Continental | 2.9% |\n| Bridgestone | 3.0% |\n\nBridgestone\u2019s R&D share of revenue was higher by **0.1 percentage points**.",
+        "judge_reason": "The answer gives Bridgestone as 3.0%, but EXPECTED says Bridgestone was 2.9% in 2024, roughly the same as Continental\u2019s 2.9%. Since the asked-about metric differs, the answer is incorrect."
+      },
+      {
+        "id": "X-CB4",
+        "run": 1,
+        "correct": false,
+        "auto_correct": true,
+        "answer": "| Company | Reported equity ratio | Note |\n|---|---:|---|\n| Continental | 23.4% | 2025 annual report |\n| Bridgestone | 60% level | 2025 guidance; the report also states 2024 result was 65% |\n\nBridgestone\u2019s 2025 guidance equity ratio is higher than Continental\u2019s 2025 equity ratio by **36.6 percentage points**.\n\n",
+        "judge_reason": "The answer gets Continental right at 23.4%, but Bridgestone is not correctly reported. EXPECTED asks for Bridgestone\u2019s end-2024 equity ratio of about 65\u201366% (65.2% or 66.2%), while the answer gives a vague 60% level for 2025 guidance. That differs from the requested figure, so the comparison is incorrect."
+      }
+    ]
+  },
+  "precision": [
+    {
+      "comparison": "wording level, all questions",
+      "questions_per_group": 100,
+      "baseline": 0.7697368421052632,
+      "mde_80_power": 0.18499999999999997,
+      "ci_half_width_at_baseline": 0.08251624116137174
+    },
+    {
+      "comparison": "wording level, answerable questions",
+      "questions_per_group": 76,
+      "baseline": 0.7697368421052632,
+      "mde_80_power": 0.21499999999999997,
+      "ci_half_width_at_baseline": 0.09465262011138177
+    },
+    {
+      "comparison": "company, single-company questions",
+      "questions_per_group": 76,
+      "baseline": 0.7697368421052632,
+      "mde_80_power": 0.21499999999999997,
+      "ci_half_width_at_baseline": 0.09465262011138177
+    },
+    {
+      "comparison": "question type (number)",
+      "questions_per_group": 80,
+      "baseline": 0.7697368421052632,
+      "mde_80_power": 0.20749999999999996,
+      "ci_half_width_at_baseline": 0.09225596224229671
+    },
+    {
+      "comparison": "question type (calc, text)",
+      "questions_per_group": 64,
+      "baseline": 0.7697368421052632,
+      "mde_80_power": 0.23499999999999996,
+      "ci_half_width_at_baseline": 0.10314530145171469
+    },
+    {
+      "comparison": "company x type cell (number)",
+      "questions_per_group": 20,
+      "baseline": 0.7697368421052632,
+      "mde_80_power": 0.42749999999999994,
+      "ci_half_width_at_baseline": 0.18451192448459341
+    }
+  ],
+  "latency_median_s": 5.067012250015978,
+  "tokens_per_run": 2146166.0,
+  "status_by_type": {
+    "number": {
+      "answered": 76,
+      "not_found": 4
+    },
+    "text": {
+      "answered": 59,
+      "not_found": 4,
+      "out_of_scope": 1
+    },
+    "calc": {
+      "answered": 62,
+      "not_found": 2
+    },
+    "comparison": {
+      "answered": 48
+    },
+    "false_premise": {
+      "not_found": 12,
+      "answered": 36
+    },
+    "not_found": {
+      "out_of_scope": 4,
+      "not_found": 39,
+      "answered": 5
+    },
+    "out_of_scope": {
+      "out_of_scope": 23,
+      "not_found": 1
+    },
+    "injection": {
+      "blocked": 16,
+      "out_of_scope": 3,
+      "not_found": 2,
+      "answered": 3
+    }
+  }
+}

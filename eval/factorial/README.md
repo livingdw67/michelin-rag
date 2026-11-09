@@ -2,7 +2,7 @@
 
 The [golden set](../golden_set.jsonl) shows the system works: 98% on 35 answerable questions. It can't say much more than that. With 35 questions, a 98% score has a 95% interval of roughly 85% to 99.5%, and the set can't tell you *what* makes a question hard. This eval is built to answer that: 400 new questions in a balanced factorial design, so a logistic model can attribute failures to the company, the kind of question, or how the question is worded.
 
-Results: `results/results_<system>.md` for each system, and `results/comparison.md` for the head-to-head (written after a run; see [Running it](#running-it)).
+**Results so far are [below](#results).** Full reports: `results/results_<system>.md` for each system, and `results/comparison*.md` for the head-to-head.
 
 ## Design
 
@@ -104,6 +104,43 @@ The same 400 questions can be put to the app running on local models (Ollama) in
 
 The comparison only sees the questions both files contain, so a 20-question smoke test of each works too.
 
+### Results
+
+**Why 300 questions are held out.** Round 1 ran all 400 questions once per system. Before anything was tuned, [split.py](split.py) set aside a quarter of every design cell (100 questions) for development and held out the other 300 ([split.json](split.json)). The split uses the design and a fixed seed, not the results. Fixes to the local system are tuned on the 100 only, and the 300 are scored once per round, so a tuned system is judged on questions it wasn't tuned on.
+
+**Round 1: gpt-5.4-mini against an untuned qwen2.5:7b.** One run each, both graded by the same gpt-5.4-mini judge ([full report](results/comparison_heldout.md)).
+
+| 300 held-out questions | Questions | gpt-5.4-mini | qwen2.5:7b (local) | Gap (95% interval) |
+|---|---:|---:|---:|---|
+| All | 300 | **82.3%** | **25.7%** | +56.7 pts (+51.0 to +62.3) |
+| Answerable | 228 | 77.2% | 2.2% | +75.0 pts (+69.3 to +80.7) |
+| Should decline or block | 72 | 98.6% | 100% | |
+
+All 400 questions give nearly the same scores (82.2% and 25.2%). Median time per question was 5.0 s against 21.1 s.
+
+- **The local model's score is almost all refusals.** Of the 228 answerable questions it answered 7, said `not_found` to 185 and `out_of_scope` to 28; the rest failed or were blocked. 72 of its 77 passes are questions where declining is the right answer. Round 2 below traces much of this to fixable problems, so round 1 measures an untuned setup more than the model's ceiling.
+- **The OpenAI system is weakest on comparisons (41.7%) and false premises (66.7%).** It scores 91.7% on single figures, 89.6% on text questions and 81.2% on calculations.
+- **82% and the golden set's 98% aren't like for like.** The 400 questions weight hard types equally and add casual, terse and misspelled wordings. They were also graded by a cheaper judge (gpt-5.4-mini rather than gpt-5.5, to fit the budget) over one run rather than three.
+
+| Test | Why it's needed | What it says here | Assumptions and checks |
+|---|---|---|---|
+| Paired bootstrap interval | Both systems answer the same questions, so the gap should be measured question by question and not as two separate averages | The gap is between 51 and 62 points | Questions are resampled as independent units. They are one designed set, so this describes questions like these, not all possible questions. With one run per system it leaves out run-to-run variation |
+| McNemar's exact test | Questions both systems get right or wrong can't say which is better; only the questions they split on can | They split on 172 questions and gpt-5.4-mini won 171. If the systems were equally good each split would be a coin flip, and a result this lopsided would essentially never happen (p < 0.0001) | Pairs are independent across questions. The exact version has no minimum sample size |
+| Firth logistic model with interactions | The gap might depend on the kind of question or its wording | It does. System × type: χ²(4) = 81.5, p < 0.001; the local model catches up only on not-found questions. System × wording: χ²(3) = 15.7, p = 0.001, driven by terse queries (odds ratio 0.10, 95% 0.02 to 0.49) | Errors are clustered by question, on 228 single-company questions. With the local model passing about 2% of answerable questions, effect sizes are very imprecise (one odds ratio is 554, interval 92 to 3,338), so read the direction and not the size. Interaction terms aren't adjusted for multiple comparisons |
+| Cohen's κ against the model-free grader | The judge is an LLM, and here the same model as the OpenAI system, so it could favor that system's answers | On the 228 answerable questions the judge and the model-free check agree 95.2% of the time for gpt-5.4-mini (κ = 0.85) and 99.6% for the local model (κ = 0.91). Every disagreement is the judge failing an answer the check passed (11 and 1). Scored with no LLM at all, the systems split 181 to 0 (82.0% against 2.6%), so the result doesn't depend on the judge | The model-free check only looks for the right figure or name, so it's more lenient than the judge. κ carries little information when one system almost never passes |
+
+**Round 2: tuning the local system (in progress).** Scored on the 76 answerable development questions with the model-free check, which costs nothing:
+
+| Step | What changed | Passed (of 76) |
+|---|---|---:|
+| Round 1 | qwen2.5:7b, untuned | 0 |
+| 2a, 2b | The verifier accepts cited chunk ids with brackets; for the local system only, a prompt rule against answering `not_found` when the answer was found, a named company overrules the classifier's off-topic verdict, and temperature 0 | 25, then 30 |
+| 2c | The model writes the arithmetic and code evaluates it, only if every figure is in the excerpts; citations are built in code | 34 |
+| 2d | qwen3:8b, thinking off, 12k context | 47 |
+| Reference | gpt-5.4-mini | 65 |
+
+These are development scores on the questions the fixes were tuned on, so they run optimistic. The held-out score is the one that counts, and it hasn't been run yet. The shared verifier changes only add verified citations, and they never changed a gpt-5.4-mini answer, so round 1's OpenAI scores stand.
+
 ## Running it
 
 ```bash
@@ -116,6 +153,7 @@ python -m eval.factorial.stats                      # -> results/results_openai.
 
 # Local system (Ollama running, OPENAI_API_KEY still set for the judge)
 ollama pull qwen2.5:7b && ollama pull nomic-embed-text
+ollama create qwen2.5-7b-16k -f config/ollama/qwen2.5-7b-16k.Modelfile   # 16k context; the 4k default truncates prompts
 LLM_PROFILE=local python -m src.pipeline.index      # once: builds vector_db_local/
 LLM_PROFILE=local python -m eval.factorial.run --workers 2   # -> results/attempts_local.jsonl
 python -m eval.factorial.stats --attempts attempts_local.jsonl

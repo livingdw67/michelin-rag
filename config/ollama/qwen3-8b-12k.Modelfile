@@ -1,0 +1,7 @@
+# qwen3:8b for the local profile. 12k context: prompts reach about 10.5k tokens, and at 16k the model spills onto
+# the CPU of an 8 GB GPU. Run it with LLM_REASONING_EFFORT=none: with thinking on, a call takes over a minute.
+#   ollama create qwen3-8b-12k -f config/ollama/qwen3-8b-12k.Modelfile
+FROM qwen3:8b
+PARAMETER num_ctx 12288
+PARAMETER num_predict 2048
+PARAMETER temperature 0

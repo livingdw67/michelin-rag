@@ -36,6 +36,15 @@ def tokenize(text):
     return TOKEN.findall(text.lower())
 
 
+_COMPANY_NAME = re.compile(r"\b(" + "|".join(re.escape(a) for meta in COMPANIES.values() for a in meta["aliases"])
+                           + r")\b", re.IGNORECASE)
+
+
+def names_a_company(question):
+    """True if the question names one of the companies as a word ("conti", not "continue")."""
+    return bool(_COMPANY_NAME.search(question))
+
+
 def detect_companies(question):
     """Companies named in the question; all companies if none are named."""
     q = question.lower()

@@ -34,6 +34,7 @@ import numpy as np
 import pandas as pd
 
 from eval.factorial.design import SINGLE_COMPANY_TYPES, WORDINGS, cell
+from eval.factorial.split import load_split
 
 HERE = Path(__file__).resolve().parent
 RESULTS = HERE / "results"
@@ -496,11 +497,14 @@ def suffix(attempts_name):
     return stem[len("attempts"):] if stem.startswith("attempts") else f"_{stem}"
 
 
-def main(attempts_name, perms, boot):
+def main(attempts_name, perms, boot, subset=None):
     df, questions, errors = load(attempts_name)
+    tag = suffix(attempts_name)
+    if subset:  # "dev" or "heldout" (eval/factorial/split.py)
+        df = df[df["id"].isin(load_split()[subset])].reset_index(drop=True)
+        tag += f"_{subset}"
     items = item_rates(df)
     summary, md = report(df, items, questions, errors, perms, boot)
-    tag = suffix(attempts_name)
     (RESULTS / f"results{tag}.md").write_text(md, encoding="utf-8")
     (RESULTS / f"summary{tag}.json").write_text(json.dumps(summary, indent=2, default=float), encoding="utf-8")
     last_reason = df.sort_values("run").groupby("id")["judge_reason"].last() if "judge_reason" in df else None
@@ -517,5 +521,6 @@ if __name__ == "__main__":
     parser.add_argument("--attempts", default="attempts_openai.jsonl")
     parser.add_argument("--perms", type=int, default=10000)
     parser.add_argument("--boot", type=int, default=2000)
+    parser.add_argument("--subset", choices=["dev", "heldout"], help="only the development or held-out questions")
     args = parser.parse_args()
-    main(args.attempts, args.perms, args.boot)
+    main(args.attempts, args.perms, args.boot, args.subset)

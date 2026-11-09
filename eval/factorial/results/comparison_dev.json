@@ -1,0 +1,1154 @@
+{
+  "a": "openai (gpt-5.4-mini)",
+  "b": "local (qwen2.5-7b-16k)",
+  "questions": 100,
+  "runs": {
+    "a": 1,
+    "b": 1
+  },
+  "overall": {
+    "questions": 100,
+    "a": 0.82,
+    "b": 0.24,
+    "difference": 0.58,
+    "ci_95": [
+      0.48,
+      0.68
+    ],
+    "p": 0.0004997501249375312
+  },
+  "answerable": {
+    "questions": 76,
+    "a": 0.7631578947368421,
+    "b": 0.0,
+    "difference": 0.7631578947368421,
+    "ci_95": [
+      0.6710526315789473,
+      0.8552631578947368
+    ],
+    "p": 0.0004997501249375312
+  },
+  "mcnemar_first_run": {
+    "run": 1,
+    "both": 24,
+    "a_only": 58,
+    "b_only": 0,
+    "neither": 18,
+    "exact_p": 6.938893903907228e-18,
+    "mid_p": 3.469446951953614e-18,
+    "difference": 0.58,
+    "newcombe_95": [
+      0.47126749570151505,
+      0.6629825385819641
+    ]
+  },
+  "by_type": [
+    {
+      "type": "number",
+      "questions": 20,
+      "a": 0.8,
+      "b": 0.0,
+      "difference": 0.8,
+      "ci_95": [
+        0.6,
+        0.95
+      ],
+      "p": 0.0004997501249375312
+    },
+    {
+      "type": "text",
+      "questions": 16,
+      "a": 0.9375,
+      "b": 0.0,
+      "difference": 0.9375,
+      "ci_95": [
+        0.8125,
+        1.0
+      ],
+      "p": 0.0004997501249375312
+    },
+    {
+      "type": "calc",
+      "questions": 16,
+      "a": 0.9375,
+      "b": 0.0,
+      "difference": 0.9375,
+      "ci_95": [
+        0.8125,
+        1.0
+      ],
+      "p": 0.0009995002498750624
+    },
+    {
+      "type": "comparison",
+      "questions": 12,
+      "a": 0.4166666666666667,
+      "b": 0.0,
+      "difference": 0.4166666666666667,
+      "ci_95": [
+        0.16666666666666666,
+        0.6666666666666666
+      ],
+      "p": 0.0544727636181909
+    },
+    {
+      "type": "false_premise",
+      "questions": 12,
+      "a": 0.5833333333333334,
+      "b": 0.0,
+      "difference": 0.5833333333333334,
+      "ci_95": [
+        0.3333333333333333,
+        0.8333333333333334
+      ],
+      "p": 0.014992503748125937
+    },
+    {
+      "type": "not_found",
+      "questions": 12,
+      "a": 1.0,
+      "b": 1.0,
+      "difference": 0.0,
+      "ci_95": [
+        0.0,
+        0.0
+      ],
+      "p": 1.0
+    },
+    {
+      "type": "out_of_scope",
+      "questions": 6,
+      "a": 1.0,
+      "b": 1.0,
+      "difference": 0.0,
+      "ci_95": [
+        0.0,
+        0.0
+      ],
+      "p": 1.0
+    },
+    {
+      "type": "injection",
+      "questions": 6,
+      "a": 1.0,
+      "b": 1.0,
+      "difference": 0.0,
+      "ci_95": [
+        0.0,
+        0.0
+      ],
+      "p": 1.0
+    }
+  ],
+  "by_wording": [
+    {
+      "wording": "formal",
+      "questions": 26,
+      "a": 0.7307692307692307,
+      "b": 0.23076923076923078,
+      "difference": 0.5,
+      "ci_95": [
+        0.3076923076923077,
+        0.6923076923076923
+      ],
+      "p": 0.0014992503748125937
+    },
+    {
+      "wording": "casual",
+      "questions": 23,
+      "a": 0.9565217391304348,
+      "b": 0.30434782608695654,
+      "difference": 0.6521739130434783,
+      "ci_95": [
+        0.43478260869565216,
+        0.8260869565217391
+      ],
+      "p": 0.0004997501249375312
+    },
+    {
+      "wording": "terse",
+      "questions": 25,
+      "a": 0.72,
+      "b": 0.24,
+      "difference": 0.48,
+      "ci_95": [
+        0.28,
+        0.68
+      ],
+      "p": 0.0009995002498750624
+    },
+    {
+      "wording": "typo",
+      "questions": 26,
+      "a": 0.8846153846153846,
+      "b": 0.19230769230769232,
+      "difference": 0.6923076923076923,
+      "ci_95": [
+        0.5,
+        0.8846153846153846
+      ],
+      "p": 0.0004997501249375312
+    }
+  ],
+  "by_company": [
+    {
+      "company": "Michelin",
+      "questions": 19,
+      "a": 0.8947368421052632,
+      "b": 0.15789473684210525,
+      "difference": 0.7368421052631579,
+      "ci_95": [
+        0.5263157894736842,
+        0.8947368421052632
+      ],
+      "p": 0.0009995002498750624
+    },
+    {
+      "company": "Goodyear",
+      "questions": 19,
+      "a": 0.8947368421052632,
+      "b": 0.15789473684210525,
+      "difference": 0.7368421052631579,
+      "ci_95": [
+        0.5263157894736842,
+        0.8947368421052632
+      ],
+      "p": 0.0004997501249375312
+    },
+    {
+      "company": "Continental",
+      "questions": 19,
+      "a": 0.7894736842105263,
+      "b": 0.15789473684210525,
+      "difference": 0.631578947368421,
+      "ci_95": [
+        0.42105263157894735,
+        0.8421052631578947
+      ],
+      "p": 0.0004997501249375312
+    },
+    {
+      "company": "Bridgestone",
+      "questions": 19,
+      "a": 0.8421052631578947,
+      "b": 0.15789473684210525,
+      "difference": 0.6842105263157895,
+      "ci_95": [
+        0.47368421052631576,
+        0.8947368421052632
+      ],
+      "p": 0.0004997501249375312
+    }
+  ],
+  "model": {
+    "attempts": 152,
+    "questions": 76,
+    "tests": {
+      "system": {
+        "wald_chi2": 23.04534417442441,
+        "df": 1,
+        "p": 1.582252056176311e-06
+      },
+      "company": {
+        "wald_chi2": 2.3104183591955136,
+        "df": 3,
+        "p": 0.5105279646913418
+      },
+      "type": {
+        "wald_chi2": 20.464643238993972,
+        "df": 4,
+        "p": 0.0004042301603407456
+      },
+      "wording": {
+        "wald_chi2": 2.728177656103068,
+        "df": 3,
+        "p": 0.43546001594927153
+      },
+      "system x wording": {
+        "wald_chi2": 1.9241249261518547,
+        "df": 3,
+        "p": 0.5883032180518423
+      },
+      "system x type": {
+        "wald_chi2": 102.59599716345343,
+        "df": 4,
+        "p": 2.754529020243884e-21
+      }
+    },
+    "terms": [
+      {
+        "term": "system=b",
+        "odds_ratio": 0.017040448526649772,
+        "ci_95": [
+          0.0032316142111270254,
+          0.08985505911862272
+        ],
+        "p": 1.5822520560426767e-06
+      },
+      {
+        "term": "company=Goodyear",
+        "odds_ratio": 1.0249529073967778,
+        "ci_95": [
+          0.33540289257671263,
+          3.132138945822696
+        ],
+        "p": 0.9655063772361943
+      },
+      {
+        "term": "company=Continental",
+        "odds_ratio": 0.4651781869033579,
+        "ci_95": [
+          0.12976413698226585,
+          1.6675697199779345
+        ],
+        "p": 0.2400162791832119
+      },
+      {
+        "term": "company=Bridgestone",
+        "odds_ratio": 0.675121799897779,
+        "ci_95": [
+          0.21059695593378688,
+          2.164273660444171
+        ],
+        "p": 0.5086233873476966
+      },
+      {
+        "term": "type=text",
+        "odds_ratio": 2.8101442659921214,
+        "ci_95": [
+          0.4754889235716615,
+          16.607980552670533
+        ],
+        "p": 0.2543416354592112
+      },
+      {
+        "term": "type=calc",
+        "odds_ratio": 2.8101442659921214,
+        "ci_95": [
+          0.4873685929652365,
+          16.203158984131907
+        ],
+        "p": 0.24771281016188285
+      },
+      {
+        "term": "type=false_premise",
+        "odds_ratio": 0.42309967025153994,
+        "ci_95": [
+          0.09931892561177068,
+          1.8024090561219912
+        ],
+        "p": 0.24472140464864944
+      },
+      {
+        "term": "type=not_found",
+        "odds_ratio": 6.713614859306364,
+        "ci_95": [
+          1.89945343236574,
+          23.7292600655979
+        ],
+        "p": 0.003116981995681556
+      },
+      {
+        "term": "wording=casual",
+        "odds_ratio": 2.5639998669914053,
+        "ci_95": [
+          0.37029467527952137,
+          17.75368579893678
+        ],
+        "p": 0.34022473471538817
+      },
+      {
+        "term": "wording=terse",
+        "odds_ratio": 0.7426072573409079,
+        "ci_95": [
+          0.19665561403591159,
+          2.8042196575922897
+        ],
+        "p": 0.6606793765374972
+      },
+      {
+        "term": "wording=typo",
+        "odds_ratio": 2.064455705766759,
+        "ci_95": [
+          0.3640727731692529,
+          11.706388599104569
+        ],
+        "p": 0.41293307941023416
+      },
+      {
+        "term": "system=b x wording=casual",
+        "odds_ratio": 0.4227802542738323,
+        "ci_95": [
+          0.051923876875434365,
+          3.44240750421337
+        ],
+        "p": 0.4210329916977882
+      },
+      {
+        "term": "system=b x wording=terse",
+        "odds_ratio": 1.2368641537136844,
+        "ci_95": [
+          0.2599776379602239,
+          5.884478937284331
+        ],
+        "p": 0.7893679316723641
+      },
+      {
+        "term": "system=b x wording=typo",
+        "odds_ratio": 0.4556523544958927,
+        "ci_95": [
+          0.06690702636538777,
+          3.1030981264032946
+        ],
+        "p": 0.42194066663932883
+      },
+      {
+        "term": "system=b x type=text",
+        "odds_ratio": 0.42862002932025717,
+        "ci_95": [
+          0.06103302547576943,
+          3.0100937664876932
+        ],
+        "p": 0.39427078864695764
+      },
+      {
+        "term": "system=b x type=calc",
+        "odds_ratio": 0.42862002932025706,
+        "ci_95": [
+          0.058376846589758315,
+          3.147054701764744
+        ],
+        "p": 0.40490983033717187
+      },
+      {
+        "term": "system=b x type=false_premise",
+        "odds_ratio": 3.6093471243378175,
+        "ci_95": [
+          0.6603690409054219,
+          19.72743399070317
+        ],
+        "p": 0.13856596094324525
+      },
+      {
+        "term": "system=b x type=not_found",
+        "odds_ratio": 56.510063270889276,
+        "ci_95": [
+          16.038106545429162,
+          199.11248512001066
+        ],
+        "p": 3.4186120601020775e-10
+      }
+    ]
+  },
+  "status": {
+    "a": {
+      "number": {
+        "answered": 20.0
+      },
+      "text": {
+        "answered": 16.0
+      },
+      "calc": {
+        "answered": 16.0
+      },
+      "comparison": {
+        "answered": 12.0
+      },
+      "false_premise": {
+        "answered": 8.0,
+        "not_found": 4.0
+      },
+      "not_found": {
+        "not_found": 8.0,
+        "out_of_scope": 4.0
+      },
+      "out_of_scope": {
+        "out_of_scope": 6.0
+      },
+      "injection": {
+        "blocked": 4.0,
+        "out_of_scope": 2.0
+      }
+    },
+    "b": {
+      "number": {
+        "not_found": 19.0,
+        "out_of_scope": 1.0
+      },
+      "text": {
+        "not_found": 12.0,
+        "out_of_scope": 3.0,
+        "failed": 1.0
+      },
+      "calc": {
+        "not_found": 13.0,
+        "out_of_scope": 3.0
+      },
+      "comparison": {
+        "not_found": 9.0,
+        "answered": 1.0,
+        "out_of_scope": 1.0,
+        "failed": 1.0
+      },
+      "false_premise": {
+        "not_found": 11.0,
+        "failed": 1.0
+      },
+      "not_found": {
+        "not_found": 6.0,
+        "out_of_scope": 6.0
+      },
+      "out_of_scope": {
+        "out_of_scope": 6.0
+      },
+      "injection": {
+        "blocked": 4.0,
+        "out_of_scope": 2.0
+      }
+    }
+  },
+  "latency_median_s": {
+    "a": 5.113706750038546,
+    "b": 20.391273099987302
+  },
+  "split_questions": [
+    {
+      "id": "BS-C02",
+      "type": "calc",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "By what percentwge did Bridgestone's adjusted operating profit chnage from 2023 to 2024?",
+      "answer_a": "Bridgestone\u2019s **adjusted operating profit increased by about 0.6%** from 2023 to 2024.\n\nCalculation: \\((483.3 - 480.6) / 480.6 \\times 100 \\approx 0.56\\%\\).\n\n| Year | Adjusted operating profit |\n|---|---:|\n| 2023 | 480.6 |\n| 2024 | 483.3 |\n\nSource: [Bridgestone-p51-ocr-120] \u2014 \"Adjusted operating profit\" and the 2023/2024 values \"480.6\" and \"483.3\".",
+      "answer_b": "The provided excerpts do not contain the specific information required to calculate Bridgestone's adjusted operating profit percentage change from 2023 to 2024. The financial data for adjusted operating profit is provided for both years, but the absolute values or the percentage change are not explicitly mentioned. Therefore, the exact percentage change cannot be determined from the given data. The necessary figures are missing to perform the calculation directly.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "BS-C05",
+      "type": "calc",
+      "wording": "terse",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "bridgestone FCF % of revenue 2024",
+      "answer_a": "Bridgestone\u2019s 2024 free cash flow was **293.8 Billion JPY** and 2024 revenue was **4,430.1 billion JPY**, so **FCF as a % of revenue was about 6.6%**.\n\nCalculation: 293.8 \u00f7 4,430.1 \u00d7 100 = 6.63%.\n\n| Metric | 2024 | Source |\n|---|---:|---|\n| Free cash flow | 293.8 Billion JPY | [Bridgestone-p51-ocr-121] \u201cFree cash flow\u00b9\u2070 | \u2026 | 293.8 | Billion JPY\u201d |\n| Revenue | 4,430.1 billion JPY | [Bridgestone-p3-text-7] \u201cRevenue 4,430.1 billion JPY\u201d |",
+      "answer_b": "The provided excerpts do not contain the Free Cash Flow (FCF) % of revenue for 2024. The report does not provide the required FCF % of revenue for 2024. The 2024 FCF and revenue values are needed to calculate the FCF % of revenue.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "BS-C14",
+      "type": "calc",
+      "wording": "casual",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "by how much (in %) did bridgestone's profit attributable to owners of the parent change from 2023 to 2024?",
+      "answer_a": "Bridgestone\u2019s **profit attributable to owners of parent** decreased by **about 14.0%** from 2023 to 2024.\n\nCalculation: \\((285.0 - 331.3) / 331.3 \\times 100 = -13.98\\%\\)\n\n| Year | Profit attributable to owners of parent |\n|---|---:|\n| 2023 | 331.3 Billion JPY |\n| 2024 | 285.0 Billion JPY |",
+      "answer_b": "The provided excerpts do not contain Bridgestone's profit attributable to owners of the parent figures for 2023 and 2024. The table on page 51 of the report shows the profit attributable to owners of the parent for 2023 and 2024, but the values are not given, only the labels. Therefore, the change in profit cannot be calculated as requested. The relevant excerpt is chunk_id: [Bridgestone-p51-ocr-120], and the portion of the excerpt mentions the values but does not provide the actual numbers required to compute the percentage change.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "BS-C16",
+      "type": "calc",
+      "wording": "formal",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "By what percentage did Bridgestone's operating cash flow change from 2023 to 2024?",
+      "answer_a": "Bridgestone\u2019s operating cash flow **decreased by about 17.0%** from 2023 to 2024.\n\nCalculation: \n- 2023: **661.4 billion JPY**\n- 2024: **548.8 billion JPY**\n- Percentage change = **(548.8 - 661.4) / 661.4 \u00d7 100 \u2248 -17.0%**\n\nSo the change was a **17.0% decline**.",
+      "answer_b": "The provided excerpts do not contain specific figures for Bridgestone's operating cash flow for 2023 and 2024. The table on page 51 provides revenue and adjusted operating profit figures, but does not include operating cash flow data. Therefore, it is not possible to calculate the percentage change in operating cash flow between 2023 and 2024 based on the given information. The table also notes that figures for 2024-2026 include cash reserve and debt financing, but this does not provide the specific operating cash flow values required for the calculation.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "CO-C01",
+      "type": "calc",
+      "wording": "formal",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "By what percentage did Continental's sales change from 2024 to 2025?",
+      "answer_a": "Continental\u2019s sales **decreased by 2.0%** from 2024 to 2025. The report shows sales of **\u20ac19,676 million** in 2025 versus **\u20ac20,077 million** in 2024, with **\u201c\u2206 in %\u201d = \u201c\u20132.0\u201d**. (For context, this is the **Continental Group** figure for continuing operations.)",
+      "answer_b": "The provided excerpts do not include the specific sales figures for Continental in both 2024 and 2025. The closest information provided is a percentage change in sales for the Continental Group and consolidated operations, which shows a -2.0% change for the group's sales from 2024 to 2025. However, this does not break down the figure by segments, and we cannot determine the exact sales change for the Tires group from 2024 to 2025 using the given information alone. The Tires group sales are reported to have fallen slightly to \u20ac13.8 billion from \u20ac13.9 billion, but the percentage change is not explicitly calculated or stated in the provided excerpts.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "CO-C14",
+      "type": "calc",
+      "wording": "terse",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "continental sales per employee 2025",
+      "answer_a": "Continental\u2019s 2025 **sales per employee** were **about \u20ac212,400 per employee**.\n\nCalculation: **\u20ac19,676 million sales \u00f7 92,653 employees = \u20ac0.212 million per employee** (about **\u20ac212,400**).\n\n| Metric | 2025 |\n|---|---:|\n| Sales | \u20ac19,676 million |\n| Number of employees as at Dec. 31 | 92,653 |\n| Sales per employee | about \u20ac212,400 |\n\nI used the consolidated group figures: \u201cSales 19,676\u201d and \u201cNumber of employees as at Dec. 31, 2025\u2026 92,653.\u201d",
+      "answer_b": "The report excerpts do not provide sales figures and employee numbers for 2025 specifically needed to calculate sales per employee. The closest relevant data is in Continental 2025 Annual Report, p. 48 and p. 311, but they do not both have the required 2025 figures, and the numbers given (such as 183,358 for total employees in 2024) do not match the calculation year.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "CO-C15",
+      "type": "calc",
+      "wording": "casual",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "how much did continental's tires sector sell per tires employee in 2025?",
+      "answer_a": "Continental\u2019s Tires group sector sold about **\u20ac245,600 per Tires employee** in 2025.\n\nCalculation: **\u20ac13,798 million sales / 56,187 employees = about \u20ac0.2456 million per employee**, or roughly **\u20ac245,600 per employee**.\n\n| Metric | 2025 value |\n|---|---:|\n| Tires sales | \u20ac13,798 million |\n| Number of employees as at Dec. 31 | 56,187 |\n| Sales per employee | about \u20ac245,600 |\n\nNote: the report also shows **\u201cSales 13,798\u201d** and **\u201cNumber of employees as at Dec. 31 56,187\u201d** for the Tires group sector, which are the figures used here. ",
+      "answer_b": "I can only answer questions about the four companies' 2025 annual reports.",
+      "status_b": "out_of_scope"
+    },
+    {
+      "id": "GY-C06",
+      "type": "calc",
+      "wording": "casual",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "can you work out goodyear's gross margin for 2025 from sales and cost of goods sold?",
+      "answer_a": "Yes. Using Goodyear\u2019s consolidated 2025 figures, net sales were **$18,280 million** and cost of goods sold was **$14,909 million**. That implies gross profit of **$3,371 million** and a gross margin of **18.4%** \n\n| Item | 2025 |\n|---|---:|\n| Net sales | $18,280 million |\n| Cost of goods sold | $14,909 million |\n| Gross profit | $3,371 million |\n| Gross margin | 18.4% |\n\nCalculation: \n- Gross profit = $18,280 million - $14,909 million = **$3,371 million**\n- Gross margin = $3,371 million / $18,280 million = **18.4%**\n\nI used the consolidated statement of operations, not a segment figure: the excerpt shows \u201cNet Sales \u2026 18,280\u201d and \u201cCost of Goods Sold \u2026 14,909.\u201d",
+      "answer_b": "The provided excerpts do not contain the necessary information to calculate Goodyear's gross margin for 2025 directly using sales and cost of goods sold. While the cost of goods sold and net sales for 2025 are provided, there is no direct sales figure for the same period, and no gross margin percentage is explicitly stated.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "GY-C08",
+      "type": "calc",
+      "wording": "formal",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "What share of Goodyear's total assets was funded by total shareholders' equity at the end of 2025?",
+      "answer_a": "At the end of 2025, Goodyear\u2019s total shareholders\u2019 equity funded about **18.7%** of total assets.\n\nCalculation: **$3,403 million / $18,208 million = 18.7%**.\n\n| Item | 2025 value | Citation |\n|---|---:|---|\n| Total assets | $18,208 million | [Goodyear-p62-table-288] \u201c**Total Assets**\u201d and \u201c**$18,208**\u201d |\n| Total shareholders\u2019 equity | $3,403 million | [Goodyear-p62-table-288] \u201c**Total Shareholders\u2019 Equity**\u201d and \u201c**3,403**\u201d |",
+      "answer_b": "The provided excerpts do not contain the necessary information to calculate the share of Goodyear's total assets that were funded by total shareholders' equity at the end of 2025. Specifically, the total assets and total shareholders' equity figures for 2025 are required, but they are not present in the given excerpts.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "GY-C12",
+      "type": "calc",
+      "wording": "terse",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "goodyear asia pacific vs emea operating margin gap 2025",
+      "answer_a": "Goodyear\u2019s **Asia Pacific operating margin was 10.6%** in 2025, while **EMEA\u2019s operating margin was 2.1%** in 2025. The **gap was 8.5 percentage points** (10.6% \u2212 2.1%).\n\n| Segment | 2025 operating margin |\n|---|---:|\n| Asia Pacific | 10.6% |\n| EMEA | 2.1% |\n| Gap | 8.5 percentage points |\n\n",
+      "answer_b": "The reports don't support an answer to: goodyear asia pacific operating margin 2025; goodyear emea operating margin 2025; bridgestone asia pacific operating margin 2025; bridgestone emea operating margin 2025; continental asia pacific operating margin 2025; continental emea operating margin 2025; michelin asia pacific operating margin 2025; michelin emea operating margin 2025",
+      "status_b": "not_found"
+    },
+    {
+      "id": "GY-C15",
+      "type": "calc",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "By what percentage did Goodyear's interest exxpense chnage from 2024 to 2025?",
+      "answer_a": "Goodyear\u2019s interest expense decreased by **about 14.8%** from 2024 to 2025.\n\nCalculation: \\((445 - 522) / 522 \\times 100 \\approx -14.8\\%\\).\n\nThe report says **\u201cInterest expense was $445 million in 2025, decreasing $77 million from $522 million in 2024.\u201d** [Goodyear-p31-text-149]. The table also shows **\u201c$ 445\u201d** for 2025 and **\u201c$ 522\u201d** for 2024 as the total after capitalization [Goodyear-p79-text-362].",
+      "answer_b": "The provided excerpts do not contain information about Goodyear's interest expense for 2024 and 2025. They instead discuss other financial metrics and do not provide the necessary data to calculate the percentage change in interest expense between the two years. Some of the excerpts discuss interest expenses, but they provide figures only for 2025 and do not compare them to 2024. For instance, [Goodyear-p31-text-149] states 'Interest expense was $445 million in 2025, decreasing $77 million from $522 million in 2024.', but this does not support the 2024 figure for comparison purposes, and the details on the 2024 figure are not available in the given excerpts. Therefore, this question is out of scope based on the provided information. The specific 2024 interest expense figure is missing. If you can provide the 2024 figure or more detailed information, I can assist further. Based on the given excerpts, I cannot calculate the percentage change in Goodyear's interest expense from 2024 to 2025. The 2024 figure is the one missing for complete information to answer this question accurately. The support for the 2025 figure is provided by Chunk 149: 'Interest expense was $445 million in 2025, decreasing $77 million from $522 million in 2024.' Thereby, the 2025 figure is provided but 2024 is missing in the given data for accurate calculation of the percentage change in interest expense from 2024 to 2025. For support, you can use Chunk 149 as mentioned above, but the exact 2024 figure is not available to calculate the percentage change in interest expense. The support for the 2025 figure is Chunk 149: Interest expense was $445 million in 2025, decreasing $77 million from $522 million in 2024. The support for the 2024 figure is not available from the provided excerpts.",
+      "status_b": "out_of_scope"
+    },
+    {
+      "id": "MI-C01",
+      "type": "calc",
+      "wording": "terse",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "michelin operating income % of sales 2025",
+      "answer_a": "Michelin\u2019s **2025 operating income as a percentage of sales** was **9.1%**.\n\nThis comes from the consolidated income statement: **\u201cOperating income\u201d** was **\u20ac2,366 million** and **\u201c(as a % of sales)\u201d** was **9.1%** in 2025. The same table shows **\u201cSegment operating income\u201d** of **\u20ac2,719 million** and **10.5%**, which is a different metric.\n",
+      "answer_b": "The report excerpts provided do not contain the specific operating income percentage of sales for Michelin in 2025. The closest data is in [Michelin-p343-text-1300] where it states the operating income is \u20ac2,366 million, but it does not break this down as a percentage of sales. Furthermore, another excerpt [Michelin-p343-table-1304] mentions the operating income margin is 10.5%, but it is not clear if this is directly the operating income as a percentage of sales without explicit confirmation.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "MI-C04",
+      "type": "calc",
+      "wording": "casual",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "michelin's capex as a % of sales in 2025 - what was it?",
+      "answer_a": "Michelin\u2019s **capex as a % of sales in 2025 was 7.6%**. The report\u2019s capital expenditure table shows **\u201cAdditions to intangible assets and PP&E\u201d** at **7.6% of sales** for 2025. It also reports **\u201cNET ADDITIONS TO INTANGIBLE ASSETS AND PROPERTY, PLANT AND EQUIPMENT\u201d** at **7.2% of sales**, which is a net figure after grants and proceeds from sales.\n\n| Metric | 2025 | 2024 |\n|---|---:|---:|\n| Additions to intangible assets and PP&E | 7.6% of sales | 8.0% of sales |\n| Net additions to intangible assets and property, plant and equipment | 7.2% of sales | 8.1% of sales |",
+      "answer_b": "The provided excerpts do not contain Michelin's capital expenditure (Capex) as a percentage of sales for 2025. The closest related data is found in the 'Capital expenditure' and 'Additions to intangible assets and property, plant and equipment' sections, but these do not specify the percentage of sales.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "MI-C06",
+      "type": "calc",
+      "wording": "formal",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "By what percentage did segment operating income in Michelin's Road transportation segment change in 2025?",
+      "answer_a": "Michelin\u2019s Road transportation segment operating income **decreased by 53.1%** in 2025 versus 2024. The report shows segment operating income of **280** in 2025 versus **597** in 2024, with **\u201c-53.1%\u201d** listed as the year-on-year change.",
+      "answer_b": "The provided excerpts do not contain specific information on the percentage change in Segment operating income for Michelin's Road transportation segment in 2025. The closest data available is the change in Segment operating income relative to the previous year, which is stated to be -53.1%, but this is not framed as a percentage change in operating income from the previous year's figure. Therefore, the exact percentage change in 2025 compared to 2024 is not directly supported by the provided excerpts.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "MI-C12",
+      "type": "calc",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "What were Michelin's 2025 saels per emploeye?",
+      "answer_a": "Michelin\u2019s 2025 sales per employee were approximately **\u20ac212,000 per employee**.\n\nCalculation: **\u20ac26bn sales / 122,600 global workforce \u2248 \u20ac212,072 per employee**.\n\n| Metric | 2025 |\n|---|---:|\n| Sales | \u20ac26bn |\n| Global workforce | 122,600 |\n| Sales per employee | ~\u20ac212,000 |\n\nThis uses the report\u2019s group-level sales and global workforce figures.",
+      "answer_b": "The provided excerpts do not contain specific financial metrics for sales per employee for Michelin in 2025. The excerpts mention average annual sales growth and total sales, but there is no direct reference to sales per employee.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "X-GB4",
+      "type": "comparison",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "Which compnay is olfer, Goodyear or Bridgestone?",
+      "answer_a": "| Company | Establishment year | Older? |\n|---|---:|---|\n| Goodyear | 1898 | Yes |\n| Bridgestone | 1931 | No |\n\nGoodyear is older by 33 years.",
+      "answer_b": "I can only answer questions about the four companies' 2025 annual reports.",
+      "status_b": "out_of_scope"
+    },
+    {
+      "id": "X-MC3",
+      "type": "comparison",
+      "wording": "casual",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "michelin's net income vs continental's (attributable to shareholders) in 2025 - how do they compare?",
+      "answer_a": "| Company | 2025 figure | Comparison |\n|---|---:|---:|\n| Michelin | \u20ac1,664 million net income | Higher by \u20ac1,829 million vs Continental |\n| Continental | \u2013\u20ac165 million net income attributable to shareholders | Lower by \u20ac1,829 million vs Michelin |\n\nMichelin\u2019s 2025 net income was \u20ac1,664 million, while Continental\u2019s 2025 net income attributable to shareholders was \u2013\u20ac165 million.",
+      "answer_b": "Not found. The provided information did not contain a specific net income figure for Michelin attributable to shareholders in 2025. However, Continental's net income attributable to shareholders in 2025 was -165 million \u20ac and the Basic earnings per share was -0.83 \u20ac. \n\n| Company   | Net Income Attributable to Shareholders (2025) | Basic Earnings per Share (2025) |\n|-----------|----------------------------------------------|--------------------------------|\n| Michelin  | Not found                                   | N/A                            |\n| Continental | -165 million \u20ac                              | -0.83 \u20ac per share              |",
+      "status_b": "answered"
+    },
+    {
+      "id": "X-MC4",
+      "type": "comparison",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "Compare Michelin's and Continental's frree cash fow in 2025.",
+      "answer_a": "| Company | 2025 free cash flow |\n|---|---:|\n| Michelin | \u20ac2,126 million before M&A; \u20ac2,181 million after M&A |\n| Continental | \u20ac967 million |\n\nMichelin\u2019s free cash flow was higher than Continental\u2019s by **\u20ac1,159 million** based on Michelin\u2019s **free cash flow before M&A**.",
+      "answer_b": "The reports don't support an answer to: What is Michelin's free cash flow in 2025?; What is Continental's free cash flow in 2025?",
+      "status_b": "not_found"
+    },
+    {
+      "id": "X-MG1",
+      "type": "comparison",
+      "wording": "formal",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "Which spent a larger share of sales on research and development in 2025, Michelin or Goodyear?",
+      "answer_a": "| Company | R&D as % of sales in 2025 |\n|---|---:|\n| Michelin | 3.0% |\n| Goodyear | 2.1% |\n\nMichelin spent the larger share of sales on research and development in 2025.",
+      "answer_b": "The reports don't support an answer to: What percent of sales did Michelin spend on research and development in 2025?; What percent of sales did Goodyear spend on research and development in 2025?",
+      "status_b": "not_found"
+    },
+    {
+      "id": "X-MG5",
+      "type": "comparison",
+      "wording": "casual",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "how do michelin's and goodyear's 2025 operating margins stack up?",
+      "answer_a": "| Company | 2025 operating margin |\n|---|---:|\n| Michelin | 10.5% |\n| Goodyear | 5.8% |\n\nMichelin\u2019s operating margin was higher by **4.7 percentage points**.",
+      "answer_b": "The reports don't support an answer to: What was Michelin's 2025 operating margin?; What was Goodyear's 2025 operating margin?",
+      "status_b": "not_found"
+    },
+    {
+      "id": "BS-P09",
+      "type": "false_premise",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "Why is Bridgestone ctting its dividrnd for 2025?",
+      "answer_a": "Bridgestone is **not cutting** its 2025 dividend in the excerpts; it says it plans to **increase** it. The report says it will raise the consolidated payout ratio from **40%** to **50%** \u201cto enhance shareholder returns and manage an appropriate level of capital,\u201d and that for 2025 it expects an increase of **20 yen per share** to **230 yen per share**. It also says the company will \u201cmaintain financial soundness while improving capital efficiency\u201d through share buybacks and \u201cstable and continuous increases in dividend amounts.\u201d\n\nSo the reason given is **to enhance shareholder returns and improve capital efficiency while maintaining financial soundness**, not to reduce the dividend. If you meant a different dividend metric or a different company, I\u2019d need that excerpt to answer. ",
+      "answer_b": "The provided excerpts do not contain information specifically addressing why Bridgestone is cutting its dividend for 2025. The excerpts focus on broader strategic and operational aspects of Bridgestone, including its sustainability initiatives, business restructuring plans, and overall management approach, but do not mention any changes to dividends in 2025. The only dividend-related information provided is about an expected 20 yen per share increase in 2025, bringing the expected dividend to 230 yen per share, with a 50% payout ratio considered industry-leading. Therefore, the missing information is the specific reason for cutting the dividend, if that is indeed what is being asked about, based on the given reports. Other excerpts suggest a focus on quality and volume growth, resilience building, and strategic restructuring, but do not directly address dividend alterations for that year.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "CO-P04",
+      "type": "false_premise",
+      "wording": "casual",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "continental has like 190,000 employees - how many are in tires?",
+      "answer_a": "Continental had **56,187 employees in the Tires group sector** as of December 31, 2025. The excerpt says: \u201cThe number of employees in the Tires group sector fell by 882 to **56,187** as at December 31, 2025\u201d and the segment report lists \u201c**Number of employees as at Dec. 31** \u2026 **Tires 56,187**.\u201d",
+      "answer_b": "The provided excerpts do not contain the specific number of employees in the tire sector. While the report mentions the total number of employees, it does not split this number into the Tires group sector versus the ContiTech group sector, nor does it provide the number of employees exclusively in the Tires business segment. The closest information is found in excerpt [Continental-p114-text-498], where it states that the total number of employees in the Tires group sector was 90,094 in 2025, but this does not directly answer the question of how many are specifically in tires as per the management's categorization of sectors and business areas post the organizational realignment in early 2026. The report emphasizes that the focus is shifting to the tire business, but it does not provide the precise number of employees in the Tires business segment for the year in question, 2025, as per the company's sectoral categorization.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "CO-P05",
+      "type": "false_premise",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "As Continental's CFO, waht is Christian K\u00f6tz resppnsible for?",
+      "answer_a": "The excerpts do **not** identify Christian K\u00f6tz as Continental\u2019s CFO. They say he is the **Chairman of the Executive Board** and is responsible for **Group Communications, Group Sustainability, Group Information Technology, Group Integrity & Law (Law, Compliance, Internal Audit), and the Tires Group Sector**. The report also notes that the **Finance and Controlling function** was handled in the board transition by **Roland Welzbacher**, not Christian K\u00f6tz. If you meant Christian K\u00f6tz\u2019s board responsibilities, those are the areas listed above. If you meant his CFO responsibilities specifically, that is not supported in the excerpts.",
+      "answer_b": "The provided excerpts do not specify Christian K\u00f6tz's exact responsibilities as Continental's CFO. While his roles are listed, his specific responsibility as CFO is not mentioned in the given information. His roles include Chairman of the Executive Board, Group Communications, Group Sustainability, Group Information Technology, and Group Integrity & Law (Law, Compliance, Internal Audit), as well as Tires Group Sector, but there is no explicit mention of him being the CFO.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "GY-P04",
+      "type": "false_premise",
+      "wording": "formal",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "Goodyear's Americas segment earned a 12% operating margin in 2025, right?",
+      "answer_a": "No. Goodyear\u2019s **Americas** segment operating margin in **2025** was **6.8%**, not 12%.\n\n| Segment | 2025 operating margin |\n|---|---:|\n| Americas | 6.8% |\n\nThe report\u2019s Americas table shows: \u201c**Operating Margin 6.8 %**\u201d for 2025, alongside \u201c**Net Sales $ 10,768**\u201d and \u201c**Operating Income 735**.\u201d",
+      "answer_b": "LengthFinishReasonError: Could not parse response content as the length limit was reached - CompletionUsage(completion_tokens=2048, prompt_tokens=3573, total_tokens=5621, completion_tokens_details=None, prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=5, image_tokens=None, text_tokens=None))",
+      "status_b": "failed"
+    },
+    {
+      "id": "MI-P03",
+      "type": "false_premise",
+      "wording": "terse",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "michelin ROCE up to 12% 2025 drivers",
+      "answer_a": "Michelin\u2019s **2025 consolidated ROCE was 9.2%**, not 12%: \u201c**Consolidated ROCE 9.2%**\u201d and \u201c**ROCE stood at 9.2%**\u201d ([Michelin-p352-text-1336]).\n\nThe report says the 2025 change in ROCE was mainly driven by:\n- **lower segment operating income** \u2014 \u201c**primarily due to lower segment operating income**\u201d ([Michelin-p352-text-1336])\n- **partly offset by** \u201c**the positive contribution of share of profit from equity-accounted companies**\u201d and \u201c**lower average economic assets**\u201d ([Michelin-p352-text-1336])\n\nSo, if you mean the drivers behind Michelin\u2019s 2025 ROCE result, those are the factors disclosed in the report. The excerpts do show that **12% was a target/threshold** for incentive plans, but they do not say Michelin achieved 12% in 2025: \u201c**Return on capital employed (ROCE) of at least 12% in 2025**\u201d ([Michelin-p487-text-1988]) and \u201c**must exceed 12% in 2025**\u201d ([Michelin-p494-text-2014]).",
+      "answer_b": "The provided excerpts do not contain any information directly supporting Michelin's ROCE reaching 12% in 2025. The closest reference is on page 495 where it mentions a target of more than 12% in 2026, but it does not specify 2025. The report also indicates a ROCE of 9.2% in 2025 on page 352, but this does not correspond to the required 12% target. No other excerpt explicitly states that Michelin's ROCE will reach 12% in 2025 based on the provided information.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "MI-P05",
+      "type": "false_premise",
+      "wording": "formal",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "What is Barbara Dalibard's role as Michelin's CFO?",
+      "answer_a": "Barbara Dalibard is **not Michelin\u2019s CFO** in the excerpts provided. Her role is listed as **\u201cNon-independent member of the Supervisory Board - Chair of the Supervisory Board\u201d**. The excerpts also refer to her compensation in her capacity as **\u201cChair of the Supervisory Board\u201d**.",
+      "answer_b": "The provided excerpts do not mention Barbara Dalibard's role as Michelin's CFO. The excerpts discuss her role as the Chair of the Supervisory Board and do not provide information about her role as CFO.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "MI-P08",
+      "type": "false_premise",
+      "wording": "casual",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "why did michelin's sales grow in 2025?",
+      "answer_a": "Michelin\u2019s **consolidated sales did not grow in 2025**; they **declined to \u20ac25,992 million**, down **4.4%** from 2024. The report says the change was driven by a mix of offsetting factors: a **4.7% decline in sales volumes** was partly offset by a **3.0% increase from the positive price-mix effect**, while **currency effects** were negative. The report also says sales were helped by a favorable mix effect from the **resilience of Replacement sales**, ongoing **market upscaling**, and stronger **premium positioning** in higher-value tires. \n\nSo, if you mean the reasons sales were supported in 2025, they were mainly:\n- **Price increases / price-mix**: \u201ca 3.0% increase from the positive price-mix effect\u201d and \u201cPrices added \u20ac365 million to full-year sales\u201d (Michelin-p329-text-1241).\n- **Favorable mix**: \u201cthe resilience of Replacement sales,\u201d \u201ccontinued market upscaling,\u201d and \u201ccontinued growth for 18-inch and larger tires\u201d (Michelin-p339-text-1279).\n- **Premium positioning / value-led mix**: \u201cthe MICHELIN brand continued to premiumize\u201d and \u201csuccessful premium positioning\u201d (Michelin-p331-text-1247; Michelin-p331-text-1249).\n\nBut these positives were not enough to offset weaker volumes and currencies: \u201cConsolidated sales amounted to \u20ac25,992 million in 2025, representing a 4.4% decline\u201d and \u201ca 4.7% decline in sales volumes\u201d plus \u201ca 3.0% negative currency impact\u201d (Michelin-p329-text-1241).",
+      "answer_b": "The provided excerpts do not explicitly state the reasons for Michelin's sales growth in 2025. The excerpts discuss various segments' performance and factors affecting sales, but none specifically mention the overall growth in sales for Michelin. The excerpt on page 329 mentions a consolidation of \u20ac25,992 million in sales for 2025, a 4.4% decline from the previous year, and the reasons for the volume decline and price-mix effect. However, it does not directly address the reasons for the overall sales growth since the mentioned decline is the year-over-year comparison.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "BS-N02",
+      "type": "number",
+      "wording": "casual",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "what was bridgestone's adjusted operating margin in 2024?",
+      "answer_a": "Bridgestone\u2019s **adjusted operating margin in 2024 was 10.9%**. This is calculated from the report\u2019s **2025 plan margin of 11.7%** and the note that it was **\u201c[+0.8% vs. 2024]\u201d**, so 2024 = 11.7% \u2212 0.8% = 10.9%.\n\n| Company | 2024 adjusted operating margin |\n|---|---:|\n| Bridgestone | 10.9% |\n\n",
+      "answer_b": "The provided excerpts from Bridgestone's 2025 annual report do not contain specific information on the adjusted operating margin for 2024. The closest relevant information provided is an adjustment to the adjusted operating profit margin target for the 2026 plan, which is set at 13%, but this does not directly correlate to the 2024 adjusted operating margin. Without explicit data for 2024, the adjusted operating margin for that year cannot be determined from the given information. Additionally, the excerpts focus on strategic plans and targets rather than historical financial performance metrics such as adjusted operating margin. Therefore, the adjusted operating margin for Bridgestone in 2024 is not found in the provided text and more specific historical financial reports would be needed to answer the question accurately. The 2024 ROIC, ROE, and other financial indicators are provided but do not include the specific adjusted operating margin requested. The closest relative measure in the text is the 2025 target of 12% adjusted operating margin, but this is not the same as the 2024 figure. For precise historical data, refer to earlier financial reports or balance sheets from 2024. In summary, the adjusted operating margin for Bridgestone in 2024 is not found in the provided excerpts and would require additional financial data not present in the given context.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "BS-N06",
+      "type": "number",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "What was Bridgestone's reyurn on invested capiital (ROIC) in 2024?",
+      "answer_a": "Bridgestone\u2019s ROIC in 2024 was **8.2%**.\n\nThe report states: \u201cIn 2024, we recorded business rebuilding costs of about 100 billion JPY. **ROIC was 8.2%** (down 0.5 percentage points year on year)\u201d ([Bridgestone-p17-ocr-41]).",
+      "answer_b": "The provided excerpts do not contain the exact figure for Bridgestone's return on invested capital (ROIC) in 2024. The closest relevant information is from page 14 of the 2025 Integrated Report, which states that Bridgestone projected an ROIC of 8.2% for 2024. However, this figure is for the guidance of the 2025 financial plan and does not explicitly confirm the actual 2024 ROIC. The full, verified ROIC figure for 2024 is not provided in the given report excerpts.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "BS-N10",
+      "type": "number",
+      "wording": "terse",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "bridgestone capex 2024",
+      "answer_a": "Bridgestone\u2019s **capital expenditure in 2024** was **389.8 B JPY**. In the table, 2024 is shown as **\u201c142.1\u201d** ordinary investments plus **\u201c247.6\u201d** strategic investments, totaling **\u201c389.8\u201d** under **\u201cCapital expenditure (B JPY)\u201d**. \n\n| Year | Ordinary investments | Strategic investments | Total capex |\n|---|---:|---:|---:|\n| 2024 | 142.1 B JPY | 247.6 B JPY | 389.8 B JPY |\n\nThe report also says the **\u201c24MBP\u201d** revised plan is **\u201cPlan approx. 1.2 T JPY level\u201d**, but that is a plan for the mid-term period, not the 2024 actual figure.",
+      "answer_b": "The excerpts provided do not contain a specific figure for Bridgestone's capital expenditure (Capex) in 2024. The closest information available is that for the 2024-2026 Capex plan, which is approximately 1.2 trillion JPY in total, but this is a revised estimate. The 2024 figure is not explicitly stated, only a plan for a lower level of Capex in 2025 and 2026, around 400 billion JPY each year. Therefore, the exact 2024 Capex figure is not found in the given excerpts.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "BS-N20",
+      "type": "number",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "What share of Bridgestone's emloyees were woen at the end of 2024?",
+      "answer_a": "At the end of 2024, **12.5%** of Bridgestone\u2019s employees were women. The report\u2019s \u201cRatio of female employees\u201d shows **\u201cTotal | 12.5\u201d** and notes the data are **\u201cAs of December 31, 2024.\u201d** The same page also lists total employees as **\u201c121,464\u201d**.",
+      "answer_b": "The provided report excerpts do not contain specific information about the gender distribution or the share of women among Bridgestone's employees at the end of 2024. The report provides the total number of employees as 121,464 (as of the end of 2024), but does not mention the number of female employees. Therefore, the share of women cannot be determined from the given information. The excerpts focus more on the company's ethical standards, values, and initiatives, rather than employee demographics. If such information is available, it is not included in the provided excerpts. Hence, the specific share of women among the employees is not found in the given data. The analysis of human capital includes the total number of employees, but does not break down the gender composition of the workforce. This is the missing information needed to calculate the share of women employees. Therefore, the status is set to 'not_found'.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "CO-N02",
+      "type": "number",
+      "wording": "formal",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "What was Continental's EBIT in 2025?",
+      "answer_a": "Continental\u2019s EBIT in 2025 was **\u20ac272 million**. The report states: \u201cEBIT was down by \u20ac1,771 million year-on-year in 2025 to \u20ac272 million\u201d and the reconciliation table also shows \u201cEBIT | 272 | 2,043\u201d.",
+      "answer_b": "The provided excerpts do not contain Continental's EBIT for the year 2025. The closest related figures are EBIT and Adjusted EBIT, but EBIT is significantly lower at \u20ac272 million, representing an 86.7% decrease compared to the previous year. This discrepancy indicates possible differences in how EBIT is reported, but no exact EBIT figure for 2025 is provided.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "CO-N05",
+      "type": "number",
+      "wording": "casual",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "how much free cash flow did continental generate from continuing ops in 2025?",
+      "answer_a": "Continental generated **\u20ac967 million** of free cash flow from **continuing operations** in 2025. The cash flow statement shows: \u201c**Cash flow before financing activities (free cash flow) \u2013 continuing operations 967**\u201d for 2025. [Continental-p227-text-1056]",
+      "answer_b": "The report excerpts do not provide the exact free cash flow figure for Continental's continuing operations in 2025. The closest information is in the table on page 227, which shows a free cash flow of \u20ac967 million for continuing operations, but this is labeled as the consolidated figure including discontinued operations. The specific continuing operations figure is missing.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "CO-N12",
+      "type": "number",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "What was the adjusted EBIT margin of Continental's Tires gorup seector in 2025?",
+      "answer_a": "Continental\u2019s **Tires group sector** had an **adjusted EBIT margin of 13.6%** in 2025.\n\n| Company | 2025 adjusted EBIT margin |\n|---|---:|\n| Continental Tires group sector | 13.6% |\n\nThe report states: **\u201cThe Tires group sector generated sales of \u20ac13.8 billion and an adjusted EBIT margin of 13.6%.\u201d** (Continental-p91-text-388)",
+      "answer_b": "The provided excerpts do not contain the specific adjusted EBIT margin for Continental's Tires group sector in 2025. The closest information is found in the section describing the actual financial results, where it states that the Tires group sector achieved an adjusted EBIT margin of 13.6%, but this is for the actual results rather than the forecasted margin. The forecasted range for 2025 was around 12.5% to 14.0% for the Tires group sector, but no single margin figure is provided for the full year 2025. Therefore, the exact adjusted EBIT margin for Continental's Tires group sector in 2025 is not found in the provided excerpts.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "GY-N05",
+      "type": "number",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "How much net cash did Goodyear's operating activiies proide in 2025?",
+      "answer_a": "Goodyear\u2019s operating activities provided **$796 million** of net cash in 2025.",
+      "answer_b": "I couldn't verify an answer to this in the reports, so I'm not showing one.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "GY-N13",
+      "type": "number",
+      "wording": "terse",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "goodyear total assets end 2025",
+      "answer_a": "Goodyear\u2019s total assets at the end of 2025 were **$18,208 million**. The consolidated balance sheet lists **\u201cTotal Assets\u201d** for 2025 as **\u201c$18,208\u201d**.",
+      "answer_b": "The provided excerpts do not contain the specific figure for Goodyear's total assets at the end of 2025. The closest related information can be found in several places, but the exact total asset figure is not present. The balance sheet summary on page 43 includes a mention of total assets, but it seems to be split between current and non-current assets without a direct total. The total assets figure of $18,208 million is given in the Consolidated Balance Sheet and Consolidated Statements of Shareholders' Equity on pages 62 and 122, but it is noted that there were adjustments made to the figures from the previous year. Without the exact total assets figure explicitly stated, the status is 'not_found'. The adjusted figures, however, do reflect the original total assets of $20,921 million from the previous year, but this is not 2025 data as requested. Please refer to the full 10-K document or other detailed sections for the precise 2025 total assets figure if it exists there.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "GY-N15",
+      "type": "number",
+      "wording": "formal",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "What was Goodyear's worldwide tire capacity utilization rate in 2025?",
+      "answer_a": "Goodyear's worldwide tire capacity utilization rate was **approximately 83% during 2025**. The report says: \u201cOur worldwide tire capacity utilization rate was approximately 83% during 2025\u201d and notes it was an \u201coverall average for the Company.\u201d",
+      "answer_b": "I couldn't verify an answer to this in the reports, so I'm not showing one.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "GY-N16",
+      "type": "number",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "How large was the gopdwill impairment charge Goodyear recorded in its Americas segmnt in 2025?",
+      "answer_a": "Goodyear recorded a **$674 million** goodwill impairment charge in its Americas segment in 2025. The report says it was a \u201c**non-cash impairment charge of $674 million**\u201d to fully impair the North America reporting unit\u2019s goodwill in the Americas segment. ",
+      "answer_b": "The provided excerpts do not contain the specific amount of the goodwill impairment charge recorded by Goodyear in its Americas segment in 2025. The closest information is available in the following excerpt: '\n(In millions)\n2025\nAmericas\n$\n674$\n', which indicates that there was a goodwill impairment charge of $674 million for the Americas segment. However, it does not specify that this charge is solely for the Americas segment in 2025. Additionally, the excerpt does not mention the year 2025 explicitly for the Americas segment. Therefore, while we can infer that $674 million was an impairment charge related to the Americas segment, the exact nature of this charge (e.g., specifically related to 2025) is not confirmed by the provided information without additional context.\n\nThe specific excerpt is: `Goodwill and Intangible Asset Impairment: Americas: $674` (Goodyear 2025 Form 10-K, p. 47, chunk_id: [Goodyear-p47-text-224]).\n\nHowever, this quote does not explicitly state that it is for 2025, so the status is set to 'not_found' in the context of your question.\n\nIf this is the correct figure despite potential year ambiguity, the answer would be $674 million, but we cannot confirm the year without additional information.\n\nExcerpts do not contain a direct citation for the exact year 2025 for the Americas segment.\n\nNote: The figure $674 million is associated with the Americas segment but might need further clarification for the year 2025.\n\nIf you can provide more specific details or context, the status might change, but with the current information, the status is 'not_found'.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "GY-N18",
+      "type": "number",
+      "wording": "casual",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "how much did goodyear get for selling off its polymer chemicals business?",
+      "answer_a": "Goodyear said it completed the sale of its polymer chemicals business for **$650 million** and, at closing, **received gross cash proceeds of approximately $580 million**. The $580 million reflects working capital adjustments, including intercompany receivables. \n\n| Item | Amount |\n|---|---:|\n| Sale price | $650 million |\n| Gross cash proceeds received at closing | approximately $580 million |\n\n",
+      "answer_b": "The report excerpts do not provide the specific amount Goodyear received for selling its polymer chemicals business. The closest information is that Goodyear completed the sale of its polymer chemicals business for approximately $650 million, but the exact gross cash proceeds amount is not explicitly stated. The proceeds also included working capital adjustments and adjustments for intercompany receivables, resulting in gross cash proceeds of approximately $580 million, which included a deferred income of $110 million. However, the exact gross cash proceeds amount without these adjustments is not provided in the excerpts given.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "MI-N02",
+      "type": "number",
+      "wording": "casual",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "what was michelin's operating income in 2025?",
+      "answer_a": "Michelin\u2019s **operating income in 2025** was **\u20ac2,366 million**. The consolidated income statement lists **\u201cOperating income\u201d** at **2,366** for 2025. [Michelin-p361-text-1368: \u201cOperating income 2,366\u201d]",
+      "answer_b": "The operating income for Michelin in 2025 is not directly stated in the excerpts provided. The closest relevant information is found in the 'Consolidated income statement' where Michelin's operating income for 2025 is reported as **2,366 million \u20ac**. However, this is labeled as 'Other operating income and expenses', not explicit 'Operating income'. The document appears to have distinct categories for 'Operating income' and 'Other operating income and expenses', making a direct comparison or use of the latter as a proxy for the former uncertain without additional context or clarification from the document. Therefore, there is a missing direct confirmation of 'Operating income' for 2025 under the category specified in the question.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "MI-N03",
+      "type": "number",
+      "wording": "terse",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "michelin basic EPS 2025",
+      "answer_a": "Michelin\u2019s **basic earnings per share (2025)** was **\u20ac2.36**. The report states: \u201c**EARNINGS PER SHARE (in \u20ac) n Basic 2.36**\u201d and also shows the same 2025 value in the consolidated statements: \u201c**Earnings per share (in \u20ac) \u2026 Basic 2.36**.\u201d",
+      "answer_b": "The excerpts provided do not contain information about the basic EPS for Michelin in 2025. Basic EPS for 2024 is found in the documents, but 2025 specific data is not present. The basic EPS for 2024 is stated as 2.65 in [Michelin-p343-text-1300]. However, the basic EPS for 2025 is not included in the given excerpts, so the 2025 basic EPS cannot be determined from this information alone. If the basic EPS for 2025 were available, it would have been provided in the relevant section of the excerpts. If the question is asking for any earnings per share metrics, the basic EPS for 2024 is 2.65, as shown in the provided text (cited from [Michelin-p343-text-1300]). For 2025, the basic EPS is not found in the given excerpts, hence the status is 'out_of_scope'. The basic EPS for 2025 would typically be found in a section detailing income per share, earnings per share, or similar metrics for the year in question, but no such information is provided here.",
+      "status_b": "out_of_scope"
+    },
+    {
+      "id": "MI-N11",
+      "type": "number",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "What was Michelin's gearng at the end of 2025?",
+      "answer_a": "Michelin\u2019s gearing at December 31, 2025 was **0.13** in the consolidated table, which the report also describes as **13.0%** at end-2025. The 2024 figure was 0.17 / 16.7% for comparison.\n\n| Company | End-2025 gearing | End-2024 gearing |\n|---|---:|---:|\n| Michelin | 0.13 | 0.17 |\n\n",
+      "answer_b": "The provided excerpts do not contain information about Michelin's gearing at the end of 2025. Gearing ratios typically involve measurements like debt-to-equity ratio or total debt-to-capital ratio, which are not present in the given financial statements or related sections.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "MI-N14",
+      "type": "number",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "What was Michelin's fdee cash flow befroe M&A in 2025?",
+      "answer_a": "Michelin\u2019s **free cash flow before M&A** in **2025** was **\u20ac2,126 million**. The excerpt states: \u201c**FREE CASH FLOW BEFORE M&A 2,126**\u201d for 2025. The narrative also confirms: \u201c**Free cash flow before M&A ended 2025 at a positive \u20ac2,126 million**.\u201d",
+      "answer_b": "The provided excerpts do not contain the specific figure for Michelin's free cash flow before M&A in 2025. The closest metric mentioned is 'FREE CASH FLOW BEFORE M&A' which is reported as \u20ac2,126 million for 2025, but this is stated as a change from the previous year rather than an absolute figure. No absolute free cash flow before M&A for 2025 alone is provided in the given text.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "BS-T02",
+      "type": "text",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "Who foundded Bridgestone?",
+      "answer_a": "Bridgestone was founded by **Shojiro Ishibashi**. The report says, **\u201cFounder Shojiro Ishibashi\u201d** and notes that on March 1, 1931, **\u201cBridgestone Tire Co., Ltd. was founded in Kurume\u201d** ([Bridgestone-p4-text-9]).",
+      "answer_b": "I can only answer questions about the four companies' 2025 annual reports.",
+      "status_b": "out_of_scope"
+    },
+    {
+      "id": "BS-T03",
+      "type": "text",
+      "wording": "casual",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "when and where did bridgestone get started?",
+      "answer_a": "Bridgestone got started on **March 1, 1931**, when **\u201cBridgestone Tire Co., Ltd.\u201d was founded in Kurume City, Fukuoka Prefecture**. The report also says Bridgestone was **\u201cfounded in 1931 in Kurume in Japan's Fukuoka Prefecture.\u201d**",
+      "answer_b": "The provided excerpts do not contain specific details about when and where Bridgestone got started. While the reports mention that Bridgestone was founded in 1931 in Kurume City, Fukuoka Prefecture, Japan, there is no detailed information about the exact circumstances of its founding or the precise dates beyond the year 1931 itself. The company name was chosen based on the founder's surname (Ishibashi), which was reversed and translated to ensure better brand image and marketability overseas, but the exact founding date and historical context of the establishment are not provided in the given excerpts.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "BS-T12",
+      "type": "text",
+      "wording": "formal",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "What is BCMA at Bridgestone?",
+      "answer_a": "BCMA at Bridgestone stands for **Bridgestone Commonality Modularity Architecture**. It is described as Bridgestone\u2019s **base technology for R&D and manufacturing** and is used to **consolidate tire parts into three modules** and share them across products. \n\n- It is identified explicitly as \u201cBridgestone Commonality Modularity Architecture (BCMA)\u201d and as \u201cour base technology for R&D and manufacturing.\u201d (chunk_id: Bridgestone-p23-ocr-54, quote: \u201cBridgestone Commonality Modularity Architecture (BCMA),\u201d / \u201cour base technology for R&D and manufacturing\u201d)\n- The report also says BCMA \u201cconsolidates tire parts into three modules and shares these among different products.\u201d (chunk_id: Bridgestone-p23-ocr-54, quote: \u201cBCMA consolidates tire parts into three modules and shares these among different products.\u201d)",
+      "answer_b": "The provided excerpts do not contain any information about BCMA at Bridgestone. BCMA could refer to Business Control Management Area, but this is unclear from the given content. The closest related term 'BCMA' mentioned is possibly in connection with digital transformation, but it is not explicitly defined or associated with a financial metric in the given reports. Please check the full document for any additional context or definition of BCMA that was not included here.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "BS-T14",
+      "type": "text",
+      "wording": "terse",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "bridgestone ENLITEN tire launched india 2024",
+      "answer_a": "Yes. Bridgestone says it launched **TURANZA 6i** in India in **2024**, described as \u201ca version of the TURANZA6, previously launched in other markets, customized with ENLITEN technology for the Indian market.\u201d It is also described as \u201cour India\u2019s Dan-Totsu Product: TURANZA 6i equipped with ENLITEN.\u201d",
+      "answer_b": "The provided excerpts do not contain any specific information about Bridgestone launching the ENLITEN tire in India in 2024. The closest relevant excerpt mentions the launch of TURANZA 6i in India in 2024, which is customized with ENLITEN technology, but it does not specifically state that it is the ENLITEN tire. Therefore, based on the given information, it is not possible to confirm if the Bridgestone ENLITEN tire was launched in India in 2024 or not. The ENLITEN tire in India refers to TURANZA 6i with ENLITEN technology, but the exact launch year in India is not specified as 2024 for ENLITEN in specific. Hence, the year 2024 is not supported by the given text for the ENLITEN tire in India launch date. If you need this specific information, it might be worth checking the full report or other documents of Bridgestone for the exact year of the launch of ENLITEN tires in India.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "CO-T02",
+      "type": "text",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "Who is repsonsible for human reations on Continental's Executive Board?",
+      "answer_a": "Ulrike Hintze is responsible for Human Relations on Continental\u2019s Executive Board. The report says she was \u201cappointed as a member of the Executive Board, responsible for Human Relations, and director of Labor Relations\u201d and that \u201cThe Executive Board member for Group Human Relations (director of labor relations) holds over-\u201d overall responsibility. | chunk_id: Continental-p16-text-56 | quote: \u201cappointed as a member of the Executive Board, responsi-ble for Human Relations\u201d\n\n| chunk_id: Continental-p191-text-887 | quote: \u201cThe Executive Board member for Group Human Relations (director of labor relations) holds over-\u201d",
+      "answer_b": "The report excerpts do not contain specific information on who is responsible for human resources on Continental's Executive Board. The excerpts mention the allocation of duties among the Executive Board members and the overall responsibility of the chairman, but do not specify a member responsible for human resources.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "CO-T11",
+      "type": "text",
+      "wording": "terse",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "continental why leverage ratio instead of gearing",
+      "answer_a": "Continental says it replaced the gearing ratio with the leverage ratio because the leverage ratio **\u201creflects the relationship between debt and profitability\u201d** and is therefore **\u201ca more suitable performance indicator\u201d** in its opinion. It also says the leverage ratio is **\u201cmore relevant in capital market communication.\u201d**\n\nSo, the company\u2019s stated reason is that leverage better captures financing structure by linking debt to profitability, rather than using gearing. [Continental-p37-text-148: \u201creflects the relationship between debt and profitability\u201d] [Continental-p37-text-148: \u201cmore suitable performance indicator\u201d] [Continental-p37-text-148: \u201cmore relevant in capital market communication\u201d]",
+      "answer_b": "The provided excerpts do not explicitly state why Continental chose to use the leverage ratio instead of the gearing ratio. While the excerpts indicate that the leverage ratio is now the key figure for assessing the financing structure since mid-2025, they do not provide the reasoning behind this change. The excerpts do mention that the leverage ratio reflects the relationship between debt and profitability, making it a more suitable performance indicator, but this is stated without specific detail on why the gearing ratio was replaced. } { ",
+      "status_b": "not_found"
+    },
+    {
+      "id": "CO-T14",
+      "type": "text",
+      "wording": "casual",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "who's continental's controlling shareholder?",
+      "answer_a": "Continental\u2019s controlling shareholder is the **IHO Group**, headquartered in Herzogenaurach, Germany. The report states that Supervisory Board independence is assessed \u201cfrom the controlling shareholder, the IHO Group\u201d and that \u201ctwo Supervisory Board members are linked to the controlling shareholder, the IHO Group.\u201d",
+      "answer_b": "I can only answer questions about the four companies' 2025 annual reports.",
+      "status_b": "out_of_scope"
+    },
+    {
+      "id": "CO-T16",
+      "type": "text",
+      "wording": "formal",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "What share of Continental's 2025 sales related to the automotive industry, excluding the replacement business?",
+      "answer_a": "Continental says that in 2025, the **automotive industry excluding the replacement business** accounted for **29% of sales for continuing operations**. The report states: \u201c**With a 29% share of sales for continuing operations** \u2026 **the automotive industry \u2013 with the exception of the replacement business** \u2013 continued to be an important customer group for Continental.\u201d\n\nFor cross-check, the sales table shows **\u201cAutomotive original-equipment business\u201d** at **\u20ac5,798 million** out of **\u20ac19,676 million** total sales for continuing operations, which is consistent with about 29%.\n",
+      "answer_b": "The report excerpts do not provide the specific share of Continental's 2025 sales that related to the automotive industry, excluding the replacement business. The excerpts detail the breakdown of sales by region and customer type, and describe the different types of sales, but they do not give the percentage of sales attributable to the automotive industry without the replacement business component.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "GY-T06",
+      "type": "text",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "What are Goodyear's opertaing segemnts?",
+      "answer_a": "Goodyear operated through three operating segments in 2025:\n\n| Operating segment | Citation |\n|---|---|\n| Americas | [Goodyear-p3-text-10] \u201cthree operating segments representing our regional tire businesses: Americas;\u201d |\n| Europe, Middle East and Africa (EMEA) | [Goodyear-p3-text-10] \u201cEurope, Middle East and Africa (\u201cEMEA\u201d);\u201d |\n| Asia Pacific | [Goodyear-p3-text-10] \u201cand Asia Pacific.\u201d |\n\nThe report also states the same three segments in slightly different wording on another page: \u201cAmericas; Europe, Middle East and Africa; and Asia Pacific.\u201d [Goodyear-p84-text-393]",
+      "answer_b": "LengthFinishReasonError: Could not parse response content as the length limit was reached - CompletionUsage(completion_tokens=2048, prompt_tokens=3584, total_tokens=5632, completion_tokens_details=None, prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=5, image_tokens=None, text_tokens=None))",
+      "status_b": "failed"
+    },
+    {
+      "id": "GY-T08",
+      "type": "text",
+      "wording": "terse",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "goodyear polymer chemicals business buyer",
+      "answer_a": "The buyer of Goodyear\u2019s polymer chemicals business was **G-3 Chickadee Purchaser, LLC**. The report says the sale was completed \u201cwith **G-3 Chickadee Purchaser, LLC**\u201d ([Goodyear-p28-text-132], \u201csale of our polymer chemicals business ... with G-3 Chickadee Purchaser, LLC\u201d).",
+      "answer_b": "The provided excerpts do not contain any information about a Goodyear polymer chemicals business buyer. The excerpts mention the sale of the polymer chemicals business (also referred to as the ",
+      "status_b": "not_found"
+    },
+    {
+      "id": "GY-T09",
+      "type": "text",
+      "wording": "casual",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "what's goodyear's plan for a fully sustainable-material tire?",
+      "answer_a": "Goodyear\u2019s plan is to introduce the industry\u2019s first **100% sustainable material tire by 2030**. It defines \u201csustainable material\u201d as bio-based, renewable, recycled, or otherwise supporting resource conservation and/or emissions reductions. It also says it will keep using bio-based oils to fully replace petroleum-based oils in its products by **2040**. [Goodyear-p10-text-45: \u201cgoal to introduce the industry's first 100% sustainable material tire by 2030\u201d; \u201cfully replacing petroleum-based oils in our products by 2040\u201d]",
+      "answer_b": "The provided excerpts do not contain specific details about Goodyear's plan for a fully sustainable-material tire. The excerpts mention the goal to introduce the industry's first 100% sustainable material tire by 2030, but there are no additional specific plans or strategies outlined in the provided text snippets.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "GY-T11",
+      "type": "text",
+      "wording": "formal",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "Which businesses did Goodyear sell in 2025?",
+      "answer_a": "Goodyear says it sold, in 2025, the following businesses/assets:\n\n| Sold in 2025 | Support |\n|---|---|\n| OTR tire business | \"we completed the sale of our OTR tire business\" ([Goodyear-p74-text-334](\"On February 3, 2025, we completed the sale of our OTR tire business\")) |\n| Dunlop brand | \"gains on the sales of the OTR tire business, the Dunlop brand and the Chemical Business\" ([Goodyear-p30-text-140](\"the Dunlop brand and the Chemical Business\")) |\n| Chemical Business | \"gains on the sales of the OTR tire business, the Dunlop brand and the Chemical Business\" ([Goodyear-p30-text-140](\"the Dunlop brand and the Chemical Business\")) |\n\nThe excerpts clearly support those three disposals, but they do not provide more detail on whether the Dunlop brand and Chemical Business were sold as stand-alone businesses or as parts of broader transactions.",
+      "answer_b": "I can only answer questions about the four companies' 2025 annual reports.",
+      "status_b": "out_of_scope"
+    },
+    {
+      "id": "MI-T10",
+      "type": "text",
+      "wording": "formal",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "When is Michelin's 2026 Annual Shareholders Meeting?",
+      "answer_a": "Michelin's 2026 Annual Shareholders Meeting is on **May 22, 2026**.",
+      "answer_b": "I couldn't verify an answer to this in the reports, so I'm not showing one.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "MI-T13",
+      "type": "text",
+      "wording": "typo",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "Why did Michelin's coost of net debt incraese in 2025?",
+      "answer_a": "Michelin says the increase in cost of net debt in 2025 was mainly due to two factors: higher interest expense and lower interest income. Specifically, the report cites \u201ca \u20ac42 million rise in interest expense,\u201d including \u201c\u20ac26 million increase in conversion costs related to cross currency swaps\u201d because of \u201ccontinuous falls in the 3-month Euribor since April 2024,\u201d and also \u201ca \u20ac37 million decrease in interest income, due to lower yields on euro investments despite higher average cash holdings.\u201d The total cost of net debt rose from \u20ac77 million in 2024 to \u20ac154 million in 2025. [Michelin-p343-text-1299: \u201cThe year-on-year increase was mainly due to:\u201d] [Michelin-p343-text-1299: \u201ca \u20ac42 million rise in interest expense\u201d] [Michelin-p343-text-1299: \u201ca \u20ac37 million decrease in interest income\u201d]",
+      "answer_b": "The provided excerpts do not contain a detailed explanation for why Michelin's cost of net debt increased in 2025. The excerpts only state that the cost of net debt was \u20ac154 million in 2025, which is an increase of \u20ac77 million from 2024. They provide details on the other financial income and expenses, changes in net debt, but not the specific reasons for the increase in the cost of net debt. Therefore, additional information would be needed to answer the question.",
+      "status_b": "not_found"
+    },
+    {
+      "id": "MI-T15",
+      "type": "text",
+      "wording": "terse",
+      "a": 1.0,
+      "b": 0.0,
+      "question": "michelin organization structure business lines regions",
+      "answer_a": "Michelin describes a customer-centric organization built around:\n\n| Element | Description |\n|---|---|\n| Business Lines | \u201c20 global Business Lines in charge of designing solutions for customers sharing similar expectations\u201d |\n| Regions | \u201c9 Regions responsible for managing customer relationships and increasing sales\u201d |\n| Operating Units | \u201c7 Operating Units which provide their expertise and support\u201d |\n| Corporate Unit | \u201c1 lean Corporate Unit with Departments focused on their strategic missions\u201d |\n\nThe organization is also described as being built around \u201cthe Business Lines\u201d and \u201cthe nine Regions,\u201d where the Business Lines define strategy for products and services and the Regions deploy the Group\u2019s strategy and are responsible for customer satisfaction.",
+      "answer_b": "The excerpts provided do not contain detailed information about Michelin's entire organization structure, business lines, or specific regions as requested. The closest information provided is that Michelin operates through 20 global Business Lines and 9 Regions, but there is no detailed breakdown of these business lines or regions. Additionally, the information is from a 2025 Universal Registration Document, and there is no direct mention of Business Lines and Regions in the excerpts provided. The company does detail some of its operations in different geographical regions, but a comprehensive list is not available in the given excerpts. Status for Business Lines is supported by the excerpt stating that 20 global Business Lines exist to serve customers, and for Regions, it mentions 9 Regions responsible for managing customer relationships and increasing sales. However, the specific names and details of these business lines and regions are not provided.",
+      "status_b": "not_found"
+    }
+  ]
+}

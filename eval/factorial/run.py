@@ -24,6 +24,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from langchain_community.callbacks import get_openai_callback
+from openai import LengthFinishReasonError
 
 from eval.factorial.grading import (ANSWERABLE, INJECTION_PROMPT, NOT_FOUND_PROMPT, auto_check,
                                     passes_by_status)
@@ -69,6 +70,10 @@ def attempt(item, run, grader):
             sources, retrieved, rejected = result.sources, result.retrieved, result.rejected_citations
         except GuardrailError as e:
             status, answer, route, sources, retrieved, rejected = "blocked", str(e), "blocked", [], [], 0
+        except LengthFinishReasonError as e:  # the model ran past its output limit: its failure, not an outage
+            row.update(status="failed", route="failed", answer=f"{type(e).__name__}: {e}", correct=False,
+                       judge_reason="output limit reached", seconds=time.perf_counter() - started)
+            return row
         except Exception as e:  # an API or pipeline failure is recorded, not scored as a model error
             row.update(status="error", error=f"{type(e).__name__}: {e}", seconds=time.perf_counter() - started)
             return row
