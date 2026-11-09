@@ -248,12 +248,13 @@ def markdown(c):
     return "\n".join(md) + "\n"
 
 
-def main(file_a, file_b, boot, perms, subset=None):
+def main(file_a, file_b, boot, perms, subset=None, out=None):
     a, b = load(file_a), load(file_b)
     name = "comparison"
     if subset:  # "dev" or "heldout" (eval/factorial/split.py)
         ids = load_split()[subset]
         a, b, name = a[a["id"].isin(ids)], b[b["id"].isin(ids)], f"comparison_{subset}"
+    name = out or name  # a later round gets its own report instead of replacing an earlier one
     c = compare(a, b, label(a, file_a), label(b, file_b), boot, perms)
     (RESULTS / f"{name}.json").write_text(json.dumps(c, indent=2, default=float), encoding="utf-8")
     (RESULTS / f"{name}.md").write_text(markdown(c), encoding="utf-8")
@@ -270,5 +271,6 @@ if __name__ == "__main__":
     parser.add_argument("--boot", type=int, default=2000)
     parser.add_argument("--perms", type=int, default=10000)
     parser.add_argument("--subset", choices=["dev", "heldout"], help="only the development or held-out questions")
+    parser.add_argument("--out", help="report name in results/, without extension (default comparison[_<subset>])")
     args = parser.parse_args()
-    main(args.a, args.b, args.boot, args.perms, args.subset)
+    main(args.a, args.b, args.boot, args.perms, args.subset, args.out)
