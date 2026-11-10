@@ -22,9 +22,19 @@ A chatbot or a web search can tell you roughly what Michelin earns. What it can'
 
 The set covers financial figures, leadership, workforce, and strategy for all four companies; cross-company and multi-metric comparisons; calculations (margins, growth rates, differences); a parent-company vs. group distinction; questions the reports can't answer; off-topic requests; a prompt-injection attempt; and a false premise ("Michelin's sales were €99 billion, right?").
 
-**Factorial evaluation (400 questions).** 41 questions show the system works but can't say what makes a question hard: a 98% score on 35 answerable questions has a 95% interval of roughly 85–99.5%. A second, [400-question set](eval/factorial/README.md) crosses company × question type × wording (formal, casual, terse, typo; randomly assigned and balanced within every cell), adds 48 comparisons, 48 false premises, 48 unanswerable questions and 48 off-topic or injection attempts, and is analyzed with a Firth logistic model (errors clustered by question), a stratified permutation test for wording, and a check of the LLM judge against a model-free grader. Every figure is pinned to its page, calculation answers are computed in code, and each "not in the reports" question is checked to be absent before the set can be built.
+### The 400-question test
 
-**What the 400 questions found.** On the 300 questions held out from any tuning, the app on gpt-5.4-mini scored **82.3%**: 77.2% on answerable questions and 98.6% on questions it should decline or block. That is well below the golden set's 98%, though the two aren't like for like: this set is harder by design, and a cheaper judge graded it. The app is weakest on comparisons (41.7%) and false premises (66.7%). The same app on an untuned local model, qwen2.5:7b, scored 25.7%, nearly all refusals (2.2% on answerable questions). The two split on 172 questions and gpt-5.4-mini won 171 (McNemar p < 0.0001). After tuning on a separate 100 questions, the local system on qwen3:8b scored **61.7%** on the same 300 (57.5% on answerable questions, 75.0% on questions it should decline or block). That's up from 25.7%, and still 20.7 points behind gpt-5.4-mini (95% interval +15.0 to +26.7). Its weakness flipped from refusing too much to answering too readily: it answered 20 of 36 questions the reports can't answer and got 20 of 36 false-premise questions wrong. [Results and how to read the tests](eval/factorial/README.md#results).
+41 questions show the system works but can't say what makes a question hard: 98% on 35 answerable questions has a 95% interval of roughly 85–99.5%. A second, [400-question set](eval/factorial/README.md) crosses company × question type × wording (formal, casual, terse, typo; randomly assigned and balanced within every cell), adds 48 comparisons, 48 false premises, 48 unanswerable questions and 48 off-topic or injection attempts, and is analyzed with a Firth logistic model (errors clustered by question), a stratified permutation test for wording, and a check of the LLM judge against a model-free grader. Every figure is pinned to its page, calculation answers are computed in code, and each "not in the reports" question is checked to be absent before the set can be built. 100 questions were used for tuning; the other 300 were scored once per system.
+
+| System | Held-out 300 | Answerable | Should decline or block |
+|---|---|---|---|
+| gpt-5.4-mini | **82.3%** | 77.2% | 98.6% |
+| qwen3:8b, local, after tuning on the 100 | **61.7%** | 57.5% | 75.0% |
+| qwen2.5:7b, local, untuned | 25.7% | 2.2% | nearly all refusals |
+
+* **The hosted model leads by 20.7 points** (95% interval +15.0 to +26.7). Its weak spots are comparisons (41.7%) and false premises (66.7%). The score is well below the golden set's 98%, but the two aren't like for like: this set is harder by design, and a cheaper judge graded it.
+* **Tuning flipped the local model's failure mode.** Untuned, it refused almost everything (gpt-5.4-mini won 171 of the 172 questions they split on, McNemar p < 0.0001). Tuned, it answers too readily: 20 of 36 unanswerable questions answered, 20 of 36 false premises accepted.
+* [Results and how to read the tests](eval/factorial/README.md#results).
 
 ## Features
 
@@ -163,4 +173,6 @@ LangGraph and LangChain 1.x; OpenAI `gpt-5.4-mini` (answers), `gpt-5.4-nano` (qu
 * **Currencies are not converted** (EUR, USD, JPY), by design, since reports don't state a common rate.
 * **The rate limiter is in-memory**, so it applies per API process. A shared store (e.g. Redis) would be needed when running several replicas.
 
-*Originally built as a take-home assessment; rebuilt with verified citations, layered guardrails, an agent for comparisons and calculations, an API, and a measured evaluation.*
+## License
+
+Code: MIT ([LICENSE](LICENSE)). The annual reports in `data/` belong to their publishers and are included only so the index can be rebuilt.
