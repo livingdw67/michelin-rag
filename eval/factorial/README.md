@@ -92,7 +92,7 @@ The headline rate is precise; single factors can show large effects (a 10–15 p
 
 ## OpenAI vs. a local model
 
-The same 400 questions can be put to the app running on local models (Ollama) instead of OpenAI, the way the Segment Assistant was compared with Cortex Analyst. Setting `LLM_PROFILE=local` points every app model at Ollama's OpenAI-compatible endpoint (`qwen2.5:7b` for answering, query expansion and input screening; `nomic-embed-text` for embeddings, with its own index in `vector_db_local/`); any of these can be overridden in `.env`. **The judge stays on OpenAI in both profiles**, so the two systems are graded identically and the comparison measures the systems, not the graders.
+The same 400 questions can be put to the app running on local models (Ollama) instead of OpenAI, the way the Segment Assistant was compared with Cortex Analyst. Setting `LLM_PROFILE=local` points every app model at Ollama's OpenAI-compatible endpoint (`qwen3:8b` with thinking off for answering, query expansion and input screening, since round 2; round 1 used `qwen2.5:7b`; `nomic-embed-text` for embeddings, with its own index in `vector_db_local/`); any of these can be overridden in `.env`. **The judge stays on OpenAI in both profiles**, so the two systems are graded identically and the comparison measures the systems, not the graders.
 
 [compare.py](compare.py) pairs the two runs question by question:
 
@@ -176,13 +176,14 @@ python -m eval.factorial.run                        # 3 runs x 400, resumable ->
 python -m eval.factorial.stats                      # -> results/results_openai.md
 
 # Local system (Ollama running, OPENAI_API_KEY still set for the judge)
-ollama pull qwen2.5:7b && ollama pull nomic-embed-text
-ollama create qwen2.5-7b-16k -f config/ollama/qwen2.5-7b-16k.Modelfile   # 16k context; the 4k default truncates prompts
+ollama pull qwen3:8b && ollama pull nomic-embed-text
+ollama create qwen3-8b-12k -f config/ollama/qwen3-8b-12k.Modelfile   # 12k context; the 4k default truncates prompts
 LLM_PROFILE=local python -m src.pipeline.index      # once: builds vector_db_local/
-LLM_PROFILE=local python -m eval.factorial.run --workers 2   # -> results/attempts_local.jsonl
-python -m eval.factorial.stats --attempts attempts_local.jsonl
+LLM_PROFILE=local python -m eval.factorial.run --workers 2 --out attempts_local_new.jsonl
+# attempts_local.jsonl already holds round 1 (qwen2.5), so a new run needs its own --out
+python -m eval.factorial.stats --attempts attempts_local_new.jsonl
 
-python -m eval.factorial.compare                    # -> results/comparison.md
+python -m eval.factorial.compare --b attempts_local_new.jsonl --out comparison_new   # -> results/comparison_new.md
 ```
 
 On Windows PowerShell, set the profile with `$env:LLM_PROFILE = "local"` before the command (and `Remove-Item Env:LLM_PROFILE` to switch back).

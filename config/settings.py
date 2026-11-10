@@ -64,12 +64,13 @@ class Settings(BaseSettings):
     def _local_profile_defaults(self):
         """LLM_PROFILE=local fills in Ollama defaults for anything the .env doesn't set, and keeps
         its own index, since the vectors from a different embedding model aren't interchangeable.
-        The chat model is qwen2.5:7b with a 16k context (config/ollama/qwen2.5-7b-16k.Modelfile):
-        Ollama's 4k default truncates the answer prompt."""
+        The chat model is qwen3:8b with a 12k context and thinking off (config/ollama/qwen3-8b-12k.Modelfile): on the
+        300 held-out factorial questions it scored 61.7% against 25.7% for qwen2.5:7b (eval/factorial/README.md).
+        Ollama's 4k default context truncates the answer prompt, and with thinking on a call takes over a minute."""
         if self.llm_profile != "local":
             return self
         defaults = {"llm_base_url": "http://localhost:11434/v1", "embedding_base_url": "http://localhost:11434/v1",
-                    "chat_model": "qwen2.5-7b-16k", "rewrite_model": "qwen2.5-7b-16k",
+                    "chat_model": "qwen3-8b-12k", "rewrite_model": "qwen3-8b-12k", "llm_reasoning_effort": "none",
                     "embedding_model": "nomic-embed-text", "index_dir": BASE_DIR / "vector_db_local",
                     "company_names_overrule_off_topic": True}
         for field, value in defaults.items():
