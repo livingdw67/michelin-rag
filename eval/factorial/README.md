@@ -129,7 +129,7 @@ All 400 questions give nearly the same scores (82.2% and 25.2%). Median time per
 | Firth logistic model with interactions | The gap might depend on the kind of question or its wording | It does. System × type: χ²(4) = 81.5, p < 0.001; the local model catches up only on not-found questions. System × wording: χ²(3) = 15.7, p = 0.001, driven by terse queries (odds ratio 0.10, 95% 0.02 to 0.49) | Errors are clustered by question, on 228 single-company questions. With the local model passing about 2% of answerable questions, effect sizes are very imprecise (one odds ratio is 554, interval 92 to 3,338), so read the direction and not the size. Interaction terms aren't adjusted for multiple comparisons |
 | Cohen's κ against the model-free grader | The judge is an LLM, and here the same model as the OpenAI system, so it could favor that system's answers | On the 228 answerable questions the judge and the model-free check agree 95.2% of the time for gpt-5.4-mini (κ = 0.85) and 99.6% for the local model (κ = 0.91). Every disagreement is the judge failing an answer the check passed (11 and 1). Scored with no LLM at all, the systems split 181 to 0 (82.0% against 2.6%), so the result doesn't depend on the judge | The model-free check only looks for the right figure or name, so it's more lenient than the judge. κ carries little information when one system almost never passes |
 
-**Round 2: tuning the local system (in progress).** Scored on the 76 answerable development questions with the model-free check, which costs nothing:
+**Round 2: tuning the local system.** Scored on the 76 answerable development questions with the model-free check, which costs nothing:
 
 | Step | What changed | Passed (of 76) |
 |---|---|---:|
@@ -139,7 +139,31 @@ All 400 questions give nearly the same scores (82.2% and 25.2%). Median time per
 | 2d | qwen3:8b, thinking off, 12k context | 47 |
 | Reference | gpt-5.4-mini | 65 |
 
-These are development scores on the questions the fixes were tuned on, so they run optimistic. The held-out score is the one that counts, and it hasn't been run yet. The shared verifier changes only add verified citations, and they never changed a gpt-5.4-mini answer, so round 1's OpenAI scores stand.
+These are development scores on the questions the fixes were tuned on, so they could run optimistic. The shared verifier changes only add verified citations, and they never changed a gpt-5.4-mini answer, so round 1's OpenAI scores stand.
+
+**Round 2 on the 300 held-out questions: qwen3:8b against gpt-5.4-mini.** The 2d system answered each held-out question once, graded by the same gpt-5.4-mini judge as round 1 ([full report](results/comparison_heldout_r2.md)).
+
+| 300 held-out questions | Questions | gpt-5.4-mini | qwen3:8b (local, round 2) | qwen2.5:7b (round 1) |
+|---|---:|---:|---:|---:|
+| All | 300 | **82.3%** | **61.7%** | 25.7% |
+| Answerable | 228 | 77.2% | 57.5% | 2.2% |
+| Should decline or block | 72 | 98.6% | 75.0% | 100% |
+
+gpt-5.4-mini leads by 20.7 points (95% interval +15.0 to +26.7). Median time per question was 5.0 s against 32.2 s.
+
+- **Tuning carried over to questions it wasn't tuned on.** By the model-free check, the 2d system passed 61.8% of the answerable development questions (47 of 76) and 64.5% of the answerable held-out ones (147 of 228), so there's no sign it was fitted to the 100.
+- **The weakness flipped.** Round 1 refused nearly everything; round 2 answers nearly everything. It answered 214 of the 228 answerable questions, but also 20 of the 36 questions the reports can't answer (gpt-5.4-mini answered 5), and it answered 31 of the 36 false-premise questions but got 20 of them wrong. Not-found questions are where it loses most: 55.6% against 97.2%.
+- **Comparisons are close.** Both systems are weak there: 36.1% for qwen3 and 41.7% for gpt-5.4-mini (difference 95% interval −13.9 to +25.0 points).
+- **What to fix next:** the decline decision. A check that the excerpts actually contain the asked-for figure before answering, and that a question's stated figure matches the report, would target both not-found and false-premise misses.
+
+| Test | Why it's needed | What it says here | Assumptions and checks |
+|---|---|---|---|
+| McNemar's exact test, round 2 against round 1 | Both local rounds answered the same 300 questions, so the improvement can be tested pair by pair | Round 2 got 126 questions right that round 1 missed, and missed 18 that round 1 got right (p < 0.0001): the tuning helped on questions it never saw | Pairs are independent across questions. The two rounds also differ in model (qwen2.5 to qwen3), so this credits the whole round 2 system, not each change |
+| McNemar's exact test, gpt-5.4-mini against qwen3 | Only the questions the systems split on can say which is better | They split on 92: gpt-5.4-mini won 77 and qwen3 15 (p < 0.0001) | As above; the exact version has no minimum sample size |
+| Firth logistic model with interactions | Is qwen3's gap the same everywhere? | Mostly. Neither system × type (χ²(4) = 7.6, p = 0.11) nor system × wording (χ²(3) = 3.9, p = 0.27) is significant as a set, but one term stands out: qwen3's odds fall much further on not-found questions (odds ratio 0.11, 95% 0.02 to 0.55, p = 0.007) | 228 single-company questions, errors clustered by question. Picking out one term after the set test isn't significant is exploratory; the not-found gap shows plainly in the raw rates too (20 of 36 answered) |
+| Cohen's κ against the model-free grader | The judge is an LLM, and the same model as the OpenAI system | For qwen3 the judge and the model-free check agree on 88.6% of answerable questions (κ = 0.76); the judge failed 21 answers the check passed and passed 5 it failed. Scored with no LLM at all, gpt-5.4-mini still leads on answerable questions, 187 to 147, splitting 53 to 13 (p < 0.0001) | The model-free check only looks for the right figure or name, so it can't see a wrong premise accepted around a correct number; false premises are the largest group of the 21 (9) |
+
+**How the run was done.** The laptop had no charger, so the 300 were answered over three battery charges by [wip/run_heldout_on_battery.py](wip/run_heldout_on_battery.py). It runs the questions in a seeded order stratified by type and company ([order](results/local_r2_heldout_order.json)), so the finished set kept the mix of the full 300 at every stop. Each question was answered once; six attempts lost their connection to the local model server and were retried, which the grader handles as outages, not answers.
 
 ## Running it
 

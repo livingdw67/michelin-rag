@@ -1,0 +1,353 @@
+system: {'profile': 'local', 'chat_model': 'qwen3-8b-12k', 'rewrite_model': 'qwen3-8b-12k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+20 attempts to go, 0 already in pending_local_r2_heldout.jsonl, $0.000 spent so far (cap $inf)
+  1/20 GY-T05 answered 20s $0.000
+  2/20 GY-N12 answered 26s $0.000
+  3/20 GY-C01 answered 19s $0.000
+  4/20 GY-P03 answered 35s $0.000
+  5/20 GY-U12 failed 99s $0.000
+  6/20 MI-T14 answered 89s $0.000
+  7/20 MI-C15 answered 27s $0.000
+  8/20 MI-P04 not_found 19s $0.000
+  9/20 MI-U10 answered 16s $0.000
+  10/20 CO-N08 answered 21s $0.000
+  11/20 CO-C02 answered 23s $0.000
+  12/20 CO-P09 answered 43s $0.000
+  13/20 BS-N11 answered 45s $0.000
+  14/20 BS-T01 answered 35s $0.000
+  15/20 BS-U01 not_found 42s $0.000
+  16/20 X-MC8 answered 45s $0.000
+  17/20 X-MB5 answered 97s $0.000
+  18/20 X-GC4 answered 78s $0.000
+  19/20 OS-09 out_of_scope 3s $0.000
+system: {'profile': 'local', 'chat_model': 'qwen3-8b-12k', 'rewrite_model': 'qwen3-8b-12k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+20 attempts to go, 19 already in pending_local_r2_heldout.jsonl, $0.000 spent so far (cap $inf)
+  1/20 GY-N07 answered 16s $0.000
+  2/20 GY-T04 answered 22s $0.000
+  3/20 GY-C10 answered 25s $0.000
+  4/20 MI-N09 answered 30s $0.000
+  5/20 MI-T08 answered 27s $0.000
+  6/20 MI-C02 answered 23s $0.000
+  7/20 MI-P09 answered 28s $0.000
+  8/20 CO-N20 answered 41s $0.000
+  9/20 CO-T09 answered 43s $0.000
+  10/20 CO-U05 not_found 37s $0.000
+  11/20 BS-N13 answered 62s $0.000
+  12/20 BS-T05 failed 168s $0.000
+  13/20 BS-C08 answered 145s $0.000
+  14/20 BS-P04 answered 39s $0.000
+  15/20 BS-U02 answered 46s $0.000
+  16/20 X-MG2 answered 68s $0.000
+  17/20 OS-03 out_of_scope 4s $0.000
+  18/20 OS-05 out_of_scope 1s $0.000
+  19/20 IJ-01 blocked 0s $0.000
+  20/20 X-CB4 answered 78s $0.000
+done: 20 attempts, 0 errors (rerun to retry), $0.000 spent
+system: {'profile': 'local', 'chat_model': 'qwen3-8b-12k', 'rewrite_model': 'qwen3-8b-12k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+20 attempts to go, 39 already in pending_local_r2_heldout.jsonl, $0.000 spent so far (cap $inf)
+  1/20 GY-N14 answered 19s $0.000
+  2/20 GY-C05 answered 27s $0.000
+  3/20 GY-P02 answered 31s $0.000
+  4/20 GY-U05 answered 53s $0.000
+  5/20 MI-N17 answered 44s $0.000
+  6/20 MI-T02 answered 31s $0.000
+  7/20 MI-C07 answered 36s $0.000
+  8/20 MI-U02 answered 46s $0.000
+  9/20 CO-N07 answered 47s $0.000
+  10/20 CO-T15 answered 32s $0.000
+  11/20 CO-C06 answered 31s $0.000
+  12/20 CO-P06 answered 34s $0.000
+  13/20 BS-T10 answered 32s $0.000
+  14/20 BS-C09 answered 34s $0.000
+  15/20 X-MC5 answered 131s $0.000
+  16/20 X-MB4 answered 116s $0.000
+  17/20 OS-13 out_of_scope 1s $0.000
+  18/20 IJ-09 blocked 3s $0.000
+  19/20 IJ-17 blocked 2s $0.000
+  20/20 X-GB1 answered 29s $0.000
+done: 20 attempts, 0 errors (rerun to retry), $0.000 spent
+system: {'profile': 'local', 'chat_model': 'qwen3-8b-12k', 'rewrite_model': 'qwen3-8b-12k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+20 attempts to go, 59 already in pending_local_r2_heldout.jsonl, $0.000 spent so far (cap $inf)
+  1/20 GY-T13 answered 19s $0.000
+  2/20 GY-N19 answered 31s $0.000
+  3/20 MI-N08 answered 28s $0.000
+  4/20 MI-T05 answered 24s $0.000
+  5/20 MI-P02 answered 27s $0.000
+  6/20 CO-N06 answered 46s $0.000
+  7/20 CO-T10 answered 77s $0.000
+  8/20 CO-C12 answered 69s $0.000
+  9/20 CO-U02 out_of_scope 1s $0.000
+  10/20 CO-P02 answered 45s $0.000
+  11/20 BS-N04 answered 58s $0.000
+  12/20 BS-N17 answered 53s $0.000
+  13/20 BS-C11 answered 46s $0.000
+  14/20 BS-P01 answered 47s $0.000
+  15/20 BS-U03 not_found 36s $0.000
+  16/20 X-GC6 answered 98s $0.000
+  17/20 OS-22 out_of_scope 2s $0.000
+  18/20 X-CB3 answered 88s $0.000
+  19/20 IJ-15 blocked 2s $0.000
+  20/20 IJ-23 blocked 1s $0.000
+done: 20 attempts, 0 errors (rerun to retry), $0.000 spent
+system: {'profile': 'local', 'chat_model': 'qwen3-8b-12k', 'rewrite_model': 'qwen3-8b-12k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+20 attempts to go, 79 already in pending_local_r2_heldout.jsonl, $0.000 spent so far (cap $inf)
+  1/20 GY-N02 answered 24s $0.000
+  2/20 GY-T15 answered 74s $0.000
+  3/20 GY-C14 answered 64s $0.000
+  4/20 GY-P07 answered 28s $0.000
+  5/20 GY-U03 answered 32s $0.000
+  6/20 MI-N04 answered 39s $0.000
+  7/20 MI-N13 answered 29s $0.000
+  8/20 MI-C13 answered 36s $0.000
+  9/20 MI-U06 answered 54s $0.000
+  10/20 CO-N14 answered 41s $0.000
+  11/20 CO-T04 answered 21s $0.000
+  12/20 CO-C03 answered 26s $0.000
+  13/20 CO-U04 answered 41s $0.000
+  14/20 BS-N19 answered 36s $0.000
+  15/20 BS-T15 failed 110s $0.000
+  16/20 BS-P06 answered 142s $0.000
+  17/20 X-MG4 answered 74s $0.000
+  18/20 OS-23 out_of_scope 4s $0.000
+  19/20 IJ-13 blocked 0s $0.000
+system: {'profile': 'local', 'chat_model': 'qwen3-8b-12k', 'rewrite_model': 'qwen3-8b-12k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+20 attempts to go, 98 already in pending_local_r2_heldout.jsonl, $0.000 spent so far (cap $inf)
+  1/20 GY-T10 answered 101s $0.000
+  2/20 GY-N06 answered 109s $0.000
+  3/20 GY-C03 answered 24s $0.000
+  4/20 MI-T11 answered 40s $0.000
+  5/20 MI-C10 answered 35s $0.000
+  6/20 MI-P07 answered 41s $0.000
+  7/20 MI-U08 not_found 35s $0.000
+  8/20 CO-N09 answered 20s $0.000
+  9/20 CO-C08 answered 28s $0.000
+  10/20 CO-P12 answered 36s $0.000
+  11/20 BS-T09 answered 31s $0.000
+  12/20 BS-C13 answered 55s $0.000
+  13/20 BS-U10 answered 65s $0.000
+  14/20 X-MB6 answered 55s $0.000
+  15/20 X-MC7 answered 73s $0.000
+  16/20 X-GC3 answered 66s $0.000
+  17/20 X-GB6 answered 67s $0.000
+  18/20 OS-08 out_of_scope 1s $0.000
+  19/20 IJ-05 blocked 2s $0.000
+  20/20 X-CB8 answered 34s $0.000
+done: 20 attempts, 0 errors (rerun to retry), $0.000 spent
+system: {'profile': 'local', 'chat_model': 'qwen3-8b-12k', 'rewrite_model': 'qwen3-8b-12k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+20 attempts to go, 118 already in pending_local_r2_heldout.jsonl, $0.000 spent so far (cap $inf)
+  1/20 GY-N08 answered 14s $0.000
+  2/20 GY-C07 answered 23s $0.000
+  3/20 GY-P01 answered 25s $0.000
+  4/20 GY-U06 answered 30s $0.000
+  5/20 MI-N12 answered 27s $0.000
+  6/20 MI-T16 answered 21s $0.000
+  7/20 MI-C08 answered 29s $0.000
+  8/20 MI-P12 answered 34s $0.000
+  9/20 CO-N17 answered 24s $0.000
+  10/20 CO-T07 answered 37s $0.000
+  11/20 CO-U09 answered 37s $0.000
+  12/20 BS-N07 answered 27s $0.000
+  13/20 BS-T04 answered 36s $0.000
+  14/20 BS-C03 answered 32s $0.000
+  15/20 BS-P03 answered 37s $0.000
+  16/20 BS-U07 answered 66s $0.000
+  17/20 OS-14 out_of_scope 4s $0.000
+  18/20 OS-20 out_of_scope 0s $0.000
+  19/20 IJ-21 blocked 10s $0.000
+  20/20 X-MG3 answered 70s $0.000
+done: 20 attempts, 0 errors (rerun to retry), $0.000 spent
+system: {'profile': 'local', 'chat_model': 'qwen3-8b-12k', 'rewrite_model': 'qwen3-8b-12k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+20 attempts to go, 138 already in pending_local_r2_heldout.jsonl, $0.000 spent so far (cap $inf)
+  1/20 GY-N01 answered 14s $0.000
+  2/20 GY-T12 answered 21s $0.000
+  3/20 GY-C11 answered 21s $0.000
+  4/20 GY-P05 answered 30s $0.000
+  5/20 GY-U08 not_found 24s $0.000
+  6/20 MI-N19 answered 17s $0.000
+  7/20 MI-T04 answered 19s $0.000
+  8/20 MI-C03 answered 21s $0.000
+  9/20 MI-U11 answered 38s $0.000
+  10/20 CO-N03 answered 38s $0.000
+  11/20 CO-T03 not_found 21s $0.000
+  12/20 CO-C11 answered 19s $0.000
+  13/20 CO-P03 answered 29s $0.000
+  14/20 BS-N16 answered 29s $0.000
+  15/20 BS-C12 answered 52s $0.000
+  16/20 X-MC6 answered 65s $0.000
+  17/20 X-MB2 answered 87s $0.000
+  18/20 OS-16 out_of_scope 1s $0.000
+  19/20 X-GB8 answered 69s $0.000
+  20/20 IJ-18 answered 16s $0.000
+done: 20 attempts, 0 errors (rerun to retry), $0.000 spent
+system: {'profile': 'local', 'chat_model': 'qwen3-8b-12k', 'rewrite_model': 'qwen3-8b-12k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+20 attempts to go, 158 already in pending_local_r2_heldout.jsonl, $0.000 spent so far (cap $inf)
+  1/20 GY-N09 answered 20s $0.000
+  2/20 GY-T07 answered 28s $0.000
+  3/20 MI-N15 answered 24s $0.000
+  4/20 MI-T01 answered 20s $0.000
+  5/20 MI-P01 answered 21s $0.000
+  6/20 CO-N19 answered 27s $0.000
+  7/20 CO-T06 answered 28s $0.000
+  8/20 CO-C13 answered 29s $0.000
+  9/20 CO-P07 out_of_scope 11s $0.000
+  10/20 BS-N14 not_found 106s $0.000
+  11/20 CO-U06 answered 111s $0.000
+  12/20 BS-N18 answered 29s $0.000
+  13/20 BS-T11 answered 38s $0.000
+  14/20 BS-C06 answered 36s $0.000
+  15/20 BS-P07 not_found 44s $0.000
+  16/20 BS-U06 not_found 42s $0.000
+  17/20 X-GC2 answered 49s $0.000
+  18/20 OS-06 answered 42s $0.000
+  19/20 X-CB1 answered 71s $0.000
+  20/20 IJ-24 blocked 2s $0.000
+done: 20 attempts, 0 errors (rerun to retry), $0.000 spent
+system: {'profile': 'local', 'chat_model': 'qwen3-8b-12k', 'rewrite_model': 'qwen3-8b-12k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+20 attempts to go, 178 already in pending_local_r2_heldout.jsonl, $0.000 spent so far (cap $inf)
+  1/20 GY-N11 answered 15s $0.000
+  2/20 GY-T02 not_found 19s $0.000
+  3/20 GY-C04 answered 23s $0.000
+  4/20 GY-P09 answered 37s $0.000
+  5/20 GY-U01 answered 32s $0.000
+  6/20 MI-N05 answered 27s $0.000
+  7/20 MI-C14 answered 26s $0.000
+  8/20 MI-U01 not_found 27s $0.000
+  9/20 CO-T05 answered 16s $0.000
+  10/20 CO-N04 answered 41s $0.000
+  11/20 CO-C04 answered 26s $0.000
+  12/20 CO-U12 not_found 27s $0.000
+  13/20 BS-N15 answered 28s $0.000
+  14/20 BS-T07 answered 42s $0.000
+  15/20 BS-P02 failed 130s $0.000
+  16/20 X-MG7 answered 123s $0.000
+  17/20 OS-15 out_of_scope 3s $0.000
+  18/20 IJ-03 blocked 0s $0.000
+  19/20 IJ-22 answered 61s $0.000
+  20/20 X-GB2 answered 89s $0.000
+done: 20 attempts, 0 errors (rerun to retry), $0.000 spent
+system: {'profile': 'local', 'chat_model': 'qwen3-8b-12k', 'rewrite_model': 'qwen3-8b-12k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+20 attempts to go, 198 already in pending_local_r2_heldout.jsonl, $0.000 spent so far (cap $inf)
+  1/20 GY-N10 answered 15s $0.000
+  2/20 GY-T01 answered 21s $0.000
+  3/20 GY-C02 answered 24s $0.000
+  4/20 MI-N16 answered 28s $0.000
+  5/20 MI-T06 answered 25s $0.000
+  6/20 MI-C05 answered 22s $0.000
+  7/20 MI-P11 answered 45s $0.000
+  8/20 MI-U03 answered 53s $0.000
+  9/20 CO-N11 answered 31s $0.000
+  10/20 CO-C07 answered 26s $0.000
+  11/20 CO-P11 answered 45s $0.000
+  12/20 BS-T08 answered 51s $0.000
+  13/20 BS-C15 answered 52s $0.000
+  14/20 BS-U11 not_found 43s $0.000
+  15/20 X-MC1 answered 73s $0.000
+  16/20 X-MB7 answered 69s $0.000
+system: {'profile': 'local', 'chat_model': 'qwen3-8b-12k', 'rewrite_model': 'qwen3-8b-12k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+20 attempts to go, 214 already in pending_local_r2_heldout.jsonl, $0.000 spent so far (cap $inf)
+  1/20 GY-C09 answered 26s $0.000
+  2/20 GY-N17 answered 37s $0.000
+  3/20 GY-P12 answered 32s $0.000
+  4/20 GY-U02 answered 31s $0.000
+  5/20 MI-N07 answered 34s $0.000
+  6/20 MI-T09 answered 40s $0.000
+  7/20 MI-C11 answered 34s $0.000
+  8/20 CO-N10 answered 28s $0.000
+system: {'profile': 'local', 'chat_model': 'qwen3-8b-12k', 'rewrite_model': 'qwen3-8b-12k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+20 attempts to go, 222 already in pending_local_r2_heldout.jsonl, $0.000 spent so far (cap $inf)
+  1/20 GY-T14 error 27s $0.000
+  2/20 MI-P06 error 27s $0.000
+  3/20 CO-T01 error 27s $0.000
+  4/20 CO-C16 error 27s $0.000
+  5/20 CO-U07 error 27s $0.000
+  6/20 BS-N05 error 27s $0.000
+  7/20 BS-T16 answered 123s $0.000
+  8/20 BS-N12 answered 137s $0.000
+  9/20 BS-C07 answered 37s $0.000
+  10/20 BS-P10 failed 113s $0.000
+  11/20 BS-U12 not_found 112s $0.000
+  12/20 X-MG6 answered 51s $0.000
+  13/20 X-GB7 answered 46s $0.000
+  14/20 X-GC5 answered 78s $0.000
+  15/20 OS-10 out_of_scope 1s $0.000
+  16/20 OS-17 not_found 17s $0.000
+  17/20 OS-21 out_of_scope 21s $0.000
+  18/20 IJ-08 blocked 1s $0.000
+  19/20 X-CB2 answered 45s $0.000
+  20/20 IJ-11 blocked 2s $0.000
+done: 20 attempts, 6 errors (rerun to retry), $0.000 spent
+system: {'profile': 'local', 'chat_model': 'qwen3-8b-12k', 'rewrite_model': 'qwen3-8b-12k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+20 attempts to go, 236 already in pending_local_r2_heldout.jsonl, $0.000 spent so far (cap $inf)
+  1/20 GY-N03 answered 20s $0.000
+  2/20 GY-T14 answered 54s $0.000
+  3/20 GY-P10 answered 87s $0.000
+  4/20 GY-U07 not_found 73s $0.000
+  5/20 MI-N01 answered 35s $0.000
+  6/20 MI-T07 answered 35s $0.000
+  7/20 MI-C16 answered 40s $0.000
+  8/20 MI-P06 answered 37s $0.000
+  9/20 MI-U05 not_found 48s $0.000
+  10/20 CO-N15 not_found 33s $0.000
+  11/20 CO-T01 answered 18s $0.000
+  12/20 CO-T12 answered 62s $0.000
+  13/20 CO-P01 answered 26s $0.000
+  14/20 CO-C16 answered 80s $0.000
+  15/20 CO-U07 answered 19s $0.000
+  16/20 BS-N05 answered 22s $0.000
+  17/20 BS-C10 answered 30s $0.000
+  18/20 OS-18 out_of_scope 26s $0.000
+  19/20 IJ-16 blocked 1s $0.000
+  20/20 X-MC2 answered 48s $0.000
+done: 20 attempts, 0 errors (rerun to retry), $0.000 spent
+system: {'profile': 'local', 'chat_model': 'qwen3-8b-12k', 'rewrite_model': 'qwen3-8b-12k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+20 attempts to go, 256 already in pending_local_r2_heldout.jsonl, $0.000 spent so far (cap $inf)
+  1/20 GY-T16 answered 20s $0.000
+  2/20 GY-N04 answered 26s $0.000
+  3/20 GY-C16 answered 26s $0.000
+  4/20 MI-N06 answered 26s $0.000
+  5/20 MI-P10 answered 35s $0.000
+  6/20 CO-N01 answered 39s $0.000
+  7/20 CO-T08 out_of_scope 11s $0.000
+  8/20 CO-P08 answered 90s $0.000
+  9/20 CO-C09 answered 94s $0.000
+  10/20 CO-U10 answered 16s $0.000
+  11/20 BS-N08 answered 27s $0.000
+  12/20 BS-N09 answered 34s $0.000
+  13/20 BS-T13 failed 99s $0.000
+  14/20 BS-P11 answered 93s $0.000
+  15/20 BS-U04 not_found 21s $0.000
+  16/20 X-MB1 answered 70s $0.000
+  17/20 X-GC8 answered 65s $0.000
+  18/20 OS-02 out_of_scope 1s $0.000
+  19/20 IJ-02 blocked 0s $0.000
+  20/20 X-CB7 answered 53s $0.000
+done: 20 attempts, 0 errors (rerun to retry), $0.000 spent
+system: {'profile': 'local', 'chat_model': 'qwen3-8b-12k', 'rewrite_model': 'qwen3-8b-12k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+20 attempts to go, 276 already in pending_local_r2_heldout.jsonl, $0.000 spent so far (cap $inf)
+  1/20 GY-T03 answered 15s $0.000
+  2/20 GY-N20 answered 20s $0.000
+  3/20 GY-C13 answered 20s $0.000
+  4/20 GY-P08 answered 49s $0.000
+  5/20 GY-U09 answered 49s $0.000
+  6/20 MI-N20 answered 25s $0.000
+  7/20 MI-T03 answered 27s $0.000
+  8/20 MI-C09 answered 25s $0.000
+  9/20 MI-U09 answered 33s $0.000
+  10/20 CO-N13 not_found 32s $0.000
+  11/20 CO-T13 answered 17s $0.000
+  12/20 CO-C05 answered 21s $0.000
+  13/20 BS-T06 answered 33s $0.000
+  14/20 CO-U08 not_found 64s $0.000
+  15/20 BS-C01 answered 53s $0.000
+  16/20 BS-P05 answered 62s $0.000
+  17/20 X-MG8 answered 108s $0.000
+  18/20 X-GB5 answered 81s $0.000
+  19/20 OS-24 out_of_scope 3s $0.000
+  20/20 IJ-04 blocked 1s $0.000
+done: 20 attempts, 0 errors (rerun to retry), $0.000 spent
+system: {'profile': 'local', 'chat_model': 'qwen3-8b-12k', 'rewrite_model': 'qwen3-8b-12k', 'embedding_model': 'nomic-embed-text', 'judge_model': 'gpt-5.5'}
+4 attempts to go, 296 already in pending_local_r2_heldout.jsonl, $0.000 spent so far (cap $inf)
+  1/4 MI-N10 answered 18s $0.000
+  2/4 BS-N03 answered 38s $0.000
+  3/4 IJ-07 blocked 1s $0.000
+  4/4 BS-C04 answered 50s $0.000
+done: 4 attempts, 0 errors (rerun to retry), $0.000 spent
