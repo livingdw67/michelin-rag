@@ -6,19 +6,22 @@ from src import llm
 def test_openai_is_the_default():
     s = Settings(_env_file=None)
     assert s.llm_profile == "openai" and s.llm_base_url == "" and s.index_dir == BASE_DIR / "vector_db"
+    assert s.llm_reasoning_effort == ""  # OpenAI calls keep their own per-call reasoning effort
 
 
 def test_local_profile_fills_ollama_defaults_and_keeps_a_separate_index():
     s = Settings(_env_file=None, llm_profile="local")
     assert s.llm_base_url == "http://localhost:11434/v1" and s.embedding_base_url == s.llm_base_url
-    assert s.chat_model == "qwen2.5-7b-16k" and s.embedding_model == "nomic-embed-text"
+    assert s.chat_model == s.rewrite_model == "qwen3-8b-12k" and s.embedding_model == "nomic-embed-text"
+    assert s.llm_reasoning_effort == "none"  # qwen3's thinking takes over a minute per call
     assert s.index_dir == BASE_DIR / "vector_db_local" and s.company_names_overrule_off_topic
     assert s.judge_model == Settings(_env_file=None).judge_model  # the grader doesn't change
 
 
 def test_explicit_settings_override_the_local_defaults():
-    s = Settings(_env_file=None, llm_profile="local", chat_model="qwen2.5:14b")
-    assert s.chat_model == "qwen2.5:14b" and s.rewrite_model == "qwen2.5-7b-16k"
+    s = Settings(_env_file=None, llm_profile="local", chat_model="qwen2.5-7b-16k", llm_reasoning_effort="")
+    assert s.chat_model == "qwen2.5-7b-16k" and s.rewrite_model == "qwen3-8b-12k"
+    assert s.llm_reasoning_effort == ""  # round 1's qwen2.5 setup is still one setting away
 
 
 def test_local_chat_model_drops_openai_only_options(monkeypatch):
