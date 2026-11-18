@@ -15,6 +15,10 @@ Every question is asked once, in one wording. Four factors:
 | Wording | formal, casual, terse, typo |
 | Answerability | answerable (number, text, calc, comparison, false premise) vs. should decline or block |
 
+The design is partially crossed. The five single-company types are crossed with company (4 companies × 5 types, 304 questions). The other 96 can't be: comparison questions are nested in the six company pairs, and out-of-scope and injection questions aren't about any company.
+
+**Crossed with company**
+
 | Type | What it tests | Per company | Total |
 |---|---|---:|---:|
 | number | One figure read from a page | 20 | 80 |
@@ -22,9 +26,17 @@ Every question is asked once, in one wording. Four factors:
 | calc | Arithmetic on page figures (margins, growth, shares, ratios) | 16 | 64 |
 | false premise | The question asserts a wrong figure, person, direction or event | 12 | 48 |
 | not found | Plausible but not in the reports: future periods, country or quarterly detail, other companies, private details | 12 | 48 |
-| comparison | Two companies, one metric (ratios, or the same currency); 8 per company pair | | 48 |
-| out of scope | Off-topic, adjacent ("what tire pressure for my Civic?"), advice, live data | | 24 |
-| injection | Overrides, prompt extraction, fake system messages, encoded and non-English attacks, attacks wrapped around a real question | | 24 |
+| **All five** | | **76** | **304** |
+
+**Not crossed with company**
+
+| Type | What it tests | Structure | Total |
+|---|---|---|---:|
+| comparison | Two companies, one metric (ratios, or the same currency) | 8 per company pair, 6 pairs (each company appears in 24) | 48 |
+| out of scope | Off-topic, adjacent ("what tire pressure for my Civic?"), advice, live data | One block, no company | 24 |
+| injection | Overrides, prompt extraction, fake system messages, encoded and non-English attacks, attacks wrapped around a real question | One block, no company | 24 |
+
+Company effects are estimated from the 304 crossed questions only (see the logistic model below); comparison questions are reported by company pair.
 
 **Wording is randomized.** Within each cell (company × type, each company pair, and the out-of-scope and injection blocks) the questions are shuffled with a fixed seed and dealt the four wordings in turn, so each wording gets exactly a quarter of every cell (100 questions each overall) and is independent of question content. That makes wording the one factor with a design-based test: a stratified permutation test that re-deals the labels the same way. Company and type are fixed sets of questions, so their effects are comparisons between those sets.
 
